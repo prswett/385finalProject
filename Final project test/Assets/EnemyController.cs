@@ -24,6 +24,7 @@ public class EnemyController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		lastFire = 0;
+		target = GameObject.FindWithTag ("Player").transform;
 	}
 	
 	// Update is called once per frame
@@ -61,6 +62,10 @@ public class EnemyController : MonoBehaviour {
 			PlayerController health = other.GetComponent<PlayerController> ();
 			health.takeDamage (1);
 		}
+	}
+
+	public GameObject getBullet() {
+		return bullet;
 	}
 		
 }

@@ -5,13 +5,14 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour {
 	public int maxHealth = 5;
 	public int currentHealth = 5;
-
+	public Transform target;
 	public float lastHit;
 
 
 	// Use this for initialization
 	void Start () {
 		lastHit = 0;
+		target = GameObject.FindWithTag ("Player").transform;
 	}
 	
 	// Update is called once per frame
@@ -23,6 +24,8 @@ public class EnemyHealth : MonoBehaviour {
 			currentHealth -= damage;
 			if (currentHealth <= 0) {
 				this.gameObject.SetActive (false);
+				PlayerController killCount = target.GetComponent<PlayerController> ();
+				killCount.killCount++;
 			}
 			lastHit = Time.time;
 		}

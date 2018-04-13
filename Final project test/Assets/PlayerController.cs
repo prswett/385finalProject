@@ -18,36 +18,35 @@ public class PlayerController : MonoBehaviour {
 	public LayerMask groundLayer;
 	public bool onGround;
 
-	public float health;
-	public float maxHealth;
-	public float mana;
-	public float maxMana;
+	public PlayerStatistics localPlayer = new PlayerStatistics();
 	Image healthbar;
 	Image manabar;
 
+	public int killCount;
 	public float lastHit;
 
 	Rigidbody2D rb2d;
 
 	// Anim is declared for changing animations
 	void Start () {
+		DontDestroyOnLoad (gameObject);
 		healthbar = GameObject.Find ("Health").GetComponent<Image> ();
 		manabar = GameObject.Find ("Mana").GetComponent<Image> ();
-		maxHealth = health;
-		maxMana = mana;
+		localPlayer.maxHealth = localPlayer.health;
+		localPlayer.maxMana = localPlayer.mana;
 
 		rb2d = this.GetComponent<Rigidbody2D> ();
 		anim = GetComponent<Animator> ();
-
+		killCount = 0;
 	}
 
 	// Update is called once per frame
 	void Update () {
-		if (health <= 0) {
+		if (localPlayer.health <= 0) {
 			this.gameObject.SetActive (false);
 		}
-		healthbar.fillAmount = health / maxHealth;
-		manabar.fillAmount = mana / maxMana;
+		healthbar.fillAmount = localPlayer.health / localPlayer.maxHealth;
+		manabar.fillAmount = localPlayer.mana / localPlayer.maxMana;
 
 		onGround = Physics2D.OverlapCircle (groundCheck.position, groundCheckRadius, groundLayer);
 		if (Input.GetKey (KeyCode.A)) {
@@ -97,7 +96,14 @@ public class PlayerController : MonoBehaviour {
 		}
 
 		if (Input.GetKey(KeyCode.R)) {
-			SceneManager.LoadScene("FinalProject");
+			SceneManager.LoadScene("Stage1");
+			this.gameObject.SetActive (false);
+		}
+		if (Input.GetKey (KeyCode.Q)) {
+			if (killCount > 0) {
+				savePlayer ();
+				SceneManager.LoadScene ("Boss Stage");
+			}
 		}
 
 	}
@@ -111,8 +117,16 @@ public class PlayerController : MonoBehaviour {
 		
 	public void takeDamage(float damage) {
 		if (Time.time - lastHit >= 0.5) {
-			health -= damage;
+			localPlayer.health -= damage;
 			lastHit = Time.time;
 		}
+	}
+
+	public void savePlayer() {
+		GlobalControl.Instance.savedData = localPlayer;
+	}
+
+	public void loadPlayer() {
+		localPlayer = GlobalControl.Instance.savedData;
 	}
 }

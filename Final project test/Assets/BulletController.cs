@@ -8,6 +8,7 @@ public class BulletController : MonoBehaviour {
 	public float velocityY;
 	Rigidbody2D rb2d;
 	public Transform target;
+	public bool enemyUnit = true;
 
 
 	// Use this for initialization
@@ -17,8 +18,13 @@ public class BulletController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		rb2d.velocity = new Vector2 (velocityX, velocityY);
-		Destroy (gameObject, 4f);
+		rb2d.velocity = new Vector2 (velocityX, velocityY) * 3;
+		if (enemyUnit) {
+			Destroy (gameObject, 4f);
+		} else {
+			Destroy (gameObject, 8f);
+		}
+
 	}
 
 	public void setVelocity(float x, float y) {
