@@ -6,8 +6,9 @@ public class EnemyHealth : MonoBehaviour {
 	public int maxHealth = 5;
 	public int currentHealth = 5;
 
-	public double lastHit;
-	public double currentTime;
+	public float lastHit;
+
+
 	// Use this for initialization
 	void Start () {
 		lastHit = 0;
@@ -15,16 +16,15 @@ public class EnemyHealth : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		currentTime = Time.realtimeSinceStartup;
 	}
 
 	public void takeDamage(int damage) {
-		if (currentTime - lastHit >= .35 || lastHit == 0) {
+		if (Time.time - lastHit >= .35 || lastHit == 0) {
 			currentHealth -= damage;
 			if (currentHealth <= 0) {
 				this.gameObject.SetActive (false);
 			}
-			lastHit = currentTime;
+			lastHit = Time.time;
 		}
 	}
 }

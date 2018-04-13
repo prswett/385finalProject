@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour {
 
@@ -17,10 +18,24 @@ public class PlayerController : MonoBehaviour {
 	public LayerMask groundLayer;
 	public bool onGround;
 
+	public float health;
+	public float maxHealth;
+	public float mana;
+	public float maxMana;
+	Image healthbar;
+	Image manabar;
+
+	public float lastHit;
+
 	Rigidbody2D rb2d;
 
-	// Anim is declared 
+	// Anim is declared for changing animations
 	void Start () {
+		healthbar = GameObject.Find ("Health").GetComponent<Image> ();
+		manabar = GameObject.Find ("Mana").GetComponent<Image> ();
+		maxHealth = health;
+		maxMana = mana;
+
 		rb2d = this.GetComponent<Rigidbody2D> ();
 		anim = GetComponent<Animator> ();
 
@@ -28,6 +43,12 @@ public class PlayerController : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+		if (health <= 0) {
+			this.gameObject.SetActive (false);
+		}
+		healthbar.fillAmount = health / maxHealth;
+		manabar.fillAmount = mana / maxMana;
+
 		onGround = Physics2D.OverlapCircle (groundCheck.position, groundCheckRadius, groundLayer);
 		if (Input.GetKey (KeyCode.A)) {
 			if (attacking) {
@@ -88,4 +109,10 @@ public class PlayerController : MonoBehaviour {
 		transform.localScale = charscale;
 	}
 		
+	public void takeDamage(float damage) {
+		if (Time.time - lastHit >= 0.5) {
+			health -= damage;
+			lastHit = Time.time;
+		}
+	}
 }
