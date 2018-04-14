@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BulletController : MonoBehaviour {
 
+	//Public variables
 	public float velocityX;
 	public float velocityY;
 	Rigidbody2D rb2d;
@@ -11,12 +12,14 @@ public class BulletController : MonoBehaviour {
 	public bool enemyUnit = true;
 
 
-	// Use this for initialization
+	// Declare rigid body for bullet
 	void Start () {
 		rb2d = this.GetComponent<Rigidbody2D>();
 	}
 	
-	// Update is called once per frame
+	//Add velocity to the bullet
+	//If its an enemy shooting, remove after 4 seconds, if its a boss
+	//Remove after 8 seconds
 	void Update () {
 		rb2d.velocity = new Vector2 (velocityX, velocityY) * 3;
 		if (enemyUnit) {
@@ -27,11 +30,14 @@ public class BulletController : MonoBehaviour {
 
 	}
 
+	//Set velocity
 	public void setVelocity(float x, float y) {
 		velocityX = x;
 		velocityY = y;
 	}
 
+	//On collision with player do damage
+	//On collision with ground dissapear
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject.CompareTag ("Player")) {
 			PlayerController health = other.GetComponent<PlayerController> ();

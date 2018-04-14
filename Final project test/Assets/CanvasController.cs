@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CanvasController : MonoBehaviour {
 
-	// Use this for initialization
+	// Dont remove canvas as we go to the next scene
 	void Start () {
 		DontDestroyOnLoad (gameObject);
 	}

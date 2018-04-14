@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour {
 
 	Rigidbody2D rb2d;
 
-	// Anim is declared for changing animations
+	// Declare health and mana bars. Set local player stats for health and mana.
 	void Start () {
 		DontDestroyOnLoad (gameObject);
 		healthbar = GameObject.Find ("Health").GetComponent<Image> ();
@@ -40,7 +40,9 @@ public class PlayerController : MonoBehaviour {
 		killCount = 0;
 	}
 
-	// Update is called once per frame
+	//attach health and mana to bars
+	//Check to see if player is on ground using an overlap circle.
+
 	void Update () {
 		if (localPlayer.health <= 0) {
 			this.gameObject.SetActive (false);
@@ -108,6 +110,7 @@ public class PlayerController : MonoBehaviour {
 
 	}
 
+	//Flip the player sprite if they go the other way
 	void flip() {
 		facing = !facing;
 		Vector3 charscale = transform.localScale;
@@ -115,6 +118,7 @@ public class PlayerController : MonoBehaviour {
 		transform.localScale = charscale;
 	}
 		
+	//Decrease health by an amount
 	public void takeDamage(float damage) {
 		if (Time.time - lastHit >= 0.5) {
 			localPlayer.health -= damage;
@@ -122,10 +126,12 @@ public class PlayerController : MonoBehaviour {
 		}
 	}
 
+	//Save data
 	public void savePlayer() {
 		GlobalControl.Instance.savedData = localPlayer;
 	}
 
+	//Load data
 	public void loadPlayer() {
 		localPlayer = GlobalControl.Instance.savedData;
 	}

@@ -29,7 +29,8 @@ public class PisanController : MonoBehaviour {
 	public Animator anim;
 	Image healthbar;
 
-	// Use this for initialization
+	//Declare target as player (who hes gonna shoot at)
+	//Set health and attach it to health bar
 	void Start () {
 		target = GameObject.FindWithTag ("Player").transform;
 		anim = GetComponent<Animator> ();
@@ -37,7 +38,8 @@ public class PisanController : MonoBehaviour {
 		healthbar = GameObject.Find ("BossHealth").GetComponent<Image> ();
 	}
 	
-	// Update is called once per frame
+	//Move pattern is in a square, top left to the left then down etc.
+	//Can change as hp gets lower
 	void Update () {
 		healthbar.fillAmount = health / maxhealth;
 		if (transform.position.x > left && count == 1) {
@@ -62,7 +64,7 @@ public class PisanController : MonoBehaviour {
 				count = 1;
 			}
 		}
-
+		//Get the positions of player and enemy
 		playerX = target.transform.position.x;
 		enemyX = transform.position.x;
 		playerY = target.transform.position.y;
@@ -70,6 +72,7 @@ public class PisanController : MonoBehaviour {
 		if (health < 0) {
 			this.gameObject.SetActive (false);
 		}
+		//Attack only at a particular interval (fire rate)
 		if (Time.time - lastFire > fireRate) {
 			anim.SetBool ("Attacking", true);
 			fire ();
@@ -79,6 +82,7 @@ public class PisanController : MonoBehaviour {
 		}
 	}
 
+	//Instantiate bullet and shoot it at players location
 	void fire() {
 		float divider = Mathf.Sqrt (Mathf.Pow (playerX - enemyX, 2) + Mathf.Pow (playerY - enemyY, 2));
 		BulletController shot = bullet.GetComponent<BulletController>();
@@ -87,6 +91,7 @@ public class PisanController : MonoBehaviour {
 		Instantiate (bullet, bulletPos, Quaternion.identity);
 	}
 
+	//Deal damage if player touches pisan or take damage if the sword hits
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject.CompareTag ("Player")) {
 			PlayerController health = other.GetComponent<PlayerController> ();

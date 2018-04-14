@@ -19,6 +19,9 @@ public class EnemyHealth : MonoBehaviour {
 	void Update () {
 	}
 
+	//Takes in an int and decreases player health by an amount
+	//Records previous time since last hit and doesn't inflict damage
+	//unless time since last hit is past the point
 	public void takeDamage(int damage) {
 		if (Time.time - lastHit >= .35 || lastHit == 0) {
 			currentHealth -= damage;
