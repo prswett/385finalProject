@@ -57,6 +57,7 @@
      <Compile Include="Assets\EnemyHealth.cs" />
      <Compile Include="Assets\GlobalControl.cs" />
      <Compile Include="Assets\PisanController.cs" />
+     <Compile Include="Assets\Player.cs" />
      <Compile Include="Assets\PlayerController.cs" />
      <Compile Include="Assets\PlayerStatistics.cs" />
      <Compile Include="Assets\Resources.cs" />

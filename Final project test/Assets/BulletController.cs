@@ -8,9 +8,8 @@ public class BulletController : MonoBehaviour {
 	public float velocityX;
 	public float velocityY;
 	Rigidbody2D rb2d;
-	public Transform target;
 	public bool enemyUnit = true;
-
+	public bool groundCollide = true;
 
 	// Declare rigid body for bullet
 	void Start () {
@@ -40,12 +39,18 @@ public class BulletController : MonoBehaviour {
 	//On collision with ground dissapear
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject.CompareTag ("Player")) {
-			PlayerController health = other.GetComponent<PlayerController> ();
+			Player health = other.GetComponent<Player> ();
 			health.takeDamage (1);
 			Destroy (gameObject);
 		}
 		if (other.gameObject.CompareTag ("Ground")) {
-			Destroy (gameObject);
+			if (groundCollide) {
+				Destroy (gameObject);
+			}
 		}
+	}
+
+	public void setGroundCollide(bool input) {
+		groundCollide = input;
 	}
 }

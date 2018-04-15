@@ -4,14 +4,20 @@ using UnityEngine;
 
 public class WeaponController : MonoBehaviour {
 
-	public Animator anim;
 
 	// Use this for initialization
 	void Start () {
-		anim = GetComponent<Animator> ();
+		
 	}
 	
 	// Update is called once per frame
 	void Update () {
+	}
+
+	void OnTriggerEnter2D(Collider2D other) {
+		if (other.gameObject.CompareTag ("Enemy")) {
+			EnemyHealth health = other.GetComponent<EnemyHealth> ();
+			health.takeDamage (1);
+		}
 	}
 }

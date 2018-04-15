@@ -4,19 +4,19 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class PisanController : MonoBehaviour {
-	public float lastHit;
-	public float health = 5;
+	private float lastHit;
+	public float health = 100;
 	public float maxhealth;
 
-	public float playerX;
-	public float enemyX;
-	public float playerY;
-	public float enemyY;
+	private float playerX;
+	private float enemyX;
+	private float playerY;
+	private float enemyY;
 	public Transform target;
 
 	public GameObject bullet;
 	Vector2 bulletPos;
-	public float fireRate = 1;
+	private float fireRate = 1;
 	public float lastFire;
 
 	public float left;
@@ -25,6 +25,8 @@ public class PisanController : MonoBehaviour {
 	public float down;
 	public int speed = 1;
 	int count = 1;
+
+	public bool bulletGround = true;
 
 	public Animator anim;
 	Image healthbar;
@@ -42,6 +44,12 @@ public class PisanController : MonoBehaviour {
 	//Can change as hp gets lower
 	void Update () {
 		healthbar.fillAmount = health / maxhealth;
+		if (health / maxhealth <= .5) {
+			bulletGround = false;
+		}
+		if (health <= 0) {
+			Destroy (this);
+		}
 		if (transform.position.x > left && count == 1) {
 			transform.position += Vector3.left * speed * Time.deltaTime;
 			if (transform.position.x < left) {
@@ -86,6 +94,7 @@ public class PisanController : MonoBehaviour {
 	void fire() {
 		float divider = Mathf.Sqrt (Mathf.Pow (playerX - enemyX, 2) + Mathf.Pow (playerY - enemyY, 2));
 		BulletController shot = bullet.GetComponent<BulletController>();
+		shot.setGroundCollide (bulletGround);
 		shot.setVelocity ((playerX - enemyX) / divider, (playerY - enemyY) / divider);
 		bulletPos = transform.position;
 		Instantiate (bullet, bulletPos, Quaternion.identity);
@@ -94,7 +103,7 @@ public class PisanController : MonoBehaviour {
 	//Deal damage if player touches pisan or take damage if the sword hits
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject.CompareTag ("Player")) {
-			PlayerController health = other.GetComponent<PlayerController> ();
+			Player health = other.GetComponent<Player> ();
 			health.takeDamage (1);
 		}
 		if (other.gameObject.CompareTag ("Weapon")) {
