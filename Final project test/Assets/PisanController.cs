@@ -4,9 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class PisanController : MonoBehaviour {
-	private float lastHit;
-	public float health = 100;
-	public float maxhealth;
 
 	private float playerX;
 	private float enemyX;
@@ -26,32 +23,35 @@ public class PisanController : MonoBehaviour {
 	public int speed = 1;
 	int count = 1;
 
-	private float timeSinceLastHit;
-	private float hitAnimationDuration = .3f;
-
 	public bool bulletGround = true;
-
 	public Animator anim;
-	Image healthbar;
 
+	private Transform myself;
+	private BossHealth temp;
+
+	float currentHealth;
+	float maxHealth;
+
+	void Awake() {
+		target = GameObject.FindWithTag ("Player").transform;
+		anim = GetComponent<Animator> ();
+		myself = GameObject.FindWithTag("Boss").transform;
+		temp = myself.GetComponent<BossHealth>();
+	}
 	//Declare target as player (who hes gonna shoot at)
 	//Set health and attach it to health bar
 	void Start () {
-		target = GameObject.FindWithTag ("Player").transform;
-		anim = GetComponent<Animator> ();
-		maxhealth = health;
-		healthbar = GameObject.Find ("BossHealth").GetComponent<Image> ();
+		
+
 	}
 	
 	//Move pattern is in a square, top left to the left then down etc.
 	//Can change as hp gets lower
 	void Update () {
-		healthbar.fillAmount = health / maxhealth;
-		if (health / maxhealth <= .5) {
+		currentHealth = temp.currentHealth;
+			maxHealth = temp.maxHealth;
+		if (currentHealth / maxHealth <= .5) {
 			bulletGround = false;
-		}
-		if (health <= 0) {
-			Destroy (gameObject);
 		}
 
 		if (transform.position.x > left && count == 1) {
@@ -81,11 +81,8 @@ public class PisanController : MonoBehaviour {
 		enemyX = transform.position.x;
 		playerY = target.transform.position.y;
 		enemyY = transform.position.y;
-		if (health < 0) {
-			this.gameObject.SetActive (false);
-		}
 		//Attack only at a particular interval (fire rate)
-		if (Time.time - lastFire > fireRate) {
+		if (Time.time - lastFire > fireRate && anim.GetBool("TookDamage") == false) {
 			anim.SetBool ("Attacking", true);
 			fire ();
 			lastFire = Time.time;
@@ -93,9 +90,7 @@ public class PisanController : MonoBehaviour {
 			anim.SetBool ("Attacking", false);
 		}
 
-		if (Time.time - timeSinceLastHit >= hitAnimationDuration) {
-			anim.SetBool ("TookDamage", false);
-		}
+
 	}
 
 	//Instantiate bullet and shoot it at players location
@@ -114,13 +109,6 @@ public class PisanController : MonoBehaviour {
 			Player health = other.GetComponent<Player> ();
 			health.takeDamage (1);
 		}
-		if (other.gameObject.CompareTag ("Weapon")) {
-			if (Time.time - lastHit >= 0.5 || lastHit == 0) {
-				anim.SetBool ("TookDamage", true);
-				health -= 1;
-				lastHit = Time.time;
-				timeSinceLastHit = Time.time;
-			}
-		}
+			
 	}
 }

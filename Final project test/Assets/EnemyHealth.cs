@@ -29,7 +29,6 @@ public class EnemyHealth : MonoBehaviour {
 		if (Time.time - lastHit >= .35 || lastHit == 0) {
 			currentHealth -= damage;
 			if (currentHealth <= 0) {
-				this.gameObject.SetActive (false);
 				Player killCount = target.GetComponent<Player> ();
 				killCount.killCount++;
 			}

@@ -8,12 +8,15 @@ public class PlayerResources : MonoBehaviour {
 	public GameObject axe;
 	public GameObject dagger;
 
+    public int wepEQPD;
+
 	//List of weapons
 	private GameObject[] weapons;
 	public int count = 4;
 
 	// Use this for initialization
 	void Start () {
+        wepEQPD = 1;
 		weapons = new GameObject[count];
 		weapons [0] = sword;
 		weapons [1] = spear;
@@ -22,6 +25,8 @@ public class PlayerResources : MonoBehaviour {
 		//Sprite mySword = Resources.Load<Sprite> ("DrawingsV2/Weapons/1HSwordRed");
 		//sword.GetComponent<SpriteRenderer> ().sprite = mySword;
 	}
+
+
 	
 	// Update is called once per frame
 	void Update () {

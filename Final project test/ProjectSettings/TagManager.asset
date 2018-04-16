@@ -8,6 +8,7 @@ TagManager:
   - Ground
   - Enemy
   - Enemy Weapon
+  - Boss
   layers:
   - Default
   - TransparentFX
@@ -19,12 +20,12 @@ TagManager:
   - 
   - Player
   - Weapon
+  - 
+  - 
+  - 
+  - 
   - Ground
   - Enemy
-  - 
-  - 
-  - 
-  - 
   - 
   - 
   - 
