@@ -1,5 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -87,7 +90,7 @@ public class Player : MonoBehaviour {
 			}
 		} else {
 			anim.SetInteger ("weapon state", wepState);
-			anim.SetInteger ("weapon equipped", wepEquipped);
+			anim.SetInteger ("weapon equipped", resources.wepEQPD);
 			onGround = Physics2D.OverlapCircle (groundCheck.position, groundCheckRadius, groundLayer);
 			//For moving left
 			if (Input.GetKey (KeyCode.A)) {
@@ -141,18 +144,18 @@ public class Player : MonoBehaviour {
 	}
 
 	void changeWeapon() {
-		if (wepEquipped < 4) {
-			resources.setActiveFalse (wepEquipped - 1);
-			wepEquipped++;
-			anim.SetInteger ("weapon equipped", wepEquipped);
-			resources.setActiveTrue (wepEquipped - 1);
+		if (resources.wepEQPD < 4) {
+			resources.setActiveFalse (resources.wepEQPD - 1);
+            resources.wepEQPD++;
+			anim.SetInteger ("weapon equipped", resources.wepEQPD);
+			resources.setActiveTrue (resources.wepEQPD- 1);
 		} else {
-			resources.setActiveFalse (wepEquipped - 1);
-			wepEquipped = 1;
-			anim.SetInteger ("weapon equipped", wepEquipped);
-			resources.setActiveTrue (wepEquipped - 1);
+			resources.setActiveFalse (resources.wepEQPD - 1);
+            resources.wepEQPD = 1;
+			anim.SetInteger ("weapon equipped", resources.wepEQPD);
+			resources.setActiveTrue (resources.wepEQPD - 1);
 		}
-		if (wepEquipped == 1 || wepEquipped == 3 || wepEquipped == 4) {
+		if (resources.wepEQPD == 1 || resources.wepEQPD == 3 || resources.wepEQPD == 4) {
 			wepState = 1;
 			anim.SetInteger ("weapon state", wepState);
 		} else {
@@ -177,11 +180,56 @@ public class Player : MonoBehaviour {
 
 	//Save data
 	public void savePlayer() {
-		GlobalControl.Instance.savedData = localPlayer;
+		//GlobalControl.Instance.savedData = localPlayer;
 	}
 
 	//Load data
 	public void loadPlayer() {
-		localPlayer = GlobalControl.Instance.savedData;
+		//localPlayer = GlobalControl.Instance.savedData;
 	}
+
+    // saving data into a file (.sb)
+    public void Save()
+    {
+        // binary formatter is helper to convert this data to the text
+        BinaryFormatter bf = new BinaryFormatter();
+        // creating new file
+        FileStream file = File.Create(Application.persistentDataPath + "/pss.sb");
+        // serializable data here
+        PlayerData data = new PlayerData();
+        data.curHP = localPlayer.health;
+        data.maxHP = localPlayer.maxHealth;
+        data.curMP = localPlayer.mana;
+        data.maxMP = localPlayer.maxMana;
+        //moves to file
+        bf.Serialize(file, data);
+        file.Close();
+    }
+
+    // loading data if exists
+    public void Load()
+    {
+        if(File.Exists(Application.persistentDataPath + "/pss.sb"))
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream file = File.Open(Application.persistentDataPath + "/pss.sb", FileMode.Open);
+            PlayerData data = (PlayerData) bf.Deserialize(file);
+            file.Close();
+
+            localPlayer.health = data.curHP;
+            localPlayer.maxHealth = data.maxHP;
+            localPlayer.mana = data.curHP;
+            localPlayer.maxMana = data.maxMP;
+        }
+    }
+}
+
+// need this class for serializable to convert to file
+[Serializable]
+class PlayerData
+{
+    public float curHP;
+    public float maxHP;
+    public float curMP;
+    public float maxMP;
 }

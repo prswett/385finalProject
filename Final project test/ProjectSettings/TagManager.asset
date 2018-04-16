@@ -8,6 +8,10 @@ TagManager:
   - Ground
   - Enemy
   - Enemy Weapon
+  - sword
+  - spear
+  - axe
+  - dagger
   layers:
   - Default
   - TransparentFX
@@ -19,12 +23,12 @@ TagManager:
   - 
   - Player
   - Weapon
+  - sword
+  - spear
+  - axe
+  - dagger
   - Ground
   - Enemy
-  - 
-  - 
-  - 
-  - 
   - 
   - 
   - 
@@ -53,6 +57,18 @@ TagManager:
     locked: 0
   - name: Weapon
     uniqueID: 1672905393
+    locked: 0
+  - name: sword
+    uniqueID: 2679142945
+    locked: 0
+  - name: spear
+    uniqueID: 510794417
+    locked: 0
+  - name: axe
+    uniqueID: 3767971017
+    locked: 0
+  - name: dagger
+    uniqueID: 2869682779
     locked: 0
   - name: Player
     uniqueID: 2215892099

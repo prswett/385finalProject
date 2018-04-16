@@ -1586,6 +1586,22 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1449877967416506, guid: 45ec9581e96163b4980c652be76d1b54, type: 2}
+      propertyPath: m_TagString
+      value: sword
+      objectReference: {fileID: 0}
+    - target: {fileID: 1436586754687406, guid: 45ec9581e96163b4980c652be76d1b54, type: 2}
+      propertyPath: m_TagString
+      value: spear
+      objectReference: {fileID: 0}
+    - target: {fileID: 1927982653655568, guid: 45ec9581e96163b4980c652be76d1b54, type: 2}
+      propertyPath: m_TagString
+      value: axe
+      objectReference: {fileID: 0}
+    - target: {fileID: 1892816653216326, guid: 45ec9581e96163b4980c652be76d1b54, type: 2}
+      propertyPath: m_TagString
+      value: axe
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 45ec9581e96163b4980c652be76d1b54, type: 2}
   m_IsPrefabParent: 0

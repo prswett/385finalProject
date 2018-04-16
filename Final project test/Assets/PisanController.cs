@@ -114,13 +114,68 @@ public class PisanController : MonoBehaviour {
 			Player health = other.GetComponent<Player> ();
 			health.takeDamage (1);
 		}
-		if (other.gameObject.CompareTag ("Weapon")) {
+
+        string cT = other.gameObject.tag;
+        if (cT == "sword")
+        {
+            if (Time.time - lastHit >= 0.5 || lastHit == 0)
+            {
+                anim.SetBool("TookDamage", true);
+                health -= 2;
+                lastHit = Time.time;
+                timeSinceLastHit = Time.time;
+            }
+        }
+        else if (cT == "spear")
+        {
+            if (Time.time - lastHit >= 0.5 || lastHit == 0)
+            {
+                anim.SetBool("TookDamage", true);
+                health -= 3;
+                lastHit = Time.time;
+                timeSinceLastHit = Time.time;
+            }
+        }
+        else if (cT == "axe")
+        {
+            if (Time.time - lastHit >= 0.5 || lastHit == 0)
+            {
+                anim.SetBool("TookDamage", true);
+                health -= 5;
+                lastHit = Time.time;
+                timeSinceLastHit = Time.time;
+            }
+        }
+        else if (cT == "dagger")
+        {
+            if (Time.time - lastHit >= 0.5 || lastHit == 0)
+            {
+                anim.SetBool("TookDamage", true);
+                health -= 1;
+                lastHit = Time.time;
+                timeSinceLastHit = Time.time;
+            }
+        }
+        /*
+        else
+        {
+            if (Time.time - lastHit >= 0.5 || lastHit == 0)
+            {
+                anim.SetBool("TookDamage", true);
+                health -= 0;
+                lastHit = Time.time;
+                timeSinceLastHit = Time.time;
+            }
+        }*/
+
+        /*
+        if (other.gameObject.CompareTag ("Weapon")) {
 			if (Time.time - lastHit >= 0.5 || lastHit == 0) {
 				anim.SetBool ("TookDamage", true);
 				health -= 1;
 				lastHit = Time.time;
 				timeSinceLastHit = Time.time;
 			}
-		}
+		}*/
 	}
 }
