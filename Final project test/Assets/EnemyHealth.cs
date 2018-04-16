@@ -17,6 +17,9 @@ public class EnemyHealth : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (currentHealth <= 0) {
+			Destroy (gameObject);
+		}
 	}
 
 	//Takes in an int and decreases player health by an amount
@@ -27,7 +30,7 @@ public class EnemyHealth : MonoBehaviour {
 			currentHealth -= damage;
 			if (currentHealth <= 0) {
 				this.gameObject.SetActive (false);
-				PlayerController killCount = target.GetComponent<PlayerController> ();
+				Player killCount = target.GetComponent<Player> ();
 				killCount.killCount++;
 			}
 			lastHit = Time.time;

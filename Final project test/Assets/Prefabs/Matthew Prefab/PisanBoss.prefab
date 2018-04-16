@@ -37,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1969034987481074}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.845, y: 1.934, z: 0}
+  m_LocalPosition: {x: 1.88, y: 0.939, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -86,22 +86,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6b27ebd7e8f55042adcf9398a94e861, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lastHit: 0
-  health: 100
+  health: 5
   maxhealth: 0
-  playerX: 0
-  enemyX: 0
-  playerY: 0
-  enemyY: 0
   target: {fileID: 0}
   bullet: {fileID: 1555974915441928, guid: bff3d479276ca41459229f44e6239f77, type: 2}
-  fireRate: 1
   lastFire: 0
-  left: -3.845
-  right: 3.845
-  up: 1.934
-  down: -1.934
+  left: -1.978
+  right: 1.88
+  up: 0.939
+  down: -0.889
   speed: 1
+  bulletGround: 1
   anim: {fileID: 0}
 --- !u!212 &212500014488585294
 SpriteRenderer:

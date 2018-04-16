@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour {
 	//Resources
-	private Resources resources;
+	private PlayerResources resources;
 	int count;
 
 	//Awake() variables
@@ -17,7 +17,6 @@ public class Player : MonoBehaviour {
 	//Start() variables
 	Rigidbody2D rb2d;
 	public Animator anim;
-	public int killCount;
 
 	//Update() variables
 	public Transform groundCheck;
@@ -31,17 +30,22 @@ public class Player : MonoBehaviour {
 	int wepState = 1;
 	int wepEquipped = 1;
 	bool created = true;
+	public float health;
 
 	//Taking damage variables
 	public float lastHit;
 
+	//KillCount
+	public int killCount;
+
 	//
 	void Awake() {
+		loadPlayer ();
 		healthbar = GameObject.Find ("Health").GetComponent<Image> ();
 		manabar = GameObject.Find ("Mana").GetComponent<Image> ();
-		localPlayer.maxHealth = localPlayer.health;
-		localPlayer.maxMana = localPlayer.mana;
-		resources = GetComponent<Resources> ();
+		//localPlayer.maxHealth = localPlayer.health;
+		//localPlayer.maxMana = localPlayer.mana;
+		resources = GetComponent<PlayerResources> ();
 		count = resources.count;
 	}
 
@@ -54,11 +58,15 @@ public class Player : MonoBehaviour {
 
 	//
 	void Update () {
+		if (Input.GetKeyDown(KeyCode.Q)) {
+			Application.Quit();
+		}
+		health = localPlayer.health;
 		if (created == true) {
 			for (int i = 1; i < count; i++) {
 				resources.setActiveFalse (i);
 			}
-			loadPlayer ();
+
 			created = false;
 		}
 		healthbar.fillAmount = localPlayer.health / localPlayer.maxHealth;
@@ -67,12 +75,15 @@ public class Player : MonoBehaviour {
 			if (facing) {
 				flip ();
 			}
+			anim.SetBool ("walking", false);
+			anim.SetBool ("attacking", false);
 			anim.SetBool ("dead", true);
 
 			if (Input.GetKeyDown(KeyCode.R)) {
+				localPlayer = new PlayerStatistics();
+				savePlayer ();
 				int scene = SceneManager.GetActiveScene ().buildIndex;
 				SceneManager.LoadScene (scene, LoadSceneMode.Single);
-				Destroy (this);
 			}
 		} else {
 			anim.SetInteger ("weapon state", wepState);

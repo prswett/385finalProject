@@ -55,12 +55,16 @@
      <Compile Include="Assets\CanvasController.cs" />
      <Compile Include="Assets\EnemyController.cs" />
      <Compile Include="Assets\EnemyHealth.cs" />
+     <Compile Include="Assets\EnemyManager.cs" />
+     <Compile Include="Assets\EnemyWeaponController.cs" />
      <Compile Include="Assets\GlobalControl.cs" />
      <Compile Include="Assets\PisanController.cs" />
      <Compile Include="Assets\Player.cs" />
      <Compile Include="Assets\PlayerController.cs" />
+     <Compile Include="Assets\PlayerResources.cs" />
      <Compile Include="Assets\PlayerStatistics.cs" />
-     <Compile Include="Assets\Resources.cs" />
+     <Compile Include="Assets\PortalController.cs" />
+     <Compile Include="Assets\StageController.cs" />
      <Compile Include="Assets\SwordController.cs" />
      <Compile Include="Assets\WeaponController.cs" />
  <Reference Include="UnityEngine.UI">

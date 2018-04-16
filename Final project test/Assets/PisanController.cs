@@ -26,6 +26,9 @@ public class PisanController : MonoBehaviour {
 	public int speed = 1;
 	int count = 1;
 
+	private float timeSinceLastHit;
+	private float hitAnimationDuration = .3f;
+
 	public bool bulletGround = true;
 
 	public Animator anim;
@@ -48,8 +51,9 @@ public class PisanController : MonoBehaviour {
 			bulletGround = false;
 		}
 		if (health <= 0) {
-			Destroy (this);
+			Destroy (gameObject);
 		}
+
 		if (transform.position.x > left && count == 1) {
 			transform.position += Vector3.left * speed * Time.deltaTime;
 			if (transform.position.x < left) {
@@ -88,6 +92,10 @@ public class PisanController : MonoBehaviour {
 		} else {
 			anim.SetBool ("Attacking", false);
 		}
+
+		if (Time.time - timeSinceLastHit >= hitAnimationDuration) {
+			anim.SetBool ("TookDamage", false);
+		}
 	}
 
 	//Instantiate bullet and shoot it at players location
@@ -108,8 +116,10 @@ public class PisanController : MonoBehaviour {
 		}
 		if (other.gameObject.CompareTag ("Weapon")) {
 			if (Time.time - lastHit >= 0.5 || lastHit == 0) {
+				anim.SetBool ("TookDamage", true);
 				health -= 1;
 				lastHit = Time.time;
+				timeSinceLastHit = Time.time;
 			}
 		}
 	}
