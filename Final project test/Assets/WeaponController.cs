@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WeaponController : MonoBehaviour {
 
-	public int damage;
+	public int damage = 1;
 	// Use this for initialization
 	void Start () {
 
@@ -17,7 +17,7 @@ public class WeaponController : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject.CompareTag ("Enemy")) {
 			EnemyHealth health = other.GetComponent<EnemyHealth> ();
-			health.takeDamage (damage);
+			health.takeDamage (5);
 		}
 
 		if (other.gameObject.CompareTag ("Boss")) {

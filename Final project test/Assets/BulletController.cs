@@ -48,7 +48,7 @@ public class BulletController : MonoBehaviour {
 			health.takeDamage (1);
 			Destroy (gameObject);
 		}
-		if (other.gameObject.CompareTag ("Ground")) {
+		if (other.gameObject.CompareTag ("Platform")) {
 			if (groundCollide) {
 				Destroy (gameObject);
 			}

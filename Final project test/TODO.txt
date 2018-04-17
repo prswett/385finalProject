@@ -1,0 +1,3 @@
+Bigger stage (side scroller)
+More enemies
+Save data

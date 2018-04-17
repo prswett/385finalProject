@@ -22,4 +22,8 @@ public class PortalController : MonoBehaviour {
 			}
 		}
 	}
+
+	public void deactivate() {
+		Destroy (gameObject);
+	}
 }

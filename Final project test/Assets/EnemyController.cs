@@ -104,8 +104,14 @@ public class EnemyController : MonoBehaviour {
 		if (jumping) {
 			transform.position += Vector3.up * jumpSpeed * .07f;
 			if (enemyX - playerX < -MinDist) {
+				if (facing) {
+					flip ();
+				}
 				transform.position += Vector3.right * speed * Time.deltaTime;
 			} else {
+				if (!facing) {
+					flip ();
+				}
 				transform.position += Vector3.left * speed * Time.deltaTime;
 			}
 		} else {

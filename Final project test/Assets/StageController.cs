@@ -6,11 +6,19 @@ using UnityEngine.SceneManagement;
 public class StageController : MonoBehaviour {
 
 	public Transform target;
-	public Transform portal;
+	public Transform portalLocation;
 	public bool portalSpawned = false;
+	public GameObject portal;
+
+	void Awake() {
+		target = GameObject.FindWithTag ("Player").transform;
+		portalLocation = GameObject.FindWithTag ("Portal").transform;
+		PortalController temp = portalLocation.GetComponent<PortalController> ();
+		temp.deactivate ();
+	}
 	// Use this for initialization
 	void Start () {
-		target = GameObject.FindWithTag ("Player").transform;
+		
 	}
 	
 	// Update is called once per frame
@@ -18,7 +26,7 @@ public class StageController : MonoBehaviour {
 		Player killCount = target.GetComponent<Player> ();
 		if (killCount.killCount > 0) {
 			if (portalSpawned == false) {
-				Instantiate (portal, new Vector3 (2.4f, 1.3f, 0), Quaternion.identity);
+				Instantiate (portal, portalLocation, false);
 				portalSpawned = true;
 			}
 		}
