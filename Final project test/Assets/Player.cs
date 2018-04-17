@@ -193,10 +193,13 @@ public class Player : MonoBehaviour {
 		// creating new file
 		FileStream file = File.Create(Application.persistentDataPath + "/pss.sb");
 		// serializable data here
-		//PlayerData data = new PlayerData();
-
+		PlayerData data = new PlayerData();
+		data.curHP = localPlayer.health;
+		data.maxHP = localPlayer.maxHealth;
+		data.curMP = localPlayer.mana;
+		data.maxMP = localPlayer.maxMana;
 		//moves to file
-		//bf.Serialize(file, data);
+		bf.Serialize(file, data);
 		file.Close();
 	}
 
@@ -207,12 +210,16 @@ public class Player : MonoBehaviour {
 		{
 			BinaryFormatter bf = new BinaryFormatter();
 			FileStream file = File.Open(Application.persistentDataPath + "/pss.sb", FileMode.Open);
-			// data = (PlayerData) bf.Deserialize(file);
+			PlayerData data = (PlayerData) bf.Deserialize(file);
 			file.Close();
+			localPlayer.health = data.curHP;
+			localPlayer.maxHealth = data.maxHP;
+			localPlayer.mana = data.curMP;
+			localPlayer.maxMana = data.maxMP;
 		}
 	}
 }
-/**
+
 // need this class for serializable to convert to file
 [Serializable]
 class PlayerData
@@ -222,4 +229,4 @@ class PlayerData
 	public float curMP;
 	public float maxMP;
 }
-*/
+

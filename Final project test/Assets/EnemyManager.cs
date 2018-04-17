@@ -20,11 +20,12 @@ public class EnemyManager : MonoBehaviour {
 	}
 
 	void Spawn() {
-		if (numberOfMonsters > 10) {
+		if (numberOfMonsters > -1) {
 			return;
 		}
 		if (!bossStage) {
 			Instantiate (enemy, new Vector3 (2.3f, 1.3f, 0f), Quaternion.identity);
+			numberOfMonsters++;
 		}
 	}
 }

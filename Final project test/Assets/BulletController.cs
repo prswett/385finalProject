@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class BulletController : MonoBehaviour {
 
+	/**
+	 * This class controls enemy bullets. It controls how they move
+	 * when to remove them, dealing damage, etc
+	 **/
+
 	//Public variables
 	public float velocityX;
 	public float velocityY;
@@ -50,6 +55,7 @@ public class BulletController : MonoBehaviour {
 		}
 	}
 
+	//Used 
 	public void setGroundCollide(bool input) {
 		groundCollide = input;
 	}

@@ -4,26 +4,40 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour {
 
+	/**
+	 * This class controls an enemies actions (NOT BOSS). It is also
+	 * ONLY for enemies that 1) walk around and 2) can go through walls
+	 * and shoot projectiles. May be updated later for more different
+	 * enemies. Right now controls movement and attacking.
+	 * 
+	 **/
+
+	//Location variables
 	public float playerX;
 	public float enemyX;
 	public float playerY;
 	public float enemyY;
 	public Transform target;
 
+	//Movement variables
 	public int speed;
 	public float MinDist = 0.1f;
+	public float jumpSpeed;
+	public bool jumping;
+	public float jumpTime;
+	public bool facing = false;
+	public bool noWep = false;
 
+	//Shooting variables
 	public GameObject bullet;
 	Vector2 bulletPos;
 	public float fireRate = 1;
-
 	public float lastFire;
+
+	//Animation variables
 	public float attackAnim;
 	public float attackAnimDelay = 0.1f;
 	public Animator anim;
-
-	public bool noWep = false;
-	public bool facing = false;
 
 	void Start () {
 		lastFire = 0;
@@ -33,6 +47,13 @@ public class EnemyController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		playerX = target.transform.position.x;
+		enemyX = transform.position.x;
+		playerY = target.transform.position.y;
+		enemyY = transform.position.y;
+		if (Time.time - jumpTime > .4) {
+			jumping = false;
+		}
 		//Get the coordinates of enemy and player
 		if (noWep) {
 			noCollideMove ();
@@ -57,10 +78,7 @@ public class EnemyController : MonoBehaviour {
 
 	void noCollideMove() {
 		anim.SetBool ("attacking", false);
-		playerX = target.transform.position.x;
-		enemyX = transform.position.x;
-		playerY = target.transform.position.y;
-		enemyY = transform.position.y;
+
 		if (enemyX - playerX < -MinDist) {
 			if (facing) {
 				flip ();
@@ -82,24 +100,29 @@ public class EnemyController : MonoBehaviour {
 	}
 
 	void collideMove() {
-		playerX = target.transform.position.x;
-		enemyX = transform.position.x;
-		playerY = target.transform.position.y;
-		enemyY = transform.position.y;
-
-		if (enemyX - playerX < -MinDist || enemyX - playerX > MinDist) {
-			anim.SetBool ("walking", true);
+		anim.SetBool ("attacking", false);
+		if (jumping) {
+			transform.position += Vector3.up * jumpSpeed * .07f;
 			if (enemyX - playerX < -MinDist) {
-				if (facing) {
-					flip ();
-				}
 				transform.position += Vector3.right * speed * Time.deltaTime;
-			}
-			if (enemyX - playerX > MinDist) {
-				if (!facing) {
-					flip ();
-				}
+			} else {
 				transform.position += Vector3.left * speed * Time.deltaTime;
+			}
+		} else {
+			if (enemyX - playerX < -MinDist || enemyX - playerX > MinDist) {
+				anim.SetBool ("walking", true);
+				if (enemyX - playerX < -MinDist) {
+					if (facing) {
+						flip ();
+					}
+					transform.position += Vector3.right * speed * Time.deltaTime;
+				}
+				if (enemyX - playerX > MinDist) {
+					if (!facing) {
+						flip ();
+					}
+					transform.position += Vector3.left * speed * Time.deltaTime;
+				}
 			}
 		}
 	}
@@ -122,6 +145,12 @@ public class EnemyController : MonoBehaviour {
 		if (other.gameObject.CompareTag ("Player")) {
 			Player health = other.GetComponent<Player> ();
 			health.takeDamage (1);
+		}
+		if (other.gameObject.CompareTag ("Platform")) {
+			if (playerY > enemyY) {
+				jumping = true;
+				jumpTime = Time.time;
+			}
 		}
 	}
 		

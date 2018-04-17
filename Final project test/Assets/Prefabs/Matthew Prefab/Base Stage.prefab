@@ -30,9 +30,9 @@ GameObject:
   - component: {fileID: 61517938386091984}
   - component: {fileID: 114639693662508774}
   - component: {fileID: 114594617602865158}
-  m_Layer: 10
+  m_Layer: 14
   m_Name: Base Stage
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -263,6 +263,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnTime: 3
   enemy: {fileID: 1806709411387380, guid: eab068a4356759345a6f5aad61cf7812, type: 2}
+  bossStage: 0
 --- !u!114 &114639693662508774
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -276,6 +277,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 4340119248068926, guid: 45ec9581e96163b4980c652be76d1b54, type: 2}
   portal: {fileID: 4299058879534818, guid: 8acdc009eafb2bd45bda13e763663439, type: 2}
+  portalSpawned: 0
 --- !u!212 &212383481589960574
 SpriteRenderer:
   m_ObjectHideFlags: 1

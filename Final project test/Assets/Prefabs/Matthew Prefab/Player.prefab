@@ -665,7 +665,7 @@ MonoBehaviour:
   groundCheckRadius: 0.01
   groundLayer:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 17408
   onGround: 0
   facing: 0
   speed: 2

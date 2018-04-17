@@ -3,28 +3,41 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/**
+ * This is the BossHealth class, whose main role is to manage the hp of
+ * bosses and related functions. It controls when the boss will switch
+ * animations and also contains the take damage function. It links
+ * the current hp with the boss health bar.
+ **/
+
 public class BossHealth : MonoBehaviour {
-	public float maxHealth;
-	public float currentHealth = 100;
-	public float lastHit;
-	public Transform target;
 
+	//Awake variables
 	public Animator anim;
-	private float hitAnimationDuration = .6f;
 	Image healthbar;
+	public float maxHealth;
+	public Transform target;
+	//Start variables
+	public float lastHit;
+	//Update variables
+	public float currentHealth = 100;
+	private float hitAnimationDuration = .6f;
 
+	//Gets all variables and components before initialization
 	void Awake() {
 		anim = GetComponent<Animator> ();
 		healthbar = GameObject.Find ("BossHealth").GetComponent<Image> ();
 		maxHealth = currentHealth;
 		target = GameObject.FindWithTag ("Boss").transform;
 	}
-	// Use this for initialization
+
 	void Start () {
 		lastHit = 0;
 	}
 
-	// Update is called once per frame
+	// Checks if health is less than 0
+	//Checks if it should turn off the blinking animation
+	//Updates health bar
 	void Update () {
 		if (currentHealth <= 0) {
 			Destroy (gameObject);
