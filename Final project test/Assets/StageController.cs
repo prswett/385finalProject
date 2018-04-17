@@ -18,9 +18,9 @@ public class StageController : MonoBehaviour {
 	}
 	// Use this for initialization
 	void Start () {
-		
+
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		Player killCount = target.GetComponent<Player> ();

@@ -54,7 +54,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnTime: 3
-  enemy: {fileID: 1806709411387380, guid: eab068a4356759345a6f5aad61cf7812, type: 2}
+  enemy: {fileID: 1806709411387380, guid: c96ecc43e882ba24b8a5e9b7c2da85d2, type: 2}
   bossStage: 0
 --- !u!114 &114639693662508774
 MonoBehaviour:
@@ -67,10 +67,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc9bf2b70a538be47bd70a06d38991a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 4340119248068926, guid: 45ec9581e96163b4980c652be76d1b54, type: 2}
+  target: {fileID: 0}
   portalLocation: {fileID: 0}
   portalSpawned: 0
-  portal: {fileID: 1059784269132996, guid: 8acdc009eafb2bd45bda13e763663439, type: 2}
+  portal: {fileID: 1059784269132996, guid: a6a3cf96cc99d024e9188e56890b8804, type: 2}
 --- !u!212 &212383481589960574
 SpriteRenderer:
   m_ObjectHideFlags: 1
