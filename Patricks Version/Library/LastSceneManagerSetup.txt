@@ -1,0 +1,4 @@
+sceneSetups:
+- path: Assets/Stages/Matthew Version/EnemyStage.unity
+  isLoaded: 1
+  isActive: 1
