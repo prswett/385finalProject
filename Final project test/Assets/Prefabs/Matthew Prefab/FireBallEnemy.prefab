@@ -115,14 +115,17 @@ MonoBehaviour:
   target: {fileID: 0}
   speed: 1
   MinDist: 1
-  bullet: {fileID: 1404036833623762, guid: 47e6ec32474e5b74fb7a2098598800ed, type: 2}
+  jumpSpeed: 0
+  jumping: 0
+  jumpTime: 0
+  facing: 0
+  noWep: 1
+  bullet: {fileID: 1404036833623762, guid: cdef9782c6a77e340925bb2295a109a7, type: 2}
   fireRate: 1
   lastFire: 0
   attackAnim: 0
   attackAnimDelay: 1
   anim: {fileID: 0}
-  noWep: 1
-  facing: 0
 --- !u!114 &114537518567070356
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -136,7 +139,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 5
   currentHealth: 5
-  target: {fileID: 4340119248068926, guid: 45ec9581e96163b4980c652be76d1b54, type: 2}
+  target: {fileID: 0}
   lastHit: 0
 --- !u!212 &212332136261449312
 SpriteRenderer:
@@ -180,5 +183,5 @@ SpriteRenderer:
   m_Size: {x: 0.5, y: 0.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0

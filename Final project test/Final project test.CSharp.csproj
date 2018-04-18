@@ -234,24 +234,28 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\BossHealth.cs" />
-    <Compile Include="Assets\BulletController.cs" />
-    <Compile Include="Assets\CanvasController.cs" />
-    <Compile Include="Assets\EnemyController.cs" />
-    <Compile Include="Assets\EnemyHealth.cs" />
-    <Compile Include="Assets\EnemyManager.cs" />
-    <Compile Include="Assets\EnemyWeaponController.cs" />
-    <Compile Include="Assets\GlobalControl.cs" />
-    <Compile Include="Assets\PisanController.cs" />
-    <Compile Include="Assets\Player.cs" />
-    <Compile Include="Assets\PlayerController.cs" />
-    <Compile Include="Assets\PlayerResources.cs" />
-    <Compile Include="Assets\PlayerStatistics.cs" />
-    <Compile Include="Assets\PortalController.cs" />
-    <Compile Include="Assets\Resources.cs" />
-    <Compile Include="Assets\StageController.cs" />
-    <Compile Include="Assets\SwordController.cs" />
-    <Compile Include="Assets\WeaponController.cs" />
+    <Compile Include="Assets\Camera.cs" />
+    <Compile Include="Assets\Scripts\AxeController.cs" />
+    <Compile Include="Assets\Scripts\BossHealth.cs" />
+    <Compile Include="Assets\Scripts\BulletController.cs" />
+    <Compile Include="Assets\Scripts\CanvasController.cs" />
+    <Compile Include="Assets\Scripts\DaggerController.cs" />
+    <Compile Include="Assets\Scripts\EnemyController.cs" />
+    <Compile Include="Assets\Scripts\EnemyHealth.cs" />
+    <Compile Include="Assets\Scripts\EnemyManager.cs" />
+    <Compile Include="Assets\Scripts\EnemyWeaponController.cs" />
+    <Compile Include="Assets\Scripts\GlobalControl.cs" />
+    <Compile Include="Assets\Scripts\PisanController.cs" />
+    <Compile Include="Assets\Scripts\Player.cs" />
+    <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\PlayerResources.cs" />
+    <Compile Include="Assets\Scripts\PlayerStatistics.cs" />
+    <Compile Include="Assets\Scripts\PortalController.cs" />
+    <Compile Include="Assets\Scripts\Resources.cs" />
+    <Compile Include="Assets\Scripts\SpearController.cs" />
+    <Compile Include="Assets\Scripts\StageController.cs" />
+    <Compile Include="Assets\Scripts\SwordController.cs" />
+    <Compile Include="Assets\Scripts\WeaponController.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>
