@@ -145,16 +145,16 @@ public class Player : MonoBehaviour {
 				anim.SetBool ("walking", false);
 			}
 
-			if (Input.GetKey (KeyCode.J)) {
+			if (Input.GetKey (KeyCode.J) || Input.GetMouseButton(0)) {
 				anim.SetBool ("attacking", true);
 				attacking = true;
 			}
-			if (Input.GetKeyUp(KeyCode.J)) {
+			if (Input.GetKeyUp(KeyCode.J) || Input.GetMouseButtonUp(0)) {
 				anim.SetBool("attacking", false);
 				attacking = false;
 			}
 
-			if (Input.GetKey (KeyCode.Space) && onGround) {
+			if (Input.GetKeyDown (KeyCode.Space) && onGround) {
 				rb2d.velocity = new Vector2 (rb2d.velocity.x, jumpSpeed);
 			}
 

@@ -16,6 +16,7 @@ public class BulletController : MonoBehaviour {
 	public bool enemyUnit = true;
 	public bool groundCollide = true;
 	public Transform target;
+	public bool portal = false;
 
 	void Awake() {
 		target = GameObject.FindWithTag ("Player").transform;
@@ -24,10 +25,12 @@ public class BulletController : MonoBehaviour {
 	void Start () {
 		rb2d = this.GetComponent<Rigidbody2D>();
 		transform.rotation = Quaternion.LookRotation (Vector3.forward, target.position - transform.position);
-		if (target.position.x < transform.position.x) {
-			transform.position = new Vector3 (transform.position.x - 0.1f, transform.position.y, 1);
-		} else {
-			transform.position = new Vector3 (transform.position.x + 0.1f, transform.position.y, 1);
+		if (portal) {
+			if (target.position.x < transform.position.x) {
+				transform.position = new Vector3 (transform.position.x - 0.1f, transform.position.y, 1);
+			} else {
+				transform.position = new Vector3 (transform.position.x + 0.1f, transform.position.y, 1);
+			}
 		}
 	}
 	
@@ -35,7 +38,7 @@ public class BulletController : MonoBehaviour {
 	//If its an enemy shooting, remove after 4 seconds, if its a boss
 	//Remove after 8 seconds
 	void Update () {
-		transform.localScale = new Vector3 (1, 1, 1f);
+		//transform.localScale = new Vector3 (1, 1, 1f);
 		rb2d.velocity = new Vector2 (velocityX, velocityY) * 3;
 
 		if (enemyUnit) {

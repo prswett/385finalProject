@@ -35,7 +35,7 @@ public class StageController : MonoBehaviour {
 	void Update () {
 		
 		Player killCount = target.GetComponent<Player> ();
-		if (killCount.killCount > monstersNeeded || killCount.killedBoss) {
+		if (killCount.killCount >= monstersNeeded || killCount.killedBoss) {
 			if (portalSpawned == false) {
 				killCount.resetKills ();
 				Instantiate (portal, location, Quaternion.identity);
