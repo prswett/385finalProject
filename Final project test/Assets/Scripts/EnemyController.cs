@@ -20,13 +20,14 @@ public class EnemyController : MonoBehaviour {
 	public Transform target;
 
 	//Movement variables
-	public int speed;
+	public float speed;
 	public float MinDist = 0.1f;
 	public float jumpSpeed;
 	public bool jumping;
 	public float jumpTime;
 	public bool facing = false;
 	public bool noWep = false;
+	public bool continuousShot = false;
 
 	//Shooting variables
 	public GameObject bullet;
@@ -54,6 +55,11 @@ public class EnemyController : MonoBehaviour {
 		if (Time.time - jumpTime > .4) {
 			jumping = false;
 		}
+
+		if (playerY - enemyY > .3) {
+			jumping = true;
+			jumpTime = Time.time;
+		}
 		//Get the coordinates of enemy and player
 		if (noWep) {
 			noCollideMove ();
@@ -65,10 +71,13 @@ public class EnemyController : MonoBehaviour {
 		if (!(enemyX - playerX > MinDist) && !(enemyX - playerX < -MinDist)) {
 			if (Time.time - lastFire > fireRate) {
 				anim.SetBool ("attacking", true);
+				anim.SetBool ("walking", false);
 				if (noWep) {
-					fire ();
+					Invoke ("fire", 1.0f);
+				} else if (continuousShot) {
+					laser ();
 				} else {
-					slash ();
+					Invoke ("slash", .1f);
 				}
 				lastFire = Time.time;
 				attackAnim = Time.time;
@@ -78,7 +87,6 @@ public class EnemyController : MonoBehaviour {
 
 	void noCollideMove() {
 		anim.SetBool ("attacking", false);
-
 		if (enemyX - playerX < -MinDist) {
 			if (facing) {
 				flip ();
@@ -116,6 +124,7 @@ public class EnemyController : MonoBehaviour {
 			}
 		} else {
 			if (enemyX - playerX < -MinDist || enemyX - playerX > MinDist) {
+				anim.SetBool ("slash", false);
 				anim.SetBool ("walking", true);
 				if (enemyX - playerX < -MinDist) {
 					if (facing) {
@@ -142,8 +151,16 @@ public class EnemyController : MonoBehaviour {
 		Instantiate (bullet, bulletPos, Quaternion.identity);
 	}
 
-	void slash() {
+	void laser() {
+		float divider = Mathf.Sqrt (Mathf.Pow (playerX - enemyX, 2) + Mathf.Pow (playerY - enemyY, 2));
+		BulletController shot = bullet.GetComponent<BulletController>();
+		shot.setVelocity ((playerX - enemyX) / divider, (playerY - enemyY) / divider);
+		bulletPos = transform.position;
+		Instantiate (bullet, bulletPos, Quaternion.identity);
+	}
 
+	void slash() {
+		anim.SetBool ("slash", true);
 	}
 
 	//If collide with player, make them take damage
@@ -151,12 +168,6 @@ public class EnemyController : MonoBehaviour {
 		if (other.gameObject.CompareTag ("Player")) {
 			Player health = other.GetComponent<Player> ();
 			health.takeDamage (1);
-		}
-		if (other.gameObject.CompareTag ("Platform")) {
-			if (playerY > enemyY) {
-				jumping = true;
-				jumpTime = Time.time;
-			}
 		}
 	}
 		

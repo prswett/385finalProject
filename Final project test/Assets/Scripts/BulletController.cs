@@ -15,17 +15,29 @@ public class BulletController : MonoBehaviour {
 	Rigidbody2D rb2d;
 	public bool enemyUnit = true;
 	public bool groundCollide = true;
+	public Transform target;
 
+	void Awake() {
+		target = GameObject.FindWithTag ("Player").transform;
+	}
 	// Declare rigid body for bullet
 	void Start () {
 		rb2d = this.GetComponent<Rigidbody2D>();
+		transform.rotation = Quaternion.LookRotation (Vector3.forward, target.position - transform.position);
+		if (target.position.x < transform.position.x) {
+			transform.position = new Vector3 (transform.position.x - 0.1f, transform.position.y, 1);
+		} else {
+			transform.position = new Vector3 (transform.position.x + 0.1f, transform.position.y, 1);
+		}
 	}
 	
 	//Add velocity to the bullet
 	//If its an enemy shooting, remove after 4 seconds, if its a boss
 	//Remove after 8 seconds
 	void Update () {
+		transform.localScale = new Vector3 (1, 1, 1f);
 		rb2d.velocity = new Vector2 (velocityX, velocityY) * 3;
+
 		if (enemyUnit) {
 			Destroy (gameObject, 4f);
 		} else {

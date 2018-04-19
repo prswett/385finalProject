@@ -1,6 +1,6 @@
 WindowsStandalone
 PlayerPath?
-C:/Users/Matthew/Desktop/CSS 385/Final Project/Final project test/TheQuestAgainstPisan.exe
+C:/Users/Matthew/Desktop/CSS 385/Final Project/Final project test/PisanQuest.exe
 SceneListBegin?
 Assets/Stages/Matthew Version/EnemyStage.unity
 Assets/Stages/Matthew Version/PisanStage.unity
@@ -126,8 +126,8 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Advertisements.dll:UnityEngine.Advertisements.CallbackExecutor
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Advertisements.dll:UnityEngine.Advertisements.Editor.Placeholder
 c206efe8a2ea0cfb9ab607c675e49561 Assembly-CSharp.dll:.StageController
-6afdcdb05b1f9a0d276894bf195764e9 Assembly-CSharp.dll:.EnemyController
-c8893bc6bc30793d01101700fbb45eb0 Assembly-CSharp.dll:.BulletController
+eacff500b3ce917443154dbc5097b42b Assembly-CSharp.dll:.EnemyController
+57772c5e627edd32cf7142648c7d4ddc Assembly-CSharp.dll:.BulletController
 ce09cb02e2f857c8aa562f2552261f90 Assembly-CSharp.dll:.WeaponController
 38d9a3df2f95e9dd2d8c8ceb1e843405 Assembly-CSharp.dll:.Player
 ce09cb02e2f857c8aa562f2552261f90 Assembly-CSharp.dll:.AxeController

@@ -36,7 +36,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1404036833623762}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.9244574, w: -0.38128543}
   m_LocalPosition: {x: -1.944, y: -0.78, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -89,10 +89,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c55eb88a6e77e94f97f5b8eb14375c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocityX: -0.819137
-  velocityY: -0.573598
+  velocityX: 0.7086272
+  velocityY: -0.70558304
   enemyUnit: 1
   groundCollide: 1
+  target: {fileID: 0}
 --- !u!212 &212325840304803188
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -107,6 +107,7 @@ public class Player : MonoBehaviour {
 				//savePlayer ();
 				int scene = SceneManager.GetActiveScene ().buildIndex;
 				SceneManager.LoadScene (scene, LoadSceneMode.Single);
+				Destroy (gameObject);
 			}
 		} else {
 			anim.SetInteger ("weapon state", wepState);
