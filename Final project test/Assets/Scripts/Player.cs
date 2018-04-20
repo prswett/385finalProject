@@ -161,6 +161,13 @@ public class Player : MonoBehaviour {
 			if (Input.GetKeyDown (KeyCode.Z)) {
 				changeWeapon();
 			}
+
+			if (Input.GetKeyDown (KeyCode.S)) {
+				anim.SetBool ("crouching", true);
+			}
+			if (Input.GetKeyUp (KeyCode.S)) {
+				anim.SetBool ("crouching", false);
+			}
 		}
 	}
 
