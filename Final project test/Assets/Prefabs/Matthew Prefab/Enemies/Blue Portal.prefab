@@ -130,15 +130,16 @@ MonoBehaviour:
   enemyY: 0
   target: {fileID: 0}
   speed: 2
-  MinDist: 3
+  MinDist: 2.5
   jumpSpeed: 0
   jumping: 0
   jumpTime: 0
   facing: 0
   noWep: 1
+  enemyWithSlash: 0
   continuousShot: 1
   bullet: {fileID: 1289046508494732, guid: 705a66b87812db14ab095271df3692f1, type: 2}
-  fireRate: 0.05
+  fireRate: 0.2
   lastFire: 0
   attackAnim: 0
   attackAnimDelay: 0.1

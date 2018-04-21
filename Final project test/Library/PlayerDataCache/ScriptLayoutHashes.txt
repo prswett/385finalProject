@@ -2,6 +2,8 @@ WindowsStandalone
 PlayerPath?
 C:/Users/Matthew/Desktop/CSS 385/Final Project/Final project test/IntoTheDungeon.exe
 SceneListBegin?
+Assets/Stages/Matthew Version/TownStage.unity
+Assets/Stages/Matthew Version/ShopStage.unity
 Assets/Stages/Matthew Version/EnemyStage.unity
 Assets/Stages/Matthew Version/PisanStage.unity
 SceneListEnd?
@@ -126,7 +128,7 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Advertisements.dll:UnityEngine.Advertisements.CallbackExecutor
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Advertisements.dll:UnityEngine.Advertisements.Editor.Placeholder
 c206efe8a2ea0cfb9ab607c675e49561 Assembly-CSharp.dll:.StageController
-eacff500b3ce917443154dbc5097b42b Assembly-CSharp.dll:.EnemyController
+08b661015785687074400d48de7abfb7 Assembly-CSharp.dll:.EnemyController
 822c14876c0e1d8697252fd07a1264fe Assembly-CSharp.dll:.BulletController
 ce09cb02e2f857c8aa562f2552261f90 Assembly-CSharp.dll:.WeaponController
 38d9a3df2f95e9dd2d8c8ceb1e843405 Assembly-CSharp.dll:.Player
@@ -145,7 +147,7 @@ e9bdabf9265d758d56f01bb188916fa8 UnityEngine.Networking.dll:UnityEngine.Networki
 3f32f08a64daf40b09ed864d96fe3840 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransform
 73843688b51256aed059f049c540bca8 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformChild
 528ea1fd7c01796fc60c4e2f172ea229 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.CanvasController
+ba5729fa367315e7a7b45a6f8d4d055c Assembly-CSharp.dll:.CanvasController
 ce09cb02e2f857c8aa562f2552261f90 Assembly-CSharp.dll:.DaggerController
 ce09cb02e2f857c8aa562f2552261f90 Assembly-CSharp.dll:.SwordController
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.PlayModeRunnerCallback
@@ -155,7 +157,7 @@ ce09cb02e2f857c8aa562f2552261f90 Assembly-CSharp.dll:.SwordController
 e0f7ffd5d5c2abe4b2e16569a21163da UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioRoom
 67a5f2c97205d2e41a8ed7c7ce898f6e UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioSoundfieldExtension
 67a5f2c97205d2e41a8ed7c7ce898f6e UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioSourceExtension
-0ea7e3a1b65cd933d7a007e6774c4eaa Assembly-CSharp.dll:.PortalController
+a4eb1391493b633786bf5ba3b8dfa1f5 Assembly-CSharp.dll:.PortalController
 9e0ef5bf862444b5dc48b5a99554ce7c UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioListenerExtension
 e0f7ffd5d5c2abe4b2e16569a21163da UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioRoom
 67a5f2c97205d2e41a8ed7c7ce898f6e UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioSoundfieldExtension
@@ -169,3 +171,8 @@ d0d84c0f0b4c9b40c698ea45ba0ee608 Assembly-CSharp.dll:.PlayerController
 9de3a22eca9aefadba2d10d5987cefe3 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 d159e017e3beb76ceecf4bf5a7c0b175 Assembly-CSharp.dll:.PisanController
 524a585e703b5897a16e09f69a51ea98 Assembly-CSharp.dll:.Resources
+bdd9e36031eb7cbb13f6945a7079de4f Assembly-CSharp.dll:.DoorController
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.StageChanger
+492db5ae4fd998f0212061c83ff0ee74 Assembly-CSharp.dll:.TownController
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.SavePoint
+492db5ae4fd998f0212061c83ff0ee74 Assembly-CSharp.dll:.ShopStage

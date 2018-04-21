@@ -51,6 +51,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\DoorController.cs" />
+     <Compile Include="Assets\SavePoint.cs" />
      <Compile Include="Assets\Scripts\AxeController.cs" />
      <Compile Include="Assets\Scripts\BossHealth.cs" />
      <Compile Include="Assets\Scripts\BulletController.cs" />
@@ -73,6 +75,9 @@
      <Compile Include="Assets\Scripts\StageController.cs" />
      <Compile Include="Assets\Scripts\SwordController.cs" />
      <Compile Include="Assets\Scripts\WeaponController.cs" />
+     <Compile Include="Assets\ShopStage.cs" />
+     <Compile Include="Assets\StageChanger.cs" />
+     <Compile Include="Assets\TownController.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

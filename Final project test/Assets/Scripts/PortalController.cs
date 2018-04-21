@@ -4,28 +4,37 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PortalController : MonoBehaviour {
-	public Transform target;
+	public int nextScene;
+	bool near = false;
 
-	// Use this for initialization
 	void Start () {
-		target = GameObject.FindWithTag ("Player").transform;
 	}
-
-	// Update is called once per frame
+		
 	void Update () {
-		if (Input.GetKeyDown(KeyCode.R)) {
-			if (transform.position.x - target.position.x < 0.2 && transform.position.y 
-				- target.position.y < 0.2){
-
-				int scene = SceneManager.GetActiveScene ().buildIndex;
-				SceneManager.LoadScene (scene + 1, LoadSceneMode.Single);
-
-
+		if (Input.GetKeyDown(KeyCode.R) || Input.GetKey(KeyCode.W)) {
+			if (near) {
+				SceneManager.LoadScene (nextScene, LoadSceneMode.Single);
 			}
 		}
 	}
 
 	public void deactivate() {
 		Destroy (gameObject);
+	}
+
+	void OnTriggerEnter2D(Collider2D other) {
+		if (other.gameObject.CompareTag ("Player")) {
+			near = true;
+		}
+	}
+
+	void OnTriggerExit2D(Collider2D other) {
+		if (other.gameObject.CompareTag ("Player")) {
+			near = false;
+		}
+	}
+
+	public void setNextScene(int input) {
+		nextScene = input;
 	}
 }

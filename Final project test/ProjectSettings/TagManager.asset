@@ -11,6 +11,7 @@ TagManager:
   - Boss
   - Platform
   - Portal
+  - Pause
   layers:
   - Default
   - TransparentFX

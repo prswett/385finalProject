@@ -13,6 +13,7 @@ public class Player : MonoBehaviour {
 	int count;
 
 	//Awake() variables
+	public static Player Instance;
 	public PlayerStatistics localPlayer = new PlayerStatistics();
 	Image healthbar;
 	Image manabar;
@@ -45,21 +46,18 @@ public class Player : MonoBehaviour {
 	//
 	void Awake() {
 		//loadPlayer ();
-		DontDestroyOnLoad(this);
+
+		if (Instance == null) {
+			DontDestroyOnLoad (gameObject);
+			Instance = this;
+		} else if (Instance != this) {
+			Destroy (gameObject);
+		}
+
 		healthbar = GameObject.Find ("Health").GetComponent<Image> ();
 		manabar = GameObject.Find ("Mana").GetComponent<Image> ();
 		resources = GetComponent<PlayerResources> ();
 		count = resources.count;
-
-		getSpawnLocation ();
-	}
-
-	public void getSpawnLocation() {
-		spawn = GameObject.FindWithTag ("Ground").transform;
-		StageController temp = spawn.GetComponent<StageController> ();
-		float x = temp.playerX;
-		float y = temp.playerY;
-		transform.position = new Vector2 (x, y);
 	}
 
 	public void getSpawnLocation(float x, float y) {
@@ -80,9 +78,6 @@ public class Player : MonoBehaviour {
 
 	//
 	void Update () {
-		if (Input.GetKeyDown(KeyCode.Q)) {
-			Application.Quit();
-		}
 		health = localPlayer.health;
 		if (created == true) {
 			for (int i = 1; i < count; i++) {
@@ -100,15 +95,6 @@ public class Player : MonoBehaviour {
 			anim.SetBool ("walking", false);
 			anim.SetBool ("attacking", false);
 			anim.SetBool ("dead", true);
-
-			if (Input.GetKeyDown(KeyCode.R)) {
-				localPlayer = new PlayerStatistics();
-				getSpawnLocation ();
-				//savePlayer ();
-				int scene = SceneManager.GetActiveScene ().buildIndex;
-				SceneManager.LoadScene (scene, LoadSceneMode.Single);
-				Destroy (gameObject);
-			}
 		} else {
 			anim.SetInteger ("weapon state", wepState);
 			anim.SetInteger ("weapon equipped", resources.wepEQPD);

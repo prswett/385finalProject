@@ -258,6 +258,7 @@ MonoBehaviour:
   jumpTime: 0
   facing: 0
   noWep: 0
+  enemyWithSlash: 1
   continuousShot: 0
   bullet: {fileID: 0}
   fireRate: 1

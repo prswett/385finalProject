@@ -27,6 +27,7 @@ public class EnemyController : MonoBehaviour {
 	public float jumpTime;
 	public bool facing = false;
 	public bool noWep = false;
+	public bool enemyWithSlash = false;
 	public bool continuousShot = false;
 
 	//Shooting variables
@@ -124,7 +125,9 @@ public class EnemyController : MonoBehaviour {
 			}
 		} else {
 			if (enemyX - playerX < -MinDist || enemyX - playerX > MinDist) {
-				anim.SetBool ("slash", false);
+				if (enemyWithSlash) {
+					anim.SetBool ("slash", false);
+				}
 				anim.SetBool ("walking", true);
 				if (enemyX - playerX < -MinDist) {
 					if (facing) {
