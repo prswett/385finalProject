@@ -21,9 +21,25 @@ GameObject:
   - component: {fileID: 4077093272373328}
   - component: {fileID: 212383481589960574}
   - component: {fileID: 114639693662508774}
+  - component: {fileID: 61543313512680498}
   m_Layer: 14
   m_Name: Base Stage
   m_TagString: Ground
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1772442281430080
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4718805989086536}
+  m_Layer: 14
+  m_Name: GameObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37,10 +53,49 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 4718805989086536}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4718805989086536
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1772442281430080}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.124, y: -0.985, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4077093272373328}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &61543313512680498
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1762540381179586}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0041406155, y: -0.020702362}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 9, y: 2.5}
+    newSize: {x: 9, y: 2.5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 8.6108, y: 2.1604843}
+  m_EdgeRadius: 0
 --- !u!114 &114639693662508774
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -55,12 +110,12 @@ MonoBehaviour:
   target: {fileID: 0}
   portalLocation: {fileID: 0}
   portalSpawned: 0
-  portal: {fileID: 1059784269132996, guid: a6a3cf96cc99d024e9188e56890b8804, type: 2}
+  portal: {fileID: 0}
   location: {x: 0, y: 0, z: 0}
   spawned: 0
-  monstersNeeded: 10
-  playerX: -8.39
-  playerY: -2.59
+  monstersNeeded: 20
+  playerX: -4.124
+  playerY: -0.985
 --- !u!212 &212383481589960574
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -95,12 +150,12 @@ SpriteRenderer:
   m_SortingLayerID: 883589841
   m_SortingLayer: -1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: edf07df3bdf2f8a4bbe21cf15c05e715, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 08285b8fb688f014fa9bfa47eaa49310, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 6, y: 4}
+  m_Size: {x: 9, y: 2.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

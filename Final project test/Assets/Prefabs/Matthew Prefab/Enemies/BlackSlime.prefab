@@ -148,7 +148,7 @@ MonoBehaviour:
   currentHealth: 0
   target: {fileID: 0}
   lastHit: 0
-  spawnTime: 0
+  coin: {fileID: 1737900479247222, guid: 8ab8938d30b21824fac94b23fea85cb1, type: 2}
 --- !u!114 &114219342164578864
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -165,13 +165,15 @@ MonoBehaviour:
   playerY: 0
   enemyY: 0
   target: {fileID: 0}
-  speed: 1.5
+  location: 0
+  speed: 0.5
   MinDist: 0
   jumpSpeed: 0.8
   jumping: 0
   jumpTime: 0
   facing: 0
   noWep: 0
+  enemyWithSlash: 0
   continuousShot: 0
   bullet: {fileID: 0}
   fireRate: 1

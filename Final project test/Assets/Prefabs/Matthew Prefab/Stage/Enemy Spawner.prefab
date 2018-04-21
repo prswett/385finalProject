@@ -81,7 +81,8 @@ MonoBehaviour:
   maxNumber: 10
   enemy: {fileID: 0}
   bossStage: 0
-  horiPos: 0
-  horiNeg: 0
-  vertiPos: 0
-  vertiNeg: 0
+  horiPos: 0.5
+  horiNeg: -0.5
+  vertiPos: 0.5
+  vertiNeg: -0.5
+  target: {fileID: 0}
