@@ -17,7 +17,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Stages/Boss Stage.unity
     guid: cabc6cfc9afb2e24bb9aa511c96a95ce
-  - enabled: 1
+  - enabled: 0
     path: Assets/Stages/Matthew Version/TownStage.unity
     guid: 6a718ea2949f39b4295cef5f687d88b3
   - enabled: 1
@@ -26,3 +26,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Stages/Matthew Version/PisanStage.unity
     guid: 05e9bf62462ae5a449e1b1dfbfb0b617
+  - enabled: 0
+    path: Assets/Stages/Matthew Version/ShopStage.unity
+    guid: 80d197b31c6502745ae0c0405e0939e6

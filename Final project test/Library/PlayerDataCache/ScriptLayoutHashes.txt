@@ -1,6 +1,6 @@
 WindowsStandalone
 PlayerPath?
-C:/Users/Matthew/Desktop/CSS 385/Final Project/Final project test/PisanQuest.exe
+C:/Users/Matthew/Desktop/CSS 385/Final Project/Final project test/IntoTheDungeon.exe
 SceneListBegin?
 Assets/Stages/Matthew Version/EnemyStage.unity
 Assets/Stages/Matthew Version/PisanStage.unity
