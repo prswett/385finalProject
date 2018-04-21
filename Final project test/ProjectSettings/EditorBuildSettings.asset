@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Stages/Boss Stage.unity
     guid: cabc6cfc9afb2e24bb9aa511c96a95ce
   - enabled: 1
+    path: Assets/Stages/Matthew Version/TownStage.unity
+    guid: 6a718ea2949f39b4295cef5f687d88b3
+  - enabled: 1
     path: Assets/Stages/Matthew Version/EnemyStage.unity
     guid: 0ea0f8a4daa70764da8bff120386e410
   - enabled: 1
