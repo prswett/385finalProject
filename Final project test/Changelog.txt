@@ -1,0 +1,48 @@
+Version 2.03
+added sword sprites (example of equipment change)
+added coin icon, player now holds coins
+black slimes now drop cins
+fixed pisan bullet targeting bug
+replaced enemy stage with new base stage
+monster spawner now spawns monsters near player
+decreased black slime speed
+
+Version 2.02
+Added town stage
+-entrance to shop
+-added save point (no code)
+-added stage manager (no code)
+bug fixes
+UI menu added (pause, quit)
+
+Version 2.01
+Pisan health bug fixed
+enemy AI jumping implemented
+knight enemy bug fixes
+added tileset for level creation
+
+Version 2.0
+player can now switch weapons
+Pisan boss difficulty increased
+bug fixes
+restart and quit buttons added
+new enemies added
+
+Version 1.02
+Change stages after killing a monster
+new sprites added for main character
+Pisan boss added
+
+Version 1.01
+Enemies can now shoot at player
+mana bar and health bar added
+enemy AI (movement towards player) added
+touching an enemy does damage
+invulnerability period after taking damage
+bullet collision
+
+Version 1.0
+Basic character created
+jump and attack features with animations
+temporary stage created
+enemies added (hp, damage, etc)
