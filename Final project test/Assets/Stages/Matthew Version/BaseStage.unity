@@ -122,11 +122,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4392137216639052, guid: c69b1ae876d56274fa7896323d896d5f, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -4.124
       objectReference: {fileID: 0}
     - target: {fileID: 4392137216639052, guid: c69b1ae876d56274fa7896323d896d5f, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.985
       objectReference: {fileID: 0}
     - target: {fileID: 4392137216639052, guid: c69b1ae876d56274fa7896323d896d5f, type: 2}
       propertyPath: m_LocalPosition.z
@@ -156,9 +156,30 @@ Prefab:
       propertyPath: m_Name
       value: Main Camera
       objectReference: {fileID: 0}
+    - target: {fileID: 20647216311749444, guid: c69b1ae876d56274fa7896323d896d5f,
+        type: 2}
+      propertyPath: orthographic size
+      value: 0.98311025
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c69b1ae876d56274fa7896323d896d5f, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &420500003 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1032331164183196, guid: c69b1ae876d56274fa7896323d896d5f,
+    type: 2}
+  m_PrefabInternal: {fileID: 420500002}
+--- !u!114 &420500004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 420500003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8afee07f72ed3b4c95c8b8f6a118bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &581447347
 Prefab:
   m_ObjectHideFlags: 0
