@@ -113,7 +113,7 @@ MonoBehaviour:
   portal: {fileID: 0}
   location: {x: 0, y: 0, z: 0}
   spawned: 0
-  monstersNeeded: 20
+  monstersNeeded: 5
   playerX: -4.124
   playerY: -0.985
 --- !u!212 &212383481589960574

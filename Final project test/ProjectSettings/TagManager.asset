@@ -12,6 +12,7 @@ TagManager:
   - Platform
   - Portal
   - Pause
+  - Instructions
   layers:
   - Default
   - TransparentFX

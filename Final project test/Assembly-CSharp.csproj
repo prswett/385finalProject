@@ -54,6 +54,7 @@
      <Compile Include="Assets\coinController.cs" />
      <Compile Include="Assets\DoorController.cs" />
      <Compile Include="Assets\GEnemyWep.cs" />
+     <Compile Include="Assets\MainMenuController.cs" />
      <Compile Include="Assets\SavePoint.cs" />
      <Compile Include="Assets\Scripts\Boss\BossHealth.cs" />
      <Compile Include="Assets\Scripts\Boss\PisanController.cs" />

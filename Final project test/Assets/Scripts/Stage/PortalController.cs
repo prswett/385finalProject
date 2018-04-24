@@ -6,20 +6,30 @@ using UnityEngine.SceneManagement;
 public class PortalController : MonoBehaviour {
 	public int nextScene;
 	bool near = false;
+	public Transform target;
+	Player killCount;
+
+	void Awake() {
+		target = GameObject.FindWithTag ("Player").transform;
+		killCount = target.GetComponent<Player> ();
+	}
 
 	void Start () {
+		
 	}
 		
 	void Update () {
+		
 		if (Input.GetKeyDown(KeyCode.R) || Input.GetKey(KeyCode.W)) {
 			if (near) {
+				killCount.resetKills ();
 				SceneManager.LoadScene (nextScene, LoadSceneMode.Single);
 			}
 		}
 	}
 
 	public void deactivate() {
-		Destroy (gameObject);
+		this.gameObject.SetActive (false);
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {

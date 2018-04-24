@@ -52,6 +52,8 @@ public class PisanController : MonoBehaviour {
 		maxHealth = temp.maxHealth;
 		if (currentHealth / maxHealth <= .5) {
 			bulletGround = false;
+			speed = 2;
+			fireRate = .5f;
 		}
 
 		if (transform.position.x > left && count == 1) {

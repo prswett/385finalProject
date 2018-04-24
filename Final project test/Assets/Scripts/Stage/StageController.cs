@@ -13,6 +13,7 @@ public class StageController : MonoBehaviour {
 	public bool spawned = false;
 	public int monstersNeeded;
 	int nextScene;
+	Player killCount;
 
 	public float playerX;
 	public float playerY;
@@ -30,17 +31,18 @@ public class StageController : MonoBehaviour {
 	}
 	// Use this for initialization
 	void Start () {
-
+		killCount = target.GetComponent<Player> ();
 	}
 
 	// Update is called once per frame
 	void Update () {
 		
-		Player killCount = target.GetComponent<Player> ();
+
 		if (killCount.killCount >= monstersNeeded || killCount.killedBoss) {
 			if (portalSpawned == false) {
 				killCount.resetKills ();
 				PortalController temp = portal.GetComponent<PortalController> ();
+				temp.gameObject.SetActive (true);
 				temp.setNextScene (nextScene);
 				Instantiate (portal, location, Quaternion.identity);
 				portalSpawned = true;
