@@ -172,6 +172,11 @@ Prefab:
       propertyPath: m_Size.y
       value: 0.5829482
       objectReference: {fileID: 0}
+    - target: {fileID: 114241939564801222, guid: 72b326b9420fc864686caddb9ac6bc22,
+        type: 2}
+      propertyPath: stageNumber
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 72b326b9420fc864686caddb9ac6bc22, type: 2}
   m_IsPrefabParent: 0
@@ -329,6 +334,21 @@ Prefab:
       propertyPath: m_ScreenMatchMode
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114848618748905366, guid: 86683ba1291d140459087dab9dbcc4ca,
+        type: 2}
+      propertyPath: m_Text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114848618748905366, guid: 86683ba1291d140459087dab9dbcc4ca,
+        type: 2}
+      propertyPath: m_FontData.m_FontSize
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 114848618748905366, guid: 86683ba1291d140459087dab9dbcc4ca,
+        type: 2}
+      propertyPath: m_FontData.m_MinSize
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 86683ba1291d140459087dab9dbcc4ca, type: 2}
   m_IsPrefabParent: 0
@@ -421,64 +441,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 60d389deabb8566468a5a56182b2e37c, type: 2}
   m_IsPrefabParent: 0
---- !u!1001 &1364933054
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4116586318580930, guid: 131849d62ac54ac4188df70f8ea5a34e, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -0.23802036
-      objectReference: {fileID: 0}
-    - target: {fileID: 4116586318580930, guid: 131849d62ac54ac4188df70f8ea5a34e, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -0.0785675
-      objectReference: {fileID: 0}
-    - target: {fileID: 4116586318580930, guid: 131849d62ac54ac4188df70f8ea5a34e, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0.03173828
-      objectReference: {fileID: 0}
-    - target: {fileID: 4116586318580930, guid: 131849d62ac54ac4188df70f8ea5a34e, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4116586318580930, guid: 131849d62ac54ac4188df70f8ea5a34e, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4116586318580930, guid: 131849d62ac54ac4188df70f8ea5a34e, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4116586318580930, guid: 131849d62ac54ac4188df70f8ea5a34e, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4116586318580930, guid: 131849d62ac54ac4188df70f8ea5a34e, type: 2}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 131849d62ac54ac4188df70f8ea5a34e, type: 2}
-  m_IsPrefabParent: 0
---- !u!1 &1364933055 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1447697052579072, guid: 131849d62ac54ac4188df70f8ea5a34e,
-    type: 2}
-  m_PrefabInternal: {fileID: 1364933054}
---- !u!114 &1364933056
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1364933055}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f983ea08fbcf3b4d9ff8ad76e7094e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1396911407
 Prefab:
   m_ObjectHideFlags: 0
@@ -521,7 +483,7 @@ Prefab:
     - target: {fileID: 114255762166747166, guid: a6a3cf96cc99d024e9188e56890b8804,
         type: 2}
       propertyPath: nextScene
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a6a3cf96cc99d024e9188e56890b8804, type: 2}

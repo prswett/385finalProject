@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{0E73F735-D12A-12EF-F6BA-81F61FB303B4}</ProjectGuid>
+    <ProjectGuid>{8FF1C876-9B20-BFDB-DA77-F1EAA6E76D47}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -62,12 +62,14 @@
      <Compile Include="Assets\Scripts\EnemyManager.cs" />
      <Compile Include="Assets\Scripts\EnemyWeaponController.cs" />
      <Compile Include="Assets\Scripts\GlobalControl.cs" />
+     <Compile Include="Assets\Scripts\LoadSceneOnClick.cs" />
      <Compile Include="Assets\Scripts\PisanController.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\PlayerResources.cs" />
      <Compile Include="Assets\Scripts\PlayerStatistics.cs" />
      <Compile Include="Assets\Scripts\PortalController.cs" />
+     <Compile Include="Assets\Scripts\QuitOnClick.cs" />
      <Compile Include="Assets\Scripts\Resources.cs" />
      <Compile Include="Assets\Scripts\SpearController.cs" />
      <Compile Include="Assets\Scripts\StageController.cs" />

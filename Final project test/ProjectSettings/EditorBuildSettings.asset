@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Stages/Matthew Version/MainMenu.unity
+    guid: a246480477529cb42bd90daca59e3789
+  - enabled: 1
     path: Assets/Stages/Matthew Version/TownStage.unity
     guid: 6a718ea2949f39b4295cef5f687d88b3
   - enabled: 1

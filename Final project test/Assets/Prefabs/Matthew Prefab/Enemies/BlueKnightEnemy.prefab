@@ -40,10 +40,10 @@ GameObject:
   - component: {fileID: 212530604535383692}
   - component: {fileID: 50204329011871384}
   - component: {fileID: 61525338469434680}
-  - component: {fileID: 114807830781357274}
   - component: {fileID: 114066665946581228}
   - component: {fileID: 95177503046584366}
   - component: {fileID: 61187586218492696}
+  - component: {fileID: 114587871636873132}
   m_Layer: 11
   m_Name: BlueKnightEnemy
   m_TagString: Enemy
@@ -87,7 +87,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1447697052579072}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.549412, y: -2.6924288, z: 0.03173828}
+  m_LocalPosition: {x: -0.23802036, y: -0.0785675, z: 0.03173828}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4050180155180958}
@@ -234,8 +234,8 @@ MonoBehaviour:
   currentHealth: 5
   target: {fileID: 0}
   lastHit: 0
-  spawnTime: 0
---- !u!114 &114807830781357274
+  coin: {fileID: 0}
+--- !u!114 &114587871636873132
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -243,29 +243,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 1447697052579072}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 305896e7754fc0e4e8052f678d3ea027, type: 3}
+  m_Script: {fileID: 11500000, guid: 6f983ea08fbcf3b4d9ff8ad76e7094e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lastFire: 0
+  target: {fileID: 0}
+  anim: {fileID: 0}
   playerX: 0
   enemyX: 0
   playerY: 0
   enemyY: 0
-  target: {fileID: 0}
-  speed: 1
-  MinDist: 0.15
-  jumpSpeed: 0.8
-  jumping: 0
   jumpTime: 0
-  facing: 0
-  noWep: 0
-  enemyWithSlash: 1
-  continuousShot: 0
-  bullet: {fileID: 0}
+  jumping: 0
+  MinDist: 0.1
   fireRate: 1
-  lastFire: 0
-  attackAnim: 0
-  attackAnimDelay: 0.3
-  anim: {fileID: 0}
+  location: 0
+  speed: 0
+  jumpSpeed: 0
+  facing: 0
 --- !u!114 &114864978353131658
 MonoBehaviour:
   m_ObjectHideFlags: 1

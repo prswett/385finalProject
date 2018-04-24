@@ -247,7 +247,7 @@ Prefab:
     - target: {fileID: 114241939564801222, guid: 72b326b9420fc864686caddb9ac6bc22,
         type: 2}
       propertyPath: stageNumber
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 72b326b9420fc864686caddb9ac6bc22, type: 2}
