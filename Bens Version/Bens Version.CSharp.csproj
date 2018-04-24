@@ -245,12 +245,14 @@
     <Compile Include="Assets\Scripts\EnemyManager.cs" />
     <Compile Include="Assets\Scripts\EnemyWeaponController.cs" />
     <Compile Include="Assets\Scripts\GlobalControl.cs" />
+    <Compile Include="Assets\Scripts\LoadSceneOnClick.cs" />
     <Compile Include="Assets\Scripts\PisanController.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\PlayerResources.cs" />
     <Compile Include="Assets\Scripts\PlayerStatistics.cs" />
     <Compile Include="Assets\Scripts\PortalController.cs" />
+    <Compile Include="Assets\Scripts\QuitOnClick.cs" />
     <Compile Include="Assets\Scripts\Resources.cs" />
     <Compile Include="Assets\Scripts\SpearController.cs" />
     <Compile Include="Assets\Scripts\StageController.cs" />
