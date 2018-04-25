@@ -1,6 +1,0 @@
-Bigger stage (side scroller)
-More enemies
-Save data
-
-PISAN: different phases = sprints
-Roll for skill effects

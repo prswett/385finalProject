@@ -1,14 +1,20 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\GEnemyWep.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\StreamingAssets\Items.json">
     <Files>
       <File FileName="Assets\DoorController.cs" Line="1" Column="1" />
-      <File FileName="Assets\TownController.cs" Line="1" Column="1" />
-      <File FileName="Assets\ShopStage.cs" Line="1" Column="1" />
       <File FileName="Assets\coinController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Enemies\EnemyController.cs" Line="30" Column="2" />
-      <File FileName="Assets\GEnemyWep.cs" Line="26" Column="29" />
-      <File FileName="Assets\Scripts\Player\Player.cs" Line="74" Column="11" />
+      <File FileName="Assets\Scripts\Player\CanvasController.cs" Line="1" Column="1" />
+      <File FileName="Assets\MainMenuController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Stage\PortalController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Stage\StageController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Enemies\EnemyHealth.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Player\Player.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Enemies\EnemyManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ItemDatabase.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Inventory.cs" Line="12" Column="36" />
+      <File FileName="Assets\Scripts\Player\PlayerResources.cs" Line="1" Column="1" />
+      <File FileName="Assets\StreamingAssets\Items.json" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

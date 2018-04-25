@@ -78,3 +78,4 @@ C:\Users\Matthew\Desktop\CSS 385\Final Project\385finalProject-master\Final proj
 C:\Users\Matthew\Desktop\CSS 385\Final Project\385finalProject-master\Final project test\obj\Release\Assembly-CSharp.csprojResolveAssemblyReference.cache
 C:\Users\Matthew\Desktop\CSS 385\Final Project\385finalProject-master\Final project test\obj\Release\Assembly-CSharp.dll
 C:\Users\Matthew\Desktop\CSS 385\Final Project\385finalProject-master\Final project test\obj\Release\Assembly-CSharp.pdb
+C:\Users\Matthew\Desktop\CSS 385\Final Project\Final project test\Temp\bin\Release\LitJson.dll
