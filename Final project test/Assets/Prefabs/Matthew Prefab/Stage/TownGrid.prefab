@@ -24,6 +24,8 @@ GameObject:
   - component: {fileID: 2113883506804441360}
   - component: {fileID: 50914120424278368}
   - component: {fileID: 66190004365460588}
+  - component: {fileID: 251941889618665880}
+  - component: {fileID: 114611350053736422}
   m_Layer: 14
   m_Name: Tilemap
   m_TagString: Ground
@@ -114,6 +116,37 @@ CompositeCollider2D:
   m_CompositePaths:
     m_Paths: []
   m_VertexDistance: 0.0005
+--- !u!114 &114611350053736422
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1165955296021694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb61ff44ae3f8b745a00a490e0278f47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  player: {fileID: 0}
+--- !u!251 &251941889618665880
+PlatformEffector2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1165955296021694}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!19719996 &2113883506804441360
 TilemapCollider2D:
   m_ObjectHideFlags: 1
@@ -124,7 +157,7 @@ TilemapCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
 --- !u!156049354 &2569400267244641978
@@ -170,7 +203,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -918345435
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_MaxChunkCount: 16
@@ -1280,15 +1313,15 @@ Tilemap:
   - m_RefCount: 0
     m_Data:
       e00: 8.792576e-39
-      e01: 3.7370104e-17
-      e02: 4.074481e-33
+      e01: -1.3565934e-32
+      e02: 3.1395456e-33
       e03: 1
       e10: 0
-      e11: 7.9491e-41
+      e11: 7.9067e-41
       e12: 0
       e13: 0
       e20: NaN
-      e21: 0.0000019832794
+      e21: 0.0000023133168
       e22: 2.985809
       e23: 0
       e30: NaN

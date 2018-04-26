@@ -19,6 +19,14 @@ public class LadderZone : MonoBehaviour {
         }
     }
 
+	void OnTriggerStay2D(Collider2D other)
+	{
+		if (other.name == "Player")
+		{
+			player.onLadder = true;
+		}
+	}
+
     void OnTriggerExit2D(Collider2D other)
     {
         if (other.name == "Player")
