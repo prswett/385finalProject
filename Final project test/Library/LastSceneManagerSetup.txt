@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Stages/Matthew Version/TownStage.unity
+- path: Assets/Stages/Matthew Version/PisanStage.unity
   isLoaded: 1
   isActive: 1

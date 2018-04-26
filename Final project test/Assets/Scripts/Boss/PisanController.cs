@@ -97,17 +97,23 @@ public class PisanController : MonoBehaviour {
 
 	//Instantiate bullet and shoot it at players location
 	void fire() {
-		enemyX -= .5f;
-		float divider = Mathf.Sqrt (Mathf.Pow (playerX - enemyX, 2) + Mathf.Pow (playerY - enemyY, 2));
+		float divider = Mathf.Sqrt (Mathf.Pow (playerX - enemyX, 2) + Mathf.Pow (playerY - enemyY , 2));
 		BulletController shot = bullet.GetComponent<BulletController>();
 		shot.setGroundCollide (bulletGround);
-		shot.setVelocity ((playerX - enemyX) / divider, (playerY - enemyY) / divider);
-		bulletPos = new Vector2 (transform.position.x, transform.position.y - .5f);
+		shot.setVelocity ((playerX - enemyX) / divider, (playerY - enemyY + .5f) / divider);
+		bulletPos = new Vector2 (transform.position.x, transform.position.y- .5f);
 		Instantiate (bullet, bulletPos, Quaternion.identity);
 	}
 
 	//Deal damage if player touches pisan or take damage if the sword hits
 	void OnTriggerEnter2D(Collider2D other) {
+		if (other.gameObject.CompareTag ("Player")) {
+			Player health = other.GetComponent<Player> ();
+			health.takeDamage (1);
+		}
+	}
+
+	void OnTriggerStay2D(Collider2D other) {
 		if (other.gameObject.CompareTag ("Player")) {
 			Player health = other.GetComponent<Player> ();
 			health.takeDamage (1);

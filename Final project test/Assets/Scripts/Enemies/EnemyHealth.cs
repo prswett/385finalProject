@@ -71,5 +71,12 @@ public class EnemyHealth : MonoBehaviour {
 			health.takeDamage (1);
 		}
 	}
+
+	void OnTriggerStay2D(Collider2D other) {
+		if (other.gameObject.CompareTag ("Player")) {
+			Player health = other.GetComponent<Player> ();
+			health.takeDamage (1);
+		}
+	}
 		
 }
