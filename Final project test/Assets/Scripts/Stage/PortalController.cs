@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PortalController : MonoBehaviour {
 	public int nextScene;
 	bool near = false;
 	public Transform target;
 	Player killCount;
+	public TextMesh control;
 
 	void Awake() {
 		target = GameObject.FindWithTag ("Player").transform;
@@ -15,7 +17,7 @@ public class PortalController : MonoBehaviour {
 	}
 
 	void Start () {
-		
+		control = GetComponentInChildren<TextMesh> ();
 	}
 		
 	void Update () {
@@ -35,12 +37,14 @@ public class PortalController : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject.CompareTag ("Player")) {
 			near = true;
+			control.text = "W";
 		}
 	}
 
 	void OnTriggerExit2D(Collider2D other) {
 		if (other.gameObject.CompareTag ("Player")) {
 			near = false;
+			control.text  = "";
 		}
 	}
 

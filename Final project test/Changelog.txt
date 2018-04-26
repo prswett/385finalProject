@@ -1,6 +1,11 @@
 Version 2.1 (Bug fixes version)
 Enemies can now pass through each other and player
 Fixed tileset movement exploits
+Fixed player weapon bugs
+Coins now drop to ground
+Fixed collider bugs
+Platforms are now jump through
+Portals now show tool tip
 
 Version 2.04
 Added main menu

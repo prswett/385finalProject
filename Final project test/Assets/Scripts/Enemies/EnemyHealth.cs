@@ -1,15 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyHealth : MonoBehaviour {
-	public int maxHealth;
-	public int currentHealth;
+	public float maxHealth;
+	public float currentHealth;
 	public Transform target;
 	public float lastHit;
 	public GameObject parent;
 	public EnemyController parentController;
+	public float fill;
 
+	Image healthbar;
 	//Drops
 	public GameObject coin;
 
@@ -25,9 +28,11 @@ public class EnemyHealth : MonoBehaviour {
 		parentController = parent.GetComponent<EnemyController> ();
 
 		currentHealth = maxHealth;
+		healthbar = GameObject.Find ("EnemyHealth").GetComponent<Image> ();
 	}
 
 	void Update () {
+		healthbar.fillAmount = currentHealth / maxHealth;
 		if (currentHealth <= 0) {
 			dropCoin ();
 			parentController.destroy();
@@ -66,4 +71,5 @@ public class EnemyHealth : MonoBehaviour {
 			health.takeDamage (1);
 		}
 	}
+		
 }

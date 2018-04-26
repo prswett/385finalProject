@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SlimeController : MonoBehaviour {
 	//Start variables
@@ -42,7 +43,7 @@ public class SlimeController : MonoBehaviour {
 			jumping = false;
 		}
 
-		if (playerY - enemyY > .3) {
+		if (playerY - enemyY > .3 && jumping == false) {
 			jumping = true;
 			jumpTime = Time.time;
 		}
