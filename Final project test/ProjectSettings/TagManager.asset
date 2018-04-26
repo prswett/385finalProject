@@ -15,6 +15,7 @@ TagManager:
   - Instructions
   - Door
   - Item
+  - outofbounds
   layers:
   - Default
   - TransparentFX

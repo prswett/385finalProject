@@ -39,6 +39,7 @@ public class Player : MonoBehaviour {
 	int spriteState = 1;
 	bool created = true;
 	public float health;
+	bool jumpDown = false;
 
 	//Taking damage variables
 	public float lastHit;
@@ -154,7 +155,7 @@ public class Player : MonoBehaviour {
 				attacking = false;
 			}
 
-			if (Input.GetKeyDown (KeyCode.Space) && onGround) {
+			if (Input.GetKeyDown (KeyCode.Space) && onGround && !jumpDown) {
 				rb2d.velocity = new Vector2 (rb2d.velocity.x, jumpSpeed);
 			}
 
@@ -186,6 +187,10 @@ public class Player : MonoBehaviour {
         {
             rb2d.gravityScale = gravityStore;
         }
+	}
+
+	public void jumpingDown() {
+		jumpDown = !jumpDown;
 	}
 
 	void changeSprite() {
