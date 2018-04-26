@@ -240,6 +240,7 @@
     <Compile Include="Assets\coinController.cs" />
     <Compile Include="Assets\DoorController.cs" />
     <Compile Include="Assets\GEnemyWep.cs" />
+    <Compile Include="Assets\JumpThrough.cs" />
     <Compile Include="Assets\MainMenuController.cs" />
     <Compile Include="Assets\PlayerSpawnLocation.cs" />
     <Compile Include="Assets\PortalCanvas.cs" />
