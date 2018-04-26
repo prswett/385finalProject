@@ -47,8 +47,14 @@ public class Player : MonoBehaviour {
 	public int killCount;
 	public bool killedBoss = false;
 
-	//
-	void Awake() {
+    // For Climbing
+    public bool onLadder = false;
+    public float climbSpeed;
+    private float climbVelocity;
+    private float gravityStore;
+
+    //
+    void Awake() {
 		//loadPlayer ();
 
 		if (Instance == null) {
@@ -80,7 +86,8 @@ public class Player : MonoBehaviour {
 		rb2d = this.GetComponent<Rigidbody2D> ();
 		anim = GetComponent<Animator> ();
 		killCount = 0;
-	}
+        gravityStore = rb2d.gravityScale;
+    }
 
 	//
 	void Update () {
@@ -165,6 +172,20 @@ public class Player : MonoBehaviour {
 				anim.SetBool ("crouching", false);
 			}
 		}
+
+        if (onLadder)
+        {
+            rb2d.gravityScale = 0f;
+
+            climbVelocity = climbSpeed * Input.GetAxisRaw("Vertical");
+
+            rb2d.velocity = new Vector2(rb2d.velocity.x, climbVelocity);
+        }
+
+        if (!onLadder)
+        {
+            rb2d.gravityScale = gravityStore;
+        }
 	}
 
 	void changeSprite() {

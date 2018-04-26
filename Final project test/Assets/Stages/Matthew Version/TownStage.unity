@@ -389,6 +389,16 @@ Prefab:
       propertyPath: m_Size.y
       value: 0.07424259
       objectReference: {fileID: 0}
+    - target: {fileID: 114736800264199108, guid: 86683ba1291d140459087dab9dbcc4ca,
+        type: 2}
+      propertyPath: climbSpeed
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114736800264199108, guid: 86683ba1291d140459087dab9dbcc4ca,
+        type: 2}
+      propertyPath: onLadder
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 86683ba1291d140459087dab9dbcc4ca, type: 2}
   m_IsPrefabParent: 0
