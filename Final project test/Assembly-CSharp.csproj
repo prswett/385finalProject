@@ -55,6 +55,7 @@
      <Compile Include="Assets\DoorController.cs" />
      <Compile Include="Assets\GEnemyWep.cs" />
      <Compile Include="Assets\MainMenuController.cs" />
+     <Compile Include="Assets\PlayerSpawnLocation.cs" />
      <Compile Include="Assets\SavePoint.cs" />
      <Compile Include="Assets\Scripts\Boss\BossHealth.cs" />
      <Compile Include="Assets\Scripts\Boss\PisanController.cs" />
@@ -82,6 +83,7 @@
      <Compile Include="Assets\Scripts\Stage\PortalController.cs" />
      <Compile Include="Assets\Scripts\Stage\StageController.cs" />
      <Compile Include="Assets\ShopStage.cs" />
+     <Compile Include="Assets\SlimeController.cs" />
      <Compile Include="Assets\StageChanger.cs" />
      <Compile Include="Assets\TownController.cs" />
  <Reference Include="UnityEngine.UI">
@@ -111,6 +113,9 @@
  <Reference Include="UnityEngine.SpatialTracking">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
  </Reference>
+ <Reference Include="LitJson">
+ <HintPath>C:/Users/Matthew/Desktop/CSS 385/Final Project/Final project test/Assets/Plugins/LitJson.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEngine.Advertisements">
  <HintPath>C:/ProgramData/Unity/cache/packages/packages.unity.com/com.unity.ads@2.0.3/UnityEngine.Advertisements.dll</HintPath>
  </Reference>
@@ -122,9 +127,6 @@
  </Reference>
  <Reference Include="UnityEngine.StandardEvents">
  <HintPath>C:/ProgramData/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.10/UnityEngine.StandardEvents.dll</HintPath>
- </Reference>
- <Reference Include="LitJson">
- <HintPath>C:/Users/Matthew/Desktop/CSS 385/Final Project/Final project test/Assets/Plugins/LitJson.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

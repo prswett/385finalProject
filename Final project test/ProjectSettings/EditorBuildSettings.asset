@@ -17,12 +17,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Stages/Matthew Version/BaseStage.unity
     guid: 9be4a410246cb45489fded7ab91e4fcc
-  - enabled: 1
-    path: Assets/Stages/Matthew Version/BaseStage1.unity
-    guid: 64e80743b668f1942818e4856c2faeac
-  - enabled: 1
-    path: Assets/Stages/Matthew Version/BaseStage2.unity
-    guid: af56bff3cdde219469227a1276bf412e
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Stages/Matthew Version/PisanStage.unity
     guid: 05e9bf62462ae5a449e1b1dfbfb0b617

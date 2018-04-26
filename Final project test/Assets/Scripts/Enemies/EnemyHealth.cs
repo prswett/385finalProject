@@ -7,6 +7,8 @@ public class EnemyHealth : MonoBehaviour {
 	public int currentHealth;
 	public Transform target;
 	public float lastHit;
+	public GameObject parent;
+	public EnemyController parentController;
 
 	//Drops
 	public GameObject coin;
@@ -19,13 +21,16 @@ public class EnemyHealth : MonoBehaviour {
 		}
 		lastHit = 0;
 		target = GameObject.FindWithTag ("Player").transform;
+		parent = transform.parent.gameObject;
+		parentController = parent.GetComponent<EnemyController> ();
+
 		currentHealth = maxHealth;
 	}
 
 	void Update () {
 		if (currentHealth <= 0) {
 			dropCoin ();
-			Destroy (gameObject);
+			parentController.destroy();
 		}
 	}
 
@@ -33,23 +38,32 @@ public class EnemyHealth : MonoBehaviour {
 	//Records previous time since last hit and doesn't inflict damage
 	//unless time since last hit is past the point
 	public void takeDamage(int damage) {
-		if (transform.position.x - target.position.x < 0) {
-			transform.position += Vector3.left * 0.05f;
-		} else {
-			transform.position += Vector3.right * 0.05f;
-		}
+		
 
-		if (Time.time - lastHit >= 0.1 || lastHit == 0) {
+		//if (Time.time - lastHit >= 0.1 || lastHit == 0) {
+			if (transform.position.x - target.position.x < 0) {
+				parentController.moveLeft ();
+			} else {
+				parentController.moveRight ();
+			}
 			currentHealth -= damage;
 			if (currentHealth <= 0) {
 				Player killCount = target.GetComponent<Player> ();
 				killCount.killCount++;
 			}
 			lastHit = Time.time;
-		}
+		//}
 	}
 
 	public void dropCoin() {
 		Instantiate (coin, transform.position, Quaternion.identity);
+	}
+
+
+	void OnTriggerEnter2D(Collider2D other) {
+		if (other.gameObject.CompareTag ("Player")) {
+			Player health = other.GetComponent<Player> ();
+			health.takeDamage (1);
+		}
 	}
 }

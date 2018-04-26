@@ -16,6 +16,8 @@ public class DoorController : MonoBehaviour {
 		if (Input.GetKey(KeyCode.R) || Input.GetKey(KeyCode.W)) {
 			if (near) {
 				SceneManager.LoadScene (stageNumber, LoadSceneMode.Single);
+				Transform target = GameObject.FindWithTag ("Player").transform;
+				target.GetComponent<Player> ().door = true;
 			}
 		}
 	}

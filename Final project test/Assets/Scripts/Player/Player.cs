@@ -13,6 +13,7 @@ public class Player : MonoBehaviour {
 	int count;
 	public int coins = 0;
 	public Text coinText;
+	public bool door = false;
 
 	//Awake() variables
 	public static Player Instance;
