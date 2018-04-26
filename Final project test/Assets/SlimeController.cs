@@ -87,13 +87,13 @@ public class SlimeController : MonoBehaviour {
 
 	//If collide with player, make them take damage
 	void OnTriggerEnter2D(Collider2D other) {
-		if (other.gameObject.CompareTag ("Ground")) {
+		if (other.gameObject.CompareTag ("outofbounds")) {
 			location = true;
 		}
 	}
 
 	void OnTriggerExit2D(Collider2D other) {
-		if (other.gameObject.CompareTag ("Ground")) {
+		if (other.gameObject.CompareTag ("outofbounds")) {
 			location = false;
 		}
 	}
