@@ -22,7 +22,7 @@ public class PortalController : MonoBehaviour {
 		
 	void Update () {
 		
-		if (Input.GetKeyDown(KeyCode.R) || Input.GetKey(KeyCode.W)) {
+		if (Input.GetKey(KeyCode.W)) {
 			if (near) {
 				killCount.resetKills ();
 				SceneManager.LoadScene (nextScene, LoadSceneMode.Single);

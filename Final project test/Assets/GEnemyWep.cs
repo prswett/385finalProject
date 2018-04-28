@@ -49,6 +49,17 @@ public class GEnemyWep : MonoBehaviour {
 			jumpTime = Time.time;
 		}
 
+		if (enemyX < playerX) {
+			if (facing) {
+				flip ();
+			}
+		}
+		if (enemyX > playerX) {
+			if (!facing) {
+				flip ();
+			}
+		}
+
 		collideMove ();
 
 		if (!(enemyX - playerX > MinDist) && !(enemyX - playerX < -MinDist)) {
@@ -66,14 +77,8 @@ public class GEnemyWep : MonoBehaviour {
 		if (jumping) {
 			transform.position += Vector3.up * jumpSpeed * .07f;
 			if (enemyX - playerX < -MinDist) {
-				if (facing) {
-					flip ();
-				}
 				transform.position += Vector3.right * speed * Time.deltaTime;
 			} else {
-				if (!facing) {
-					flip ();
-				}
 				transform.position += Vector3.left * speed * Time.deltaTime;
 			}
 		} else {
@@ -81,15 +86,9 @@ public class GEnemyWep : MonoBehaviour {
 				anim.SetBool ("slash", false);
 				anim.SetBool ("walking", true);
 				if (enemyX - playerX < -MinDist) {
-					if (facing) {
-						flip ();
-					}
 					transform.position += Vector3.right * speed * Time.deltaTime;
 				}
 				if (enemyX - playerX > MinDist) {
-					if (!facing) {
-						flip ();
-					}
 					transform.position += Vector3.left * speed * Time.deltaTime;
 				}
 			}
@@ -106,13 +105,13 @@ public class GEnemyWep : MonoBehaviour {
 			Player health = other.GetComponent<Player> ();
 			health.takeDamage (1);
 		}
-		if (other.gameObject.CompareTag ("Ground")) {
+		if (other.gameObject.CompareTag ("outofbounds")) {
 			location = true;
 		}
 	}
 
 	void OnTriggerExit2D(Collider2D other) {
-		if (other.gameObject.CompareTag ("Ground")) {
+		if (other.gameObject.CompareTag ("outofbounds")) {
 			location = false;
 		}
 	}

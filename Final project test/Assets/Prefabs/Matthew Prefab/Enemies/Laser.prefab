@@ -79,7 +79,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.01, y: 0.35}
+    oldSize: {x: 0.01, y: 0.2}
     newSize: {x: 0.1, y: 0.1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -104,6 +104,9 @@ MonoBehaviour:
   enemyUnit: 1
   groundCollide: 1
   target: {fileID: 0}
+  anim: {fileID: 0}
+  explosion: 0
+  portal: 1
 --- !u!212 &212141588435109670
 SpriteRenderer:
   m_ObjectHideFlags: 1

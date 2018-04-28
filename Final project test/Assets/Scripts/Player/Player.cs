@@ -142,6 +142,10 @@ public class Player : MonoBehaviour {
 				transform.position += Vector3.right * speed * Time.deltaTime;
 			}
 
+			if (Input.GetKeyDown (KeyCode.R)) {
+				SceneManager.LoadScene (1);
+			}
+
 			if (Input.GetKeyUp (KeyCode.D)) {
 				anim.SetBool ("walking", false);
 			}
@@ -231,7 +235,7 @@ public class Player : MonoBehaviour {
 	}
 
 	public void takeDamage(float damage) {
-		if (Time.time - lastHit >= 0.5) {
+		if (Time.time - lastHit >= 0.2) {
 			localPlayer.health -= damage;
 			lastHit = Time.time;
 		}

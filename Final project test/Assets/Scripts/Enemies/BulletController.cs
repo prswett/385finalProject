@@ -16,6 +16,8 @@ public class BulletController : MonoBehaviour {
 	public bool enemyUnit = true;
 	public bool groundCollide = true;
 	public Transform target;
+	public Animator anim;
+	public bool explosion = false;
 	public bool portal = false;
 
 	void Awake() {
@@ -61,13 +63,36 @@ public class BulletController : MonoBehaviour {
 		if (other.gameObject.CompareTag ("Player")) {
 			Player health = other.GetComponent<Player> ();
 			health.takeDamage (1);
-			Destroy (gameObject);
-		}
-		if (other.gameObject.CompareTag ("Platform")) {
-			if (groundCollide) {
+			if (!explosion) {
 				Destroy (gameObject);
+			} else {
+				Invoke ("remove", 1f);
+				anim.SetBool ("hit", true);
+				setVelocity (0, 0);
 			}
 		}
+		if (other.gameObject.CompareTag ("Ground")) {
+			if (groundCollide) {
+				if (!explosion) {
+					Destroy (gameObject);
+				} else {
+					Invoke ("remove", 1f);
+					anim.SetBool ("hit", true);
+					setVelocity (0, 0);
+				}
+			}
+		}
+	}
+
+	void OnTriggerStay2D(Collider2D other) {
+		if (other.gameObject.CompareTag ("Player")) {
+			Player health = other.GetComponent<Player> ();
+			health.takeDamage (1);
+		}
+	}
+
+	void remove() {
+		Destroy (gameObject);
 	}
 
 	//Used 

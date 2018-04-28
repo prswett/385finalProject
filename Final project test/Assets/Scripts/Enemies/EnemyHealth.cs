@@ -12,10 +12,12 @@ public class EnemyHealth : MonoBehaviour {
 	public EnemyController parentController;
 	public float fill;
 
-	Image healthbar;
+	public Image healthbar;
 	//Drops
 	public GameObject coin;
 
+	void Awake() {
+	}
 
 	void Start () {
 		//If maxhealth hasnt been initialized, default value of 100
@@ -28,7 +30,7 @@ public class EnemyHealth : MonoBehaviour {
 		parentController = parent.GetComponent<EnemyController> ();
 
 		currentHealth = maxHealth;
-		healthbar = GameObject.Find ("EnemyHealth").GetComponent<Image> ();
+
 	}
 
 	void Update () {

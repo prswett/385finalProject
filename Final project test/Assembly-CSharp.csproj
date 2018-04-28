@@ -53,9 +53,13 @@
   <ItemGroup>
      <Compile Include="Assets\coinController.cs" />
      <Compile Include="Assets\DoorController.cs" />
+     <Compile Include="Assets\FEnemyR.cs" />
+     <Compile Include="Assets\GasController.cs" />
+     <Compile Include="Assets\GEnemyR.cs" />
      <Compile Include="Assets\GEnemyWep.cs" />
      <Compile Include="Assets\JumpThrough.cs" />
      <Compile Include="Assets\MainMenuController.cs" />
+     <Compile Include="Assets\MushroomController.cs" />
      <Compile Include="Assets\PlayerSpawnLocation.cs" />
      <Compile Include="Assets\PortalCanvas.cs" />
      <Compile Include="Assets\SavePoint.cs" />
