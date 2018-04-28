@@ -41,6 +41,7 @@ GameObject:
   - component: {fileID: 61314430998357510}
   - component: {fileID: 50108688136542646}
   - component: {fileID: 114585037939710460}
+  - component: {fileID: 114121946273871160}
   m_Layer: 10
   m_Name: BlueMushroom
   m_TagString: Enemy
@@ -236,6 +237,17 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114121946273871160
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1348966307472472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 305896e7754fc0e4e8052f678d3ea027, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114151330729649564
 MonoBehaviour:
   m_ObjectHideFlags: 1

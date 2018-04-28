@@ -21,7 +21,7 @@ public class BossHealth : MonoBehaviour {
 	public float lastHit;
 	//Update variables
 	public float currentHealth = 100;
-	private float hitAnimationDuration = .6f;
+	private float hitAnimationDuration = .55f;
 
 	//Gets all variables and components before initialization
 	void Awake() {

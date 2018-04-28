@@ -41,7 +41,9 @@ public class StageController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		int mon = monstersNeeded - killCount.killCount;
-		monsters.text = mon.ToString ();
+		if (mon >= 0) {
+			monsters.text = mon.ToString ();
+		}
 		if (portalSpawned) {
 			portalSpawn.text = "Portal has been spawned";
 		}
