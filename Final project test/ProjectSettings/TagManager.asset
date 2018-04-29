@@ -16,6 +16,7 @@ TagManager:
   - Door
   - Item
   - outofbounds
+  - Inventory
   layers:
   - Default
   - TransparentFX

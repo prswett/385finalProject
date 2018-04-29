@@ -5,13 +5,18 @@ using UnityEngine;
 public class CanvasController : MonoBehaviour {
 	GameObject[] pause;
 	public bool paused = false;
+	GameObject[] inventory;
+	public bool inventoryOpen = false;
 
 	void Start () {
 		pause = GameObject.FindGameObjectsWithTag ("Pause");
 		foreach (GameObject pauseObject in pause) {
 			pauseObject.SetActive (false);
 		}
-		
+		inventory = GameObject.FindGameObjectsWithTag ("Inventory");
+		foreach (GameObject inventoryObject in inventory) {
+			inventoryObject.SetActive (false);
+		}
 	}
 
 	void Update () {
@@ -20,6 +25,14 @@ public class CanvasController : MonoBehaviour {
 				UnPause ();
 			} else {
 				Pause ();
+			}
+		}
+
+		if (Input.GetKeyDown (KeyCode.I)) {
+			if (!inventoryOpen) {
+				showInventory ();
+			} else {
+				hideInventory();
 			}
 		}
 	}
@@ -37,6 +50,22 @@ public class CanvasController : MonoBehaviour {
 		Time.timeScale = 1;
 		foreach (GameObject pauseObject in pause) {
 			pauseObject.SetActive (false);
+		}
+	}
+
+	public void showInventory() {
+		inventoryOpen = true;
+		Time.timeScale = 0;
+		foreach (GameObject inventoryObject in inventory) {
+			inventoryObject.SetActive (true);
+		}
+	}
+
+	public void hideInventory() {
+		inventoryOpen = false;
+		Time.timeScale = 1;
+		foreach (GameObject inventoryObject in inventory) {
+			inventoryObject.SetActive (false);
 		}
 	}
 

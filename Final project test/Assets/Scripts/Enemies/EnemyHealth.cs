@@ -57,6 +57,9 @@ public class EnemyHealth : MonoBehaviour {
 			if (currentHealth <= 0) {
 				Player killCount = target.GetComponent<Player> ();
 				killCount.killCount++;
+				if (killCount.exp < 200) {
+					killCount.localPlayer.exp += 5;
+				}
 			}
 			lastHit = Time.time;
 		//}

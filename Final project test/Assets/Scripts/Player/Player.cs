@@ -20,6 +20,7 @@ public class Player : MonoBehaviour {
 	public PlayerStatistics localPlayer = new PlayerStatistics();
 	Image healthbar;
 	Image manabar;
+	Image expbar;
 	Transform spawn;
 
 	//Start() variables
@@ -38,7 +39,6 @@ public class Player : MonoBehaviour {
 	int wepState = 1;
 	int spriteState = 1;
 	bool created = true;
-	public float health;
 	bool jumpDown = false;
 
 	//Taking damage variables
@@ -47,6 +47,9 @@ public class Player : MonoBehaviour {
 	//KillCount
 	public int killCount;
 	public bool killedBoss = false;
+
+	//Exp
+	public int exp = 0;
 
     // For Climbing
     public bool onLadder = false;
@@ -67,6 +70,7 @@ public class Player : MonoBehaviour {
 
 		healthbar = GameObject.Find ("Health").GetComponent<Image> ();
 		manabar = GameObject.Find ("Mana").GetComponent<Image> ();
+		expbar = GameObject.Find ("Exp").GetComponent<Image> ();
 		resources = GetComponent<PlayerResources> ();
 		count = resources.count;
 	}
@@ -76,6 +80,7 @@ public class Player : MonoBehaviour {
 
 		healthbar = GameObject.Find ("Health").GetComponent<Image> ();
 		manabar = GameObject.Find ("Mana").GetComponent<Image> ();
+		expbar = GameObject.Find ("Exp").GetComponent<Image> ();
 		resources = GetComponent<PlayerResources> ();
 		count = resources.count;
 
@@ -93,7 +98,6 @@ public class Player : MonoBehaviour {
 	//
 	void Update () {
 		coinText.text = coins.ToString ();
-		health = localPlayer.health;
 		if (created == true) {
 			for (int i = 1; i < count; i++) {
 				resources.setActiveFalse (i);
@@ -103,6 +107,7 @@ public class Player : MonoBehaviour {
 		}
 		healthbar.fillAmount = localPlayer.health / localPlayer.maxHealth;
 		manabar.fillAmount = localPlayer.mana / localPlayer.maxMana;
+		expbar.fillAmount = localPlayer.exp / localPlayer.maxExp;
 		if (localPlayer.health <= 0) {
 			if (facing) {
 				flip ();

@@ -13,6 +13,9 @@ public class PlayerStatistics {
     // maximum mana points
     public float maxMana = 5;
 
+	public float exp = 0;
+	public float maxExp = 200;
+
     // speed of the character
     //public static float speed;
     // rate at which the character jumps
@@ -46,6 +49,6 @@ public class PlayerStatistics {
     public static float avo;
 
     // exp as a total of all the exp the character has EVER gained
-    public static float exp;
+    //public static float exp;
 
 }

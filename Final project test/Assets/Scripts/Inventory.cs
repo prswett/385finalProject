@@ -31,10 +31,9 @@ public class Inventory : MonoBehaviour
             slots[i].transform.SetParent(slotPanel.transform);
 
         }
-		AddItem (1);
-		AddItem (1);
+        AddItem(0);
     }
-
+		
     public void AddItem(int id)
     {
         Item itemToAdd = database.FetchItemByID(id);

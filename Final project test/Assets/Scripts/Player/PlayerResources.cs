@@ -28,7 +28,8 @@ public class PlayerResources : MonoBehaviour {
 		swordSprites[0] = Resources.Load<Sprite>("DrawingsV2/Weapons/1HSword");
 		swordSprites[1] = Resources.Load<Sprite>("DrawingsV2/Weapons/1HSwordRed");
 		swordSprites[2] = Resources.Load<Sprite>("DrawingsV2/Weapons/1HSwordGreen");
-		swordSprites[3] = Resources.Load<Sprite>("DrawingsV2/Weapons/1HSwordBlue");
+		swordSprites [3] = Resources.Load<Sprite> ("DrawingsV2/Weapons/1HSwordBlue");
+
 	}
 
 	public void swordChange(int input) {

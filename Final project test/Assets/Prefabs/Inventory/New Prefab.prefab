@@ -19,8 +19,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4831791028112200}
-  - component: {fileID: 114086803058046644}
-  - component: {fileID: 114389369421080718}
+  - component: {fileID: 114533025739145922}
+  - component: {fileID: 114221042581360802}
   m_Layer: 0
   m_Name: New Prefab
   m_TagString: Untagged
@@ -41,7 +41,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114086803058046644
+--- !u!114 &114221042581360802
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -49,10 +49,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1151832370388682}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebbfc49b20823ff40ba3e33152c04f4d, type: 3}
+  m_Script: {fileID: 11500000, guid: 9b332e99c23d5934b9833d32d622b5ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114389369421080718
+--- !u!114 &114533025739145922
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -60,11 +60,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1151832370388682}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2c99b2d966095a4a94076f0ec591958, type: 3}
+  m_Script: {fileID: 11500000, guid: 62592679beee3d4469be95c5696111a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventorySlot: {fileID: 1138782008862426, guid: 1c3870299eb0f614c898bf2a8df7ed45,
+  inventorySlot: {fileID: 1138782008862426, guid: cca3850d85a9cf341acfee631f6d6626,
     type: 2}
-  inventoryItem: {fileID: 1750088932876938, guid: 0bfaf6ee6c294e941b55123f50786e75,
+  inventoryItem: {fileID: 1750088932876938, guid: 1f624fcd9112e0f4ab52e6c867e05aac,
     type: 2}
   slots: []
