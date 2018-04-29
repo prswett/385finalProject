@@ -5,6 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: Assets/Stages/Matthew Version/BaseStage.unity
+    guid: 9be4a410246cb45489fded7ab91e4fcc
+  - enabled: 0
+    path: Assets/Stages/Matthew Version/PisanStage.unity
+    guid: 05e9bf62462ae5a449e1b1dfbfb0b617
   - enabled: 1
     path: Assets/Stages/Matthew Version/MainMenu.unity
     guid: a246480477529cb42bd90daca59e3789
@@ -15,9 +21,6 @@ EditorBuildSettings:
     path: Assets/Stages/Matthew Version/ShopStage.unity
     guid: 80d197b31c6502745ae0c0405e0939e6
   - enabled: 1
-    path: Assets/Stages/Matthew Version/BoarBossStage.unity
-    guid: 5d42fcd7e43731048ba621f412bca80b
-  - enabled: 1
     path: Assets/Stages/Ben Version/map1.unity
     guid: 5c234b5a1c5487546be6834b49e9da9e
   - enabled: 1
@@ -27,8 +30,8 @@ EditorBuildSettings:
     path: Assets/Stages/Ben Version/map3.unity
     guid: 8d02b2c6c1fcd2c4dac2e91fe0483c4e
   - enabled: 1
-    path: Assets/Stages/Matthew Version/BaseStage.unity
-    guid: 9be4a410246cb45489fded7ab91e4fcc
+    path: Assets/Stages/Ben Version/map4.unity
+    guid: c0969ecfa4a32134abefb0a3f1bb4bc2
   - enabled: 1
-    path: Assets/Stages/Matthew Version/PisanStage.unity
-    guid: 05e9bf62462ae5a449e1b1dfbfb0b617
+    path: Assets/Stages/Matthew Version/BoarBossStage.unity
+    guid: 5d42fcd7e43731048ba621f412bca80b
