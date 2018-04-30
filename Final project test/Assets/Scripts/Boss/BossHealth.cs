@@ -44,7 +44,7 @@ public class BossHealth : MonoBehaviour {
 			Player temp = GameObject.FindWithTag ("Player").transform.GetComponent<Player>();
 			temp.killedBoss = true;
 			if (temp.exp < 200) {
-				temp.localPlayer.exp += 10;
+				PlayerStatistics.exp += 10;
 			}
 		}
 

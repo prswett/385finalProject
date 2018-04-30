@@ -17,7 +17,6 @@ public class Player : MonoBehaviour {
 
 	//Awake() variables
 	public static Player Instance;
-	public PlayerStatistics localPlayer = new PlayerStatistics();
 	Image healthbar;
 	Image manabar;
 	Image expbar;
@@ -51,14 +50,14 @@ public class Player : MonoBehaviour {
 	//Exp
 	public int exp = 0;
 
-    // For Climbing
-    public bool onLadder = false;
-    public float climbSpeed;
-    private float climbVelocity;
-    private float gravityStore;
+	// For Climbing
+	public bool onLadder = false;
+	public float climbSpeed;
+	private float climbVelocity;
+	private float gravityStore;
 
-    //
-    void Awake() {
+	//
+	void Awake() {
 		//loadPlayer ();
 
 		if (Instance == null) {
@@ -92,8 +91,8 @@ public class Player : MonoBehaviour {
 		rb2d = this.GetComponent<Rigidbody2D> ();
 		anim = GetComponent<Animator> ();
 		killCount = 0;
-        gravityStore = rb2d.gravityScale;
-    }
+		gravityStore = rb2d.gravityScale;
+	}
 
 	//
 	void Update () {
@@ -105,194 +104,148 @@ public class Player : MonoBehaviour {
 
 			created = false;
 		}
-		healthbar.fillAmount = localPlayer.health / localPlayer.maxHealth;
-		manabar.fillAmount = localPlayer.mana / localPlayer.maxMana;
-		expbar.fillAmount = localPlayer.exp / localPlayer.maxExp;
-		if (localPlayer.health <= 0) {
-			if (facing) {
-				flip ();
-			}
-			anim.SetBool ("walking", false);
-			anim.SetBool ("attacking", false);
-			anim.SetBool ("dead", true);
-		} else {
-			anim.SetInteger ("weapon state", wepState);
-			anim.SetInteger ("weapon equipped", resources.wepEQPD);
-			onGround = Physics2D.OverlapCircle (groundCheck.position, groundCheckRadius, groundLayer);
-			//For moving left
-			if (Input.GetKey (KeyCode.A)) {
-				if (attacking) {
-					anim.SetBool ("walking", true);
-				} else {
-					anim.SetBool ("walking", true);
-				}
-				if (!facing) {
-					flip ();
-				}
-				transform.position += Vector3.left * speed * Time.deltaTime;
-			}
-			if (Input.GetKeyUp (KeyCode.A)) {
-				anim.SetBool ("walking", false);
-			}
-
-			if (Input.GetKey (KeyCode.D)) {
-				if (attacking) {
-					anim.SetBool ("walking", true);
-				} else {
-					anim.SetBool ("walking", true);
-				}
+		healthbar.fillAmount = PlayerStatistics.health / PlayerStatistics.maxHealth;
+		manabar.fillAmount = PlayerStatistics.mana / PlayerStatistics.maxMana;
+		expbar.fillAmount = PlayerStatistics.exp / PlayerStatistics.nextLevel;
+		if (PlayerStatistics.health <= 0) {
 				if (facing) {
 					flip ();
 				}
-				transform.position += Vector3.right * speed * Time.deltaTime;
-			}
-
-			if (Input.GetKeyDown (KeyCode.R)) {
-				SceneManager.LoadScene (1);
-			}
-
-			if (Input.GetKeyUp (KeyCode.D)) {
 				anim.SetBool ("walking", false);
+				anim.SetBool ("attacking", false);
+				anim.SetBool ("dead", true);
+			} else {
+				anim.SetInteger ("weapon state", wepState);
+				anim.SetInteger ("weapon equipped", resources.wepEQPD);
+				onGround = Physics2D.OverlapCircle (groundCheck.position, groundCheckRadius, groundLayer);
+				//For moving left
+				if (Input.GetKey (KeyCode.A)) {
+					if (attacking) {
+						anim.SetBool ("walking", true);
+					} else {
+						anim.SetBool ("walking", true);
+					}
+					if (!facing) {
+						flip ();
+					}
+					transform.position += Vector3.left * speed * Time.deltaTime;
+				}
+				if (Input.GetKeyUp (KeyCode.A)) {
+					anim.SetBool ("walking", false);
+				}
+
+				if (Input.GetKey (KeyCode.D)) {
+					if (attacking) {
+						anim.SetBool ("walking", true);
+					} else {
+						anim.SetBool ("walking", true);
+					}
+					if (facing) {
+						flip ();
+					}
+					transform.position += Vector3.right * speed * Time.deltaTime;
+				}
+
+				if (Input.GetKeyDown (KeyCode.R)) {
+					SceneManager.LoadScene (1);
+				}
+
+				if (Input.GetKeyUp (KeyCode.D)) {
+					anim.SetBool ("walking", false);
+				}
+
+				if (Input.GetKey (KeyCode.J) || Input.GetMouseButton(0)) {
+					anim.SetBool ("attacking", true);
+					attacking = true;
+				}
+				if (Input.GetKeyUp(KeyCode.J) || Input.GetMouseButtonUp(0)) {
+					anim.SetBool("attacking", false);
+					attacking = false;
+				}
+
+				if (Input.GetKeyDown (KeyCode.Space) && onGround && !jumpDown) {
+					rb2d.velocity = new Vector2 (rb2d.velocity.x, jumpSpeed);
+				}
+
+				if (Input.GetKeyDown (KeyCode.Z)) {
+					changeWeapon();
+				}
+				if (Input.GetKeyDown (KeyCode.Q)) {
+					changeSprite ();
+				}
+
+				if (Input.GetKeyDown (KeyCode.S)) {
+					anim.SetBool ("crouching", true);
+				}
+				if (Input.GetKeyUp (KeyCode.S)) {
+					anim.SetBool ("crouching", false);
+				}
 			}
 
-			if (Input.GetKey (KeyCode.J) || Input.GetMouseButton(0)) {
-				anim.SetBool ("attacking", true);
-				attacking = true;
-			}
-			if (Input.GetKeyUp(KeyCode.J) || Input.GetMouseButtonUp(0)) {
-				anim.SetBool("attacking", false);
-				attacking = false;
+			if (onLadder)
+			{
+				rb2d.gravityScale = 0f;
+
+				climbVelocity = climbSpeed * Input.GetAxisRaw("Vertical");
+
+				rb2d.velocity = new Vector2(rb2d.velocity.x, climbVelocity);
 			}
 
-			if (Input.GetKeyDown (KeyCode.Space) && onGround && !jumpDown) {
-				rb2d.velocity = new Vector2 (rb2d.velocity.x, jumpSpeed);
-			}
-
-			if (Input.GetKeyDown (KeyCode.Z)) {
-				changeWeapon();
-			}
-			if (Input.GetKeyDown (KeyCode.Q)) {
-				changeSprite ();
-			}
-
-			if (Input.GetKeyDown (KeyCode.S)) {
-				anim.SetBool ("crouching", true);
-			}
-			if (Input.GetKeyUp (KeyCode.S)) {
-				anim.SetBool ("crouching", false);
+			if (!onLadder)
+			{
+				rb2d.gravityScale = gravityStore;
 			}
 		}
 
-        if (onLadder)
-        {
-            rb2d.gravityScale = 0f;
+		public void jumpingDown() {
+			jumpDown = !jumpDown;
+		}
 
-            climbVelocity = climbSpeed * Input.GetAxisRaw("Vertical");
+		void changeSprite() {
+			resources.swordChange (spriteState);
+			if (spriteState == 3) {
+				spriteState = 0;
+			} else {
+				spriteState++;
+			}
+		}
 
-            rb2d.velocity = new Vector2(rb2d.velocity.x, climbVelocity);
-        }
+		void changeWeapon() {
+			if (resources.wepEQPD < 4) {
+				resources.setActiveFalse (resources.wepEQPD - 1);
+				resources.wepEQPD++;
+				anim.SetInteger ("weapon equipped", resources.wepEQPD);
+				resources.setActiveTrue (resources.wepEQPD- 1);
+			} else {
+				resources.setActiveFalse (resources.wepEQPD - 1);
+				resources.wepEQPD = 1;
+				anim.SetInteger ("weapon equipped", resources.wepEQPD);
+				resources.setActiveTrue (resources.wepEQPD - 1);
+			}
+			if (resources.wepEQPD == 1 || resources.wepEQPD == 3 || resources.wepEQPD == 4) {
+				wepState = 1;
+				anim.SetInteger ("weapon state", wepState);
+			} else {
+				wepState = 2;
+				anim.SetInteger ("weapon state", wepState);
+			}
+		}
 
-        if (!onLadder)
-        {
-            rb2d.gravityScale = gravityStore;
-        }
-	}
+		void flip() {
+			facing = !facing;
+			Vector3 charscale = transform.localScale;
+			charscale.x *= -1;
+			transform.localScale = charscale;
+		}
 
-	public void jumpingDown() {
-		jumpDown = !jumpDown;
-	}
+		public void takeDamage(float damage) {
+			if (Time.time - lastHit >= 0.2) {
+				//PlayerStats.health -= damage;
+			}
+		}
 
-	void changeSprite() {
-		resources.swordChange (spriteState);
-		if (spriteState == 3) {
-			spriteState = 0;
-		} else {
-			spriteState++;
+		public void resetKills() {
+				killCount = 0;
+				killedBoss = false;
 		}
 	}
-
-	void changeWeapon() {
-		if (resources.wepEQPD < 4) {
-			resources.setActiveFalse (resources.wepEQPD - 1);
-			resources.wepEQPD++;
-			anim.SetInteger ("weapon equipped", resources.wepEQPD);
-			resources.setActiveTrue (resources.wepEQPD- 1);
-		} else {
-			resources.setActiveFalse (resources.wepEQPD - 1);
-			resources.wepEQPD = 1;
-			anim.SetInteger ("weapon equipped", resources.wepEQPD);
-			resources.setActiveTrue (resources.wepEQPD - 1);
-		}
-		if (resources.wepEQPD == 1 || resources.wepEQPD == 3 || resources.wepEQPD == 4) {
-			wepState = 1;
-			anim.SetInteger ("weapon state", wepState);
-		} else {
-			wepState = 2;
-			anim.SetInteger ("weapon state", wepState);
-		}
-	}
-
-	void flip() {
-		facing = !facing;
-		Vector3 charscale = transform.localScale;
-		charscale.x *= -1;
-		transform.localScale = charscale;
-	}
-
-	public void takeDamage(float damage) {
-		if (Time.time - lastHit >= 0.2) {
-			localPlayer.health -= damage;
-			lastHit = Time.time;
-		}
-	}
-
-	public void resetKills() {
-		killCount = 0;
-		killedBoss = false;
-	}
-
-	// saving data into a file (.sb)
-	public void Save()
-	{
-		// binary formatter is helper to convert this data to the text
-		BinaryFormatter bf = new BinaryFormatter();
-		// creating new file
-		FileStream file = File.Create(Application.persistentDataPath + "/pss.sb");
-		// serializable data here
-		PlayerData data = new PlayerData();
-		data.curHP = localPlayer.health;
-		data.maxHP = localPlayer.maxHealth;
-		data.curMP = localPlayer.mana;
-		data.maxMP = localPlayer.maxMana;
-		//moves to file
-		bf.Serialize(file, data);
-		file.Close();
-	}
-
-	// loading data if exists
-	public void Load()
-	{
-		if(File.Exists(Application.persistentDataPath + "/pss.sb"))
-		{
-			BinaryFormatter bf = new BinaryFormatter();
-			FileStream file = File.Open(Application.persistentDataPath + "/pss.sb", FileMode.Open);
-			PlayerData data = (PlayerData) bf.Deserialize(file);
-			file.Close();
-			localPlayer.health = data.curHP;
-			localPlayer.maxHealth = data.maxHP;
-			localPlayer.mana = data.curMP;
-			localPlayer.maxMana = data.maxMP;
-		}
-	}
-}
-
-// need this class for serializable to convert to file
-[Serializable]
-class PlayerData
-{
-	public float curHP;
-	public float maxHP;
-	public float curMP;
-	public float maxMP;
-}
-

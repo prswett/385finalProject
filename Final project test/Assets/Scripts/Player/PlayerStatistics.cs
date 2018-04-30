@@ -3,52 +3,85 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class PlayerStatistics {
-    // current hp
-    public float health = 100;
-    // maximum health points
-    public float maxHealth = 100;
-    // current mp
-    public float mana = 5;
-    // maximum mana points
-    public float maxMana = 5;
+public class PlayerStatistics  : MonoBehaviour
+{
+	// current hp
+	public static float health = 100;
+	// maximum health points
+	public static float maxHealth = 100;
+	// current mp
+	public static float mana = 5;
+	// maximum mana points
+	public static float maxMana = 5;
 
-	public float exp = 0;
-	public float maxExp = 200;
+	// speed of the character
+	//public static float speed;
+	// rate at which the character jumps
+	//public static float jumpSpeed;
 
-    // speed of the character
-    //public static float speed;
-    // rate at which the character jumps
-    //public static float jumpSpeed;
+	// ability stats
+	// stats manipulate abilities and modifiers on weapons, skills, etc.
 
-    // ability stats
-    // stats manipulate abilities and modifiers on weapons, skills, etc.
+	// stats should be able to be rese t and reallocated through
+	// earned in game currency (maybe increasing price up to fixed amount)
+	public static float atk = 0;
+	public static float matk = 0;
+	// strength modifies all physical weapon attack damage, increases health
+	// crit damage
+	public static float str = 1;
+	// dexterity modifies accuracy and avoidability
+	public static float dex = 1;
+	// increases magic attack, mana points
+	public static float itl = 1;
+	// increases chances of drops, exp gained
+	// crit chance
+	public static float luk = 1;
 
-    // stats should be able to be rese t and reallocated through
-    // earned in game currency (maybe increasing price up to fixed amount)
+	// all weapons do some base damage when physically swung based on this stat
+	public static float wa = 1;
+	// skills and effects will scale off of magic attack
+	public static float ma = 1;
 
-    // strength modifies all physical weapon attack damage, increases health
-    // crit damage
-    public static float str;
-    // dexterity modifies accuracy and avoidability
-    public static float dex;
-    // increases magic attack, mana points
-    public static float itl;
-    // increases chances of drops, exp gained
-    // crit chance
-    public static float luk;
+	// physical defense reduces damage taken by %
+	public static float def = 1;
 
-    // all weapons do some base damage when physically swung based on this stat
-    public static float atk;
-    // skills and effects will scale off of magic attack
-    public static float matk;
 
-    // the rate at which you hit the enemy (enemy avoid - your accuracy)
-    public static float acc;
-    // the rate at which enemies hit you (your avoid - enemy accuracy)
-    public static float avo;
+	// the rate at which you hit the enemy (enemy avoid - your accuracy)
+	public static float acc;
+	// the rate at which enemies hit you (your avoid - enemy accuracy)
+	public static float avo;
 
-    // exp as a total of all the exp the character has EVER gained
-    //public static float exp;
+	// crit chance
+	public static float cc = 5;
 
+
+	// exp as a total of all the exp the character has EVER gained
+	public static float exp = 0;
+
+	// ignore enemy defense% (enemy defense * (ied / 100))
+	public static float ied = 30;
+
+	// multiplier for exp
+	public static float expMod = 1;
+
+	// exp needed to reach next level
+	public static float nextLevel = 10;
+
+	private void Update()
+	{
+		// atk scales off WA + 0.5*Str + 0.25Dex
+		atk = (float)((str * 0.5) + (dex * 0.25) + wa);
+		// matk scales off MA + 0.8*Itl
+		matk = ma + (float)(itl * 0.8);
+		// crit chance scales off of 0.5 * luk
+		cc = 5 + (float)(luk * 0.5);
+		// more luk more crit
+		expMod = 1 + (float)(luk * 0.01);
+		// enemy avo - acc is hit chance
+		acc = 90 + (float)(dex * 0.5);
+		// chance to get hit
+		avo = 10 + (float)((dex * 0.2) + (luk * 0.5));
+		// ied
+		ied = 30 + (float)(luk * 0.05);
+	}
 }

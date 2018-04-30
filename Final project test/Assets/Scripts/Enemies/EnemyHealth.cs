@@ -45,23 +45,23 @@ public class EnemyHealth : MonoBehaviour {
 	//Records previous time since last hit and doesn't inflict damage
 	//unless time since last hit is past the point
 	public void takeDamage(int damage) {
-		
+
 
 		//if (Time.time - lastHit >= 0.1 || lastHit == 0) {
-			if (transform.position.x - target.position.x < 0) {
-				parentController.moveLeft ();
-			} else {
-				parentController.moveRight ();
+		if (transform.position.x - target.position.x < 0) {
+			parentController.moveLeft ();
+		} else {
+			parentController.moveRight ();
+		}
+		currentHealth -= damage;
+		if (currentHealth <= 0) {
+			Player killCount = target.GetComponent<Player> ();
+			killCount.killCount++;
+			if (killCount.exp < 200) {
+				PlayerStatistics.exp += 5;
 			}
-			currentHealth -= damage;
-			if (currentHealth <= 0) {
-				Player killCount = target.GetComponent<Player> ();
-				killCount.killCount++;
-				if (killCount.exp < 200) {
-					killCount.localPlayer.exp += 5;
-				}
-			}
-			lastHit = Time.time;
+		}
+		lastHit = Time.time;
 		//}
 	}
 
@@ -83,5 +83,5 @@ public class EnemyHealth : MonoBehaviour {
 			health.takeDamage (1);
 		}
 	}
-		
+
 }
