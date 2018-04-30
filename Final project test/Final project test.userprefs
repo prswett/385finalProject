@@ -1,14 +1,20 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Player\Player.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Stage\StageController.cs">
     <Files>
-      <File FileName="Assets\Scripts\Player\CanvasController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Inventory.cs" Line="6" Column="39" />
-      <File FileName="Assets\LoadPlayer.cs" Line="12" Column="3" />
-      <File FileName="Assets\Scripts\Player\Player.cs" Line="110" Column="23" />
-      <File FileName="Assets\Scripts\Boss\BossHealth.cs" Line="69" Column="2" />
-      <File FileName="Assets\Scripts\Player\PlayerStatistics.cs" Line="7" Column="1" />
-      <File FileName="Assets\SavePoint.cs" Line="61" Column="30" />
+      <File FileName="Assets\PisanShopKeeper.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Stage\PortalController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Inventory.cs" Line="31" Column="1" />
+      <File FileName="Assets\Scripts\ItemDatabase.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Tooltip.cs" Line="15" Column="25" />
+      <File FileName="Assets\Scripts\ItemData.cs" Line="40" Column="2" />
+      <File FileName="Assets\Scripts\Player\Player.cs" Line="244" Column="5" />
+      <File FileName="Assets\Scripts\Player\PlayerStatistics.cs" Line="68" Column="37" />
+      <File FileName="Assets\LoadPlayer.cs" Line="20" Column="4" />
+      <File FileName="Assets\Scripts\Enemies\EnemyHealth.cs" Line="70" Column="3" />
+      <File FileName="Assets\BoarController.cs" Line="78" Column="33" />
+      <File FileName="Assets\Scripts\Enemies\BulletController.cs" Line="88" Column="33" />
+      <File FileName="Assets\Scripts\Stage\StageController.cs" Line="51" Column="33" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

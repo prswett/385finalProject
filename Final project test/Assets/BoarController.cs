@@ -7,7 +7,7 @@ public class BoarController : MonoBehaviour {
 	//Awake variables
 	public Transform target;
 	public Animator anim;
-	private Transform myself;
+	//private Transform myself;
 
 	public float right;
 	public float left;
@@ -19,7 +19,7 @@ public class BoarController : MonoBehaviour {
 	void Awake() {
 		target = GameObject.FindWithTag ("Player").transform;
 		anim = GetComponent<Animator> ();
-		myself = GameObject.FindWithTag("Boss").transform;
+		//myself = GameObject.FindWithTag("Boss").transform;
 	}
 		
 	// Use this for initialization
@@ -69,15 +69,13 @@ public class BoarController : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject.CompareTag ("Player")) {
-			Player health = other.GetComponent<Player> ();
-			health.takeDamage (5);
+			PlayerStatistics.health -= 5;
 		}
 	}
 
 	void OnTriggerStay2D(Collider2D other) {
 		if (other.gameObject.CompareTag ("Player")) {
-			Player health = other.GetComponent<Player> ();
-			health.takeDamage (5);
+			PlayerStatistics.health -= 5;
 		}
 	}
 

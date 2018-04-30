@@ -69,19 +69,4 @@ public class EnemyHealth : MonoBehaviour {
 		Instantiate (coin, transform.position, Quaternion.identity);
 	}
 
-
-	void OnTriggerEnter2D(Collider2D other) {
-		if (other.gameObject.CompareTag ("Player")) {
-			Player health = other.GetComponent<Player> ();
-			health.takeDamage (1);
-		}
-	}
-
-	void OnTriggerStay2D(Collider2D other) {
-		if (other.gameObject.CompareTag ("Player")) {
-			Player health = other.GetComponent<Player> ();
-			health.takeDamage (1);
-		}
-	}
-
 }

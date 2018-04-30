@@ -39,7 +39,9 @@ GameObject:
   - component: {fileID: 224464718556756360}
   - component: {fileID: 222900572969141108}
   - component: {fileID: 114659405492876760}
-  - component: {fileID: 114542822369170638}
+  - component: {fileID: 114435666211184018}
+  - component: {fileID: 225641868851565060}
+  - component: {fileID: 114615966800953962}
   m_Layer: 5
   m_Name: Item
   m_TagString: Untagged
@@ -47,6 +49,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &114435666211184018
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1750088932876938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1679637790, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreLayout: 1
+  m_MinWidth: -1
+  m_MinHeight: -1
+  m_PreferredWidth: -1
+  m_PreferredHeight: -1
+  m_FlexibleWidth: -1
+  m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!114 &114473060493064654
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -94,7 +115,7 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
---- !u!114 &114542822369170638
+--- !u!114 &114615966800953962
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -102,10 +123,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1750088932876938}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02e1bfc346a27bb4782c4a56f9000d98, type: 3}
+  m_Script: {fileID: 11500000, guid: 97da04894f4199c408cc5a88a8448334, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   amount: 0
+  slot: 0
 --- !u!114 &114659405492876760
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -182,3 +204,14 @@ RectTransform:
   m_AnchoredPosition: {x: 0.0000076293945, y: 0.000017166138}
   m_SizeDelta: {x: 25.57, y: 19.37}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!225 &225641868851565060
+CanvasGroup:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1750088932876938}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0

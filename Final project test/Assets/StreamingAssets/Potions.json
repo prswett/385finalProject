@@ -1,0 +1,12 @@
+[
+  {
+    "id": 0,
+    "title": "Health Potion S",
+    "value": 1,
+	"healing": 10,
+    "description": "A helmet made of iron",
+    "stackable": true,
+    "rarity": 0,
+    "slug":  "HealthPotion"
+  }
+]

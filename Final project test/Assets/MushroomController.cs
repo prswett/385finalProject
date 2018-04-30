@@ -107,8 +107,7 @@ public class MushroomController : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject.CompareTag ("Player")) {
-			Player health = other.GetComponent<Player> ();
-			health.takeDamage (1);
+			PlayerStatistics.health -= 1;
 		}
 		if (other.gameObject.CompareTag ("outofbounds")) {
 			location = true;

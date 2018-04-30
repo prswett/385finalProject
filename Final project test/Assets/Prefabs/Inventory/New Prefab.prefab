@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4831791028112200}
   - component: {fileID: 114533025739145922}
   - component: {fileID: 114221042581360802}
+  - component: {fileID: 114739518589589180}
   m_Layer: 0
   m_Name: New Prefab
   m_TagString: Untagged
@@ -63,8 +64,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62592679beee3d4469be95c5696111a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventorySlot: {fileID: 1138782008862426, guid: cca3850d85a9cf341acfee631f6d6626,
+  inventorySlot: {fileID: 1138782008862426, guid: 877b7205c63898645bfb1f5dfd256575,
     type: 2}
-  inventoryItem: {fileID: 1750088932876938, guid: 1f624fcd9112e0f4ab52e6c867e05aac,
+  inventoryItem: {fileID: 1750088932876938, guid: bf332bd7c36cb144ab1d7b2e077e6e11,
     type: 2}
   slots: []
+--- !u!114 &114739518589589180
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1151832370388682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ae38034633758446814c949d45ea204, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
