@@ -53,7 +53,30 @@ public class PlayerResources : MonoBehaviour {
 	public void swordChange(int input) {
 		sword.GetComponent<SpriteRenderer> ().sprite = swordSprites [input];
 	}
-	
+
+	public void changeHelmet(string path) {
+		helmet.GetComponent<SpriteRenderer> ().sprite = Resources.Load<Sprite> (path);
+	}
+
+	public void changeArmor(string path) {
+		armor.GetComponent<SpriteRenderer> ().sprite = Resources.Load<Sprite> (path);
+	}
+
+	public void changeSword(string path) {
+		sword.GetComponent<SpriteRenderer> ().sprite = Resources.Load<Sprite> (path);
+	}
+
+	public void changeSpear(string path) {
+		spear.GetComponent<SpriteRenderer> ().sprite = Resources.Load<Sprite> (path);
+	}
+
+	public void changeAxe(string path) {
+		axe.GetComponent<SpriteRenderer> ().sprite = Resources.Load<Sprite> (path);
+	}
+
+	public void changeDagger(string path) {
+		dagger.GetComponent<SpriteRenderer> ().sprite = Resources.Load<Sprite> (path);
+	}
 	// Update is called once per frame
 	void Update () {
 		

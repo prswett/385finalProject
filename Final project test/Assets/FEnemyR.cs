@@ -99,7 +99,7 @@ public class FEnemyR : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject.CompareTag ("Player")) {
-			PlayerStatistics.health -= 1;
+			PlayerStatistics.takeDamage (1);
 		}
 		if (other.gameObject.CompareTag ("outofbounds")) {
 			location = true;

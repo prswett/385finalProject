@@ -61,7 +61,7 @@ public class BulletController : MonoBehaviour {
 	//On collision with ground dissapear
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject.CompareTag ("Player")) {
-			PlayerStatistics.health -= 1;
+			PlayerStatistics.takeDamage(1);
 			if (!explosion) {
 				Destroy (gameObject);
 			} else {
@@ -85,7 +85,7 @@ public class BulletController : MonoBehaviour {
 
 	void OnTriggerStay2D(Collider2D other) {
 		if (other.gameObject.CompareTag ("Player")) {
-			PlayerStatistics.health -= 1;
+			PlayerStatistics.takeDamage(1);
 		}
 	}
 

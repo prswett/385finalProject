@@ -55,7 +55,7 @@ using UnityEngine;
 		data.ma = PlayerStatistics.wa;
 		data.str = PlayerStatistics.str;
 		data.dex = PlayerStatistics.dex;
-		data.itl = PlayerStatistics.itl;
+		data.wis = PlayerStatistics.wis;
 		data.luk = PlayerStatistics.luk;
 
 		data.exp = PlayerStatistics.exp;
@@ -81,7 +81,7 @@ using UnityEngine;
 		public float ma;
 		public float str;
 		public float dex;
-		public float itl;
+		public float wis;
 		public float luk;
 
 		public float exp;

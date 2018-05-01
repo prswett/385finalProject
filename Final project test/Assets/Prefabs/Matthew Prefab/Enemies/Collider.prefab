@@ -1,21 +1,10 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &100100000
-Prefab:
-  m_ObjectHideFlags: 1
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications: []
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1015866392741884}
-  m_IsPrefabParent: 1
 --- !u!1 &1015866392741884
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
+  m_PrefabInternal: {fileID: 0}
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4192359599164744}
@@ -33,7 +22,7 @@ GameObject:
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
+  m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1015866392741884}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -47,7 +36,7 @@ Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
+  m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1015866392741884}
   m_BodyType: 1
   m_Simulated: 1
@@ -66,7 +55,7 @@ Rigidbody2D:
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
+  m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1015866392741884}
   m_Enabled: 1
   m_Density: 1
@@ -91,7 +80,7 @@ BoxCollider2D:
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
+  m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1015866392741884}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -108,3 +97,4 @@ MonoBehaviour:
   healthbar: {fileID: 114677515688251698, guid: 6fc81fa586b5b3c46890b323af9f6657,
     type: 2}
   coin: {fileID: 1737900479247222, guid: 8ab8938d30b21824fac94b23fea85cb1, type: 2}
+  item: {fileID: 1570605163964070, guid: 05273a26aef75114596c8d69be1934a6, type: 2}

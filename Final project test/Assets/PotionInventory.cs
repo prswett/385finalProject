@@ -16,10 +16,8 @@ public class PotionInventory : MonoBehaviour {
 	public List<Potion> potions = new List<Potion> ();
 	public List<GameObject> slots = new List<GameObject>();
 
-	void Start()
-	{
+	void Awake() {
 		database = GetComponent<PotionDatabase>();
-
 		slotAmount = 5;
 		inventoryPanel = GameObject.Find("Inventory Panel");
 		//slotPanel = inventoryPanel.transform.Find("Slot Panel").gameObject;
@@ -34,6 +32,11 @@ public class PotionInventory : MonoBehaviour {
 
 		}
 	}
+
+	void Start()
+	{
+		
+	}
 	
 	// Update is called once per frame
 	void Update () {
@@ -43,6 +46,9 @@ public class PotionInventory : MonoBehaviour {
 	public void AddItem(int id)
 	{
 		Potion itemToAdd = database.FetchItemByID(id);
+		if (itemToAdd == null) {
+			Debug.Log ("nll");
+		}
 
 		if (itemToAdd.Stackable && CheckIfItemIsInInventory(itemToAdd))
 		{
@@ -70,7 +76,7 @@ public class PotionInventory : MonoBehaviour {
 					itemObj.GetComponent<PotionData> ().potion = itemToAdd;
 					itemObj.GetComponent<PotionData> ().slot = i;
 					itemObj.transform.SetParent(slots[i].transform);
-					itemObj.transform.position = Vector2.zero;
+					itemObj.transform.position = slots [i].transform.position;
 					itemObj.GetComponent<Image>().sprite = itemToAdd.Sprite;
 					itemObj.name = itemToAdd.Title;
 					PotionData data = slots[i].transform.GetChild(0).GetComponent<PotionData>();

@@ -1,3 +1,10 @@
+Version 3.0 
+Enemies no longer get stuck in walls
+Added fireball spell
+Added equips
+Added monster drops
+many many bug fixes
+
 Version 2.1 (Bug fixes version)
 Enemies can now pass through each other and player
 Fixed tileset movement exploits

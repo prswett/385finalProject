@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using System;
 
-public class PotionData : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerDownHandler, IPointerEnterHandler, IPointerExitHandler {
+public class PotionData : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerDownHandler, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler {
 	public Potion potion;
 	public int amount;
 	public int slot;
@@ -21,6 +21,29 @@ public class PotionData : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 	// Update is called once per frame
 	void Update () {
 		
+	}
+
+	public void OnPointerClick(PointerEventData eventData) {
+		if (eventData.button == PointerEventData.InputButton.Right) {
+			if (potion.type == "Health") {
+				int healing = potion.healing;
+				if (PlayerStatistics.health <= PlayerStatistics.maxHealth - healing) {
+					PlayerStatistics.health += healing;
+				} else {
+					PlayerStatistics.health = PlayerStatistics.maxHealth;
+				}
+				inv.RemoveItem (potion.ID);
+			}
+			if (potion.type == "Mana") {
+				int healing = potion.healing;
+				if (PlayerStatistics.mana <= PlayerStatistics.maxMana - healing) {
+					PlayerStatistics.mana += healing;
+				} else {
+					PlayerStatistics.mana = PlayerStatistics.maxMana;
+				}
+				inv.RemoveItem (potion.ID);
+			}
+		}
 	}
 
 	public void OnBeginDrag(PointerEventData eventData)

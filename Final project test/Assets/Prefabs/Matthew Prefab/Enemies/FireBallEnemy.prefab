@@ -109,7 +109,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1806709411387380}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.14897126, y: -0.26202545, z: 0.03173828}
+  m_LocalPosition: {x: -3.236763, y: -0.5548651, z: 0.03173828}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4565513069995430}
@@ -143,8 +143,8 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_AngularDrag: 0
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -363,6 +363,7 @@ MonoBehaviour:
   fill: 0
   healthbar: {fileID: 114366080559823928}
   coin: {fileID: 1737900479247222, guid: 8ab8938d30b21824fac94b23fea85cb1, type: 2}
+  item: {fileID: 1570605163964070, guid: 05273a26aef75114596c8d69be1934a6, type: 2}
 --- !u!212 &212332136261449312
 SpriteRenderer:
   m_ObjectHideFlags: 1

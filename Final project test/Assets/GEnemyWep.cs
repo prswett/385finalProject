@@ -105,7 +105,7 @@ public class GEnemyWep : MonoBehaviour {
 			location = true;
 		}
 		if (other.gameObject.CompareTag ("Player")) {
-			PlayerStatistics.health -= 1;
+			PlayerStatistics.takeDamage(1);
 		}
 	}
 

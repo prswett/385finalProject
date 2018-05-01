@@ -59,6 +59,7 @@
      <Compile Include="Assets\GasController.cs" />
      <Compile Include="Assets\GEnemyR.cs" />
      <Compile Include="Assets\GEnemyWep.cs" />
+     <Compile Include="Assets\ItemController.cs" />
      <Compile Include="Assets\JumpThrough.cs" />
      <Compile Include="Assets\LoadPlayer.cs" />
      <Compile Include="Assets\MainMenuController.cs" />
@@ -100,6 +101,7 @@
      <Compile Include="Assets\Scripts\Stage\PortalController.cs" />
      <Compile Include="Assets\Scripts\Stage\StageController.cs" />
      <Compile Include="Assets\Scripts\Tooltip.cs" />
+     <Compile Include="Assets\ShopController.cs" />
      <Compile Include="Assets\ShopStage.cs" />
      <Compile Include="Assets\SlimeController.cs" />
      <Compile Include="Assets\StageChanger.cs" />

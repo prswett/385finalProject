@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class DoorController : MonoBehaviour {
 	public int stageNumber;
 	bool near = false;
-
+	public bool shop;
 	public TextMesh control;
 
 	// Use this for initialization
@@ -17,6 +17,10 @@ public class DoorController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKey(KeyCode.W)) {
+			if (shop) {
+				ShopController temp = GameObject.Find ("PisanShopKeeper").GetComponent<ShopController> ();
+				temp.stopShop ();
+			}
 			if (near) {
 				SceneManager.LoadScene (stageNumber, LoadSceneMode.Single);
 				Transform target = GameObject.FindWithTag ("Player").transform;

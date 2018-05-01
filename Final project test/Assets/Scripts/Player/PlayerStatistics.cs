@@ -5,10 +5,11 @@ using System;
 
 public class PlayerStatistics  : MonoBehaviour
 {
+	public static float lastHit = 0;
 	// current hp
-	public static float health = 100;
+	public static float health = 2000;
 	// maximum health points
-	public static float maxHealth = 100;
+	public static float maxHealth = 2000;
 	// current mp
 	public static float mana = 5;
 	// maximum mana points
@@ -32,7 +33,7 @@ public class PlayerStatistics  : MonoBehaviour
 	// dexterity modifies accuracy and avoidability
 	public static float dex = 1;
 	// increases magic attack, mana points
-	public static float itl = 1;
+	public static float wis = 1;
 	// increases chances of drops, exp gained
 	// crit chance
 	public static float luk = 1;
@@ -70,6 +71,13 @@ public class PlayerStatistics  : MonoBehaviour
 	// everyone starts with 5 stat points
 	public static float statPoints = 5;
 
+	public static void takeDamage(float damage) {
+		if (Time.time - lastHit >= 0.5) {
+			health -= damage;
+			lastHit = Time.time;
+		}
+	}
+
 	// put in stat points
 	public void aStr()
 	{
@@ -94,7 +102,7 @@ public class PlayerStatistics  : MonoBehaviour
 		if (statPoints >= 1)
 		{
 			statPoints -= 1;
-			itl += 1;
+			wis += 1;
 		}
 	}
 
@@ -113,8 +121,8 @@ public class PlayerStatistics  : MonoBehaviour
 	{
 		// atk scales off WA + 0.5*Str + 0.25Dex
 		atk = (float)((str * 0.5) + (dex * 0.25) + wa);
-		// matk scales off MA + 0.8*Itl
-		matk = ma + (float)(itl * 0.8);
+		// matk scales off MA + 0.8*wis
+		matk = ma + (float)(wis * 0.8);
 		// crit chance scales off of 0.5 * luk
 		cc = 5 + (float)(luk * 0.5);
 		// more luk more crit

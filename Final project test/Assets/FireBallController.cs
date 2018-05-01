@@ -25,7 +25,12 @@ public class FireBallController : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject.CompareTag ("Enemy")) {
 			EnemyHealth health = other.GetComponent<EnemyHealth> ();
-			health.takeDamage (5);
+			health.takeDamage (50);
+			Destroy (gameObject);
+		}
+		if (other.gameObject.CompareTag ("Boss")) {
+			BossHealth health = other.GetComponent<BossHealth> ();
+			health.takeDamage (50);
 			Destroy (gameObject);
 		}
 		if (other.gameObject.CompareTag ("Ground")) {

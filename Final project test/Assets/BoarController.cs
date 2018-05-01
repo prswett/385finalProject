@@ -69,13 +69,13 @@ public class BoarController : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject.CompareTag ("Player")) {
-			PlayerStatistics.health -= 5;
+			PlayerStatistics.takeDamage(5);
 		}
 	}
 
 	void OnTriggerStay2D(Collider2D other) {
 		if (other.gameObject.CompareTag ("Player")) {
-			PlayerStatistics.health -= 5;
+			PlayerStatistics.takeDamage(5);
 		}
 	}
 

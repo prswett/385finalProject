@@ -1,30 +1,110 @@
 [
   {
     "id": 0,
-    "title": "Steel Gloves",
+    "title": "Iron Helmet",
+	"type": "Helmet",
     "value": 6,
     "stats": {
-      "power": 1,
-      "defence": 4,
-      "vitality": 2
+      "str": 1,
+	  "dex": 1,
+	  "wis": 1,
+	  "luk": 1,
+	  "atk": 1,
+	  "def": 1
     },
-    "description": "Gloves made from steel",
+    "description": "A helmet made of iron",
     "stackable": false,
-    "rarity": 2,
-    "slug":  "steel_gloves"
+    "rarity": 0,
+    "slug":  "IronHelmet"
   },
   {
     "id": 1,
-    "title": "The Great Stick",
-    "value": 534,
+    "title": "Iron Armor",
+	"type": "Armor",
+    "value": 6,
     "stats": {
-      "power": 56,
-      "defence": 2,
-      "vitality": 54
+      "str": 1,
+	  "dex": 1,
+	  "wis": 1,
+	  "luk": 1,
+	  "atk": 1,
+	  "def": 5
     },
-    "description": "It's a stick that's pretty great.",
-    "stackable": true,
-    "rarity": 6,
-    "slug": "the_great_stick"
+    "description": "Armor made of iron",
+    "stackable": false,
+    "rarity": 0,
+    "slug":  "IronArmor"
+  },
+  {
+    "id": 2,
+    "title": "Iron Sword",
+	"type": "Sword",
+    "value": 6,
+    "stats": {
+      "str": 5,
+	  "dex": 1,
+	  "wis": 1,
+	  "luk": 1,
+	  "atk": 10,
+	  "def": 1
+    },
+    "description": "A Sword made of iron",
+    "stackable": false,
+    "rarity": 0,
+    "slug":  "IronSword"
+  },
+  {
+    "id": 3,
+    "title": "Iron Spear",
+	"type": "Spear",
+    "value": 6,
+    "stats": {
+      "str": 5,
+	  "dex": 1,
+	  "wis": 1,
+	  "luk": 1,
+	  "atk": 10,
+	  "def": 1
+    },
+    "description": "A Spear made of iron",
+    "stackable": false,
+    "rarity": 0,
+    "slug":  "IronSpear"
+  },
+  {
+    "id": 4,
+    "title": "Iron Axe",
+	"type": "Axe",
+    "value": 6,
+    "stats": {
+      "str": 5,
+	  "dex": 1,
+	  "wis": 1,
+	  "luk": 1,
+	  "atk": 10,
+	  "def": 1
+    },
+    "description": "An Axe made of iron",
+    "stackable": false,
+    "rarity": 0,
+    "slug":  "IronAxe"
+  },
+  {
+    "id": 5,
+    "title": "Iron Dagger",
+	"type": "Dagger",
+    "value": 6,
+    "stats": {
+      "str": 5,
+	  "dex": 1,
+	  "wis": 1,
+	  "luk": 1,
+	  "atk": 10,
+	  "def": 1
+    },
+    "description": "A Dagger made of iron",
+    "stackable": false,
+    "rarity": 0,
+    "slug":  "IronDagger"
   }
 ]

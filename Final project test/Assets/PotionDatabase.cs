@@ -8,9 +8,13 @@ public class PotionDatabase : MonoBehaviour {
 	private List<Potion> database = new List<Potion> ();
 	private JsonData potionData;
 	// Use this for initialization
-	void Start () {
+
+	void Awake() {
 		potionData = JsonMapper.ToObject (File.ReadAllText (Application.dataPath + "/StreamingAssets/Potions.json"));
 		ConstructPotionDatabase ();
+	}
+	void Start () {
+		
 	}
 
 	public Potion FetchItemByID(int id)
@@ -24,7 +28,7 @@ public class PotionDatabase : MonoBehaviour {
 	void ConstructPotionDatabase()
 	{
 		for (int i = 0; i < potionData.Count; i++) {
-			database.Add (new Potion ((int)potionData [i] ["id"], potionData [i] ["title"].ToString (), (int)potionData [i] ["value"], 
+			database.Add (new Potion ((int)potionData [i] ["id"], potionData [i] ["title"].ToString (), potionData [i] ["type"].ToString (), (int)potionData [i] ["value"], 
 				(int)potionData [i] ["healing"], potionData [i] ["description"].ToString (), (bool)potionData [i] ["stackable"],
 				(int)potionData [i] ["rarity"], potionData [i] ["slug"].ToString ()));
 		}
@@ -40,6 +44,7 @@ public class Potion
 {
 	public int ID { get; set; }
 	public string Title { get; set; }
+	public string type { get; set; }
 	public int Value { get; set; }
 	public int healing { get; set; }
 	public string Description { get; set; }
@@ -48,9 +53,10 @@ public class Potion
 	public string Slug { get; set; }
 	public Sprite Sprite { get; set; }
 
-	public Potion(int id, string title, int value, int healing, string description, bool stackable, int rarity, string slug) {
+	public Potion(int id, string title, string type, int value, int healing, string description, bool stackable, int rarity, string slug) {
 		this.ID = id;
 		this.Title = title;
+		this.type = type;
 		this.Value = value;
 		this.healing = healing;
 		this.Description = description;

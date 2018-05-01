@@ -156,7 +156,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1447697052579072}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.23802036, y: -0.0785675, z: 0.03173828}
+  m_LocalPosition: {x: -2.882729, y: -0.8413173, z: 0.03173828}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4050180155180958}
@@ -361,7 +361,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daee876380ad5e64892611c527d8d856, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 1000
+  maxHealth: 3000
   currentHealth: 0
   target: {fileID: 0}
   lastHit: 0
@@ -370,6 +370,7 @@ MonoBehaviour:
   fill: 0
   healthbar: {fileID: 114736206794870486}
   coin: {fileID: 1737900479247222, guid: 8ab8938d30b21824fac94b23fea85cb1, type: 2}
+  item: {fileID: 1570605163964070, guid: 05273a26aef75114596c8d69be1934a6, type: 2}
 --- !u!114 &114549819289578426
 MonoBehaviour:
   m_ObjectHideFlags: 1

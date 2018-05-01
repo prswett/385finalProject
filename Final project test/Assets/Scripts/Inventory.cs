@@ -17,29 +17,36 @@ public class Inventory : MonoBehaviour
     public List<Item> items = new List<Item>();
     public List<GameObject> slots = new List<GameObject>();
 
-    void Start()
-    {
-        database = GetComponent<ItemDatabase>();
+	void Awake() {
+		database = GetComponent<ItemDatabase>();
 
-        slotAmount = 10;
-        inventoryPanel = GameObject.Find("Inventory Panel");
-       // slotPanel = inventoryPanel.transform.Find("Slot Panel").gameObject;
+		slotAmount = 10;
+		inventoryPanel = GameObject.Find("Inventory Panel");
+		// slotPanel = inventoryPanel.transform.Find("Slot Panel").gameObject;
 
-        for (int i = 0; i < slotAmount; i++)
-        {
-            items.Add(new Item());
-            slots.Add(Instantiate(inventorySlot));
+		for (int i = 0; i < slotAmount; i++)
+		{
+			items.Add(new Item());
+			slots.Add(Instantiate(inventorySlot));
 
 			slots[i].GetComponent<Slot> ().id = i;
-            slots[i].transform.SetParent(slotPanel.transform);
+			slots[i].transform.SetParent(slotPanel.transform);
 
-        }
+		}
+	}
+
+    void Start()
+    {
+        
     }
 		
     public void AddItem(int id)
     {
+		
         Item itemToAdd = database.FetchItemByID(id);
-
+		if (itemToAdd == null) {
+			Debug.Log ("nll");
+		}
         if (itemToAdd.Stackable && CheckIfItemIsInInventory(itemToAdd))
         {
             for(int i = 0; i < items.Count; i++)
@@ -66,7 +73,7 @@ public class Inventory : MonoBehaviour
 					itemObj.GetComponent<ItemData> ().item = itemToAdd;
 					itemObj.GetComponent<ItemData> ().slot = i;
                     itemObj.transform.SetParent(slots[i].transform);
-					itemObj.transform.position = Vector2.zero;
+					itemObj.transform.position = slots [i].transform.position;
                     itemObj.GetComponent<Image>().sprite = itemToAdd.Sprite;
                     itemObj.name = itemToAdd.Title;
                     ItemData data = slots[i].transform.GetChild(0).GetComponent<ItemData>();

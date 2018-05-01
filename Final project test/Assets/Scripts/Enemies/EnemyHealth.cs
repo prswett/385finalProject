@@ -15,6 +15,7 @@ public class EnemyHealth : MonoBehaviour {
 	public Image healthbar;
 	//Drops
 	public GameObject coin;
+	public GameObject item;
 
 	void Awake() {
 	}
@@ -37,6 +38,7 @@ public class EnemyHealth : MonoBehaviour {
 		healthbar.fillAmount = currentHealth / maxHealth;
 		if (currentHealth <= 0) {
 			dropCoin ();
+			dropItem ();
 			parentController.destroy();
 		}
 	}
@@ -67,6 +69,10 @@ public class EnemyHealth : MonoBehaviour {
 
 	public void dropCoin() {
 		Instantiate (coin, transform.position, Quaternion.identity);
+	}
+
+	public void dropItem() {
+		Instantiate (item, transform.position, Quaternion.identity);
 	}
 
 }

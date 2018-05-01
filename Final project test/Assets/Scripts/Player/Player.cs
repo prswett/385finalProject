@@ -39,6 +39,9 @@ public class Player : MonoBehaviour {
 	int spriteState = 1;
 	bool created = true;
 	bool jumpDown = false;
+	float manaTime = 0;
+	float manaRegen = 5;
+	CanvasController playerCanvas;
 
 	//Taking damage variables
 	public float lastHit;
@@ -56,6 +59,10 @@ public class Player : MonoBehaviour {
 	private float climbVelocity;
 	private float gravityStore;
 
+	//Inventory
+	public Inventory inv;
+	public PotionInventory pInv;
+
 	//
 	void Awake() {
 		//loadPlayer ();
@@ -72,11 +79,13 @@ public class Player : MonoBehaviour {
 		expbar = GameObject.Find ("Exp").GetComponent<Image> ();
 		resources = GetComponent<PlayerResources> ();
 		count = resources.weaponCount;
+		playerCanvas = GameObject.Find ("Base Player UI").GetComponent<CanvasController> ();
+		inv = GameObject.Find ("Inventory").GetComponent<Inventory> ();
+		pInv = GameObject.Find ("InventoryP").GetComponent<PotionInventory> ();
 	}
 
 	public void getSpawnLocation(float x, float y) {
-		transform.position = new Vector2(x, y);
-
+		transform.position = new Vector3(x, y, 0);
 		healthbar = GameObject.Find ("Health").GetComponent<Image> ();
 		manabar = GameObject.Find ("Mana").GetComponent<Image> ();
 		expbar = GameObject.Find ("Exp").GetComponent<Image> ();
@@ -84,8 +93,16 @@ public class Player : MonoBehaviour {
 		count = resources.weaponCount;
 
 		coinText.text = coins.ToString ();
+
 	}
 
+	public void addItem(int input) {
+		inv.AddItem (input);
+	}
+
+	public void addPotion(int input) {
+		pInv.AddItem (input);
+	}
 	//
 	void Start () {
 		rb2d = this.GetComponent<Rigidbody2D> ();
@@ -96,6 +113,12 @@ public class Player : MonoBehaviour {
 
 	//
 	void Update () {
+		if (Time.time - manaTime > manaRegen) {
+			if (PlayerStatistics.mana < PlayerStatistics.maxMana) {
+				PlayerStatistics.mana += 1;
+				manaTime = Time.time;
+			}
+		}
 		coinText.text = coins.ToString ();
 		if (created == true) {
 			for (int i = 1; i < count; i++) {
@@ -182,8 +205,8 @@ public class Player : MonoBehaviour {
 				if (Input.GetKeyUp (KeyCode.S)) {
 					anim.SetBool ("crouching", false);
 				}
-
-				if (Input.GetMouseButtonDown(1)) {
+				
+			if (Input.GetMouseButtonDown(1) && playerCanvas.inventoryOpen != true) {
 					if (PlayerStatistics.mana >= 1) {
 						PlayerStatistics.mana -= 1;
 						FireBall();
@@ -259,7 +282,7 @@ public class Player : MonoBehaviour {
 		}
 
 		public void takeDamage(float damage) {
-			if (Time.time - lastHit >= 0.2) {
+			if (Time.time - lastHit >= 0.5) {
 				//PlayerStats.health -= damage;
 			}
 		}

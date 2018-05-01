@@ -13,11 +13,11 @@ public class EnemyController : MonoBehaviour {
 	}
 
 	public void moveLeft() {
-		transform.position += Vector3.left * 0.05f;
+		transform.position += Vector3.left * 0.01f;
 	}
 
 	public void moveRight() {
-		transform.position += Vector3.right * 0.05f;
+		transform.position += Vector3.right * 0.01f;
 	}
 
 	public void destroy() {
