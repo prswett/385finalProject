@@ -26,6 +26,7 @@ public class FireBallController : MonoBehaviour {
 		if (other.gameObject.CompareTag ("Enemy")) {
 			EnemyHealth health = other.GetComponent<EnemyHealth> ();
 			health.takeDamage (5);
+			Destroy (gameObject);
 		}
 		if (other.gameObject.CompareTag ("Ground")) {
 			Destroy (gameObject);

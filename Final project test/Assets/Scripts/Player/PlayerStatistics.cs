@@ -67,6 +67,48 @@ public class PlayerStatistics  : MonoBehaviour
 	// exp needed to reach next level
 	public static float nextLevel = 10;
 
+	// everyone starts with 5 stat points
+	public static float statPoints = 5;
+
+	// put in stat points
+	public void aStr()
+	{
+		if (statPoints >= 1)
+		{
+			statPoints -= 1;
+			str += 1;
+		}
+	}
+
+	public void aDex()
+	{
+		if (statPoints >= 1)
+		{
+			statPoints -= 1;
+			dex += 1;
+		}
+	}
+
+	public void aInt()
+	{
+		if (statPoints >= 1)
+		{
+			statPoints -= 1;
+			itl += 1;
+		}
+	}
+
+	public void aLuk()
+	{
+		if (statPoints >= 1)
+		{
+			statPoints -= 1;
+			luk += 1;
+		}
+	}
+
+
+
 	private void Update()
 	{
 		// atk scales off WA + 0.5*Str + 0.25Dex
@@ -83,5 +125,16 @@ public class PlayerStatistics  : MonoBehaviour
 		avo = 10 + (float)((dex * 0.2) + (luk * 0.5));
 		// ied
 		ied = 30 + (float)(luk * 0.05);
+
+		// check if exp reached
+		if(exp >= nextLevel)
+		{
+			// next level reached
+			exp -= nextLevel;
+			// exp to next level += 20
+			nextLevel += 20;
+			// more stat points
+			statPoints += 3;
+		}
 	}
 }
