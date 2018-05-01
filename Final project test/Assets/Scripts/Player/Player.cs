@@ -71,7 +71,7 @@ public class Player : MonoBehaviour {
 		manabar = GameObject.Find ("Mana").GetComponent<Image> ();
 		expbar = GameObject.Find ("Exp").GetComponent<Image> ();
 		resources = GetComponent<PlayerResources> ();
-		count = resources.count;
+		count = resources.weaponCount;
 	}
 
 	public void getSpawnLocation(float x, float y) {
@@ -81,7 +81,7 @@ public class Player : MonoBehaviour {
 		manabar = GameObject.Find ("Mana").GetComponent<Image> ();
 		expbar = GameObject.Find ("Exp").GetComponent<Image> ();
 		resources = GetComponent<PlayerResources> ();
-		count = resources.count;
+		count = resources.weaponCount;
 
 		coinText.text = coins.ToString ();
 	}
@@ -111,6 +111,7 @@ public class Player : MonoBehaviour {
 				if (facing) {
 					flip ();
 				}
+				resources.setArmorOff ();
 				anim.SetBool ("walking", false);
 				anim.SetBool ("attacking", false);
 				anim.SetBool ("dead", true);
@@ -148,6 +149,7 @@ public class Player : MonoBehaviour {
 
 				if (Input.GetKeyDown (KeyCode.R)) {
 					SceneManager.LoadScene (1);
+					resources.setArmorOn ();
 				}
 
 				if (Input.GetKeyUp (KeyCode.D)) {
@@ -180,6 +182,13 @@ public class Player : MonoBehaviour {
 				if (Input.GetKeyUp (KeyCode.S)) {
 					anim.SetBool ("crouching", false);
 				}
+
+				if (Input.GetMouseButtonDown(1)) {
+					if (PlayerStatistics.mana >= 1) {
+						PlayerStatistics.mana -= 1;
+						FireBall();
+					}
+				}
 			}
 
 			if (onLadder)
@@ -195,6 +204,17 @@ public class Player : MonoBehaviour {
 			{
 				rb2d.gravityScale = gravityStore;
 			}
+		}
+
+		public void FireBall() {
+			Vector2 cursorL = Camera.main.ScreenToWorldPoint (Input.mousePosition);
+			float divider = Mathf.Sqrt (Mathf.Pow (cursorL.x - transform.position.x, 2) + Mathf.Pow (cursorL.y - transform.position.y, 2));
+			GameObject fire = resources.getSpell(0);
+			FireBallController shot = fire.GetComponent<FireBallController> ();
+			shot.setVelocity((cursorL.x - transform.position.x) / divider, (cursorL.y - transform.position.y) / divider);
+			Vector2 temp = Camera.main.WorldToScreenPoint (transform.position);
+			float angle = Mathf.Atan2 (transform.position.x - cursorL.x, cursorL.y -  transform.position.y) * Mathf.Rad2Deg;
+			Instantiate (fire, transform.position, Quaternion.Euler (new Vector3(0, 0, angle)));
 		}
 
 		public void jumpingDown() {

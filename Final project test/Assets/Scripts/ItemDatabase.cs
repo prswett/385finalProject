@@ -9,11 +9,11 @@ public class ItemDatabase : MonoBehaviour
     private List<Item> database = new List<Item>();
     private JsonData itemData;
 
+
     void Start()
     {
         itemData = JsonMapper.ToObject(File.ReadAllText(Application.dataPath + "/StreamingAssets/Items.json"));
         ConstructItemDatabase();
-
     }
 
     public Item FetchItemByID(int id)
@@ -34,6 +34,7 @@ public class ItemDatabase : MonoBehaviour
                 (bool)itemData[i]["stackable"], (int)itemData[i]["rarity"], itemData[i]["slug"].ToString()));
         }
     }
+
 }
 
 public class Item
@@ -76,3 +77,4 @@ public class Item
         this.ID = -1;
     }
 }
+	

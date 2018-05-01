@@ -4,9 +4,19 @@
     "title": "Health Potion S",
     "value": 1,
 	"healing": 10,
-    "description": "A helmet made of iron",
-    "stackable": true,
+    "description": "A small red potion for healing",
+    "stackable": false,
     "rarity": 0,
     "slug":  "HealthPotion"
+  },
+  {
+    "id": 1,
+    "title": "Mana Potion S",
+    "value": 1,
+	"healing": 10,
+    "description": "A small blue potion for mana",
+    "stackable": false,
+    "rarity": 0,
+    "slug":  "ManaPotion"
   }
 ]

@@ -8,7 +8,7 @@ public class Inventory : MonoBehaviour
 {
 
     GameObject inventoryPanel;
-    GameObject slotPanel;
+    public GameObject slotPanel;
     public GameObject inventorySlot;
     public GameObject inventoryItem;
     ItemDatabase database;
@@ -23,7 +23,7 @@ public class Inventory : MonoBehaviour
 
         slotAmount = 10;
         inventoryPanel = GameObject.Find("Inventory Panel");
-        slotPanel = inventoryPanel.transform.Find("Slot Panel").gameObject;
+       // slotPanel = inventoryPanel.transform.Find("Slot Panel").gameObject;
 
         for (int i = 0; i < slotAmount; i++)
         {
@@ -34,7 +34,6 @@ public class Inventory : MonoBehaviour
             slots[i].transform.SetParent(slotPanel.transform);
 
         }
-        AddItem(0);
     }
 		
     public void AddItem(int id)
@@ -67,7 +66,7 @@ public class Inventory : MonoBehaviour
 					itemObj.GetComponent<ItemData> ().item = itemToAdd;
 					itemObj.GetComponent<ItemData> ().slot = i;
                     itemObj.transform.SetParent(slots[i].transform);
-                    itemObj.transform.position = Vector2.zero;
+					itemObj.transform.position = Vector2.zero;
                     itemObj.GetComponent<Image>().sprite = itemToAdd.Sprite;
                     itemObj.name = itemToAdd.Title;
                     ItemData data = slots[i].transform.GetChild(0).GetComponent<ItemData>();
@@ -79,6 +78,37 @@ public class Inventory : MonoBehaviour
         }
 
     }
+
+	public void RemoveItem(int id) {
+		Item itemToRemove = database.FetchItemByID (id);
+		if (itemToRemove.Stackable && CheckIfItemIsInInventory (itemToRemove)) {
+			for (int j = 0; j < items.Count; j++) {
+				if (items [j].ID == id) {
+					ItemData data = slots [j].transform.GetChild (0).GetComponent<ItemData> ();
+					data.amount--;
+					data.transform.GetChild (0).GetComponent<Text> ().text = data.amount.ToString ();
+					if (data.amount == 0) {
+						Destroy (slots [j].transform.GetChild (0).gameObject);
+						items [j] = new Item ();
+						break;
+					}
+					if (data.amount == 1) {
+						slots [j].transform.GetChild (0).transform.GetChild (0).GetComponent<Text> ().text = "";
+						break;
+					}
+					break;
+				}
+			}
+		} else {
+			for (int i = 0; i < items.Count; i++) {
+				if (items [i].ID != -1 && items [i].ID == id) {
+					Destroy (slots [i].transform.GetChild (0).gameObject);
+					items [i] = new Item ();
+					break;
+				}
+			}
+		}
+	}
 
     bool CheckIfItemIsInInventory(Item item)
     {

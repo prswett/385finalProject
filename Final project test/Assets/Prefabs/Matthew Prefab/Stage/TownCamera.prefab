@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 20154033336990644}
   - component: {fileID: 124294451187861040}
   - component: {fileID: 81616045405118058}
-  - component: {fileID: 114119839615636078}
+  - component: {fileID: 114958866795126010}
   m_Layer: 0
   m_Name: TownCamera
   m_TagString: MainCamera
@@ -86,7 +86,7 @@ AudioListener:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1868452743818606}
   m_Enabled: 1
---- !u!114 &114119839615636078
+--- !u!114 &114958866795126010
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -94,7 +94,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1868452743818606}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8afee07f72ed3b4c95c8b8f6a118bc5, type: 3}
+  m_Script: {fileID: 11500000, guid: 0e6f584efff26634babdae6b45bd80c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!124 &124294451187861040

@@ -25,13 +25,13 @@ public class Slot : MonoBehaviour, IDropHandler {
         {
 
             Transform item = this.transform.GetChild(0);
-            item.GetComponent<ItemData>().slot = droppedItem.slot;
-            item.transform.SetParent(inv.slots[droppedItem.slot].transform);
-            item.transform.position = inv.slots[droppedItem.slot].transform.position;
+			item.GetComponent<ItemData> ().slot = droppedItem.slot;
+			item.transform.SetParent (inv.slots [droppedItem.slot].transform);
+			item.transform.position = inv.slots [droppedItem.slot].transform.position;
 
-            inv.items[droppedItem.slot] = item.GetComponent<ItemData>().item;
-            inv.items[id] = droppedItem.item;
-            droppedItem.slot = id;
+			inv.items [droppedItem.slot] = item.GetComponent<ItemData> ().item;
+			inv.items [id] = droppedItem.item;
+			droppedItem.slot = id;
             /*
             Transform item = this.transform.GetChild(0);
             item.GetComponent<ItemData>().slot = droppedItem.slot;

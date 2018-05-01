@@ -37,9 +37,7 @@ public class Tooltip : MonoBehaviour {
 
     public void ConstructDataString()
     {
-        Debug.Log(item.Description);
         data = "<color=#0473f0><b>" + item.Title + "</b></color>\n" + item.Description + "\nPower: " + item.str;
-        Debug.Log(data);
         tooltip.transform.GetChild(0).GetComponent<Text>().text = data;
     }
 }
