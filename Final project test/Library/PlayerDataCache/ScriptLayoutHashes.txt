@@ -27,6 +27,7 @@ df374c01140c2d578bf70cbd60073d1d UnityEngine.Timeline.dll:UnityEngine.Timeline.T
 ba3bd209617a51f21ebc145dc5acefe8 Assembly-CSharp.dll:.MainMenuController
 492db5ae4fd998f0212061c83ff0ee74 Assembly-CSharp.dll:.ShopStage
 0f8aa6742dc631342de56036bfe80623 Assembly-CSharp.dll:.GEnemyWep
+89b560a484ccfb2d88c90bf66884c180 Assembly-CSharp.dll:.ItemController
 de54ecca5322bb963622fbad030e4e61 Assembly-CSharp.dll:.FEnemyR
 a35dc9cca2faebc5f5f1aeb9e8e47bbe UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.UI.dll:UnityEngine.EventSystems.BaseInput
@@ -155,7 +156,7 @@ d64a7f935a1332310951c3185b31bd6b Assembly-CSharp.dll:.DoorController
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.EnemyController
 c65daa50e05fdf6e6b600b8a56dce8f2 Assembly-CSharp.dll:.BulletController
 ce09cb02e2f857c8aa562f2552261f90 Assembly-CSharp.dll:.WeaponController
-f5819a236c6e7c2679698fbf2d62aa58 Assembly-CSharp.dll:.Player
+e0a28b5aa590fc2a93727937a29de652 Assembly-CSharp.dll:.Player
 a743707ebde858a99dec7264cc1950e3 Assembly-CSharp.dll:.SlimeController
 ce09cb02e2f857c8aa562f2552261f90 Assembly-CSharp.dll:.AxeController
 78cc088c755ea201266db64835bc329c Assembly-CSharp.dll:.SavePoint
@@ -206,6 +207,5 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.LoadSceneOnClick
 d159e017e3beb76ceecf4bf5a7c0b175 Assembly-CSharp.dll:.PisanController
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.CameraController
-49069e264700767257cc5859e1a953f3 Assembly-CSharp.dll:.MushroomController
-89b560a484ccfb2d88c90bf66884c180 Assembly-CSharp.dll:.ItemController
 1281c4c39344be701d20ee756126da82 Assembly-CSharp.dll:.ShopController
+49069e264700767257cc5859e1a953f3 Assembly-CSharp.dll:.MushroomController

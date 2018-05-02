@@ -32,6 +32,7 @@ public class LoadPlayer : MonoBehaviour {
 
 			PlayerStatistics.exp = data.exp;
 			PlayerStatistics.nextLevel = data.nextLevel;
+			PlayerStatistics.coins = data.coins;
 		}
 		SceneManager.LoadScene(1);
 	}

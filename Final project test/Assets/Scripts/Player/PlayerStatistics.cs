@@ -5,11 +5,13 @@ using System;
 
 public class PlayerStatistics  : MonoBehaviour
 {
+	public static float coins = 50;
+
 	public static float lastHit = 0;
 	// current hp
-	public static float health = 2000;
+	public static float health = 100;
 	// maximum health points
-	public static float maxHealth = 2000;
+	public static float maxHealth = 100;
 	// current mp
 	public static float mana = 5;
 	// maximum mana points

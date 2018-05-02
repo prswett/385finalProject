@@ -16,8 +16,7 @@ public class coinController : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject.CompareTag ("Player")) {
-			Player coin = other.GetComponent<Player> ();
-			coin.coins++;
+			PlayerStatistics.coins++;
 			Destroy (gameObject);
 		}
 	}

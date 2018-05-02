@@ -59,6 +59,7 @@ using UnityEngine;
 		data.luk = PlayerStatistics.luk;
 
 		data.exp = PlayerStatistics.exp;
+		data.coins = PlayerStatistics.coins;
 
 			//moves to file
 			bf.Serialize(file, data);
@@ -86,4 +87,5 @@ using UnityEngine;
 
 		public float exp;
 		public float nextLevel;
+		public float coins;
 	}

@@ -11,7 +11,6 @@ public class Player : MonoBehaviour {
 	//Resources
 	private PlayerResources resources;
 	int count;
-	public int coins = 0;
 	public Text coinText;
 	public bool door = false;
 
@@ -92,7 +91,7 @@ public class Player : MonoBehaviour {
 		resources = GetComponent<PlayerResources> ();
 		count = resources.weaponCount;
 
-		coinText.text = coins.ToString ();
+		coinText.text = PlayerStatistics.coins.ToString ();
 
 	}
 
@@ -119,7 +118,7 @@ public class Player : MonoBehaviour {
 				manaTime = Time.time;
 			}
 		}
-		coinText.text = coins.ToString ();
+		coinText.text = PlayerStatistics.coins.ToString ();
 		if (created == true) {
 			for (int i = 1; i < count; i++) {
 				resources.setActiveFalse (i);
