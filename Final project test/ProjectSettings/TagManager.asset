@@ -18,6 +18,7 @@ TagManager:
   - outofbounds
   - Inventory
   - Shop
+  - Spike
   layers:
   - Default
   - TransparentFX
