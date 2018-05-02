@@ -108,15 +108,13 @@ public class PisanController : MonoBehaviour {
 	//Deal damage if player touches pisan or take damage if the sword hits
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject.CompareTag ("Player")) {
-			Player health = other.GetComponent<Player> ();
-			health.takeDamage (1);
+			PlayerStatistics.takeDamage (1);
 		}
 	}
 
 	void OnTriggerStay2D(Collider2D other) {
 		if (other.gameObject.CompareTag ("Player")) {
-			Player health = other.GetComponent<Player> ();
-			health.takeDamage (1);
+			PlayerStatistics.takeDamage (1);
 		}
 	}
 }

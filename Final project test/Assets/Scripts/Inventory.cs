@@ -33,6 +33,7 @@ public class Inventory : MonoBehaviour
 			slots[i].transform.SetParent(slotPanel.transform);
 
 		}
+		AddItem (0);
 	}
 
     void Start()
@@ -44,77 +45,48 @@ public class Inventory : MonoBehaviour
     {
 		
         Item itemToAdd = database.FetchItemByID(id);
-		if (itemToAdd == null) {
-			Debug.Log ("nll");
-		}
-        if (itemToAdd.Stackable && CheckIfItemIsInInventory(itemToAdd))
+
+        for (int i = 0; i < items.Count; i++)
         {
-            for(int i = 0; i < items.Count; i++)
+            if (items[i].ID == -1)
             {
-                if(items[i].ID == id)
-                {
-                    ItemData data = slots[i].transform.GetChild(0).GetComponent<ItemData>();
-                    data.amount++;
-                    data.transform.GetChild(0).GetComponent<Text>().text = data.amount.ToString();
-                    break;
-                }
-            }
+                items[i] = itemToAdd;
+                GameObject itemObj = Instantiate(inventoryItem);
 
-        }
-        else
-        {
-            for (int i = 0; i < items.Count; i++)
-            {
-                if (items[i].ID == -1)
-                {
-                    items[i] = itemToAdd;
-                    GameObject itemObj = Instantiate(inventoryItem);
+				itemObj.GetComponent<ItemData> ().item = itemToAdd;
+				itemObj.GetComponent<ItemData> ().slot = i;
+                itemObj.transform.SetParent(slots[i].transform);
+				itemObj.transform.position = slots [i].transform.position;
+                itemObj.GetComponent<Image>().sprite = itemToAdd.Sprite;
+                itemObj.name = itemToAdd.Title;
+                ItemData data = slots[i].transform.GetChild(0).GetComponent<ItemData>();
+                data.amount = 1;
+                break;
 
-					itemObj.GetComponent<ItemData> ().item = itemToAdd;
-					itemObj.GetComponent<ItemData> ().slot = i;
-                    itemObj.transform.SetParent(slots[i].transform);
-					itemObj.transform.position = slots [i].transform.position;
-                    itemObj.GetComponent<Image>().sprite = itemToAdd.Sprite;
-                    itemObj.name = itemToAdd.Title;
-                    ItemData data = slots[i].transform.GetChild(0).GetComponent<ItemData>();
-                    data.amount = 1;
-                    break;
-
-                }
-            }
-        }
+        	}
+    	}
 
     }
 
 	public void RemoveItem(int id) {
 		Item itemToRemove = database.FetchItemByID (id);
-		if (itemToRemove.Stackable && CheckIfItemIsInInventory (itemToRemove)) {
-			for (int j = 0; j < items.Count; j++) {
-				if (items [j].ID == id) {
-					ItemData data = slots [j].transform.GetChild (0).GetComponent<ItemData> ();
-					data.amount--;
-					data.transform.GetChild (0).GetComponent<Text> ().text = data.amount.ToString ();
-					if (data.amount == 0) {
-						Destroy (slots [j].transform.GetChild (0).gameObject);
-						items [j] = new Item ();
-						break;
-					}
-					if (data.amount == 1) {
-						slots [j].transform.GetChild (0).transform.GetChild (0).GetComponent<Text> ().text = "";
-						break;
-					}
-					break;
-				}
-			}
-		} else {
-			for (int i = 0; i < items.Count; i++) {
-				if (items [i].ID != -1 && items [i].ID == id) {
-					Destroy (slots [i].transform.GetChild (0).gameObject);
-					items [i] = new Item ();
-					break;
-				}
+
+		for (int i = 0; i < items.Count; i++) {
+			if (items [i].ID != -1 && items [i].ID == id) {
+				Destroy (slots [i].transform.GetChild (0).gameObject);
+				items [i] = new Item ();
+				break;
 			}
 		}
+	}
+
+	public void RemoveItemSlot(int slot) {
+		Destroy (slots [slot].transform.GetChild (0).gameObject);
+		items [slot] = new Item ();
+	}
+
+	public Item getItem(int slot) {
+		return items [slot];
 	}
 
     bool CheckIfItemIsInInventory(Item item)

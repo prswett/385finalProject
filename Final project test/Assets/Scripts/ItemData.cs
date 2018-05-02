@@ -4,23 +4,47 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using System;
 
+
 public class ItemData : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerDownHandler, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler {
 
 	public Item item;
 	public int amount;
 	public int slot;
+	public Player target;
 
 	private Inventory inv;
 	private Tooltip tooltip;
 	private Vector2 offset;
 
 	public PlayerResources player;
+	public bool noDelete = false;
+	public bool showQuestion = false;
+	CanvasController question;
 
 	void Start()
 	{
 		inv = GameObject.Find("Inventory").GetComponent<Inventory>();
 		tooltip = inv.GetComponent<Tooltip>();
 		player = GameObject.Find ("Player").GetComponent<PlayerResources> ();
+		target = GameObject.FindGameObjectWithTag ("Player").GetComponent<Player> ();
+		question = target.playerCanvas;
+	}
+
+	void Update() {
+		if (showQuestion) {
+			if (question.clicked) {
+				if (question.answer == true) {
+					inv.RemoveItemSlot (slot);
+					question.hideQuestion ();
+					question.clicked = false;
+				} else {
+					noDelete = false;
+					showQuestion = false;
+					question.hideQuestion ();
+					question.clicked = false;
+				}
+			}
+		}
 	}
 		
 	public void OnPointerClick(PointerEventData eventData) {
@@ -87,6 +111,7 @@ public class ItemData : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 	{
 		if(item != null)
 		{
+			noDelete = false;
 			this.transform.SetParent(this.transform.parent.parent);
 			GetComponent<CanvasGroup>().blocksRaycasts = false;
 		}
@@ -106,6 +131,14 @@ public class ItemData : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 		this.transform.SetParent(inv.slots[slot].transform);
 		this.transform.position = inv.slots[slot].transform.position;
 		GetComponent<CanvasGroup>().blocksRaycasts = true;
+		if (noDelete == false) {
+			showQuestion = true;
+			question.showQuestion ();
+			Debug.Log ("hello");
+		} else {
+			showQuestion = false;
+		}
+
 	}
 
 	public void OnPointerDown(PointerEventData eventData)

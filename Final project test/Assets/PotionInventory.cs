@@ -18,7 +18,7 @@ public class PotionInventory : MonoBehaviour {
 
 	void Awake() {
 		database = GetComponent<PotionDatabase>();
-		slotAmount = 5;
+		slotAmount = 4;
 		inventoryPanel = GameObject.Find("Inventory Panel");
 		//slotPanel = inventoryPanel.transform.Find("Slot Panel").gameObject;
 
@@ -46,9 +46,6 @@ public class PotionInventory : MonoBehaviour {
 	public void AddItem(int id)
 	{
 		Potion itemToAdd = database.FetchItemByID(id);
-		if (itemToAdd == null) {
-			Debug.Log ("nll");
-		}
 
 		if (itemToAdd.Stackable && CheckIfItemIsInInventory(itemToAdd))
 		{

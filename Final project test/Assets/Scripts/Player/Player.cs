@@ -40,7 +40,7 @@ public class Player : MonoBehaviour {
 	bool jumpDown = false;
 	float manaTime = 0;
 	float manaRegen = 5;
-	CanvasController playerCanvas;
+	public CanvasController playerCanvas;
 
 	//Taking damage variables
 	public float lastHit;
@@ -278,12 +278,6 @@ public class Player : MonoBehaviour {
 			Vector3 charscale = transform.localScale;
 			charscale.x *= -1;
 			transform.localScale = charscale;
-		}
-
-		public void takeDamage(float damage) {
-			if (Time.time - lastHit >= 0.5) {
-				//PlayerStats.health -= damage;
-			}
 		}
 
 		public void resetKills() {

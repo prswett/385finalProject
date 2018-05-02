@@ -7,6 +7,10 @@ public class CanvasController : MonoBehaviour {
 	public bool paused = false;
 	GameObject[] inventory;
 	public bool inventoryOpen = false;
+	GameObject[] question;
+	public bool questionOpen = false;
+	public bool clicked = false;
+	public bool answer = false;
 
 	void Start () {
 		pause = GameObject.FindGameObjectsWithTag ("Pause");
@@ -16,6 +20,10 @@ public class CanvasController : MonoBehaviour {
 		inventory = GameObject.FindGameObjectsWithTag ("Inventory");
 		foreach (GameObject inventoryObject in inventory) {
 			inventoryObject.SetActive (false);
+		}
+		question = GameObject.FindGameObjectsWithTag ("QuestionBox");
+		foreach (GameObject questionObject in question) {
+			questionObject.SetActive (false);
 		}
 	}
 
@@ -67,6 +75,28 @@ public class CanvasController : MonoBehaviour {
 		foreach (GameObject inventoryObject in inventory) {
 			inventoryObject.SetActive (false);
 		}
+	}
+
+	public void showQuestion() {
+		foreach (GameObject questionObject in question) {
+			questionObject.SetActive (true);
+		}
+	}
+
+	public void hideQuestion() {
+		foreach (GameObject questionObject in question) {
+			questionObject.SetActive (false);
+		}
+	}
+
+	public void yes() {
+		clicked = true;
+		answer = true;
+	}
+
+	public void no() {
+		clicked = true;
+		answer = false;
 	}
 
     public void Quit()

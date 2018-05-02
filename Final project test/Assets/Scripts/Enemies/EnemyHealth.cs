@@ -11,11 +11,14 @@ public class EnemyHealth : MonoBehaviour {
 	public GameObject parent;
 	public EnemyController parentController;
 	public float fill;
+	public string monsterName;
 
 	public Image healthbar;
 	//Drops
 	public GameObject coin;
 	public GameObject item;
+
+	public TextMesh control;
 
 	void Awake() {
 	}
@@ -31,6 +34,8 @@ public class EnemyHealth : MonoBehaviour {
 		parentController = parent.GetComponent<EnemyController> ();
 
 		currentHealth = maxHealth;
+		control = GetComponentInChildren<TextMesh> ();
+		control.text = monsterName;
 
 	}
 
@@ -48,7 +53,7 @@ public class EnemyHealth : MonoBehaviour {
 	//unless time since last hit is past the point
 	public void takeDamage(int damage) {
 
-
+		control.text  = monsterName + "    " + damage;
 		//if (Time.time - lastHit >= 0.1 || lastHit == 0) {
 		if (transform.position.x - target.position.x < 0) {
 			parentController.moveLeft ();
@@ -75,4 +80,15 @@ public class EnemyHealth : MonoBehaviour {
 		Instantiate (item, transform.position, Quaternion.identity);
 	}
 
+	void OnTriggerEnter2D(Collider2D other) {
+		if (other.gameObject.CompareTag ("Player")) {
+			PlayerStatistics.takeDamage(1);
+		}
+	}
+
+	void OnTriggerStay2D(Collider2D other) {
+		if (other.gameObject.CompareTag ("Player")) {
+			PlayerStatistics.takeDamage(1);
+		}
+	}
 }

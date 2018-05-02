@@ -109,6 +109,12 @@ public class GEnemyWep : MonoBehaviour {
 		}
 	}
 
+	void OnTriggerStay2D(Collider2D other) {
+		if (other.gameObject.CompareTag ("Player")) {
+			PlayerStatistics.takeDamage(1);
+		}
+	}
+
 	void OnTriggerExit2D(Collider2D other) {
 		if (other.gameObject.CompareTag ("outofbounds")) {
 			location = false;

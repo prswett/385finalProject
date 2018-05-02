@@ -19,6 +19,7 @@ TagManager:
   - Inventory
   - Shop
   - Spike
+  - QuestionBox
   layers:
   - Default
   - TransparentFX
