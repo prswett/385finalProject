@@ -1,0 +1,24 @@
+[
+  {
+    "id": 0,
+    "title": "Health Potion S",
+	"type": "Health",
+    "value": 1,
+	"healing": 10,
+    "description": "A small red potion for healing",
+    "stackable": true,
+    "rarity": 0,
+    "slug":  "HealthPotion"
+  },
+  {
+    "id": 1,
+    "title": "Mana Potion S",
+	"type": "Mana",
+    "value": 1,
+	"healing": 5,
+    "description": "A small blue potion for mana",
+    "stackable": true,
+    "rarity": 0,
+    "slug":  "ManaPotion"
+  }
+]
