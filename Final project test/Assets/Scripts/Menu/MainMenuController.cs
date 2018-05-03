@@ -21,7 +21,6 @@ public class MainMenuController : MonoBehaviour {
 
 	public void showInstructions() {
 		show = true;
-		Debug.Log ("show");
 		foreach (GameObject instructObject in instructions) {
 			instructObject.SetActive (true);
 		}
@@ -29,7 +28,6 @@ public class MainMenuController : MonoBehaviour {
 
 	public void hideInstructions() {
 		show = false;
-		Debug.Log ("hide");
 		foreach (GameObject instructObject in instructions) {
 			instructObject.SetActive (false);
 		}

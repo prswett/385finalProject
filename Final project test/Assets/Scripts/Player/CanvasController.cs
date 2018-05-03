@@ -12,7 +12,11 @@ public class CanvasController : MonoBehaviour {
 	public bool clicked = false;
 	public bool answer = false;
 
+	public Player player;
+
 	void Start () {
+		player = GameObject.FindGameObjectWithTag ("Player").GetComponent<Player> ();
+
 		pause = GameObject.FindGameObjectsWithTag ("Pause");
 		foreach (GameObject pauseObject in pause) {
 			pauseObject.SetActive (false);
@@ -47,6 +51,7 @@ public class CanvasController : MonoBehaviour {
 
 	public void Pause() {
 		paused = true;
+		player.menu = true;
 		Time.timeScale = 0;
 		foreach (GameObject pauseObject in pause) {
 			pauseObject.SetActive (true);
@@ -55,7 +60,10 @@ public class CanvasController : MonoBehaviour {
 
 	public void UnPause() {
 		paused = false;
-		Time.timeScale = 1;
+		player.menu = false;
+		if (!player.menu && !player.inventory && !player.shop) {
+			Time.timeScale = 1;
+		}
 		foreach (GameObject pauseObject in pause) {
 			pauseObject.SetActive (false);
 		}
@@ -63,6 +71,7 @@ public class CanvasController : MonoBehaviour {
 
 	public void showInventory() {
 		inventoryOpen = true;
+		player.inventory = true;
 		Time.timeScale = 0;
 		foreach (GameObject inventoryObject in inventory) {
 			inventoryObject.SetActive (true);
@@ -71,7 +80,10 @@ public class CanvasController : MonoBehaviour {
 
 	public void hideInventory() {
 		inventoryOpen = false;
-		Time.timeScale = 1;
+		player.inventory = false;
+		if (!player.menu && !player.inventory && !player.shop) {
+			Time.timeScale = 1;
+		}
 		foreach (GameObject inventoryObject in inventory) {
 			inventoryObject.SetActive (false);
 		}

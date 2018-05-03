@@ -36,11 +36,8 @@ public class Player : MonoBehaviour {
 	public float jumpSpeed;
 	public bool attacking = false;
 	int wepState = 1;
-	int spriteState = 1;
 	bool created = true;
 	bool jumpDown = false;
-	float manaTime = 0;
-	float manaRegen = 5;
 	public CanvasController playerCanvas;
 
 	//Taking damage variables
@@ -63,6 +60,11 @@ public class Player : MonoBehaviour {
 	public Inventory inv;
 	public PotionInventory pInv;
 
+	//Time stops
+	public bool menu = false;
+	public bool inventory = false;
+	public bool shop = false;
+	public bool timeStop;
 
 	//
 	void Awake() {
@@ -118,16 +120,11 @@ public class Player : MonoBehaviour {
 
 	//
 	void Update () {
+		timeStop = (menu && inventory && shop);
 		if (loadedChar) {
 			LoadPlayer load = new LoadPlayer ();
 			load.Load (this);
 			loadedChar = false;
-		}
-		if (Time.time - manaTime > manaRegen) {
-			if (PlayerStatistics.mana < PlayerStatistics.maxMana) {
-				PlayerStatistics.mana += 1;
-				manaTime = Time.time;
-			}
 		}
 		coinText.text = PlayerStatistics.coins.ToString ();
 		if (created == true) {
@@ -141,18 +138,28 @@ public class Player : MonoBehaviour {
 		manabar.fillAmount = PlayerStatistics.mana / PlayerStatistics.maxMana;
 		expbar.fillAmount = PlayerStatistics.exp / PlayerStatistics.nextLevel;
 		if (PlayerStatistics.health <= 0) {
-				if (facing) {
-					flip ();
-				}
-				resources.setArmorOff ();
-				anim.SetBool ("walking", false);
-				anim.SetBool ("attacking", false);
-				anim.SetBool ("dead", true);
-			} else {
-				anim.SetInteger ("weapon state", wepState);
-				anim.SetInteger ("weapon equipped", resources.wepEQPD);
-				onGround = Physics2D.OverlapCircle (groundCheck.position, groundCheckRadius, groundLayer);
-				//For moving left
+			if (facing) {
+				flip ();
+			}
+			resources.setArmorOff ();
+			anim.SetBool ("walking", false);
+			anim.SetBool ("attacking", false);
+			anim.SetBool ("dead", true);
+
+			if (Input.GetKeyDown (KeyCode.R)) {
+				SceneManager.LoadScene (1);
+				resources.setArmorOn ();
+				PlayerStatistics.coins /= 2;
+				PlayerStatistics.exp = 0;
+				playerReset ();
+			}
+		} else {
+			anim.SetInteger ("weapon state", wepState);
+			anim.SetInteger ("weapon equipped", resources.wepEQPD);
+			onGround = Physics2D.OverlapCircle (groundCheck.position, groundCheckRadius, groundLayer);
+			//For moving left
+
+			if (!timeStop) {
 				if (Input.GetKey (KeyCode.A)) {
 					if (attacking) {
 						anim.SetBool ("walking", true);
@@ -180,33 +187,21 @@ public class Player : MonoBehaviour {
 					transform.position += Vector3.right * speed * Time.deltaTime;
 				}
 
-				if (Input.GetKeyDown (KeyCode.R)) {
-					SceneManager.LoadScene (1);
-					resources.setArmorOn ();
-				}
-
 				if (Input.GetKeyUp (KeyCode.D)) {
 					anim.SetBool ("walking", false);
 				}
 
-				if (Input.GetKey (KeyCode.J) || Input.GetMouseButton(0)) {
+				if (Input.GetKey (KeyCode.J) || Input.GetMouseButton (0)) {
 					anim.SetBool ("attacking", true);
 					attacking = true;
 				}
-				if (Input.GetKeyUp(KeyCode.J) || Input.GetMouseButtonUp(0)) {
-					anim.SetBool("attacking", false);
+				if (Input.GetKeyUp (KeyCode.J) || Input.GetMouseButtonUp (0)) {
+					anim.SetBool ("attacking", false);
 					attacking = false;
 				}
 
 				if (Input.GetKeyDown (KeyCode.Space) && onGround && !jumpDown) {
 					rb2d.velocity = new Vector2 (rb2d.velocity.x, jumpSpeed);
-				}
-
-				if (Input.GetKeyDown (KeyCode.Z)) {
-					changeWeapon();
-				}
-				if (Input.GetKeyDown (KeyCode.Q)) {
-					changeSprite ();
 				}
 
 				if (Input.GetKeyDown (KeyCode.S)) {
@@ -216,28 +211,39 @@ public class Player : MonoBehaviour {
 					anim.SetBool ("crouching", false);
 				}
 				
-			if (Input.GetMouseButtonDown(1) && playerCanvas.inventoryOpen != true) {
+				if (Input.GetMouseButtonDown (1) && playerCanvas.inventoryOpen != true) {
 					if (PlayerStatistics.mana >= 1) {
 						PlayerStatistics.mana -= 1;
-						FireBall();
+						FireBall ();
 					}
+				}
+
+				float wheel = Input.GetAxis ("Mouse ScrollWheel");
+				if (wheel > 0f) {
+					changeWeapon (true);
+				} else if (wheel < 0f) {
+					changeWeapon (false);
 				}
 			}
 
-			if (onLadder)
-			{
+			if (onLadder) {
 				rb2d.gravityScale = 0f;
 
-				climbVelocity = climbSpeed * Input.GetAxisRaw("Vertical");
+				climbVelocity = climbSpeed * Input.GetAxisRaw ("Vertical");
 
-				rb2d.velocity = new Vector2(rb2d.velocity.x, climbVelocity);
+				rb2d.velocity = new Vector2 (rb2d.velocity.x, climbVelocity);
 			}
 
-			if (!onLadder)
-			{
+			if (!onLadder) {
 				rb2d.gravityScale = gravityStore;
 			}
 		}
+		}
+
+	public void playerReset() {
+		PlayerStatistics.health = PlayerStatistics.maxHealth;
+		PlayerStatistics.mana = PlayerStatistics.maxMana;
+	}
 
 		public void FireBall() {
 			Vector2 cursorL = Camera.main.ScreenToWorldPoint (Input.mousePosition);
@@ -245,7 +251,6 @@ public class Player : MonoBehaviour {
 			GameObject fire = resources.getSpell(0);
 			FireBallController shot = fire.GetComponent<FireBallController> ();
 			shot.setVelocity((cursorL.x - transform.position.x) / divider, (cursorL.y - transform.position.y) / divider);
-			Vector2 temp = Camera.main.WorldToScreenPoint (transform.position);
 			float angle = Mathf.Atan2 (transform.position.x - cursorL.x, cursorL.y -  transform.position.y) * Mathf.Rad2Deg;
 			Instantiate (fire, transform.position, Quaternion.Euler (new Vector3(0, 0, angle)));
 		}
@@ -254,26 +259,31 @@ public class Player : MonoBehaviour {
 			jumpDown = !jumpDown;
 		}
 
-		void changeSprite() {
-			resources.swordChange (spriteState);
-			if (spriteState == 3) {
-				spriteState = 0;
-			} else {
-				spriteState++;
-			}
-		}
-
-		void changeWeapon() {
+	void changeWeapon(bool up) {
+		if (up) {
 			if (resources.wepEQPD < 4) {
 				resources.setActiveFalse (resources.wepEQPD - 1);
 				resources.wepEQPD++;
 				anim.SetInteger ("weapon equipped", resources.wepEQPD);
-				resources.setActiveTrue (resources.wepEQPD- 1);
+				resources.setActiveTrue (resources.wepEQPD - 1);
 			} else {
 				resources.setActiveFalse (resources.wepEQPD - 1);
 				resources.wepEQPD = 1;
 				anim.SetInteger ("weapon equipped", resources.wepEQPD);
 				resources.setActiveTrue (resources.wepEQPD - 1);
+			}
+		} else {
+			if (resources.wepEQPD > 1) {
+				resources.setActiveFalse (resources.wepEQPD - 1);
+				resources.wepEQPD--;
+				anim.SetInteger ("weapon equipped", resources.wepEQPD);
+				resources.setActiveTrue (resources.wepEQPD - 1);
+			} else {
+				resources.setActiveFalse (resources.wepEQPD - 1);
+				resources.wepEQPD = 4;
+				anim.SetInteger ("weapon equipped", resources.wepEQPD);
+				resources.setActiveTrue (resources.wepEQPD - 1);
+			
 			}
 			if (resources.wepEQPD == 1 || resources.wepEQPD == 3 || resources.wepEQPD == 4) {
 				wepState = 1;
@@ -283,6 +293,7 @@ public class Player : MonoBehaviour {
 				anim.SetInteger ("weapon state", wepState);
 			}
 		}
+	}
 
 		void flip() {
 			facing = !facing;

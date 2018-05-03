@@ -18,7 +18,6 @@ public class PlayerResources : MonoBehaviour {
 
     public int wepEQPD;
 
-
 	//List of weapons
 	private GameObject[] weapons;
 	private GameObject[] armors;
@@ -26,7 +25,6 @@ public class PlayerResources : MonoBehaviour {
 	public int weaponCount = 4;
 	public int armorCount = 2;
 	public int spellCount = 1;
-	private Sprite[] swordSprites;
 
 	// Use this for initialization
 	void Start () {
@@ -36,11 +34,6 @@ public class PlayerResources : MonoBehaviour {
 		weapons [1] = spear;
 		weapons [2] = axe;
 		weapons [3] = dagger;
-		swordSprites = new Sprite[4];
-		swordSprites[0] = Resources.Load<Sprite>("DrawingsV2/Weapons/1HSword");
-		swordSprites[1] = Resources.Load<Sprite>("DrawingsV2/Weapons/1HSwordRed");
-		swordSprites[2] = Resources.Load<Sprite>("DrawingsV2/Weapons/1HSwordGreen");
-		swordSprites [3] = Resources.Load<Sprite> ("DrawingsV2/Weapons/1HSwordBlue");
 
 		armors = new GameObject[armorCount];
 		armors [0] = helmet;
@@ -48,10 +41,6 @@ public class PlayerResources : MonoBehaviour {
 
 		spells = new GameObject[spellCount];
 		spells [0] = fireball;
-	}
-
-	public void swordChange(int input) {
-		sword.GetComponent<SpriteRenderer> ().sprite = swordSprites [input];
 	}
 
 	public void changeHelmet(string path) {

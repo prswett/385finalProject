@@ -19,6 +19,7 @@ public class EnemyHealth : MonoBehaviour {
 	public GameObject item;
 
 	public TextMesh control;
+	Renderer render;
 
 	void Awake() {
 	}
@@ -36,10 +37,13 @@ public class EnemyHealth : MonoBehaviour {
 		currentHealth = maxHealth;
 		control = GetComponentInChildren<TextMesh> ();
 		control.text = monsterName;
-
+		render = GetComponent<Renderer> ();
 	}
 
 	void Update () {
+		if (Time.time - lastHit > 1) {
+			control.text = monsterName;
+		}
 		healthbar.fillAmount = currentHealth / maxHealth;
 		if (currentHealth <= 0) {
 			dropCoin ();
@@ -54,7 +58,6 @@ public class EnemyHealth : MonoBehaviour {
 	public void takeDamage(int damage) {
 
 		control.text  = monsterName + "    " + damage;
-		//if (Time.time - lastHit >= 0.1 || lastHit == 0) {
 		if (transform.position.x - target.position.x < 0) {
 			parentController.moveLeft ();
 		} else {
@@ -68,8 +71,15 @@ public class EnemyHealth : MonoBehaviour {
 				PlayerStatistics.exp += 5;
 			}
 		}
+		if (Time.time - lastHit > 0.2) {
+			damageAnimation ();
+			Invoke ("damageAnimation", .1f);
+		}
 		lastHit = Time.time;
-		//}
+	}
+
+	public void damageAnimation() {
+		render.enabled = !render.enabled;
 	}
 
 	public void dropCoin() {

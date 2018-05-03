@@ -39,7 +39,6 @@ public class Inventory : MonoBehaviour
 			slots[i].transform.SetParent(slotPanel.transform);
 
 		}
-		AddItem (0);
 	}
 
     void Start()
@@ -101,8 +100,6 @@ public class Inventory : MonoBehaviour
 	}
 
 	public void RemoveItem(int id) {
-		Item itemToRemove = database.FetchItemByID (id);
-
 		for (int i = 0; i < items.Count; i++) {
 			if (items [i].ID != -1 && items [i].ID == id) {
 				Destroy (slots [i].transform.GetChild (0).gameObject);

@@ -1,6 +1,10 @@
-Bigger stage (side scroller)
+More bosses, more variety in stages/difficulty
 More enemies
-Save data
+Equip system
+Upgrading system
+More spells
+More stages
+Art, music
 
-PISAN: different phases = sprints
-Roll for skill effects
+Make enemies fade in
+Create a tutorial stage

@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 23149758088547030}
   - component: {fileID: 102806043924462194}
   - component: {fileID: 222515854571467798}
+  - component: {fileID: 114004707501256720}
   m_Layer: 15
   m_Name: GameObject
   m_TagString: Untagged
@@ -141,7 +142,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1648411544400318}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.0256333, y: 0.47317868, z: 0}
+  m_LocalPosition: {x: 0.8517572, y: 0.30579284, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224962921231516232}
@@ -235,7 +236,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.005564451, y: -0.13696152}
+  m_Offset: {x: -0.064950794, y: 0.054751933}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -246,7 +247,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.31366825, y: 0.13451517}
+  m_Size: {x: 0.17263776, y: 0.30639613}
   m_EdgeRadius: 0
 --- !u!70 &70997564972778058
 CapsuleCollider2D:
@@ -301,6 +302,19 @@ TextMesh:
   m_Color:
     serializedVersion: 2
     rgba: 4294967295
+--- !u!114 &114004707501256720
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1793354576505840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 500bf7b2a29123544ad62252225534ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  flipped: 0
 --- !u!114 &114053341092255614
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -583,7 +597,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.16, y: 0.132}
+  m_AnchoredPosition: {x: -0.19, y: 0.357}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224962921231516232

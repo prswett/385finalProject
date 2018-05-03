@@ -10,6 +10,9 @@ public class ItemController : MonoBehaviour {
 
 	public Transform target;
 	public Player player;
+
+	public bool location = false;
+	float spawnTime;
 	// Use this for initialization
 	void Awake() {
 		
@@ -18,9 +21,9 @@ public class ItemController : MonoBehaviour {
 	void Start () {
 		target = GameObject.FindGameObjectWithTag ("Player").transform;
 		player = target.GetComponent<Player> ();
-
+		spawnTime = Time.time;
 		int randType = Random.Range (0, 10);
-		if (randType <= 3) {
+		if (randType < 1) {
 			type = "Item";
 		} else {
 			type = "Potion";
@@ -35,7 +38,12 @@ public class ItemController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if (!location) {
+			transform.position = target.position;
+		}
+		if (Time.time - spawnTime > 10) {
+			transform.position = target.position;
+		}
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
@@ -46,6 +54,10 @@ public class ItemController : MonoBehaviour {
 				player.addItem (ID);
 			}
 			Destroy (gameObject);
+		}
+
+		if (other.gameObject.CompareTag ("outofbounds")) {
+			location = true;
 		}
 	}
 }

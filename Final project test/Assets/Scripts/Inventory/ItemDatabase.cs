@@ -63,12 +63,66 @@ public class Item
         this.Title = title;
 		this.type = type;
         this.Value = value;
-		this.str = str;
-		this.dex = dex;
-		this.wis = wis;
-		this.luk = luk;
-		this.atk = atk;
-		this.def = def;
+		int random = Random.Range (0, 2);
+
+		if (random == 0) {
+			this.str = str;
+		} else if (random == 1) {
+			this.str = str + 1;
+		} else {
+			this.str = str - 1;
+		}
+
+		random = Random.Range (0, 2);
+
+		if (random == 0) {
+			this.dex = dex;
+		} else if (random == 1) {
+			this.dex = dex + 1;
+		} else {
+			this.dex = dex - 1;
+		}
+
+		random = Random.Range (0, 2);
+
+		if (random == 0) {
+			this.wis = wis;
+		} else if (random == 1) {
+			this.wis = wis + 1;
+		} else {
+			this.wis = wis - 1;
+		}
+
+		random = Random.Range (0, 2);
+
+		if (random == 0) {
+			this.luk = luk;
+		} else if (random == 1) {
+			this.luk = luk + 1;
+		} else {
+			this.luk = luk - 1;
+		}
+
+		random = Random.Range (0, 2);
+
+		if (random == 0) {
+			this.atk = atk;
+		} else if (random == 1) {
+			this.atk = atk + 1;
+		} else {
+			this.atk = atk - 1;
+		}
+
+		random = Random.Range (0, 2);
+
+		if (random == 0) {
+			this.def = def;
+		} else if (random == 1) {
+			this.def = def + 1;
+		} else {
+			this.def = def - 1;
+		}
+
         this.Description = description;
         this.Rarity = rarity;
         this.Slug = slug;

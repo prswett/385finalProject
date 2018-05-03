@@ -8,12 +8,12 @@ public class PortalController : MonoBehaviour {
 	public int nextScene;
 	bool near = false;
 	public Transform target;
-	Player killCount;
+	Player player;
 	public TextMesh control;
 
 	void Awake() {
 		target = GameObject.FindWithTag ("Player").transform;
-		killCount = target.GetComponent<Player> ();
+		player = target.GetComponent<Player> ();
 	}
 
 	void Start () {
@@ -24,8 +24,9 @@ public class PortalController : MonoBehaviour {
 		
 		if (Input.GetKey(KeyCode.W)) {
 			if (near) {
-				killCount.resetKills ();
+				player.resetKills ();
 				SceneManager.LoadScene (nextScene, LoadSceneMode.Single);
+				player.anim.SetBool ("attacking", false);
 			}
 		}
 	}

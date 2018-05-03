@@ -21,7 +21,8 @@ public class BossHealth : MonoBehaviour {
 	public float lastHit;
 	//Update variables
 	public float currentHealth = 100;
-	private float hitAnimationDuration = .55f;
+
+	Renderer render;
 
 	//Gets all variables and components before initialization
 	void Awake() {
@@ -29,6 +30,8 @@ public class BossHealth : MonoBehaviour {
 		healthbar = GameObject.Find ("BossHealth").GetComponent<Image> ();
 		maxHealth = currentHealth;
 		target = GameObject.FindWithTag ("Boss").transform;
+
+		render = GetComponent<Renderer> ();
 	}
 
 	void Start () {
@@ -49,21 +52,21 @@ public class BossHealth : MonoBehaviour {
 		}
 
 		healthbar.fillAmount = currentHealth / maxHealth;
-
-
-		if (Time.time - lastHit >= hitAnimationDuration) {
-			anim.SetBool ("TookDamage", false);
-		}
 	}
 
 	public void takeDamage(int damage) {
 
 		if (Time.time - lastHit >= 0.5 || lastHit == 0) {
 			currentHealth -= damage;
-			anim.SetBool ("TookDamage", true);
+			damageAnimation();
+			Invoke ("damageAnimation", .1f);
 			lastHit = Time.time;
 		}
 
 
+	}
+
+	public void damageAnimation() {
+		render.enabled = !render.enabled;
 	}
 }

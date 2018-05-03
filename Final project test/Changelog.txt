@@ -1,3 +1,18 @@
+Version 3.1 (bug fixes, play test changes)
+Stage glitches removed
+Enemies no longer can go through stage
+Items and coins can no longer be out of reach
+Items and coins now move to player after 10 seconds
+Save and load implemented
+Inventory UI fixed
+Enemies now have blinking animation on hit
+Boss blink animation on hit fixed
+Boar boss hp decreased
+Player weapon switch moved from 'z' to scroll wheel
+Shop key is now 'F' instead of 'O'
+Time resume bug fixed on opening menu, inventory, and shop
+Equipment drop rate decreased from 30% to 10%
+
 Version 3.0 
 Enemies no longer get stuck in walls
 Added fireball spell
