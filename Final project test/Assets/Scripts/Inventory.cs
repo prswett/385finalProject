@@ -76,6 +76,30 @@ public class Inventory : MonoBehaviour
 
     }
 
+	public void AddItem(Item id) {
+		if (id.ID < 0) {
+			return;
+		}
+		for (int i = 0; i < items.Count; i++)
+		{
+			if (items[i].ID == -1)
+			{
+				items[i] = id;
+				GameObject itemObj = Instantiate(inventoryItem);
+
+				itemObj.GetComponent<ItemData> ().item = id;
+				itemObj.GetComponent<ItemData> ().slot = i;
+				itemObj.transform.SetParent(slots[i].transform);
+				itemObj.transform.position = slots [i].transform.position;
+				itemObj.GetComponent<Image>().sprite = id.Sprite;
+				itemObj.name = id.Title;
+				ItemData data = slots[i].transform.GetChild(0).GetComponent<ItemData>();
+				data.amount = 1;
+				break;
+			}
+		}
+	}
+
 	public void RemoveItem(int id) {
 		Item itemToRemove = database.FetchItemByID (id);
 

@@ -54,6 +54,7 @@
      <Compile Include="Assets\BoarController.cs" />
      <Compile Include="Assets\coinController.cs" />
      <Compile Include="Assets\DoorController.cs" />
+     <Compile Include="Assets\EmptyClass.cs" />
      <Compile Include="Assets\FEnemyR.cs" />
      <Compile Include="Assets\FireBallController.cs" />
      <Compile Include="Assets\FlipText.cs" />

@@ -34,7 +34,7 @@ public class ItemDatabase : MonoBehaviour
 			database.Add(new Item((int)itemData[i]["id"], itemData[i]["title"].ToString(), itemData[i]["type"].ToString(), (int)itemData[i]["value"],
 				(int)itemData[i]["stats"]["str"], (int)itemData[i]["stats"]["dex"], (int)itemData[i]["stats"]["wis"], (int)itemData[i]["stats"]["luk"],
 				(int)itemData[i]["stats"]["atk"], (int)itemData[i]["stats"]["def"], itemData[i]["description"].ToString(),
-                (bool)itemData[i]["stackable"], (int)itemData[i]["rarity"], itemData[i]["slug"].ToString()));
+                (int)itemData[i]["rarity"], itemData[i]["slug"].ToString()));
         }
     }
 
@@ -53,12 +53,11 @@ public class Item
 	public int atk { get; set; }
 	public int def { get; set; }
     public string Description { get; set; }
-    public bool Stackable { get; set; }
     public int Rarity { get; set; }
     public string Slug { get; set; }
     public Sprite Sprite { get; set; }
 
-	public Item(int id, string title, string type, int value, int str, int dex, int wis, int luk, int atk, int def, string description, bool stackable, int rarity, string slug)
+	public Item(int id, string title, string type, int value, int str, int dex, int wis, int luk, int atk, int def, string description, int rarity, string slug)
     {
         this.ID = id;
         this.Title = title;
@@ -71,7 +70,6 @@ public class Item
 		this.atk = atk;
 		this.def = def;
         this.Description = description;
-        this.Stackable = stackable;
         this.Rarity = rarity;
         this.Slug = slug;
 		this.Sprite = Resources.Load<Sprite> ("DrawingsV2/Items/Equipment/" + slug);

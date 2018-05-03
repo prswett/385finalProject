@@ -100,9 +100,14 @@ public class Player : MonoBehaviour {
 		inv.AddItem (input);
 	}
 
+	public void addItem(Item input) {
+		inv.AddItem (input);
+	}
+
 	public void addPotion(int input) {
 		pInv.AddItem (input);
 	}
+
 	//
 	void Start () {
 		rb2d = this.GetComponent<Rigidbody2D> ();

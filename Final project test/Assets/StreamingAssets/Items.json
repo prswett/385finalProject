@@ -13,7 +13,6 @@
 	  "def": 1
     },
     "description": "A helmet made of iron",
-    "stackable": false,
     "rarity": 0,
     "slug":  "IronHelmet"
   },
@@ -31,7 +30,6 @@
 	  "def": 5
     },
     "description": "Armor made of iron",
-    "stackable": false,
     "rarity": 0,
     "slug":  "IronArmor"
   },
@@ -49,7 +47,6 @@
 	  "def": 1
     },
     "description": "A Sword made of iron",
-    "stackable": false,
     "rarity": 0,
     "slug":  "IronSword"
   },
@@ -67,7 +64,6 @@
 	  "def": 1
     },
     "description": "A Spear made of iron",
-    "stackable": false,
     "rarity": 0,
     "slug":  "IronSpear"
   },
@@ -85,7 +81,6 @@
 	  "def": 1
     },
     "description": "An Axe made of iron",
-    "stackable": false,
     "rarity": 0,
     "slug":  "IronAxe"
   },
@@ -103,7 +98,6 @@
 	  "def": 1
     },
     "description": "A Dagger made of iron",
-    "stackable": false,
     "rarity": 0,
     "slug":  "IronDagger"
   }
