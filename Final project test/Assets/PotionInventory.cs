@@ -16,6 +16,12 @@ public class PotionInventory : MonoBehaviour {
 	public List<Potion> potions = new List<Potion> ();
 	public List<GameObject> slots = new List<GameObject>();
 
+	public static List<Potion> savePotions = new List<Potion> ();
+
+	public void save() {
+		savePotions = potions;
+	}
+
 	void Awake() {
 		database = GetComponent<PotionDatabase>();
 		slotAmount = 4;
@@ -45,6 +51,9 @@ public class PotionInventory : MonoBehaviour {
 
 	public void AddItem(int id)
 	{
+		if (id < 0) {
+			return;
+		}
 		Potion itemToAdd = database.FetchItemByID(id);
 
 		if (itemToAdd.Stackable && CheckIfItemIsInInventory(itemToAdd))
