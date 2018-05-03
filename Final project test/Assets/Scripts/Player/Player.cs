@@ -26,6 +26,7 @@ public class Player : MonoBehaviour {
 	public Animator anim;
 
 	//Update() variables
+	public static bool loadedChar = false;
 	public Transform groundCheck;
 	public float groundCheckRadius;
 	public LayerMask groundLayer;
@@ -62,9 +63,9 @@ public class Player : MonoBehaviour {
 	public Inventory inv;
 	public PotionInventory pInv;
 
+
 	//
 	void Awake() {
-		//loadPlayer ();
 
 		if (Instance == null) {
 			DontDestroyOnLoad (gameObject);
@@ -112,6 +113,11 @@ public class Player : MonoBehaviour {
 
 	//
 	void Update () {
+		if (loadedChar) {
+			LoadPlayer load = new LoadPlayer ();
+			load.Load (this);
+			loadedChar = false;
+		}
 		if (Time.time - manaTime > manaRegen) {
 			if (PlayerStatistics.mana < PlayerStatistics.maxMana) {
 				PlayerStatistics.mana += 1;

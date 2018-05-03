@@ -17,6 +17,12 @@ public class Inventory : MonoBehaviour
     public List<Item> items = new List<Item>();
     public List<GameObject> slots = new List<GameObject>();
 
+	public static List<Item> saveItems = new List<Item>();
+
+	public void save() {
+		saveItems = items;
+	}
+
 	void Awake() {
 		database = GetComponent<ItemDatabase>();
 
@@ -43,7 +49,9 @@ public class Inventory : MonoBehaviour
 		
     public void AddItem(int id)
     {
-		
+		if (id < 0) {
+			return;
+		}
         Item itemToAdd = database.FetchItemByID(id);
 
         for (int i = 0; i < items.Count; i++)
