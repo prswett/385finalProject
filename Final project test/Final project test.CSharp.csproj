@@ -242,6 +242,7 @@
     <Compile Include="Assets\DoorController.cs" />
     <Compile Include="Assets\FEnemyR.cs" />
     <Compile Include="Assets\FireBallController.cs" />
+    <Compile Include="Assets\FlipText.cs" />
     <Compile Include="Assets\GasController.cs" />
     <Compile Include="Assets\GEnemyR.cs" />
     <Compile Include="Assets\GEnemyWep.cs" />
