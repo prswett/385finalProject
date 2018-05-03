@@ -118,16 +118,4 @@ public class Inventory : MonoBehaviour
 		return items [slot];
 	}
 
-    bool CheckIfItemIsInInventory(Item item)
-    {
-        for (int i = 0; i < items.Count; i++)
-        {
-            if (items[i].ID == item.ID)
-            {
-                return true;
-            }
-        }
-        return false;
-    }
-
 }

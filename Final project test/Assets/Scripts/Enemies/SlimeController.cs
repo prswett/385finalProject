@@ -17,6 +17,7 @@ public class SlimeController : MonoBehaviour {
 	public bool jumping;
 	public float jumpTime;
 
+	public EnemyController parent;
 	//movement
 	public bool facing = false;
 	public float MinDist = 0.1f;
@@ -25,6 +26,7 @@ public class SlimeController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		parent = GetComponent<EnemyController> ();
 		target = GameObject.FindWithTag ("Player").transform;
 		anim = GetComponent<Animator> ();
 	}
@@ -39,16 +41,19 @@ public class SlimeController : MonoBehaviour {
 		enemyX = transform.position.x;
 		playerY = target.transform.position.y;
 		enemyY = transform.position.y;
-		if (Time.time - jumpTime > .4) {
-			jumping = false;
-		}
 
-		if (playerY - enemyY > .3 && jumping == false) {
-			jumping = true;
-			jumpTime = Time.time;
-		}
+		if (parent.active == true) {
+			if (Time.time - jumpTime > .4) {
+				jumping = false;
+			}
 
-		collideMove ();
+			if (playerY - enemyY > .3 && jumping == false) {
+				jumping = true;
+				jumpTime = Time.time;
+			}
+
+			collideMove ();
+		}
 	}
 
 	void collideMove() {

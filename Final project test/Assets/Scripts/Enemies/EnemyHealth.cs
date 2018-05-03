@@ -37,11 +37,11 @@ public class EnemyHealth : MonoBehaviour {
 		currentHealth = maxHealth;
 		control = GetComponentInChildren<TextMesh> ();
 		control.text = monsterName;
-		render = GetComponent<Renderer> ();
+		render = parent.GetComponent<Renderer> ();
 	}
 
 	void Update () {
-		if (Time.time - lastHit > 1) {
+		if (Time.time - lastHit > 2f) {
 			control.text = monsterName;
 		}
 		healthbar.fillAmount = currentHealth / maxHealth;
@@ -56,26 +56,27 @@ public class EnemyHealth : MonoBehaviour {
 	//Records previous time since last hit and doesn't inflict damage
 	//unless time since last hit is past the point
 	public void takeDamage(int damage) {
-
-		control.text  = monsterName + "    " + damage;
-		if (transform.position.x - target.position.x < 0) {
-			parentController.moveLeft ();
-		} else {
-			parentController.moveRight ();
-		}
-		currentHealth -= damage;
-		if (currentHealth <= 0) {
-			Player killCount = target.GetComponent<Player> ();
-			killCount.killCount++;
-			if (killCount.exp < 200) {
-				PlayerStatistics.exp += 5;
+		if (parentController.active == true) {
+			control.text = monsterName + "    " + damage;
+			if (transform.position.x - target.position.x < 0) {
+				parentController.moveLeft ();
+			} else {
+				parentController.moveRight ();
 			}
+			currentHealth -= damage;
+			if (currentHealth <= 0) {
+				Player killCount = target.GetComponent<Player> ();
+				killCount.killCount++;
+				if (killCount.exp < 200) {
+					PlayerStatistics.exp += 5;
+				}
+			}
+			if (Time.time - lastHit > 0.5) {
+				damageAnimation ();
+				Invoke ("damageAnimation", .1f);
+			}
+			lastHit = Time.time;
 		}
-		if (Time.time - lastHit > 0.2) {
-			damageAnimation ();
-			Invoke ("damageAnimation", .1f);
-		}
-		lastHit = Time.time;
 	}
 
 	public void damageAnimation() {

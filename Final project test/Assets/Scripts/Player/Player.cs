@@ -109,13 +109,15 @@ public class Player : MonoBehaviour {
 	public void addPotion(int input) {
 		pInv.AddItem (input);
 	}
-
+		
 	//
 	void Start () {
 		rb2d = this.GetComponent<Rigidbody2D> ();
 		anim = GetComponent<Animator> ();
 		killCount = 0;
 		gravityStore = rb2d.gravityScale;
+
+		//GetComponent<SpriteRenderer> ().color = Color.blue;
 	}
 
 	//
@@ -285,13 +287,14 @@ public class Player : MonoBehaviour {
 				resources.setActiveTrue (resources.wepEQPD - 1);
 			
 			}
-			if (resources.wepEQPD == 1 || resources.wepEQPD == 3 || resources.wepEQPD == 4) {
-				wepState = 1;
-				anim.SetInteger ("weapon state", wepState);
-			} else {
-				wepState = 2;
-				anim.SetInteger ("weapon state", wepState);
-			}
+
+		}
+		if (resources.wepEQPD == 1 || resources.wepEQPD == 3 || resources.wepEQPD == 4) {
+			wepState = 1;
+			anim.SetInteger ("weapon state", wepState);
+		} else {
+			wepState = 2;
+			anim.SetInteger ("weapon state", wepState);
 		}
 	}
 

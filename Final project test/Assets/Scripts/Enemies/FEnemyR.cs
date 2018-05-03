@@ -16,6 +16,8 @@ public class FEnemyR : MonoBehaviour {
 	public float playerY;
 	public float enemyY;
 
+	public EnemyController parent;
+
 	//Movement variables
 	public float MinDist = 0.1f;
 	public bool facing = false;
@@ -27,6 +29,7 @@ public class FEnemyR : MonoBehaviour {
 	public float fireRate = 1;
 
 	void Start () {
+		parent = GetComponent<EnemyController> ();
 		lastFire = 0;
 		target = GameObject.FindWithTag ("Player").transform;
 		anim = GetComponent<Animator> ();
@@ -43,25 +46,27 @@ public class FEnemyR : MonoBehaviour {
 		playerY = target.transform.position.y;
 		enemyY = transform.position.y;
 
-		noCollideMove ();
+		if (parent.active == true) {
+			noCollideMove ();
 
-		if (enemyX < playerX) {
-			if (facing) {
-				flip ();
+			if (enemyX < playerX) {
+				if (facing) {
+					flip ();
+				}
 			}
-		}
-		if (enemyX > playerX) {
-			if (!facing) {
-				flip ();
+			if (enemyX > playerX) {
+				if (!facing) {
+					flip ();
+				}
 			}
-		}
 
-		if (!(enemyX - playerX > MinDist) && !(enemyX - playerX < -MinDist)) {
-			anim.SetBool ("attacking", true);
-			anim.SetBool ("walking", false);
-			if (Time.time - lastFire > fireRate) {
-				Invoke ("fire", 1.0f);
-				lastFire = Time.time;
+			if (!(enemyX - playerX > MinDist) && !(enemyX - playerX < -MinDist)) {
+				anim.SetBool ("attacking", true);
+				anim.SetBool ("walking", false);
+				if (Time.time - lastFire > fireRate) {
+					Invoke ("fire", 1.0f);
+					lastFire = Time.time;
+				}
 			}
 		}
 	}

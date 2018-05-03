@@ -52,6 +52,8 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\EmptyClass.cs" />
+     <Compile Include="Assets\Equipment.cs" />
+     <Compile Include="Assets\EquipmentTooltip.cs" />
      <Compile Include="Assets\Scripts\Boss\BoarController.cs" />
      <Compile Include="Assets\Scripts\Boss\BossHealth.cs" />
      <Compile Include="Assets\Scripts\Boss\PisanController.cs" />

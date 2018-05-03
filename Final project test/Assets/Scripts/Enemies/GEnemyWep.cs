@@ -20,12 +20,14 @@ public class GEnemyWep : MonoBehaviour {
 	public float fireRate = 1;
 	public bool location;
 
+	public EnemyController parent;
 	//collide variables
 	public float speed;
 	public float jumpSpeed;
 	public bool facing = false;
 
 	void Start () {
+		parent = GetComponent<EnemyController> ();
 		lastFire = 0;
 		target = GameObject.FindWithTag ("Player").transform;
 		anim = GetComponent<Animator> ();
@@ -40,34 +42,37 @@ public class GEnemyWep : MonoBehaviour {
 		enemyX = transform.position.x;
 		playerY = target.transform.position.y;
 		enemyY = transform.position.y;
-		if (Time.time - jumpTime > .4) {
-			jumping = false;
-		}
 
-		if (playerY - enemyY > .3) {
-			jumping = true;
-			jumpTime = Time.time;
-		}
-
-		if (enemyX < playerX) {
-			if (facing) {
-				flip ();
+		if (parent.active == true) {
+			if (Time.time - jumpTime > .4) {
+				jumping = false;
 			}
-		}
-		if (enemyX > playerX) {
-			if (!facing) {
-				flip ();
+
+			if (playerY - enemyY > .3) {
+				jumping = true;
+				jumpTime = Time.time;
 			}
-		}
 
-		collideMove ();
+			if (enemyX < playerX) {
+				if (facing) {
+					flip ();
+				}
+			}
+			if (enemyX > playerX) {
+				if (!facing) {
+					flip ();
+				}
+			}
 
-		if (!(enemyX - playerX > MinDist) && !(enemyX - playerX < -MinDist)) {
-			if (Time.time - lastFire > fireRate) {
-				anim.SetBool ("attacking", true);
-				anim.SetBool ("walking", false);
-				Invoke ("slash", .1f);
-				lastFire = Time.time;
+			collideMove ();
+
+			if (!(enemyX - playerX > MinDist) && !(enemyX - playerX < -MinDist)) {
+				if (Time.time - lastFire > fireRate) {
+					anim.SetBool ("attacking", true);
+					anim.SetBool ("walking", false);
+					Invoke ("slash", .1f);
+					lastFire = Time.time;
+				}
 			}
 		}
 	}
