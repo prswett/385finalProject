@@ -63,10 +63,12 @@ public class PotionInventory : MonoBehaviour {
 				if(potions[i].ID == id)
 				{
 					PotionData data = slots[i].transform.GetChild(0).GetComponent<PotionData>();
+					potions [i].stack++;
 					data.amount++;
 					data.transform.GetChild(0).GetComponent<Text>().text = data.amount.ToString();
 					break;
 				}
+
 			}
 
 		}
@@ -78,7 +80,7 @@ public class PotionInventory : MonoBehaviour {
 				{
 					potions[i] = itemToAdd;
 					GameObject itemObj = Instantiate(inventoryPotion);
-
+					potions [i].stack++;
 					itemObj.GetComponent<PotionData> ().potion = itemToAdd;
 					itemObj.GetComponent<PotionData> ().slot = i;
 					itemObj.transform.SetParent(slots[i].transform);
@@ -102,6 +104,7 @@ public class PotionInventory : MonoBehaviour {
 				if (potions [j].ID == id) {
 					PotionData data = slots [j].transform.GetChild (0).GetComponent<PotionData> ();
 					data.amount--;
+					potions [j].stack--;
 					data.transform.GetChild (0).GetComponent<Text> ().text = data.amount.ToString ();
 					if (data.amount == 0) {
 						Destroy (slots [j].transform.GetChild (0).gameObject);

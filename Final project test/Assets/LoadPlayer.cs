@@ -45,11 +45,18 @@ public class LoadPlayer : MonoBehaviour {
 			a.addItem(data.id8);
 			a.addItem(data.id9);
 
-			print("pid0 is: " + data.pid0);
-			a.addPotion(data.pid0);
-			a.addPotion(data.pid1);
-			a.addPotion(data.pid2);
-			a.addPotion(data.pid3);
+			for(int i  = 0; i < data.potionStack0; i++){
+				a.addPotion (data.pid0);
+			}
+			for(int i  = 0; i < data.potionStack1; i++){
+				a.addPotion (data.pid1);
+			}
+			for(int i  = 0; i < data.potionStack2; i++){
+				a.addPotion (data.pid2);
+			}
+			for(int i  = 0; i < data.potionStack3; i++){
+				a.addPotion (data.pid3);
+			}
 			//a.addPotion(data.pid4);
 
 			/*

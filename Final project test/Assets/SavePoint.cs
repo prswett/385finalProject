@@ -243,6 +243,7 @@ public class SavePoint : MonoBehaviour {
 		data.pstack0 = PotionInventory.savePotions[0].Stackable;
 		data.prar0 = PotionInventory.savePotions[0].Rarity;
 		data.pslug0 = PotionInventory.savePotions[0].Slug;
+		data.potionStack0 = PotionInventory.savePotions [0].stack;
 
 		// saving data in potion 1
 		data.pid1 = PotionInventory.savePotions[1].ID;
@@ -254,6 +255,7 @@ public class SavePoint : MonoBehaviour {
 		data.pstack1 = PotionInventory.savePotions[1].Stackable;
 		data.prar1 = PotionInventory.savePotions[1].Rarity;
 		data.pslug1 = PotionInventory.savePotions[1].Slug;
+		data.potionStack1 = PotionInventory.savePotions [1].stack;
 
 		// saving data in potion 2
 		data.pid2 = PotionInventory.savePotions[2].ID;
@@ -265,6 +267,7 @@ public class SavePoint : MonoBehaviour {
 		data.pstack2 = PotionInventory.savePotions[2].Stackable;
 		data.prar2 = PotionInventory.savePotions[2].Rarity;
 		data.pslug2 = PotionInventory.savePotions[2].Slug;
+		data.potionStack2 = PotionInventory.savePotions [2].stack;
 
 		// saving data in potion 3
 		data.pid3 = PotionInventory.savePotions[3].ID;
@@ -276,6 +279,7 @@ public class SavePoint : MonoBehaviour {
 		data.pstack3 = PotionInventory.savePotions[3].Stackable;
 		data.prar3 = PotionInventory.savePotions[3].Rarity;
 		data.pslug3 = PotionInventory.savePotions[3].Slug;
+		data.potionStack3 = PotionInventory.savePotions [3].stack;
 
 		/**
 		// saving data in potion 4
@@ -506,6 +510,7 @@ class PlayerData
 	public bool pstack0;
 	public int prar0;
 	public string pslug0;
+	public int potionStack0;
 
 	// potion1
 	public int pid1;
@@ -517,6 +522,7 @@ class PlayerData
 	public bool pstack1;
 	public int prar1;
 	public string pslug1;
+	public int potionStack1;
 
 	// potion2
 	public int pid2;
@@ -528,6 +534,7 @@ class PlayerData
 	public bool pstack2;
 	public int prar2;
 	public string pslug2;
+	public int potionStack2;
 
 	// potion3
 	public int pid3;
@@ -539,7 +546,9 @@ class PlayerData
 	public bool pstack3;
 	public int prar3;
 	public string pslug3;
+	public int potionStack3;
 
+	/**
 	// potion4
 	public int pid4;
 	public string ptitle4;
@@ -550,6 +559,8 @@ class PlayerData
 	public bool pstack4;
 	public int prar4;
 	public string pslug4;
+	public int pstack4;
+	*/
 
 	/*public Item s0;
     public Item s1;

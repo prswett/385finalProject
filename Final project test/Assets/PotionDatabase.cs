@@ -52,6 +52,7 @@ public class Potion
 	public int Rarity { get; set; }
 	public string Slug { get; set; }
 	public Sprite Sprite { get; set; }
+	public int stack { get; set; }
 
 	public Potion(int id, string title, string type, int value, int healing, string description, bool stackable, int rarity, string slug) {
 		this.ID = id;
