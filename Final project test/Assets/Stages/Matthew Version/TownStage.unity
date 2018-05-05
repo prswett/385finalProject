@@ -786,9 +786,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slotPanel: {fileID: 516898611}
-  inventorySlot: {fileID: 1138782008862426, guid: 877b7205c63898645bfb1f5dfd256575,
+  inventorySlot: {fileID: 1898427791696372, guid: 81bca46f10730174282cec5df417a591,
     type: 2}
-  inventoryItem: {fileID: 1750088932876938, guid: bf332bd7c36cb144ab1d7b2e077e6e11,
+  inventoryItem: {fileID: 1575181773334094, guid: 473d7eb7ae8ba16429f3f8c54d02493a,
     type: 2}
   slots: []
 --- !u!114 &1384716933
@@ -1170,7 +1170,7 @@ Prefab:
     - target: {fileID: 224141426035255792, guid: 86683ba1291d140459087dab9dbcc4ca,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 44.3
+      value: 34.8
       objectReference: {fileID: 0}
     - target: {fileID: 224141426035255792, guid: 86683ba1291d140459087dab9dbcc4ca,
         type: 2}
@@ -1186,6 +1186,44 @@ Prefab:
       propertyPath: m_SizeDelta.y
       value: 93.1
       objectReference: {fileID: 0}
+    - target: {fileID: 224584117525846198, guid: 86683ba1291d140459087dab9dbcc4ca,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 170.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224584117525846198, guid: 86683ba1291d140459087dab9dbcc4ca,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224141426035255792, guid: 86683ba1291d140459087dab9dbcc4ca,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114081337595532688, guid: 86683ba1291d140459087dab9dbcc4ca,
+        type: 2}
+      propertyPath: inventoryItem
+      value: 
+      objectReference: {fileID: 1575181773334094, guid: 473d7eb7ae8ba16429f3f8c54d02493a,
+        type: 2}
+    - target: {fileID: 224756151159243462, guid: 86683ba1291d140459087dab9dbcc4ca,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114081337595532688, guid: 86683ba1291d140459087dab9dbcc4ca,
+        type: 2}
+      propertyPath: slotChild
+      value: 
+      objectReference: {fileID: 1663448850081862, guid: 2622e6bacde37964a881c136ac4d1b05,
+        type: 2}
+    - target: {fileID: 114903990329341692, guid: 86683ba1291d140459087dab9dbcc4ca,
+        type: 2}
+      propertyPath: inventoryPotion
+      value: 
+      objectReference: {fileID: 1463439941099858, guid: c6d0037c2751a8343833df8a32b2bdc8,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 86683ba1291d140459087dab9dbcc4ca, type: 2}
   m_IsPrefabParent: 0

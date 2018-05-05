@@ -80,4 +80,6 @@ MonoBehaviour:
     type: 2}
   inventoryItem: {fileID: 1750088932876938, guid: bf332bd7c36cb144ab1d7b2e077e6e11,
     type: 2}
+  slotChild: {fileID: 1663448850081862, guid: 2622e6bacde37964a881c136ac4d1b05, type: 2}
+  items: []
   slots: []

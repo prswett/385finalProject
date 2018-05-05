@@ -36,6 +36,7 @@ public class LoadPlayer : MonoBehaviour {
 
 			string[] split;
 			Item temp;
+			ItemStats temp2 = new ItemStats();
 
 			if (data.item0 != null) {
 				split = data.item0.Split (new string[] { " " }, System.StringSplitOptions.None);
@@ -43,7 +44,8 @@ public class LoadPlayer : MonoBehaviour {
 					           int.Parse (split [3]), int.Parse (split [4]), int.Parse (split [5]), int.Parse (split [6]), 
 					int.Parse (split [7]), int.Parse (split [8]), data.item0Desc, int.Parse (split [9]),
 					           split [10]);
-				a.addItem (temp);
+				temp2.loadStats (temp);
+				a.addItem (temp2);
 			}
 
 			if (data.item1 != null) {
@@ -52,7 +54,8 @@ public class LoadPlayer : MonoBehaviour {
 					int.Parse (split [3]), int.Parse (split [4]), int.Parse (split [5]), int.Parse (split [6]), 
 					int.Parse (split [7]), int.Parse (split [8]), data.item1Desc, int.Parse (split [9]),
 					split [10]);
-				a.addItem (temp);
+				temp2.loadStats (temp);
+				a.addItem (temp2);
 			}
 				
 			if (data.item2 != null) {
@@ -61,7 +64,8 @@ public class LoadPlayer : MonoBehaviour {
 					int.Parse (split [3]), int.Parse (split [4]), int.Parse (split [5]), int.Parse (split [6]), 
 					int.Parse (split [7]), int.Parse (split [8]), data.item2Desc, int.Parse (split [9]),
 					split [10]);
-				a.addItem (temp);
+				temp2.loadStats (temp);
+				a.addItem (temp2);
 			}
 
 			if (data.item3 != null) {
@@ -70,7 +74,8 @@ public class LoadPlayer : MonoBehaviour {
 					int.Parse (split [3]), int.Parse (split [4]), int.Parse (split [5]), int.Parse (split [6]), 
 					int.Parse (split [7]), int.Parse (split [8]), data.item3Desc, int.Parse (split [9]),
 					split [10]);
-				a.addItem (temp);
+				temp2.loadStats (temp);
+				a.addItem (temp2);
 			}
 
 			if (data.item4 != null) {
@@ -79,7 +84,8 @@ public class LoadPlayer : MonoBehaviour {
 					int.Parse (split [3]), int.Parse (split [4]), int.Parse (split [5]), int.Parse (split [6]), 
 					int.Parse (split [7]), int.Parse (split [8]), data.item4Desc, int.Parse (split [9]),
 					split [10]);
-				a.addItem (temp);
+				temp2.loadStats (temp);
+				a.addItem (temp2);
 			}
 
 			if (data.item5 != null) {
@@ -88,7 +94,8 @@ public class LoadPlayer : MonoBehaviour {
 					int.Parse (split [3]), int.Parse (split [4]), int.Parse (split [5]), int.Parse (split [6]), 
 					int.Parse (split [7]), int.Parse (split [8]), data.item5Desc, int.Parse (split [9]),
 					split [10]);
-				a.addItem (temp);
+				temp2.loadStats (temp);
+				a.addItem (temp2);
 			}
 
 			if (data.item6 != null) {
@@ -97,7 +104,8 @@ public class LoadPlayer : MonoBehaviour {
 					int.Parse (split [3]), int.Parse (split [4]), int.Parse (split [5]), int.Parse (split [6]), 
 					int.Parse (split [7]), int.Parse (split [8]), data.item6Desc, int.Parse (split [9]),
 					split [10]);
-				a.addItem (temp);
+				temp2.loadStats (temp);
+				a.addItem (temp2);
 			}
 
 			if (data.item7 != null) {
@@ -106,7 +114,8 @@ public class LoadPlayer : MonoBehaviour {
 					int.Parse (split [3]), int.Parse (split [4]), int.Parse (split [5]), int.Parse (split [6]), 
 					int.Parse (split [7]), int.Parse (split [8]), data.item7Desc, int.Parse (split [9]),
 					split [10]);
-				a.addItem (temp);
+				temp2.loadStats (temp);
+				a.addItem (temp2);
 			}
 
 			if (data.item8 != null) {
@@ -115,7 +124,8 @@ public class LoadPlayer : MonoBehaviour {
 					int.Parse (split [3]), int.Parse (split [4]), int.Parse (split [5]), int.Parse (split [6]), 
 					int.Parse (split [7]), int.Parse (split [8]), data.item8Desc, int.Parse (split [9]),
 					split [10]);
-				a.addItem (temp);
+				temp2.loadStats (temp);
+				a.addItem (temp2);
 			}
 
 			if (data.item9 != null) {
@@ -124,7 +134,8 @@ public class LoadPlayer : MonoBehaviour {
 					int.Parse (split [3]), int.Parse (split [4]), int.Parse (split [5]), int.Parse (split [6]), 
 					int.Parse (split [7]), int.Parse (split [8]), data.item9Desc, int.Parse (split [9]),
 					split [10]);
-				a.addItem (temp);
+				temp2.loadStats (temp);
+				a.addItem (temp2);
 			}
 				
 			if (data.potion0 != null) {
@@ -154,6 +165,67 @@ public class LoadPlayer : MonoBehaviour {
 					a.addPotion (int.Parse(split[0]));
 				}
 			}
+
+			if (data.equip0 != null) {
+				split = data.equip0.Split (new string[] { " " }, System.StringSplitOptions.None);
+				temp = new Item (int.Parse (split [0]), data.equip0Title, split [1], int.Parse (split [2]),
+					int.Parse (split [3]), int.Parse (split [4]), int.Parse (split [5]), int.Parse (split [6]), 
+					int.Parse (split [7]), int.Parse (split [8]), data.equip0Desc, int.Parse (split [9]),
+					split [10]);
+				a.addEquipment (temp, 0, true);
+				a.resources.changeHelmet ("DrawingsV2/Items/Equipment/" + temp.Slug);
+			}
+
+			if (data.equip1 != null) {
+				split = data.equip1.Split (new string[] { " " }, System.StringSplitOptions.None);
+				temp = new Item (int.Parse (split [0]), data.equip1Title, split [1], int.Parse (split [2]),
+					int.Parse (split [3]), int.Parse (split [4]), int.Parse (split [5]), int.Parse (split [6]), 
+					int.Parse (split [7]), int.Parse (split [8]), data.equip1Desc, int.Parse (split [9]),
+					split [10]);
+				a.addEquipment (temp, 1, true);
+				a.resources.changeArmor ("DrawingsV2/Items/Equipment/" + temp.Slug);
+			}
+
+			if (data.equip2 != null) {
+				split = data.equip2.Split (new string[] { " " }, System.StringSplitOptions.None);
+				temp = new Item (int.Parse (split [0]), data.equip2Title, split [1], int.Parse (split [2]),
+					int.Parse (split [3]), int.Parse (split [4]), int.Parse (split [5]), int.Parse (split [6]), 
+					int.Parse (split [7]), int.Parse (split [8]), data.equip2Desc, int.Parse (split [9]),
+					split [10]);
+				a.addEquipment (temp, 2, true);
+				a.resources.changeSword ("DrawingsV2/Items/Equipment/" + temp.Slug);
+			}
+
+			if (data.equip3 != null) {
+				split = data.equip3.Split (new string[] { " " }, System.StringSplitOptions.None);
+				temp = new Item (int.Parse (split [0]), data.equip3Title, split [1], int.Parse (split [2]),
+					int.Parse (split [3]), int.Parse (split [4]), int.Parse (split [5]), int.Parse (split [6]), 
+					int.Parse (split [7]), int.Parse (split [8]), data.equip3Desc, int.Parse (split [9]),
+					split [10]);
+				a.addEquipment (temp, 3, true);
+				a.resources.changeSpear ("DrawingsV2/Items/Equipment/" + temp.Slug);
+			}
+
+			if (data.equip4 != null) {
+				split = data.equip4.Split (new string[] { " " }, System.StringSplitOptions.None);
+				temp = new Item (int.Parse (split [0]), data.equip4Title, split [1], int.Parse (split [2]),
+					int.Parse (split [3]), int.Parse (split [4]), int.Parse (split [5]), int.Parse (split [6]), 
+					int.Parse (split [7]), int.Parse (split [8]), data.equip4Desc, int.Parse (split [9]),
+					split [10]);
+				a.addEquipment (temp, 4, true);
+				a.resources.changeAxe ("DrawingsV2/Items/Equipment/" + temp.Slug);
+			}
+
+			if (data.equip5 != null) {
+				split = data.equip5.Split (new string[] { " " }, System.StringSplitOptions.None);
+				temp = new Item (int.Parse (split [0]), data.equip5Title, split [1], int.Parse (split [2]),
+					int.Parse (split [3]), int.Parse (split [4]), int.Parse (split [5]), int.Parse (split [6]), 
+					int.Parse (split [7]), int.Parse (split [8]), data.equip5Desc, int.Parse (split [9]),
+					split [10]);
+				a.addEquipment (temp, 5, true);
+				a.resources.changeDagger ("DrawingsV2/Items/Equipment/" + temp.Slug);
+			}
+
 			print(" Loaded saved file.");
 		}
 		SceneManager.LoadScene(1);

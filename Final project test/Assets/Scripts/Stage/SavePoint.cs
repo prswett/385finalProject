@@ -39,6 +39,7 @@ public class SavePoint : MonoBehaviour
 			if (Input.GetKeyDown (KeyCode.S)) {
 				player.inv.save ();
 				player.pInv.save ();
+				player.eInv.save ();
 				Save ();
 
 			}
@@ -71,175 +72,207 @@ public class SavePoint : MonoBehaviour
 		data.coins = PlayerStatistics.coins;
 		data.nextLevel = PlayerStatistics.nextLevel;
 
-		string[] split;
-		string slug;
-
-		if (Inventory.saveItems [0].ID != -1) {
-			split = Inventory.saveItems [0].Slug.Split (new string[] { "/" }, StringSplitOptions.None);
-			slug = split [split.Length - 1];
-
+		int numberItems = Inventory.saveItems.Count;
+		int count = 0;
+		if (count < numberItems) {
+			count++;
 			data.item0Title = Inventory.saveItems [0].Title;
 			data.item0Desc = Inventory.saveItems [0].Description;
 			data.item0 = Inventory.saveItems [0].ID + " " + Inventory.saveItems [0].type + " " + Inventory.saveItems [0].Value + " " +
 			Inventory.saveItems [0].str + " " + Inventory.saveItems [0].dex + " " + Inventory.saveItems [0].wis + " " + Inventory.saveItems [0].luk + " " +
 			Inventory.saveItems [0].atk + " " + Inventory.saveItems [0].def + " " + Inventory.saveItems [0].Rarity + " " +
-			slug;
+				Inventory.saveItems [0].Slug;
 		}
 
-		if (Inventory.saveItems [1].ID != -1) {
-			split = Inventory.saveItems [1].Slug.Split (new string[] { "/" }, StringSplitOptions.None);
-			slug = split [split.Length - 1];
-
+		if (count < numberItems) {
+			count++;
 			data.item1Title = Inventory.saveItems [1].Title;
 			data.item1Desc = Inventory.saveItems [1].Description;
 			data.item1 = Inventory.saveItems [1].ID + " " + Inventory.saveItems [1].type + " " + Inventory.saveItems [1].Value + " " +
 				Inventory.saveItems [1].str + " " + Inventory.saveItems [1].dex + " " + Inventory.saveItems [1].wis + " " + Inventory.saveItems [1].luk + " " +
 				Inventory.saveItems [1].atk + " " + Inventory.saveItems [1].def + " " + Inventory.saveItems [1].Rarity + " " +
-				slug;
+				Inventory.saveItems [1].Slug;
 		}
 		
-		if (Inventory.saveItems[2].ID != -1) {
-			split = Inventory.saveItems [2].Slug.Split (new string[] { "/" }, StringSplitOptions.None);
-			slug = split [split.Length - 1];
-
+		if (count < numberItems) {
+			count++;
 			data.item2Title = Inventory.saveItems [2].Title;
 			data.item2Desc = Inventory.saveItems [2].Description;
 			data.item2 = Inventory.saveItems [2].ID + " " + Inventory.saveItems [2].type + " " + Inventory.saveItems [2].Value + " " +
 				Inventory.saveItems [2].str + " " + Inventory.saveItems [2].dex + " " + Inventory.saveItems [2].wis + " " + Inventory.saveItems [2].luk + " " +
 				Inventory.saveItems [2].atk + " " + Inventory.saveItems [2].def + " " + Inventory.saveItems [2].Rarity + " " +
-				slug;
+				Inventory.saveItems [2].Slug;
 		}
 
-		if (Inventory.saveItems [3].ID != -1) {
-			split = Inventory.saveItems [3].Slug.Split (new string[] { "/" }, StringSplitOptions.None);
-			slug = split [split.Length - 1];
-
+		if (count < numberItems) {
+			count++;
 			data.item3Title = Inventory.saveItems [3].Title;
 			data.item3Desc = Inventory.saveItems [3].Description;
 			data.item3 = Inventory.saveItems [3].ID + " " + Inventory.saveItems [3].type + " " + Inventory.saveItems [3].Value + " " +
 				Inventory.saveItems [3].str + " " + Inventory.saveItems [3].dex + " " + Inventory.saveItems [3].wis + " " + Inventory.saveItems [3].luk + " " +
 				Inventory.saveItems [3].atk + " " + Inventory.saveItems [3].def + " " + Inventory.saveItems [3].Rarity + " " +
-				slug;
+				Inventory.saveItems [3].Slug;
 		}
 
-		if (Inventory.saveItems [4].ID != -1) {
-			split = Inventory.saveItems [4].Slug.Split (new string[] { "/" }, StringSplitOptions.None);
-			slug = split [split.Length - 1];
-
+		if (count < numberItems) {
+			count++;
 			data.item4Title = Inventory.saveItems [4].Title;
 			data.item4Desc = Inventory.saveItems [4].Description;
 			data.item4 = Inventory.saveItems [4].ID + " " + Inventory.saveItems [4].type + " " + Inventory.saveItems [4].Value + " " +
 				Inventory.saveItems [4].str + " " + Inventory.saveItems [4].dex + " " + Inventory.saveItems [4].wis + " " + Inventory.saveItems [4].luk + " " +
 				Inventory.saveItems [4].atk + " " + Inventory.saveItems [4].def + " " + Inventory.saveItems [4].Rarity + " " +
-				slug;
+				Inventory.saveItems [4].Slug;
 		}
 
-		if (Inventory.saveItems [5].ID != -1) {
-			split = Inventory.saveItems [5].Slug.Split (new string[] { "/" }, StringSplitOptions.None);
-			slug = split [split.Length - 1];
-
+		if (count < numberItems) {
+			count++;
 			data.item5Title = Inventory.saveItems [5].Title;
 			data.item5Desc = Inventory.saveItems [5].Description;
 			data.item5 = Inventory.saveItems [5].ID + " " + Inventory.saveItems [5].type + " " + Inventory.saveItems [5].Value + " " +
 				Inventory.saveItems [5].str + " " + Inventory.saveItems [5].dex + " " + Inventory.saveItems [5].wis + " " + Inventory.saveItems [5].luk + " " +
 				Inventory.saveItems [5].atk + " " + Inventory.saveItems [5].def + " " + Inventory.saveItems [5].Rarity + " " +
-				slug;
+				Inventory.saveItems [5].Slug;
 		}
 
-		if (Inventory.saveItems [6].ID != -1) {
-			split = Inventory.saveItems [6].Slug.Split (new string[] { "/" }, StringSplitOptions.None);
-			slug = split [split.Length - 1];
-
+		if (count < numberItems) {
+			count++;
 			data.item6Title = Inventory.saveItems [6].Title;
 			data.item6Desc = Inventory.saveItems [6].Description;
 			data.item6 = Inventory.saveItems [6].ID + " " + Inventory.saveItems [6].type + " " + Inventory.saveItems [6].Value + " " +
 				Inventory.saveItems [6].str + " " + Inventory.saveItems [6].dex + " " + Inventory.saveItems [6].wis + " " + Inventory.saveItems [6].luk + " " +
 				Inventory.saveItems [6].atk + " " + Inventory.saveItems [6].def + " " + Inventory.saveItems [6].Rarity + " " +
-				slug;
+				Inventory.saveItems [6].Slug;
 		}
 
-		if (Inventory.saveItems [7].ID != -1) {
-			split = Inventory.saveItems [7].Slug.Split (new string[] { "/" }, StringSplitOptions.None);
-			slug = split [split.Length - 1];
-
+		if (count < numberItems) {
+			count++;
 			data.item7Title = Inventory.saveItems [7].Title;
 			data.item7Desc = Inventory.saveItems [7].Description;
 			data.item7 = Inventory.saveItems [7].ID + " " + Inventory.saveItems [7].type + " " + Inventory.saveItems [7].Value + " " +
 				Inventory.saveItems [7].str + " " + Inventory.saveItems [7].dex + " " + Inventory.saveItems [7].wis + " " + Inventory.saveItems [7].luk + " " +
 				Inventory.saveItems [7].atk + " " + Inventory.saveItems [7].def + " " + Inventory.saveItems [7].Rarity + " " +
-				slug;
+				Inventory.saveItems [7].Slug;
 		}
 
-		if (Inventory.saveItems [8].ID != -1) {
-			split = Inventory.saveItems [8].Slug.Split (new string[] { "/" }, StringSplitOptions.None);
-			slug = split [split.Length - 1];
-
+		if (count < numberItems) {
+			count++;
 			data.item8Title = Inventory.saveItems [8].Title;
 			data.item8Desc = Inventory.saveItems [8].Description;
 			data.item8 = Inventory.saveItems [8].ID + " " + Inventory.saveItems [8].type + " " + Inventory.saveItems [8].Value + " " +
 				Inventory.saveItems [8].str + " " + Inventory.saveItems [8].dex + " " + Inventory.saveItems [8].wis + " " + Inventory.saveItems [8].luk + " " +
 				Inventory.saveItems [8].atk + " " + Inventory.saveItems [8].def + " " + Inventory.saveItems [8].Rarity + " " +
-				slug;
+				Inventory.saveItems [8].Slug;
 		}
 
-		if (Inventory.saveItems [9].ID != -1) {
-			split = Inventory.saveItems [9].Slug.Split (new string[] { "/" }, StringSplitOptions.None);
-			slug = split [split.Length - 1];
-
+		if (count < numberItems) {
+			count++;
 			data.item9Title = Inventory.saveItems [9].Title;
 			data.item9Desc = Inventory.saveItems [9].Description;
 			data.item9 = Inventory.saveItems [9].ID + " " + Inventory.saveItems [9].type + " " + Inventory.saveItems [9].Value + " " +
 				Inventory.saveItems [9].str + " " + Inventory.saveItems [9].dex + " " + Inventory.saveItems [9].wis + " " + Inventory.saveItems [9].luk + " " +
 				Inventory.saveItems [9].atk + " " + Inventory.saveItems [9].def + " " + Inventory.saveItems [9].Rarity + " " +
-				slug;
+				Inventory.saveItems [9].Slug;
 		}
+		count = 0;
+		numberItems = PotionInventory.savePotions.Count;
 
-		if (PotionInventory.savePotions [0].ID != -1) {
-			split = PotionInventory.savePotions [0].Slug.Split (new string[] { "/" }, StringSplitOptions.None);
-			slug = split [split.Length - 1];
+		if (count < numberItems) {
+			count++;
 
 			data.potion0Title = PotionInventory.savePotions [0].Title;
 			data.potion0Desc = PotionInventory.savePotions [0].Description;
 			data.potion0 = PotionInventory.savePotions [0].ID + " " + PotionInventory.savePotions [0].type + " " +
 			PotionInventory.savePotions [0].Value + " " + PotionInventory.savePotions [0].healing + " " +
-			PotionInventory.savePotions [0].Stackable + " " + PotionInventory.savePotions [0].Rarity + " " + slug + " " +
+			PotionInventory.savePotions [0].Stackable + " " + PotionInventory.savePotions [0].Rarity + " " + PotionInventory.savePotions[0].Slug + " " +
 			PotionInventory.savePotions [0].stack;
 		}
 
-		if (PotionInventory.savePotions [1].ID != -1) {
-			split = PotionInventory.savePotions [1].Slug.Split (new string[] { "/" }, StringSplitOptions.None);
-			slug = split [split.Length - 1];
+		if (count < numberItems) {
+			count++;
 
 			data.potion1Title = PotionInventory.savePotions [1].Title;
 			data.potion1Desc = PotionInventory.savePotions [1].Description;
 			data.potion1 = PotionInventory.savePotions [1].ID + " " + PotionInventory.savePotions [1].type + " " +
 				PotionInventory.savePotions [1].Value + " " + PotionInventory.savePotions [1].healing + " " +
-				PotionInventory.savePotions [1].Stackable + " " + PotionInventory.savePotions [1].Rarity + " " + slug + " " +
+				PotionInventory.savePotions [1].Stackable + " " + PotionInventory.savePotions [1].Rarity + " " + PotionInventory.savePotions[1].Slug + " " +
 				PotionInventory.savePotions [1].stack;
 		}
 
-		if (PotionInventory.savePotions [2].ID != -1) {
-			split = PotionInventory.savePotions [2].Slug.Split (new string[] { "/" }, StringSplitOptions.None);
-			slug = split [split.Length - 1];
+		if (count < numberItems) {
+			count++;
 
 			data.potion2Title = PotionInventory.savePotions [2].Title;
 			data.potion2Desc = PotionInventory.savePotions [2].Description;
 			data.potion2 = PotionInventory.savePotions [2].ID + " " + PotionInventory.savePotions [2].type + " " +
 				PotionInventory.savePotions [2].Value + " " + PotionInventory.savePotions [2].healing + " " +
-				PotionInventory.savePotions [2].Stackable + " " + PotionInventory.savePotions [2].Rarity + " " + slug + " " +
+				PotionInventory.savePotions [2].Stackable + " " + PotionInventory.savePotions [2].Rarity + " " + PotionInventory.savePotions[2].Slug + " " +
 				PotionInventory.savePotions [2].stack;
 		}
 
-		if (PotionInventory.savePotions [3].ID != -1) {
-			split = PotionInventory.savePotions [3].Slug.Split (new string[] { "/" }, StringSplitOptions.None);
-			slug = split [split.Length - 1];
+		if (count < numberItems) {
+			count++;
 
 			data.potion3Title = PotionInventory.savePotions [3].Title;
 			data.potion3Desc = PotionInventory.savePotions [3].Description;
 			data.potion3 = PotionInventory.savePotions [3].ID + " " + PotionInventory.savePotions [3].type + " " +
 				PotionInventory.savePotions [3].Value + " " + PotionInventory.savePotions [3].healing + " " +
-				PotionInventory.savePotions [3].Stackable + " " + PotionInventory.savePotions [3].Rarity + " " + slug + " " +
+				PotionInventory.savePotions [3].Stackable + " " + PotionInventory.savePotions [3].Rarity + " " + PotionInventory.savePotions[2].Slug + " " +
 				PotionInventory.savePotions [3].stack;
+		}
+
+		if (Equipment.saveItems [0].ID != -1) {
+			data.equip0Title = Equipment.saveItems [0].Title;
+			data.equip0Desc = Equipment.saveItems [0].Description;
+			data.equip0 = Equipment.saveItems [0].ID + " " + Equipment.saveItems [0].type + " " + Equipment.saveItems [0].Value + " " +
+				Equipment.saveItems [0].str + " " + Equipment.saveItems [0].dex + " " + Equipment.saveItems [0].wis + " " + Equipment.saveItems [0].luk + " " +
+				Equipment.saveItems [0].atk + " " + Equipment.saveItems [0].def + " " + Equipment.saveItems [0].Rarity + " " +
+				Equipment.saveItems[0].Slug;
+		}
+
+		if (Equipment.saveItems [1].ID != -1) {
+
+			data.equip1Title = Equipment.saveItems [1].Title;
+			data.equip1Desc = Equipment.saveItems [1].Description;
+			data.equip1 = Equipment.saveItems [1].ID + " " + Equipment.saveItems [1].type + " " + Equipment.saveItems [1].Value + " " +
+				Equipment.saveItems [1].str + " " + Equipment.saveItems [1].dex + " " + Equipment.saveItems [1].wis + " " + Equipment.saveItems [1].luk + " " +
+				Equipment.saveItems [1].atk + " " + Equipment.saveItems [1].def + " " + Equipment.saveItems [1].Rarity + " " +
+				Equipment.saveItems[1].Slug;
+		}
+
+		if (Equipment.saveItems [2].ID != -1) {
+			data.equip2Title = Equipment.saveItems [2].Title;
+			data.equip2Desc = Equipment.saveItems [2].Description;
+			data.equip2 = Equipment.saveItems [2].ID + " " + Equipment.saveItems [2].type + " " + Equipment.saveItems [2].Value + " " +
+				Equipment.saveItems [2].str + " " + Equipment.saveItems [2].dex + " " + Equipment.saveItems [2].wis + " " + Equipment.saveItems [2].luk + " " +
+				Equipment.saveItems [2].atk + " " + Equipment.saveItems [2].def + " " + Equipment.saveItems [2].Rarity + " " +
+				Equipment.saveItems[2].Slug;
+		}
+
+		if (Equipment.saveItems [3].ID != -1) {
+			data.equip3Title = Equipment.saveItems [3].Title;
+			data.equip3Desc = Equipment.saveItems [3].Description;
+			data.equip3 = Equipment.saveItems [3].ID + " " + Equipment.saveItems [3].type + " " + Equipment.saveItems [3].Value + " " +
+				Equipment.saveItems [3].str + " " + Equipment.saveItems [3].dex + " " + Equipment.saveItems [3].wis + " " + Equipment.saveItems [3].luk + " " +
+				Equipment.saveItems [3].atk + " " + Equipment.saveItems [3].def + " " + Equipment.saveItems [3].Rarity + " " +
+				Equipment.saveItems[3].Slug;
+		}
+
+		if (Equipment.saveItems [4].ID != -1) {
+			data.equip4Title = Equipment.saveItems [4].Title;
+			data.equip4Desc = Equipment.saveItems [4].Description;
+			data.equip4 = Equipment.saveItems [4].ID + " " + Equipment.saveItems [4].type + " " + Equipment.saveItems [4].Value + " " +
+				Equipment.saveItems [4].str + " " + Equipment.saveItems [4].dex + " " + Equipment.saveItems [4].wis + " " + Equipment.saveItems [4].luk + " " +
+				Equipment.saveItems [4].atk + " " + Equipment.saveItems [4].def + " " + Equipment.saveItems [4].Rarity + " " +
+				Equipment.saveItems[4].Slug;
+		}
+
+		if (Equipment.saveItems [5].ID != -1) {
+			data.equip5Title = Equipment.saveItems [5].Title;
+			data.equip5Desc = Equipment.saveItems [5].Description;
+			data.equip5 = Equipment.saveItems [5].ID + " " + Equipment.saveItems [5].type + " " + Equipment.saveItems [5].Value + " " +
+				Equipment.saveItems [5].str + " " + Equipment.saveItems [5].dex + " " + Equipment.saveItems [5].wis + " " + Equipment.saveItems [5].luk + " " +
+				Equipment.saveItems [5].atk + " " + Equipment.saveItems [5].def + " " + Equipment.saveItems [5].Rarity + " " +
+				Equipment.saveItems[5].Slug;
 		}
 
 		// moves to file
@@ -270,6 +303,7 @@ class PlayerData
 	public float nextLevel;
 	public float coins;
 
+	//Items
 	public string item0;
 	public string item0Title;
 	public string item0Desc;
@@ -310,6 +344,7 @@ class PlayerData
 	public string item9Title;
 	public string item9Desc;
 
+	//Potions
 	public string potion0;
 	public string potion0Title;
 	public string potion0Desc;
@@ -325,4 +360,29 @@ class PlayerData
 	public string potion3;
 	public string potion3Title;
 	public string potion3Desc;
+
+	//Equipment
+	public string equip0;
+	public string equip0Title;
+	public string equip0Desc;
+
+	public string equip1;
+	public string equip1Title;
+	public string equip1Desc;
+
+	public string equip2;
+	public string equip2Title;
+	public string equip2Desc;
+
+	public string equip3;
+	public string equip3Title;
+	public string equip3Desc;
+
+	public string equip4;
+	public string equip4Title;
+	public string equip4Desc;
+
+	public string equip5;
+	public string equip5Title;
+	public string equip5Desc;
 }

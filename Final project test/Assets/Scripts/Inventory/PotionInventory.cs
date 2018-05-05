@@ -13,24 +13,29 @@ public class PotionInventory : MonoBehaviour {
 	PotionDatabase database;
 
 	private int slotAmount;
-	public List<Potion> potions = new List<Potion> ();
+
 	public List<GameObject> slots = new List<GameObject>();
 
-	public static List<Potion> savePotions = new List<Potion> ();
+	public static List<PotionStats> savePotions = new List<PotionStats> ();
 
 	public void save() {
-		savePotions = potions;
+		savePotions = new List<PotionStats> ();
+		for (int i = 0; i < slotAmount; i++) {
+			if (slots [i].GetComponent<PotionSlot> ().potion != null) {
+				slots [i].GetComponent<PotionSlot> ().potion.GetComponent<PotionStats> ().stack = slots [i].GetComponent<PotionSlot> ().potion.GetComponent<PotionObject> ().amount;
+				savePotions.Add (slots [i].GetComponent<PotionSlot> ().potion.GetComponent<PotionStats> ());
+			}
+		}
 	}
 
 	void Awake() {
 		database = GetComponent<PotionDatabase>();
 		slotAmount = 4;
 		inventoryPanel = GameObject.Find("Inventory Panel");
-		//slotPanel = inventoryPanel.transform.Find("Slot Panel").gameObject;
+
 
 		for (int i = 0; i < slotAmount; i++)
 		{
-			potions.Add(new Potion());
 			slots.Add(Instantiate(inventorySlot));
 
 			slots[i].GetComponent<PotionSlot> ().id = i;
@@ -56,14 +61,14 @@ public class PotionInventory : MonoBehaviour {
 		}
 		Potion itemToAdd = database.FetchItemByID(id);
 
-		if (itemToAdd.Stackable && CheckIfItemIsInInventory(itemToAdd))
+		if (itemToAdd.Stackable && CheckIfItemIsInInventory(itemToAdd.ID))
 		{
-			for(int i = 0; i < potions.Count; i++)
+			for(int i = 0; i < slotAmount; i++)
 			{
-				if(potions[i].ID == id)
+				if(slots[i].GetComponent<PotionSlot>().potion.GetComponent<PotionStats>().ID == itemToAdd.ID)
 				{
-					PotionData data = slots[i].transform.GetChild(0).GetComponent<PotionData>();
-					potions [i].stack++;
+					Debug.Log ("here");
+					PotionObject data = slots [i].GetComponent<PotionSlot> ().potion.GetComponent<PotionObject> ();
 					data.amount++;
 					data.transform.GetChild(0).GetComponent<Text>().text = data.amount.ToString();
 					break;
@@ -74,68 +79,49 @@ public class PotionInventory : MonoBehaviour {
 		}
 		else
 		{
-			for (int i = 0; i < potions.Count; i++)
-			{
-				if (potions[i].ID == -1)
-				{
-					potions[i] = itemToAdd;
-					GameObject itemObj = Instantiate(inventoryPotion);
-					potions [i].stack++;
-					itemObj.GetComponent<PotionData> ().potion = itemToAdd;
-					itemObj.GetComponent<PotionData> ().slot = i;
-					itemObj.transform.SetParent(slots[i].transform);
-					itemObj.transform.position = slots [i].transform.position;
-					itemObj.GetComponent<Image>().sprite = itemToAdd.Sprite;
-					itemObj.name = itemToAdd.Title;
-					PotionData data = slots[i].transform.GetChild(0).GetComponent<PotionData>();
-					data.amount = 1;
+			for (int i = 0; i < slotAmount; i++) {
+				if (slots [i].GetComponent<PotionSlot> ().potion == null) {
+					PotionSlot temp = slots [i].GetComponent<PotionSlot> ();
+					temp.potion = Instantiate (inventoryPotion);
+					temp.potion.transform.SetParent (slots [i].transform);
+					temp.potion.transform.position = slots [i].transform.position;
+					temp.potion.GetComponent<Image> ().sprite = database.FetchItemByID (id).Sprite;
+					temp.potion.transform.localScale = new Vector3 (.5f, .5f, 0);
+					temp.potion.GetComponent<PotionObject> ().slot = i;
+					temp.potion.GetComponent<PotionStats> ().loadStats(database.FetchItemByID(id));
+					slots [i].GetComponent<PotionSlot> ().potion.GetComponent<PotionObject> ().amount = 1;
 					break;
-
 				}
 			}
 		}
 
 	}
 
-	public void RemoveItem(int id) {
-		Potion itemToRemove = database.FetchItemByID (id);
-		if (itemToRemove.Stackable && CheckIfItemIsInInventory (itemToRemove)) {
-			for (int j = 0; j < potions.Count; j++) {
-				if (potions [j].ID == id) {
-					PotionData data = slots [j].transform.GetChild (0).GetComponent<PotionData> ();
-					data.amount--;
-					potions [j].stack--;
-					data.transform.GetChild (0).GetComponent<Text> ().text = data.amount.ToString ();
-					if (data.amount == 0) {
-						Destroy (slots [j].transform.GetChild (0).gameObject);
-						potions [j] = new Potion ();
-						break;
-					}
-					if (data.amount == 1) {
-						slots [j].transform.GetChild (0).transform.GetChild (0).GetComponent<Text> ().text = "";
-						break;
-					}
-					break;
-				}
-			}
-		} else {
-			for (int i = 0; i < potions.Count; i++) {
-				if (potions [i].ID != -1 && potions [i].ID == id) {
-					Destroy (slots [i].transform.GetChild (0).gameObject);
-					potions [i] = new Potion ();
-					break;
-				}
-			}
-		}
+	public void AddItemSlot(int slot, PotionStats id, int amount) {
+		PotionSlot temp = slots[slot].GetComponent<PotionSlot>();
+		temp.potion = Instantiate (inventoryPotion);
+		temp.potion.transform.SetParent (slots [slot].transform);
+		temp.potion.transform.position = slots [slot].transform.position;
+		temp.potion.GetComponent<Image>().sprite = database.FetchItemByID (id.ID).Sprite;
+		temp.potion.transform.localScale = new Vector3 (.5f, .5f, 0);
+		temp.potion.GetComponent<PotionObject> ().slot = slot;
+		temp.potion.GetComponent<PotionObject> ().amount = amount;
+		temp.potion.GetComponent<PotionStats> ().loadStats(id);
 	}
 
-	bool CheckIfItemIsInInventory(Potion potion)
+	public void RemoveItemSlot(int slot) {
+		PotionSlot temp = slots[slot].GetComponent<PotionSlot>();
+		Destroy (temp.potion);
+		temp.potion = null;
+	}
+
+	bool CheckIfItemIsInInventory(int id)
 	{
-		for (int i = 0; i < potions.Count; i++)
-		{
-			if (potions[i].ID == potion.ID)
-			{
-				return true;
+		for (int i = 0; i < slotAmount; i++) {
+			if (slots [i].GetComponent<PotionSlot> ().potion != null) {
+				if (slots [i].GetComponent<PotionSlot> ().potion.GetComponent<PotionStats> ().ID == id) {
+					return true;
+				}
 			}
 		}
 		return false;

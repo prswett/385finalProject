@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PotionTooltip : MonoBehaviour {
 	
-	private Potion potion;
+	private PotionStats potion;
 	private string data;
 	private GameObject tooltip;
 
@@ -23,7 +23,7 @@ public class PotionTooltip : MonoBehaviour {
 		}
 	}
 
-	public void Activate(Potion potion)
+	public void Activate(PotionStats potion)
 	{
 		this.potion = potion;
 		ConstructDataString();

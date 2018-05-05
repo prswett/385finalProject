@@ -53,7 +53,12 @@
   <ItemGroup>
      <Compile Include="Assets\EmptyClass.cs" />
      <Compile Include="Assets\Equipment.cs" />
+     <Compile Include="Assets\EquipmentSlot.cs" />
      <Compile Include="Assets\EquipmentTooltip.cs" />
+     <Compile Include="Assets\ItemObject.cs" />
+     <Compile Include="Assets\ItemStats.cs" />
+     <Compile Include="Assets\PotionObject.cs" />
+     <Compile Include="Assets\PotionStats.cs" />
      <Compile Include="Assets\Scripts\Boss\BoarController.cs" />
      <Compile Include="Assets\Scripts\Boss\BossHealth.cs" />
      <Compile Include="Assets\Scripts\Boss\PisanController.cs" />

@@ -9,7 +9,7 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour {
 	//Resources
-	private PlayerResources resources;
+	public PlayerResources resources;
 	int count;
 	public Text coinText;
 	public bool door = false;
@@ -59,6 +59,7 @@ public class Player : MonoBehaviour {
 	//Inventory
 	public Inventory inv;
 	public PotionInventory pInv;
+	public Equipment eInv;
 
 	//Time stops
 	public bool menu = false;
@@ -82,8 +83,10 @@ public class Player : MonoBehaviour {
 		resources = GetComponent<PlayerResources> ();
 		count = resources.weaponCount;
 		playerCanvas = GameObject.Find ("Base Player UI").GetComponent<CanvasController> ();
+
 		inv = GameObject.Find ("Inventory").GetComponent<Inventory> ();
 		pInv = GameObject.Find ("InventoryP").GetComponent<PotionInventory> ();
+		eInv = GameObject.Find ("Equipment").GetComponent<Equipment> ();
 	}
 
 	public void getSpawnLocation(float x, float y) {
@@ -102,12 +105,20 @@ public class Player : MonoBehaviour {
 		inv.AddItem (input);
 	}
 
-	public void addItem(Item input) {
-		inv.AddItem (input);
+	public void addItem(ItemStats inputStats) {
+		inv.AddItem (inputStats);
 	}
 
 	public void addPotion(int input) {
 		pInv.AddItem (input);
+	}
+
+	public void addEquipment(Item input, int slot, bool equipped) {
+		eInv.AddItem (input, slot, equipped);
+	}
+
+	public void addEquipment(Item input, int slot) {
+		eInv.AddItem (input, slot);
 	}
 		
 	//
@@ -204,10 +215,13 @@ public class Player : MonoBehaviour {
 
 				if (Input.GetKeyDown (KeyCode.Space) && onGround && !jumpDown) {
 					rb2d.velocity = new Vector2 (rb2d.velocity.x, jumpSpeed);
+					int random = UnityEngine.Random.Range (0, 6);
+					addItem (random);
 				}
 
 				if (Input.GetKeyDown (KeyCode.S)) {
 					anim.SetBool ("crouching", true);
+					inv.showData ();
 				}
 				if (Input.GetKeyUp (KeyCode.S)) {
 					anim.SetBool ("crouching", false);

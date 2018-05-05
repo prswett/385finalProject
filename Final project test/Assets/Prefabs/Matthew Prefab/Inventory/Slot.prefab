@@ -41,6 +41,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 0
+  inv: {fileID: 0}
+  offset: {x: 0, y: 0}
 --- !u!114 &114657588961188266
 MonoBehaviour:
   m_ObjectHideFlags: 1
