@@ -5,6 +5,3 @@ Upgrading system
 More spells
 More stages
 Art, music
-
-Make enemies fade in
-Create a tutorial stage

@@ -22,12 +22,18 @@ public class BossHealth : MonoBehaviour {
 	//Update variables
 	public float currentHealth = 100;
 
+
+	public GameObject item;
+	public GameObject coin;
+	public int numberHeld = 1;
+
 	Renderer render;
 
 	//Gets all variables and components before initialization
 	void Awake() {
 		anim = GetComponent<Animator> ();
 		healthbar = GameObject.Find ("BossHealth").GetComponent<Image> ();
+		currentHealth = currentHealth * (PlayerStatistics.level) / 1.5f;
 		maxHealth = currentHealth;
 		target = GameObject.FindWithTag ("Boss").transform;
 
@@ -48,6 +54,14 @@ public class BossHealth : MonoBehaviour {
 			temp.killedBoss = true;
 			if (temp.exp < 200) {
 				PlayerStatistics.exp += 10;
+			}
+			float length = 1f;
+			float spawnLocation = length / numberHeld;
+			for (int i = 0; i < numberHeld; i++) {
+				Instantiate (item, new Vector3 ((transform.position.x - (length / 2f)) + (i * spawnLocation), transform.position.y, 0), 
+					Quaternion.identity);
+				Instantiate (coin, new Vector3 ((transform.position.x - (length / 2f)) + (i * spawnLocation), transform.position.y, 0), 
+					Quaternion.identity);
 			}
 		}
 

@@ -54,6 +54,15 @@ public class PotionInventory : MonoBehaviour {
 		
 	}
 
+	public bool checkEmpty() {
+		for (int i = 0; i < slotAmount; i++) {
+			if (slots [i].GetComponent<PotionSlot> ().potion == null) {
+				return true;
+			}
+		}
+		return false;
+	}
+
 	public void AddItem(int id)
 	{
 		if (id < 0) {
@@ -67,7 +76,6 @@ public class PotionInventory : MonoBehaviour {
 			{
 				if(slots[i].GetComponent<PotionSlot>().potion.GetComponent<PotionStats>().ID == itemToAdd.ID)
 				{
-					Debug.Log ("here");
 					PotionObject data = slots [i].GetComponent<PotionSlot> ().potion.GetComponent<PotionObject> ();
 					data.amount++;
 					data.transform.GetChild(0).GetComponent<Text>().text = data.amount.ToString();
@@ -94,7 +102,49 @@ public class PotionInventory : MonoBehaviour {
 				}
 			}
 		}
+	}
 
+	public void AddItem(int id, bool tutorial)
+	{
+		if (id < 0) {
+			return;
+		}
+		Potion itemToAdd = database.FetchItemByID(id);
+
+		if (itemToAdd.Stackable && CheckIfItemIsInInventory(itemToAdd.ID))
+		{
+			for(int i = 0; i < slotAmount; i++)
+			{
+				if(slots[i].GetComponent<PotionSlot>().potion.GetComponent<PotionStats>().ID == itemToAdd.ID)
+				{
+					PotionObject data = slots [i].GetComponent<PotionSlot> ().potion.GetComponent<PotionObject> ();
+					data.amount++;
+					data.tutorial = tutorial;
+					data.transform.GetChild(0).GetComponent<Text>().text = data.amount.ToString();
+					break;
+				}
+
+			}
+
+		}
+		else
+		{
+			for (int i = 0; i < slotAmount; i++) {
+				if (slots [i].GetComponent<PotionSlot> ().potion == null) {
+					PotionSlot temp = slots [i].GetComponent<PotionSlot> ();
+					temp.potion = Instantiate (inventoryPotion);
+					temp.potion.transform.SetParent (slots [i].transform);
+					temp.potion.transform.position = slots [i].transform.position;
+					temp.potion.GetComponent<Image> ().sprite = database.FetchItemByID (id).Sprite;
+					temp.potion.transform.localScale = new Vector3 (.5f, .5f, 0);
+					temp.potion.GetComponent<PotionObject> ().slot = i;
+					temp.potion.GetComponent<PotionObject> ().tutorial = tutorial;
+					temp.potion.GetComponent<PotionStats> ().loadStats(database.FetchItemByID(id));
+					slots [i].GetComponent<PotionSlot> ().potion.GetComponent<PotionObject> ().amount = 1;
+					break;
+				}
+			}
+		}
 	}
 
 	public void AddItemSlot(int slot, PotionStats id, int amount) {

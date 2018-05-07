@@ -28,6 +28,12 @@ public class FEnemyR : MonoBehaviour {
 	Vector2 bulletPos;
 	public float fireRate = 1;
 
+	public bool zone = false;
+	public float leftCoordinate;
+	public float rightCoordinate;
+	public float upCoordinate;
+	public float downCoordinate;
+
 	void Start () {
 		parent = GetComponent<EnemyController> ();
 		lastFire = 0;
@@ -83,6 +89,22 @@ public class FEnemyR : MonoBehaviour {
 			transform.position += Vector3.up * speed * Time.deltaTime;
 		}
 		if (enemyY - playerY > MinDist) {
+			transform.position += Vector3.down * speed * Time.deltaTime;
+		}
+	}
+
+	void zoneMove() {
+		anim.SetBool ("attacking", false);
+		if (enemyX - playerX < -MinDist && enemyX < rightCoordinate) {
+			transform.position += Vector3.right * speed * Time.deltaTime;
+		} 
+		if (enemyX - playerX > MinDist && enemyX > leftCoordinate) {
+			transform.position += Vector3.left * speed * Time.deltaTime;
+		}
+		if (enemyY - playerY < -MinDist && enemyY < upCoordinate) {
+			transform.position += Vector3.up * speed * Time.deltaTime;
+		}
+		if (enemyY - playerY > MinDist && enemyY > downCoordinate) {
 			transform.position += Vector3.down * speed * Time.deltaTime;
 		}
 	}

@@ -41,7 +41,7 @@ public class StageController : MonoBehaviour {
 	void Update () {
 		int mon = monstersNeeded - killCount.killCount;
 		if (mon >= 0 && !portalSpawned) {
-			monsters.text = mon.ToString () + "Monsters Remaining";
+			monsters.text = mon.ToString () + " Monsters Remaining";
 		}
 		if (portalSpawned) {
 			monsters.text = "Find the portal to move on";

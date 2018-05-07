@@ -7,6 +7,7 @@ public class ItemController : MonoBehaviour {
 	public int ID;
 	//Potion or Item
 	public string type;
+	public bool setItem = false;
 
 	public Transform target;
 	public Player player;
@@ -22,18 +23,37 @@ public class ItemController : MonoBehaviour {
 		target = GameObject.FindGameObjectWithTag ("Player").transform;
 		player = target.GetComponent<Player> ();
 		spawnTime = Time.time;
-		int randType = Random.Range (0, 10);
-		if (randType < 1) {
-			type = "Item";
-		} else {
-			type = "Potion";
-		}
+		typeSet ();
+	}
 
-		if (type == "Item") {
-			ID = Random.Range (0, 5);
-		} else {
-			ID = Random.Range (0, 1);
+	void typeSet() {
+		if (!setItem) {
+			int randType = Random.Range (0, 10);
+			if (randType < 1) {
+				type = "Item";
+			} else {
+				type = "Potion";
+			}
+
+			if (type == "Item") {
+				generateItem ();
+			} else {
+				generatePotion ();
+			}
 		}
+	}
+
+	void generateItem() {
+		int roll = Random.Range (0, 10);
+		if (roll < 4) {
+			ID = Random.Range (6, 18);
+		} else {
+			ID = Random.Range (0, 5);
+		}
+	}
+
+	void generatePotion() {
+		ID = Random.Range (0, 2);
 	}
 	
 	// Update is called once per frame
@@ -49,11 +69,17 @@ public class ItemController : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject.CompareTag ("Player")) {
 			if (type == "Potion") {
-				player.addPotion (ID);
+				if (player.pInv.checkEmpty()) {
+					player.addPotion (ID);
+					Destroy (transform.parent.gameObject);
+				}
 			} else {
-				player.addItem (ID);
+				if (player.inv.checkEmpty()) {
+					player.addItem (ID);
+					Destroy (transform.parent.gameObject);
+				}
 			}
-			Destroy (gameObject);
+
 		}
 
 		if (other.gameObject.CompareTag ("outofbounds")) {

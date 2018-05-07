@@ -17,8 +17,10 @@ public class LoadPlayer : MonoBehaviour {
 			FileStream file = File.Open(Application.persistentDataPath + "/pss.sb", FileMode.Open);
 			PlayerData data = (PlayerData)bf.Deserialize(file);
 			file.Close();
+			PlayerStatistics.baseHealth = data.baseHp;
 			PlayerStatistics.health = data.curHP;
 			PlayerStatistics.maxHealth = data.maxHP;
+			PlayerStatistics.baseMana = data.baseMp;
 			PlayerStatistics.mana = data.curMP;
 			PlayerStatistics.maxMana = data.maxMP;
 
@@ -33,6 +35,7 @@ public class LoadPlayer : MonoBehaviour {
 			PlayerStatistics.exp = data.exp;
 			PlayerStatistics.nextLevel = data.nextLevel;
 			PlayerStatistics.coins = data.coins;
+			PlayerStatistics.level = data.level;
 
 			string[] split;
 			Item temp;

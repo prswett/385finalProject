@@ -86,7 +86,7 @@ public class Player : MonoBehaviour {
 
 		inv = GameObject.Find ("Inventory").GetComponent<Inventory> ();
 		pInv = GameObject.Find ("InventoryP").GetComponent<PotionInventory> ();
-		eInv = GameObject.Find ("Equipment").GetComponent<Equipment> ();
+		eInv = GameObject.Find ("EquipmentInventory").GetComponent<Equipment> ();
 	}
 
 	public void getSpawnLocation(float x, float y) {
@@ -127,7 +127,6 @@ public class Player : MonoBehaviour {
 		anim = GetComponent<Animator> ();
 		killCount = 0;
 		gravityStore = rb2d.gravityScale;
-
 		//GetComponent<SpriteRenderer> ().color = Color.blue;
 	}
 
@@ -164,6 +163,7 @@ public class Player : MonoBehaviour {
 				resources.setArmorOn ();
 				PlayerStatistics.coins /= 2;
 				PlayerStatistics.exp = 0;
+				anim.SetBool ("dead", false);
 				playerReset ();
 			}
 		} else {
@@ -215,13 +215,10 @@ public class Player : MonoBehaviour {
 
 				if (Input.GetKeyDown (KeyCode.Space) && onGround && !jumpDown) {
 					rb2d.velocity = new Vector2 (rb2d.velocity.x, jumpSpeed);
-					int random = UnityEngine.Random.Range (0, 6);
-					addItem (random);
 				}
 
 				if (Input.GetKeyDown (KeyCode.S)) {
 					anim.SetBool ("crouching", true);
-					inv.showData ();
 				}
 				if (Input.GetKeyUp (KeyCode.S)) {
 					anim.SetBool ("crouching", false);

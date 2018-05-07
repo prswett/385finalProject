@@ -27,6 +27,7 @@ public class PortalController : MonoBehaviour {
 				player.resetKills ();
 				SceneManager.LoadScene (nextScene, LoadSceneMode.Single);
 				player.anim.SetBool ("attacking", false);
+				player.anim.SetBool ("walking", false);
 			}
 		}
 	}

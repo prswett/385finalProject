@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class DaggerController : MonoBehaviour {
-
-	public int damage = 1;
+	public int baseDamage = 5;
+	public int damage = 5;
 	void Start () {
 
 	}
 
 	void Update () {
+		damage = baseDamage + (int)PlayerStatistics.atk;
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {

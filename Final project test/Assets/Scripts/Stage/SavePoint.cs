@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
-using UnityEditor;
+
 using UnityEngine;
 
 public class SavePoint : MonoBehaviour
@@ -56,8 +56,10 @@ public class SavePoint : MonoBehaviour
 		// serializable data here
 		PlayerData data = new PlayerData ();
 
+		data.baseHp = PlayerStatistics.baseHealth;
 		data.curHP = PlayerStatistics.health;
 		data.maxHP = PlayerStatistics.maxHealth;
+		data.baseMp = PlayerStatistics.baseMana;
 		data.curMP = PlayerStatistics.mana;
 		data.maxMP = PlayerStatistics.maxMana;
 
@@ -71,6 +73,7 @@ public class SavePoint : MonoBehaviour
 		data.exp = PlayerStatistics.exp;
 		data.coins = PlayerStatistics.coins;
 		data.nextLevel = PlayerStatistics.nextLevel;
+		data.level = PlayerStatistics.level;
 
 		int numberItems = Inventory.saveItems.Count;
 		int count = 0;
@@ -287,8 +290,10 @@ public class SavePoint : MonoBehaviour
 [Serializable]
 class PlayerData
 {
+	public float baseHp;
 	public float curHP;
 	public float maxHP;
+	public float baseMp;
 	public float curMP;
 	public float maxMP;
 	// reference PlayerStats
@@ -301,6 +306,7 @@ class PlayerData
 
 	public float exp;
 	public float nextLevel;
+	public float level;
 	public float coins;
 
 	//Items

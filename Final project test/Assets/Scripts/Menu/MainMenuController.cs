@@ -32,4 +32,5 @@ public class MainMenuController : MonoBehaviour {
 			instructObject.SetActive (false);
 		}
 	}
+
 }

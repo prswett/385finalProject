@@ -26,6 +26,10 @@ public class GEnemyWep : MonoBehaviour {
 	public float jumpSpeed;
 	public bool facing = false;
 
+	public bool zone = false;
+	public float leftCoordinate;
+	public float rightCoordinate;
+
 	void Start () {
 		parent = GetComponent<EnemyController> ();
 		lastFire = 0;
@@ -64,7 +68,11 @@ public class GEnemyWep : MonoBehaviour {
 				}
 			}
 
-			collideMove ();
+			if (zone) {
+				zoneMove ();
+			} else {
+				collideMove ();
+			}
 
 			if (!(enemyX - playerX > MinDist) && !(enemyX - playerX < -MinDist)) {
 				if (Time.time - lastFire > fireRate) {
@@ -91,9 +99,36 @@ public class GEnemyWep : MonoBehaviour {
 				anim.SetBool ("slash", false);
 				anim.SetBool ("walking", true);
 				if (enemyX - playerX < -MinDist) {
-					transform.position += Vector3.right * speed * Time.deltaTime;
+					if (enemyX < rightCoordinate) {
+						transform.position += Vector3.right * speed * Time.deltaTime;
+					}
 				}
 				if (enemyX - playerX > MinDist) {
+					if (enemyX > leftCoordinate) {
+						transform.position += Vector3.left * speed * Time.deltaTime;
+					}
+				}
+			}
+		}
+	}
+
+	void zoneMove() {
+		anim.SetBool ("attacking", false);
+		if (jumping) {
+			transform.position += Vector3.up * jumpSpeed * .07f;
+			if (enemyX - playerX < -MinDist) {
+				transform.position += Vector3.right * speed * Time.deltaTime;
+			} else {
+				transform.position += Vector3.left * speed * Time.deltaTime;
+			}
+		} else {
+			if (enemyX - playerX < -MinDist || enemyX - playerX > MinDist) {
+				anim.SetBool ("slash", false);
+				anim.SetBool ("walking", true);
+				if (enemyX - playerX < -MinDist && enemyX < rightCoordinate) {
+					transform.position += Vector3.right * speed * Time.deltaTime;
+				}
+				if (enemyX - playerX > MinDist && enemyX > leftCoordinate) {
 					transform.position += Vector3.left * speed * Time.deltaTime;
 				}
 			}

@@ -13,10 +13,17 @@ public class CanvasController : MonoBehaviour {
 	public bool answer = false;
 
 	public Player player;
+	public PlayerTutorial playerTutorial;
+	public bool tutorial = false;
+	public bool tutorialReady = false;
 
 	void Start () {
-		player = GameObject.FindGameObjectWithTag ("Player").GetComponent<Player> ();
-
+		
+		if (tutorial) {
+			playerTutorial = GameObject.FindGameObjectWithTag ("Player").GetComponent<PlayerTutorial> ();
+		} else {
+			player = GameObject.FindGameObjectWithTag ("Player").GetComponent<Player> ();
+		}
 		pause = GameObject.FindGameObjectsWithTag ("Pause");
 		foreach (GameObject pauseObject in pause) {
 			pauseObject.SetActive (false);
@@ -40,18 +47,24 @@ public class CanvasController : MonoBehaviour {
 			}
 		}
 
-		if (Input.GetKeyDown (KeyCode.I)) {
-			if (!inventoryOpen) {
-				showInventory ();
-			} else {
-				hideInventory();
+		if (!tutorial) {
+			if (Input.GetKeyDown (KeyCode.I)) {
+				if (!inventoryOpen) {
+					showInventory ();
+				} else {
+					hideInventory ();
+				}
 			}
 		}
 	}
 
 	public void Pause() {
 		paused = true;
-		player.menu = true;
+		if (tutorial) {
+			playerTutorial.menu = true;
+		} else {
+			player.menu = true;
+		}
 		Time.timeScale = 0;
 		foreach (GameObject pauseObject in pause) {
 			pauseObject.SetActive (true);
@@ -60,10 +73,18 @@ public class CanvasController : MonoBehaviour {
 
 	public void UnPause() {
 		paused = false;
-		player.menu = false;
-		if (!player.menu && !player.inventory && !player.shop) {
-			Time.timeScale = 1;
+		if (tutorial) {
+			playerTutorial.menu = false;
+			if (!playerTutorial.menu && !playerTutorial.inventory && !playerTutorial.shop) {
+				Time.timeScale = 1;
+			}
+		} else {
+			player.menu = false;
+			if (!player.menu && !player.inventory && !player.shop) {
+				Time.timeScale = 1;
+			}
 		}
+
 		foreach (GameObject pauseObject in pause) {
 			pauseObject.SetActive (false);
 		}
@@ -71,7 +92,11 @@ public class CanvasController : MonoBehaviour {
 
 	public void showInventory() {
 		inventoryOpen = true;
-		player.inventory = true;
+		if (tutorialReady) {
+			playerTutorial.inventory = true;
+		} else {
+			player.inventory = true;
+		}
 		Time.timeScale = 0;
 		foreach (GameObject inventoryObject in inventory) {
 			inventoryObject.SetActive (true);
@@ -80,10 +105,18 @@ public class CanvasController : MonoBehaviour {
 
 	public void hideInventory() {
 		inventoryOpen = false;
-		player.inventory = false;
-		if (!player.menu && !player.inventory && !player.shop) {
-			Time.timeScale = 1;
+		if (tutorialReady) {
+			playerTutorial.inventory = false;
+			if (!playerTutorial.menu && !playerTutorial.inventory && !playerTutorial.shop) {
+				Time.timeScale = 1;
+			}
+		} else {
+			player.inventory = false;
+			if (!player.menu && !player.inventory && !player.shop) {
+				Time.timeScale = 1;
+			}
 		}
+
 		foreach (GameObject inventoryObject in inventory) {
 			inventoryObject.SetActive (false);
 		}

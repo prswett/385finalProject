@@ -8,10 +8,14 @@ public class PlayerStatistics  : MonoBehaviour
 	public static float coins = 50;
 
 	public static float lastHit = 0;
+
+	public static float baseHealth = 100;
 	// current hp
 	public static float health = 100;
 	// maximum health points
 	public static float maxHealth = 100;
+
+	public static float baseMana = 100;
 	// current mp
 	public static float mana = 5;
 	// maximum mana points
@@ -67,6 +71,7 @@ public class PlayerStatistics  : MonoBehaviour
 	// multiplier for exp
 	public static float expMod = 1;
 
+	public static float level = 1;
 	// exp needed to reach next level
 	public static float nextLevel = 10;
 
@@ -75,7 +80,7 @@ public class PlayerStatistics  : MonoBehaviour
 
 	public static void takeDamage(float damage) {
 		if (Time.time - lastHit >= 0.5) {
-			health -= damage;
+			health -= (damage * level) - def / 10;
 			lastHit = Time.time;
 		}
 	}
@@ -139,12 +144,15 @@ public class PlayerStatistics  : MonoBehaviour
 		// check if exp reached
 		if(exp >= nextLevel)
 		{
+			health = maxHealth;
+			mana = maxMana;
 			// next level reached
 			exp -= nextLevel;
 			// exp to next level += 20
 			nextLevel += 20;
 			// more stat points
 			statPoints += 3;
+			level++;
 		}
 	}
 }

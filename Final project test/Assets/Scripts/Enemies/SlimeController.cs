@@ -24,6 +24,10 @@ public class SlimeController : MonoBehaviour {
 	public float jumpSpeed;
 	public float speed = 1;
 
+	public bool zone = false;
+	public float leftCoordinate;
+	public float rightCoordinate;
+
 	// Use this for initialization
 	void Start () {
 		parent = GetComponent<EnemyController> ();
@@ -52,7 +56,11 @@ public class SlimeController : MonoBehaviour {
 				jumpTime = Time.time;
 			}
 
-			collideMove ();
+			if (zone) {
+				zoneMove ();
+			} else {
+				collideMove ();
+			}
 		}
 	}
 
@@ -81,6 +89,44 @@ public class SlimeController : MonoBehaviour {
 					transform.position += Vector3.right * speed * Time.deltaTime;
 				}
 				if (enemyX - playerX > MinDist) {
+					if (!facing) {
+						flip ();
+					}
+					transform.position += Vector3.left * speed * Time.deltaTime;
+				}
+			}
+		}
+	}
+
+	void zoneMove() {
+		anim.SetBool ("attacking", false);
+		if (jumping) {
+			transform.position += Vector3.up * jumpSpeed * .07f;
+			if (enemyX - playerX < -MinDist) {
+				if (facing) {
+					flip ();
+				}
+				if (enemyX < rightCoordinate) {
+					transform.position += Vector3.right * speed * Time.deltaTime;
+				}
+			} else {
+				if (!facing) {
+					flip ();
+				}
+				if (enemyX > leftCoordinate) {
+					transform.position += Vector3.left * speed * Time.deltaTime;
+				}
+			}
+		} else {
+			if (enemyX - playerX < -MinDist || enemyX - playerX > MinDist) {
+				anim.SetBool ("walking", true);
+				if (enemyX - playerX < -MinDist && enemyX < rightCoordinate) {
+					if (facing) {
+						flip ();
+					}
+					transform.position += Vector3.right * speed * Time.deltaTime;
+				}
+				if (enemyX - playerX > MinDist && enemyX > leftCoordinate) {
 					if (!facing) {
 						flip ();
 					}

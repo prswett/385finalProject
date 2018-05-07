@@ -29,6 +29,10 @@ public class MushroomController : MonoBehaviour {
 	Vector2 bulletPos;
 	public float fireRate = 4;
 
+	public bool zone = false;
+	public float leftCoordinate;
+	public float rightCoordinate;
+
 	// Use this for initialization
 	void Start () {
 		parent = GetComponent<EnemyController> ();
@@ -68,7 +72,12 @@ public class MushroomController : MonoBehaviour {
 					flip ();
 				}
 			}
-			collideMove ();
+
+			if (zone) {
+				zoneMove ();
+			} else {
+				collideMove ();
+			}
 
 			if (!(enemyX - playerX > MinDist) && !(enemyX - playerX < -MinDist)) {
 				anim.SetBool ("attacking", true);
@@ -95,9 +104,36 @@ public class MushroomController : MonoBehaviour {
 			if (enemyX - playerX < -MinDist || enemyX - playerX > MinDist) {
 				anim.SetBool ("walking", true);
 				if (enemyX - playerX < -MinDist) {
-					transform.position += Vector3.right * speed * Time.deltaTime;
+					if (enemyX < rightCoordinate) {
+						transform.position += Vector3.right * speed * Time.deltaTime;
+					}
 				}
 				if (enemyX - playerX > MinDist) {
+					if (enemyX > leftCoordinate) {
+						transform.position += Vector3.left * speed * Time.deltaTime;
+					}
+				}
+			}
+		}
+	}
+
+	void zoneMove() {
+		anim.SetBool ("attacking", false);
+		if (jumping) {
+			transform.position += Vector3.up * jumpSpeed * .07f;
+			if (enemyX - playerX < -MinDist) {
+				transform.position += Vector3.right * speed * Time.deltaTime;
+			} else {
+				transform.position += Vector3.left * speed * Time.deltaTime;
+			}
+		} else {
+
+			if (enemyX - playerX < -MinDist || enemyX - playerX > MinDist) {
+				anim.SetBool ("walking", true);
+				if (enemyX - playerX < -MinDist && enemyX < rightCoordinate) {
+					transform.position += Vector3.right * speed * Time.deltaTime;
+				}
+				if (enemyX - playerX > MinDist && enemyX > leftCoordinate) {
 					transform.position += Vector3.left * speed * Time.deltaTime;
 				}
 			}

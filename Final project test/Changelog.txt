@@ -1,3 +1,21 @@
+Version 3.2
+Enemies now fade in before becoming active
+Added two new weapon sets
+adjusted item stats
+added treasure chest
+added tutorial stage
+added rare item drop
+adjusted drop rates for item
+adjusted rates for getting an equip
+adjusted weapon damage
+added enemy health and damage scaling
+added boss health and damage scaling
+Fixed equipment cosmetics bugs
+Fixed stats not changing on switching equips
+Added player level
+Changed player animations and sprites
+Loot will not longer be picked up and destroyed if inventory is full
+
 Version 3.1 (bug fixes, play test changes)
 Stage glitches removed
 Enemies no longer can go through stage

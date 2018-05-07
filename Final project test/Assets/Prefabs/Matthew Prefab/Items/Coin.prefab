@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114788877023465856}
   - component: {fileID: 50379680272516804}
   - component: {fileID: 61572840314023432}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: Coin
   m_TagString: Item
   m_Icon: {fileID: 0}
@@ -125,6 +125,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee34296455080404080337459469efb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  location: 0
+  target: {fileID: 0}
+  player: {fileID: 0}
 --- !u!212 &212215270329444078
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -156,8 +159,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1111279711
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 3c6d964d6f221934cb4aebecd30c75b6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

@@ -35,3 +35,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Stages/Matthew Version/BoarBossStage.unity
     guid: 5d42fcd7e43731048ba621f412bca80b
+  - enabled: 1
+    path: Assets/Stages/TutorialStage.unity
+    guid: 22567d834129e5f4d94a6097ad69474d

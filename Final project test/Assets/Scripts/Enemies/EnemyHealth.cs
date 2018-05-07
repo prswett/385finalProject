@@ -29,6 +29,7 @@ public class EnemyHealth : MonoBehaviour {
 		if (maxHealth == 0) {
 			maxHealth = 100;
 		}
+		maxHealth = (maxHealth * PlayerStatistics.level) / 1.3f;
 		lastHit = 0;
 		target = GameObject.FindWithTag ("Player").transform;
 		parent = transform.parent.gameObject;
@@ -47,7 +48,10 @@ public class EnemyHealth : MonoBehaviour {
 		healthbar.fillAmount = currentHealth / maxHealth;
 		if (currentHealth <= 0) {
 			dropCoin ();
-			dropItem ();
+			int dropRate = Random.Range (0, 10);
+			if (dropRate < 2) {
+				dropItem ();
+			}
 			parentController.destroy();
 		}
 	}
