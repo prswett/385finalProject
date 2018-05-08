@@ -21,6 +21,7 @@ TagManager:
   - Spike
   - QuestionBox
   - Pickup
+  - EnemyHealth
   layers:
   - Default
   - TransparentFX

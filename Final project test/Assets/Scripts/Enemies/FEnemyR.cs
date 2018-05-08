@@ -85,7 +85,7 @@ public class FEnemyR : MonoBehaviour {
 		if (enemyX - playerX > MinDist) {
 			transform.position += Vector3.left * speed * Time.deltaTime;
 		}
-		if (enemyY - playerY < -MinDist) {
+		if (enemyY < playerY) {
 			transform.position += Vector3.up * speed * Time.deltaTime;
 		}
 		if (enemyY - playerY > MinDist) {

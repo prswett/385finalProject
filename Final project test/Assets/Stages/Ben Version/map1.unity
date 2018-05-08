@@ -304,7 +304,7 @@ Prefab:
     - target: {fileID: 114866180376637772, guid: f7e2e38104e396c4e9c9e01df593d44c,
         type: 2}
       propertyPath: maxNumber
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f7e2e38104e396c4e9c9e01df593d44c, type: 2}

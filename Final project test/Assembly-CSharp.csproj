@@ -51,7 +51,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\DamageNumber.cs" />
      <Compile Include="Assets\EmptyClass.cs" />
+     <Compile Include="Assets\LightningController.cs" />
+     <Compile Include="Assets\PlayerSpells.cs" />
      <Compile Include="Assets\RareItemController.cs" />
      <Compile Include="Assets\Scripts\Boss\BoarController.cs" />
      <Compile Include="Assets\Scripts\Boss\BossHealth.cs" />

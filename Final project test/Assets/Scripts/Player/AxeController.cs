@@ -10,11 +10,11 @@ public class AxeController : MonoBehaviour {
 	}
 
 	void Update () {
-		damage = baseDamage + (int)PlayerStatistics.atk;
+		damage = baseDamage + (int)PlayerStatistics.calcPD ();
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
-		if (other.gameObject.CompareTag ("Enemy")) {
+		if (other.gameObject.CompareTag ("EnemyHealth")) {
 			EnemyHealth health = other.GetComponent<EnemyHealth> ();
 			health.takeDamage (damage);
 		}
@@ -26,7 +26,7 @@ public class AxeController : MonoBehaviour {
 	}
 
 	void OnTriggerStay2D(Collider2D other) {
-		if (other.gameObject.CompareTag ("Enemy")) {
+		if (other.gameObject.CompareTag ("EnemyHealth")) {
 			EnemyHealth health = other.GetComponent<EnemyHealth> ();
 			health.takeDamage (damage);
 		}

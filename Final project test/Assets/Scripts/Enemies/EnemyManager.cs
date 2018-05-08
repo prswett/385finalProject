@@ -16,18 +16,23 @@ public class EnemyManager : MonoBehaviour {
 	float x;
 	float y;
 
+	public bool playerSpawn = true;
 	public Transform target;
 
 	void Awake() {
 		target = GameObject.FindWithTag ("Player").transform;
-		x = target.transform.position.x;
-		y = target.transform.position.y;
+		if (playerSpawn) {
+			x = target.transform.position.x;
+			y = target.transform.position.y;
+		} else {
+			x = transform.position.x;
+			y = transform.position.y;
+		}
 	}
 
 	void Start () {
 		InvokeRepeating ("Spawn", spawnTime, spawnTime);
-		//x = transform.position.x;
-		//y = transform.position.y;
+
 	}
 
 	void Update () {

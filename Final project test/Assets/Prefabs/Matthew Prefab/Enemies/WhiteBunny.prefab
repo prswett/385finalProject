@@ -80,7 +80,7 @@ GameObject:
   - component: {fileID: 114669449744554246}
   m_Layer: 15
   m_Name: Collider
-  m_TagString: Enemy
+  m_TagString: EnemyHealth
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -128,7 +128,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1446601695001950}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.2350867, y: -0.32062048, z: 0}
+  m_LocalPosition: {x: -3.4298954, y: -0.80565727, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224573667047685760}
@@ -302,8 +302,8 @@ TextMesh:
   m_OffsetZ: 0
   m_CharacterSize: 0.05
   m_LineSpacing: 1
-  m_Anchor: 0
-  m_Alignment: 0
+  m_Anchor: 1
+  m_Alignment: 1
   m_TabSize: 4
   m_FontSize: 0
   m_FontStyle: 0
@@ -375,6 +375,8 @@ MonoBehaviour:
   coin: {fileID: 1737900479247222, guid: 8ab8938d30b21824fac94b23fea85cb1, type: 2}
   item: {fileID: 1570605163964070, guid: 05273a26aef75114596c8d69be1934a6, type: 2}
   control: {fileID: 0}
+  damageNumber: {fileID: 1888548063201054, guid: 9043e4b5a85fbc140915b0ee7b37e82a,
+    type: 2}
 --- !u!114 &114718342124079020
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -437,6 +439,7 @@ MonoBehaviour:
   enemyX: 0
   playerY: 0
   enemyY: 0
+  parent: {fileID: 0}
   MinDist: 3
   facing: 0
   speed: 1
@@ -445,6 +448,9 @@ MonoBehaviour:
   jumpSpeed: 0.8
   bullet: {fileID: 1722554958487274, guid: 8c32b086789467a4fbbfbdf724976adb, type: 2}
   fireRate: 1
+  zone: 0
+  leftCoordinate: 0
+  rightCoordinate: 0
 --- !u!114 &114956182743243224
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -477,6 +483,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 305896e7754fc0e4e8052f678d3ea027, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startTime: 0
+  countdownTime: 0
+  spawnTime: 0
+  active: 0
+  set: 0
 --- !u!212 &212809995262433698
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -574,7 +585,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.145, y: 0.274}
+  m_AnchoredPosition: {x: -0.005, y: 0.281}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224573667047685760

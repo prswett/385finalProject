@@ -48,7 +48,7 @@ public class GEnemyWep : MonoBehaviour {
 		enemyY = transform.position.y;
 
 		if (parent.active == true) {
-			if (Time.time - jumpTime > .4) {
+			if (Time.time - jumpTime > .2) {
 				jumping = false;
 			}
 

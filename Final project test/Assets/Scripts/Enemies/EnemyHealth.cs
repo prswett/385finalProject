@@ -19,6 +19,7 @@ public class EnemyHealth : MonoBehaviour {
 	public GameObject item;
 
 	public TextMesh control;
+	public GameObject damageNumber;
 	Renderer render;
 
 	void Awake() {
@@ -29,7 +30,7 @@ public class EnemyHealth : MonoBehaviour {
 		if (maxHealth == 0) {
 			maxHealth = 100;
 		}
-		maxHealth = (maxHealth * PlayerStatistics.level) / 1.3f;
+		maxHealth = (maxHealth * PlayerStatistics.level) / 4f;
 		lastHit = 0;
 		target = GameObject.FindWithTag ("Player").transform;
 		parent = transform.parent.gameObject;
@@ -42,16 +43,16 @@ public class EnemyHealth : MonoBehaviour {
 	}
 
 	void Update () {
-		if (Time.time - lastHit > 2f) {
-			control.text = monsterName;
-		}
 		healthbar.fillAmount = currentHealth / maxHealth;
 		if (currentHealth <= 0) {
 			dropCoin ();
 			int dropRate = Random.Range (0, 10);
-			if (dropRate < 2) {
+			if (dropRate < 4) {
 				dropItem ();
 			}
+			Player killCount = target.GetComponent<Player> ();
+			killCount.killCount++;
+			PlayerStatistics.exp += 5 * PlayerStatistics.level / 4;
 			parentController.destroy();
 		}
 	}
@@ -61,20 +62,15 @@ public class EnemyHealth : MonoBehaviour {
 	//unless time since last hit is past the point
 	public void takeDamage(int damage) {
 		if (parentController.active == true) {
-			control.text = monsterName + "    " + damage;
+			DamageNumber temp = damageNumber.GetComponent<DamageNumber> ();
+			temp.setNumber (damage);
+			Instantiate(temp, new Vector3(transform.position.x, healthbar.transform.position.y + .2f, 0), Quaternion.identity);
 			if (transform.position.x - target.position.x < 0) {
 				parentController.moveLeft ();
 			} else {
 				parentController.moveRight ();
 			}
 			currentHealth -= damage;
-			if (currentHealth <= 0) {
-				Player killCount = target.GetComponent<Player> ();
-				killCount.killCount++;
-				if (killCount.exp < 200) {
-					PlayerStatistics.exp += 5;
-				}
-			}
 			if (Time.time - lastHit > 0.5) {
 				damageAnimation ();
 				Invoke ("damageAnimation", .1f);

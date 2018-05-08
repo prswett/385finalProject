@@ -106,10 +106,6 @@ public class PlayerResources : MonoBehaviour {
 		
 	}
 
-	public GameObject getSpell(int i) {
-		return spells [i];
-	}
-
 	public void setActiveTrue(int item) {
 		weapons [item].SetActive (true);
 		hands [item].SetActive (true);

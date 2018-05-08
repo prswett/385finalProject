@@ -52,9 +52,7 @@ public class BossHealth : MonoBehaviour {
 			Destroy (gameObject);
 			Player temp = GameObject.FindWithTag ("Player").transform.GetComponent<Player>();
 			temp.killedBoss = true;
-			if (temp.exp < 200) {
-				PlayerStatistics.exp += 10;
-			}
+			PlayerStatistics.exp += 10 * PlayerStatistics.level / 4;
 			float length = 1f;
 			float spawnLocation = length / numberHeld;
 			for (int i = 0; i < numberHeld; i++) {

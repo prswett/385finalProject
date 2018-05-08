@@ -8,16 +8,17 @@ public class FlipText : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		target = GameObject.FindWithTag ("Player").transform;
+		if (target.position.x < transform.position.x) {
+			flip ();
+		}
 	}
 
 	// Update is called once per frame
 	void Update () {
 		if (transform.position.x > target.position.x && !flipped) {
-			transform.position = new Vector3 (transform.position.x - .3f, transform.position.y, 0);
 			flip ();
 		}
 		if (transform.position.x < target.position.x && flipped) {
-			transform.position = new Vector3 (transform.position.x + .3f, transform.position.y, 0);
 			flip ();
 		}
 	}

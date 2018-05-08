@@ -10,15 +10,17 @@ using UnityEngine.UI;
 public class Player : MonoBehaviour {
 	//Resources
 	public PlayerResources resources;
+	public PlayerSpells spells;
+
 	int count;
 	public Text coinText;
 	public bool door = false;
 
 	//Awake() variables
 	public static Player Instance;
-	Image healthbar;
-	Image manabar;
-	Image expbar;
+	public Image healthbar;
+	public Image manabar;
+	public Image expbar;
 	Transform spawn;
 
 	//Start() variables
@@ -47,9 +49,6 @@ public class Player : MonoBehaviour {
 	public int killCount;
 	public bool killedBoss = false;
 
-	//Exp
-	public int exp = 0;
-
 	// For Climbing
 	public bool onLadder = false;
 	public float climbSpeed;
@@ -69,18 +68,19 @@ public class Player : MonoBehaviour {
 
 	//
 	void Awake() {
-
 		if (Instance == null) {
 			DontDestroyOnLoad (gameObject);
 			Instance = this;
 		} else if (Instance != this) {
 			Destroy (gameObject);
 		}
+		PlayerStatistics.load ();
 
 		healthbar = GameObject.Find ("Health").GetComponent<Image> ();
 		manabar = GameObject.Find ("Mana").GetComponent<Image> ();
 		expbar = GameObject.Find ("Exp").GetComponent<Image> ();
 		resources = GetComponent<PlayerResources> ();
+		spells = GetComponent<PlayerSpells> ();
 		count = resources.weaponCount;
 		playerCanvas = GameObject.Find ("Base Player UI").GetComponent<CanvasController> ();
 
@@ -132,7 +132,7 @@ public class Player : MonoBehaviour {
 
 	//
 	void Update () {
-		timeStop = (menu && inventory && shop);
+		timeStop = (menu || inventory || shop);
 		if (loadedChar) {
 			LoadPlayer load = new LoadPlayer ();
 			load.Load (this);
@@ -173,42 +173,13 @@ public class Player : MonoBehaviour {
 			//For moving left
 
 			if (!timeStop) {
-				if (Input.GetKey (KeyCode.A)) {
-					if (attacking) {
-						anim.SetBool ("walking", true);
-					} else {
-						anim.SetBool ("walking", true);
-					}
-					if (!facing) {
-						flip ();
-					}
-					transform.position += Vector3.left * speed * Time.deltaTime;
-				}
-				if (Input.GetKeyUp (KeyCode.A)) {
-					anim.SetBool ("walking", false);
-				}
+				
 
-				if (Input.GetKey (KeyCode.D)) {
-					if (attacking) {
-						anim.SetBool ("walking", true);
-					} else {
-						anim.SetBool ("walking", true);
-					}
-					if (facing) {
-						flip ();
-					}
-					transform.position += Vector3.right * speed * Time.deltaTime;
-				}
-
-				if (Input.GetKeyUp (KeyCode.D)) {
-					anim.SetBool ("walking", false);
-				}
-
-				if (Input.GetKey (KeyCode.J) || Input.GetMouseButton (0)) {
+				if (Input.GetMouseButton (0)) {
 					anim.SetBool ("attacking", true);
 					attacking = true;
 				}
-				if (Input.GetKeyUp (KeyCode.J) || Input.GetMouseButtonUp (0)) {
+				if (Input.GetMouseButtonUp (0)) {
 					anim.SetBool ("attacking", false);
 					attacking = false;
 				}
@@ -223,19 +194,28 @@ public class Player : MonoBehaviour {
 				if (Input.GetKeyUp (KeyCode.S)) {
 					anim.SetBool ("crouching", false);
 				}
-				
-				if (Input.GetMouseButtonDown (1) && playerCanvas.inventoryOpen != true) {
-					if (PlayerStatistics.mana >= 1) {
-						PlayerStatistics.mana -= 1;
-						FireBall ();
-					}
+
+				if (Input.GetMouseButtonDown (1)) {
+					spells.useSpell ();
 				}
 
-				float wheel = Input.GetAxis ("Mouse ScrollWheel");
+				float wheel = Input.GetAxis("Mouse ScrollWheel");
 				if (wheel > 0f) {
 					changeWeapon (true);
 				} else if (wheel < 0f) {
 					changeWeapon (false);
+				}
+
+				if (Input.GetMouseButtonDown (2)) {
+					changeWeapon (true);
+				}
+
+				if (Input.GetKeyDown (KeyCode.Q)) {
+					spells.decrease ();
+				}
+
+				if (Input.GetKeyDown (KeyCode.E)) {
+					spells.increase ();
 				}
 			}
 
@@ -253,20 +233,37 @@ public class Player : MonoBehaviour {
 		}
 		}
 
+	void FixedUpdate() {
+		if (!timeStop && (anim.GetBool("dead") != true)) {
+			if (Input.GetKey (KeyCode.A)) {
+				anim.SetBool ("walking", true);
+				if (!facing) {
+					flip ();
+				}
+				transform.position += Vector3.left * speed * Time.deltaTime;
+			}
+			if (Input.GetKeyUp (KeyCode.A)) {
+				anim.SetBool ("walking", false);
+			}
+
+			if (Input.GetKey (KeyCode.D)) {
+				anim.SetBool ("walking", true);
+				if (facing) {
+					flip ();
+				}
+				transform.position += Vector3.right * speed * Time.deltaTime;
+			}
+
+			if (Input.GetKeyUp (KeyCode.D)) {
+				anim.SetBool ("walking", false);
+			}
+		}
+	}
+
 	public void playerReset() {
 		PlayerStatistics.health = PlayerStatistics.maxHealth;
 		PlayerStatistics.mana = PlayerStatistics.maxMana;
 	}
-
-		public void FireBall() {
-			Vector2 cursorL = Camera.main.ScreenToWorldPoint (Input.mousePosition);
-			float divider = Mathf.Sqrt (Mathf.Pow (cursorL.x - transform.position.x, 2) + Mathf.Pow (cursorL.y - transform.position.y, 2));
-			GameObject fire = resources.getSpell(0);
-			FireBallController shot = fire.GetComponent<FireBallController> ();
-			shot.setVelocity((cursorL.x - transform.position.x) / divider, (cursorL.y - transform.position.y) / divider);
-			float angle = Mathf.Atan2 (transform.position.x - cursorL.x, cursorL.y -  transform.position.y) * Mathf.Rad2Deg;
-			Instantiate (fire, transform.position, Quaternion.Euler (new Vector3(0, 0, angle)));
-		}
 
 		public void jumpingDown() {
 			jumpDown = !jumpDown;
