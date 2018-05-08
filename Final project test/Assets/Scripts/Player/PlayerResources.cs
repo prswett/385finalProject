@@ -17,19 +17,14 @@ public class PlayerResources : MonoBehaviour {
 	public GameObject helmet;
 	public GameObject armor;
 
-	//Spells
-	public GameObject fireball;
-
     public int wepEQPD;
 
 	//List of weapons
 	private GameObject[] weapons;
 	private GameObject[] hands;
 	private GameObject[] armors;
-	private GameObject[] spells;
 	public int weaponCount = 4;
 	public int armorCount = 2;
-	public int spellCount = 1;
 
 	// Use this for initialization
 	void Start () {
@@ -48,9 +43,6 @@ public class PlayerResources : MonoBehaviour {
 		armors = new GameObject[armorCount];
 		armors [0] = helmet;
 		armors [1] = armor;
-
-		spells = new GameObject[spellCount];
-		spells [0] = fireball;
 	}
 
 	public void changeHelmet(string path) {

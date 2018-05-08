@@ -21,6 +21,9 @@ public class Player : MonoBehaviour {
 	public Image healthbar;
 	public Image manabar;
 	public Image expbar;
+	public Text healthText;
+	public Text manaText;
+	public Text expText;
 	Transform spawn;
 
 	//Start() variables
@@ -76,14 +79,22 @@ public class Player : MonoBehaviour {
 		}
 		PlayerStatistics.load ();
 
+		//Player UI
+		playerCanvas = GameObject.Find ("Base Player UI").GetComponent<CanvasController> ();
 		healthbar = GameObject.Find ("Health").GetComponent<Image> ();
 		manabar = GameObject.Find ("Mana").GetComponent<Image> ();
 		expbar = GameObject.Find ("Exp").GetComponent<Image> ();
+		healthText = GameObject.Find ("Health").GetComponentInChildren<Text> ();
+		manaText = GameObject.Find ("Mana").GetComponentInChildren<Text> ();
+		expText = GameObject.Find ("Exp").GetComponentInChildren<Text> ();
+
+		//Player weapons and spells
 		resources = GetComponent<PlayerResources> ();
 		spells = GetComponent<PlayerSpells> ();
 		count = resources.weaponCount;
-		playerCanvas = GameObject.Find ("Base Player UI").GetComponent<CanvasController> ();
 
+		spells.load ();
+		//Player inventory UI
 		inv = GameObject.Find ("Inventory").GetComponent<Inventory> ();
 		pInv = GameObject.Find ("InventoryP").GetComponent<PotionInventory> ();
 		eInv = GameObject.Find ("EquipmentInventory").GetComponent<Equipment> ();
@@ -120,6 +131,10 @@ public class Player : MonoBehaviour {
 	public void addEquipment(Item input, int slot) {
 		eInv.AddItem (input, slot);
 	}
+
+	public void addSpell(int input) {
+		spells.addSpell (input);
+	}
 		
 	//
 	void Start () {
@@ -149,6 +164,10 @@ public class Player : MonoBehaviour {
 		healthbar.fillAmount = PlayerStatistics.health / PlayerStatistics.maxHealth;
 		manabar.fillAmount = PlayerStatistics.mana / PlayerStatistics.maxMana;
 		expbar.fillAmount = PlayerStatistics.exp / PlayerStatistics.nextLevel;
+
+		healthText.text = PlayerStatistics.health + "/" + PlayerStatistics.maxHealth;
+		manaText.text = PlayerStatistics.mana + "/" + PlayerStatistics.maxMana;
+		expText.text = PlayerStatistics.exp + "/" + PlayerStatistics.nextLevel;
 		if (PlayerStatistics.health <= 0) {
 			if (facing) {
 				flip ();
@@ -217,6 +236,13 @@ public class Player : MonoBehaviour {
 				if (Input.GetKeyDown (KeyCode.E)) {
 					spells.increase ();
 				}
+
+				if (Input.GetKeyUp (KeyCode.A)) {
+					anim.SetBool ("walking", false);
+				}
+				if (Input.GetKeyUp (KeyCode.D)) {
+					anim.SetBool ("walking", false);
+				}
 			}
 
 			if (onLadder) {
@@ -242,20 +268,12 @@ public class Player : MonoBehaviour {
 				}
 				transform.position += Vector3.left * speed * Time.deltaTime;
 			}
-			if (Input.GetKeyUp (KeyCode.A)) {
-				anim.SetBool ("walking", false);
-			}
-
 			if (Input.GetKey (KeyCode.D)) {
 				anim.SetBool ("walking", true);
 				if (facing) {
 					flip ();
 				}
 				transform.position += Vector3.right * speed * Time.deltaTime;
-			}
-
-			if (Input.GetKeyUp (KeyCode.D)) {
-				anim.SetBool ("walking", false);
 			}
 		}
 	}

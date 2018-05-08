@@ -81,7 +81,7 @@ public class PlayerStatistics  : MonoBehaviour
 
 	public static void load() {
 		maxHealth = baseHealth + (3 * str);
-		maxMana = baseMana + (wis / 3);
+		maxMana = baseMana + (float)(int)(wis / 3);
 		health = maxHealth;
 		mana = maxMana;
 	}
@@ -108,6 +108,7 @@ public class PlayerStatistics  : MonoBehaviour
 		if (Time.time - lastHit >= 0.5) {
 			health -= (damage * (1 + (level / 50)) * (1000 / (def + 1000)));
 			lastHit = Time.time;
+			health = (float)(int)health;
 		}
 	}
 
@@ -154,7 +155,7 @@ public class PlayerStatistics  : MonoBehaviour
 	{
 		//
 		maxHealth = baseHealth + (3 * str);
-		maxMana = baseMana + (wis / 3);
+		maxMana = baseMana + (float)(int)(wis / 3);
 		// atk scales off WA + 0.5*Str + 0.25Dex
 		atk = (float)((str * 0.5) + (dex * 0.25) + wa);
 		// matk scales off MA + 0.8*wis

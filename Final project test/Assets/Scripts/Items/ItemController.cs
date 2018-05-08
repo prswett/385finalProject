@@ -14,10 +14,6 @@ public class ItemController : MonoBehaviour {
 
 	public bool location = false;
 	float spawnTime;
-	// Use this for initialization
-	void Awake() {
-		
-	}
 
 	void Start () {
 		target = GameObject.FindGameObjectWithTag ("Player").transform;
@@ -29,7 +25,7 @@ public class ItemController : MonoBehaviour {
 	void typeSet() {
 		if (!setItem) {
 			int randType = Random.Range (0, 10);
-			if (randType < 1) {
+			if (randType < 4) {
 				type = "Item";
 			} else {
 				type = "Potion";

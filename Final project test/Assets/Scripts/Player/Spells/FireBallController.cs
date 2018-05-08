@@ -7,6 +7,9 @@ public class FireBallController : MonoBehaviour {
 	public float velocityY;
 	Rigidbody2D rb2d;
 
+	public int baseDamage = 200;
+	public int modifiedDamage = 0;
+
 	void Start () {
 		rb2d = this.GetComponent<Rigidbody2D>();
 	}
@@ -25,12 +28,12 @@ public class FireBallController : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject.CompareTag ("EnemyHealth")) {
 			EnemyHealth health = other.GetComponent<EnemyHealth> ();
-			health.takeDamage (200 + (int)PlayerStatistics.calcMD());
+			health.takeDamage (modifiedDamage + (int)PlayerStatistics.calcMD());
 			Destroy (gameObject);
 		}
 		if (other.gameObject.CompareTag ("Boss")) {
 			BossHealth health = other.GetComponent<BossHealth> ();
-			health.takeDamage (200 + (int)PlayerStatistics.calcMD());
+			health.takeDamage (modifiedDamage + (int)PlayerStatistics.calcMD());
 			Destroy (gameObject);
 		}
 		if (other.gameObject.CompareTag ("Ground")) {

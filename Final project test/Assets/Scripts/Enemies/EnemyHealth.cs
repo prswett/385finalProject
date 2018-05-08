@@ -17,6 +17,7 @@ public class EnemyHealth : MonoBehaviour {
 	//Drops
 	public GameObject coin;
 	public GameObject item;
+	public GameObject spell;
 
 	public TextMesh control;
 	public GameObject damageNumber;
@@ -49,6 +50,9 @@ public class EnemyHealth : MonoBehaviour {
 			int dropRate = Random.Range (0, 10);
 			if (dropRate < 4) {
 				dropItem ();
+			}
+			if (dropRate < 2) {
+				dropSpell ();
 			}
 			Player killCount = target.GetComponent<Player> ();
 			killCount.killCount++;
@@ -89,6 +93,10 @@ public class EnemyHealth : MonoBehaviour {
 
 	public void dropItem() {
 		Instantiate (item, transform.position, Quaternion.identity);
+	}
+
+	public void dropSpell() {
+		Instantiate (spell, transform.position, Quaternion.identity);
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {

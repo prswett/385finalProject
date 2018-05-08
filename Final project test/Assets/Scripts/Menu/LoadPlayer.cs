@@ -37,6 +37,9 @@ public class LoadPlayer : MonoBehaviour {
 			PlayerStatistics.coins = data.coins;
 			PlayerStatistics.level = data.level;
 
+			PlayerSpells.saveLevel = data.spellLevel;
+			PlayerSpells.saveUnlocked = data.unlocked;
+
 			string[] split;
 			Item temp;
 			ItemStats temp2 = new ItemStats();

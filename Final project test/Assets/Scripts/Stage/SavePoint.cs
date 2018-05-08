@@ -13,16 +13,21 @@ public class SavePoint : MonoBehaviour
 	public Player player;
 	public Transform target;
 
+	public TextMesh control;
+
 	void Start ()
 	{
 		target = GameObject.FindGameObjectWithTag ("Player").transform;
 		player = target.GetComponent<Player> ();
+		control = GetComponentInChildren<TextMesh> ();
+
 	}
 
 	void OnTriggerEnter2D (Collider2D other)
 	{
 		if (other.gameObject.CompareTag ("Player")) {
 			inside = true;
+			control.text = "S";
 		}
 	}
 
@@ -30,6 +35,7 @@ public class SavePoint : MonoBehaviour
 	{
 		if (other.gameObject.CompareTag ("Player")) {
 			inside = false;
+			control.text = "";
 		}
 	}
 
@@ -40,6 +46,7 @@ public class SavePoint : MonoBehaviour
 				player.inv.save ();
 				player.pInv.save ();
 				player.eInv.save ();
+				player.spells.save ();
 				Save ();
 
 			}
@@ -55,6 +62,9 @@ public class SavePoint : MonoBehaviour
 		FileStream file = File.Create (Application.persistentDataPath + "/pss.sb");
 		// serializable data here
 		PlayerData data = new PlayerData ();
+
+		data.unlocked = PlayerSpells.saveUnlocked;
+		data.spellLevel = PlayerSpells.saveLevel;
 
 		data.baseHp = PlayerStatistics.baseHealth;
 		data.curHP = PlayerStatistics.health;
@@ -290,13 +300,14 @@ public class SavePoint : MonoBehaviour
 [Serializable]
 class PlayerData
 {
+	// reference PlayerStats
 	public float baseHp;
 	public float curHP;
 	public float maxHP;
 	public float baseMp;
 	public float curMP;
 	public float maxMP;
-	// reference PlayerStats
+
 	public float wa;
 	public float ma;
 	public float str;
@@ -308,6 +319,9 @@ class PlayerData
 	public float nextLevel;
 	public float level;
 	public float coins;
+
+	public bool[] unlocked;
+	public int[] spellLevel;
 
 	//Items
 	public string item0;

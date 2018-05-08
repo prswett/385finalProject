@@ -30,7 +30,7 @@ public class RareItemController : MonoBehaviour {
 	void typeSet() {
 		if (!setItem) {
 			int randType = Random.Range (0, 10);
-			if (randType < 5) {
+			if (randType < 6) {
 				type = "Item";
 			} else {
 				type = "Potion";

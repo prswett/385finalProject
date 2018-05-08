@@ -6,6 +6,9 @@ public class LightningController : MonoBehaviour {
 	public float velocityX;
 	public float velocityY;
 	Rigidbody2D rb2d;
+
+	public int baseDamage = 100;
+	public int modifiedDamage = 0;
 	// Use this for initialization
 	void Start () {
 		rb2d = this.GetComponent<Rigidbody2D>();
@@ -24,11 +27,11 @@ public class LightningController : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject.CompareTag ("EnemyHealth")) {
 			EnemyHealth health = other.GetComponent<EnemyHealth> ();
-			health.takeDamage (100 + (int)PlayerStatistics.calcMD());
+			health.takeDamage (modifiedDamage + (int)PlayerStatistics.calcMD());
 		}
 		if (other.gameObject.CompareTag ("Boss")) {
 			BossHealth health = other.GetComponent<BossHealth> ();
-			health.takeDamage (100 + (int)PlayerStatistics.calcMD());
+			health.takeDamage (modifiedDamage + (int)PlayerStatistics.calcMD());
 		}
 		if (other.gameObject.CompareTag ("Ground")) {
 			Destroy (gameObject);
