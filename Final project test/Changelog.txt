@@ -1,3 +1,17 @@
+Version 3.3
+Added bomb spell
+Added spell UI
+fixed bugs
+Enemy manager has two modes now: spawn around player, spawn around area
+Enemies can now be modified to remain in an area
+flying enemies will now go upward if player is above them
+added new prefabs
+Updated save and load functions
+removed J as attack key
+Added keys for spells and switching
+added damage scaling
+Added spell book drop
+
 Version 3.2
 Enemies now fade in before becoming active
 Added two new weapon sets

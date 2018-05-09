@@ -24570,6 +24570,10 @@ Prefab:
       propertyPath: tutorialReady
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1366314577931278, guid: 86683ba1291d140459087dab9dbcc4ca, type: 2}
+      propertyPath: m_Name
+      value: EquipmentInventory
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114736800264199108, guid: 86683ba1291d140459087dab9dbcc4ca, type: 2}
     - {fileID: 114669138377797060, guid: 86683ba1291d140459087dab9dbcc4ca, type: 2}

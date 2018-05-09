@@ -10,6 +10,7 @@ public class PlayerSpells : MonoBehaviour {
 	public GameObject fireball;
 	public GameObject lightning;
 	public GameObject heal;
+	public GameObject bomb;
 
 	public bool[] unlocked;
 	public int selectedSpell;
@@ -43,10 +44,11 @@ public class PlayerSpells : MonoBehaviour {
 		spells [0] = fireball;
 		spells [1] = lightning;
 		spells [2] = heal;
+		spells [3] = bomb;
 	}
 
 	void Start () {
-		numberOfSpells = 3;
+		numberOfSpells = 4;
 		loadSpells ();
 		unlocked = new bool[numberOfSpells];
 		unlocked [0] = true;
@@ -112,6 +114,9 @@ public class PlayerSpells : MonoBehaviour {
 			if (selectedSpell == 2) {
 				healingSpell ();
 			}
+			if (selectedSpell == 3) {
+				bombSpell ();
+			}
 		}
 	}
 
@@ -147,6 +152,20 @@ public class PlayerSpells : MonoBehaviour {
 			HealingController shot = heal.GetComponent<HealingController> ();
 			shot.modifiedHealing = shot.baseHealing + level [selectedSpell];
 			Instantiate (heal, transform.position, Quaternion.identity);
+		}
+	}
+
+	public void bombSpell() {
+		if (PlayerStatistics.mana >= 1) {
+			PlayerStatistics.mana -= 1;
+
+			Vector2 cursorL = Camera.main.ScreenToWorldPoint (Input.mousePosition);
+			float divider = Mathf.Sqrt (Mathf.Pow (cursorL.x - transform.position.x, 2) + Mathf.Pow (cursorL.y - transform.position.y, 2));
+			BombController shot = bomb.GetComponent<BombController> ();
+			shot.modifiedDamage = shot.baseDamage + level [selectedSpell] * 5;
+			shot.setVelocity ((cursorL.x - transform.position.x) / divider, (cursorL.y - transform.position.y) / divider);
+			float angle = Mathf.Atan2 (transform.position.x - cursorL.x, cursorL.y - transform.position.y) * Mathf.Rad2Deg;
+			Instantiate (bomb, transform.position, Quaternion.Euler (new Vector3 (0, 0, angle)));
 		}
 	}
 
