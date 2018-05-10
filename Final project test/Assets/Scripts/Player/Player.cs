@@ -15,6 +15,7 @@ public class Player : MonoBehaviour {
 	int count;
 	public Text coinText;
 	public bool door = false;
+	public int stageCount = 0;
 
 	//Awake() variables
 	public static Player Instance;
@@ -44,6 +45,8 @@ public class Player : MonoBehaviour {
 	bool created = true;
 	bool jumpDown = false;
 	public CanvasController playerCanvas;
+	public float spellTime;
+	public bool dupeSpeed;
 
 	//Taking damage variables
 	public float lastHit;
@@ -69,6 +72,11 @@ public class Player : MonoBehaviour {
 	public bool shop = false;
 	public bool timeStop;
 
+	//Buffs
+	public bool goldBoost = false;
+	public bool expBoost = false;
+	public float goldTime;
+	public float expTime;
 	//
 	void Awake() {
 		if (Instance == null) {
@@ -153,6 +161,14 @@ public class Player : MonoBehaviour {
 			load.Load (this);
 			loadedChar = false;
 		}
+
+		if (Time.time - goldTime > 30) {
+			goldBoost = false;
+		}
+		if (Time.time - expTime > 30) {
+			expBoost = false;
+		}
+
 		coinText.text = PlayerStatistics.coins.ToString ();
 		if (created == true) {
 			for (int i = 1; i < count; i++) {
@@ -203,7 +219,7 @@ public class Player : MonoBehaviour {
 					attacking = false;
 				}
 
-				if (Input.GetKeyDown (KeyCode.Space) && onGround && !jumpDown) {
+				if (Input.GetKeyDown (KeyCode.Space) && onGround && !jumpDown && !Input.GetKeyDown(KeyCode.S)) {
 					rb2d.velocity = new Vector2 (rb2d.velocity.x, jumpSpeed);
 				}
 
@@ -214,8 +230,11 @@ public class Player : MonoBehaviour {
 					anim.SetBool ("crouching", false);
 				}
 
-				if (Input.GetMouseButtonDown (1)) {
-					spells.useSpell ();
+				if (Input.GetMouseButton (1)) {
+					if (Time.time - spellTime > .5f) {
+						spellTime = Time.time;
+						spells.useSpell ();
+					}
 				}
 
 				float wheel = Input.GetAxis("Mouse ScrollWheel");

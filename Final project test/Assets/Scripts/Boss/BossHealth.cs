@@ -25,6 +25,8 @@ public class BossHealth : MonoBehaviour {
 
 	public GameObject item;
 	public GameObject coin;
+	public GameObject spellBook;
+	public GameObject rareItem;
 	public int numberHeld = 1;
 
 	Renderer render;
@@ -52,13 +54,21 @@ public class BossHealth : MonoBehaviour {
 			Destroy (gameObject);
 			Player temp = GameObject.FindWithTag ("Player").transform.GetComponent<Player>();
 			temp.killedBoss = true;
-			PlayerStatistics.exp += 10 * PlayerStatistics.level / 4;
+			if (temp.expBoost) {
+				PlayerStatistics.exp += 2 * (10 * PlayerStatistics.level / 4);
+			} else {
+				PlayerStatistics.exp += 10 * PlayerStatistics.level / 4;
+			}
 			float length = 1f;
 			float spawnLocation = length / numberHeld;
 			for (int i = 0; i < numberHeld; i++) {
 				Instantiate (item, new Vector3 ((transform.position.x - (length / 2f)) + (i * spawnLocation), transform.position.y, 0), 
 					Quaternion.identity);
 				Instantiate (coin, new Vector3 ((transform.position.x - (length / 2f)) + (i * spawnLocation), transform.position.y, 0), 
+					Quaternion.identity);
+				Instantiate (rareItem, new Vector3 ((transform.position.x - (length / 2f)) + (i * spawnLocation), transform.position.y, 0), 
+					Quaternion.identity);
+				Instantiate (spellBook, new Vector3 ((transform.position.x - (length / 2f)) + (i * spawnLocation), transform.position.y, 0), 
 					Quaternion.identity);
 			}
 		}

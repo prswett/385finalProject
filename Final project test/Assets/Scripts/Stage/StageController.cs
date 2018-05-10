@@ -29,11 +29,12 @@ public class StageController : MonoBehaviour {
 		nextScene = temp.nextScene;
 		temp.deactivate ();
 
-		target.GetComponent<Player> ().getSpawnLocation (playerX, playerY);
+
 
 	}
 	// Use this for initialization
 	void Start () {
+		target.GetComponent<Player> ().getSpawnLocation (playerX, playerY);
 		killCount = target.GetComponent<Player> ();
 	}
 

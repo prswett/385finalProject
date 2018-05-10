@@ -17,17 +17,21 @@ public class PlayerStatUI : MonoBehaviour {
 
     public Text sP;
 
-    public Button addStr;
-    public Button addDex;
-    public Button addWis;
-    public Button addLuk;
-
+	void Awake() {
+		str = GameObject.Find ("str").GetComponentInChildren<Text> ();
+		dex = GameObject.Find ("dex").GetComponentInChildren<Text> ();
+		wis = GameObject.Find ("wis").GetComponentInChildren<Text> ();
+		luk = GameObject.Find ("luk").GetComponentInChildren<Text> ();
+		atk = GameObject.Find ("atk").GetComponentInChildren<Text> ();
+		matk = GameObject.Find ("matk").GetComponentInChildren<Text> ();
+		crit = GameObject.Find ("critical").GetComponentInChildren<Text> ();
+		sP = GameObject.Find ("sP").GetComponentInChildren<Text> ();
+	}
 
     void Start () {
 		
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
         str.text = "str: " + PlayerStatistics.str.ToString();
         dex.text = "dex: " + PlayerStatistics.dex.ToString();
@@ -41,26 +45,5 @@ public class PlayerStatUI : MonoBehaviour {
 
         sP.text = "stat points left: " + PlayerStatistics.statPoints.ToString();
     }
-
-    /*
-    public void buttonASTR()
-    {
-        PlayerStatistics.aStr();
-    }
-
-    public void buttonADEX()
-    {
-        PlayerStatistics.aDex();
-    }
-
-    public void buttonAWIS()
-    {
-        PlayerStatistics.aInt);
-    }
-
-    public void buttonALUK()
-    {
-        PlayerStatistics.aLuk();
-    }*/
 
 }

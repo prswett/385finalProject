@@ -92,6 +92,11 @@ MonoBehaviour:
   target: {fileID: 0}
   lastHit: 0
   currentHealth: 100
+  item: {fileID: 1570605163964070, guid: 05273a26aef75114596c8d69be1934a6, type: 2}
+  coin: {fileID: 1737900479247222, guid: 8ab8938d30b21824fac94b23fea85cb1, type: 2}
+  spellBook: {fileID: 1248215226356444, guid: 9f15010bb78a7054ebb6520e6caf6f52, type: 2}
+  rareItem: {fileID: 1265602660170940, guid: 575ca9e376ae6874483f88d682305569, type: 2}
+  numberHeld: 1
 --- !u!114 &114542961661383532
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -145,7 +150,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1203121819
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 51558a2755502554487cc678b6c8d860, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -155,5 +160,5 @@ SpriteRenderer:
   m_Size: {x: 2, y: 2.2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0

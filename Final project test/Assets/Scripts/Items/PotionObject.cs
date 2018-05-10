@@ -77,6 +77,28 @@ public class PotionObject : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 					}
 				}
 			}
+
+			if (temp.type == "Gold") {
+				target.goldBoost = true;
+				target.goldTime = Time.time;
+				amount--;
+				transform.GetChild (0).GetComponent<Text> ().text = amount.ToString ();
+				if (amount == 0) {
+					tooltip.Deactivate ();
+					pInv.RemoveItemSlot (slot);
+				}
+			}
+
+			if (temp.type == "Exp") {
+				target.expBoost = true;
+				target.expTime = Time.time;
+				amount--;
+				transform.GetChild (0).GetComponent<Text> ().text = amount.ToString ();
+				if (amount == 0) {
+					tooltip.Deactivate ();
+					pInv.RemoveItemSlot (slot);
+				}
+			}
 		}
 	}
 

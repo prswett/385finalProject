@@ -66,5 +66,21 @@ public class ShopController : MonoBehaviour {
 			PlayerStatistics.coins -= 10;
 		}
 	}
+
+	public void buyGold() {
+		Player temp = target.GetComponent<Player> ();
+		if (PlayerStatistics.coins >= 100) {
+			temp.addPotion (2);
+			PlayerStatistics.coins -= 100;
+		}
+	}
+
+	public void buyExp() {
+		Player temp = target.GetComponent<Player> ();
+		if (PlayerStatistics.coins >= 200) {
+			temp.addPotion (3);
+			PlayerStatistics.coins -= 200;
+		}
+	}
 		
 }

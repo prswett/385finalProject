@@ -54,7 +54,12 @@ public class RareItemController : MonoBehaviour {
 	}
 
 	void generatePotion() {
-		ID = Random.Range (0, 2);
+		int roll = Random.Range (0, 10);
+		if (roll < 1) {
+			ID = Random.Range (2, 4);
+		} else {
+			ID = Random.Range (0, 2);
+		}
 	}
 
 	// Update is called once per frame

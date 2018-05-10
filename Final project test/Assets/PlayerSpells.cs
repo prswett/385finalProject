@@ -11,6 +11,8 @@ public class PlayerSpells : MonoBehaviour {
 	public GameObject lightning;
 	public GameObject heal;
 	public GameObject bomb;
+	public GameObject flamethrower;
+	public GameObject speed;
 
 	public bool[] unlocked;
 	public int selectedSpell;
@@ -45,10 +47,12 @@ public class PlayerSpells : MonoBehaviour {
 		spells [1] = lightning;
 		spells [2] = heal;
 		spells [3] = bomb;
+		spells [4] = flamethrower;
+		spells [5] = speed;
 	}
 
 	void Start () {
-		numberOfSpells = 4;
+		numberOfSpells = 6;
 		loadSpells ();
 		unlocked = new bool[numberOfSpells];
 		unlocked [0] = true;
@@ -117,6 +121,12 @@ public class PlayerSpells : MonoBehaviour {
 			if (selectedSpell == 3) {
 				bombSpell ();
 			}
+			if (selectedSpell == 4) {
+				flamethrowerSpell ();
+			}
+			if (selectedSpell == 5) {
+				speedSpell ();
+			}
 		}
 	}
 
@@ -166,6 +176,32 @@ public class PlayerSpells : MonoBehaviour {
 			shot.setVelocity ((cursorL.x - transform.position.x) / divider, (cursorL.y - transform.position.y) / divider);
 			float angle = Mathf.Atan2 (transform.position.x - cursorL.x, cursorL.y - transform.position.y) * Mathf.Rad2Deg;
 			Instantiate (bomb, transform.position, Quaternion.Euler (new Vector3 (0, 0, angle)));
+
+
+		}
+	}
+
+	public void flamethrowerSpell() {
+		if (PlayerStatistics.mana >= .5f) {
+			PlayerStatistics.mana -= .5f;
+
+			Vector2 cursorL = Camera.main.ScreenToWorldPoint (Input.mousePosition);
+			float divider = Mathf.Sqrt (Mathf.Pow (cursorL.x - transform.position.x, 2) + Mathf.Pow (cursorL.y - transform.position.y, 2));
+			FlamethrowerController shot = flamethrower.GetComponent<FlamethrowerController> ();
+			shot.modifiedDamage = shot.baseDamage + level [selectedSpell] * 5;
+			shot.setVelocity ((cursorL.x - transform.position.x) / divider, (cursorL.y - transform.position.y) / divider);
+			float angle = Mathf.Atan2 (transform.position.x - cursorL.x, cursorL.y - transform.position.y) * Mathf.Rad2Deg;
+			Instantiate (flamethrower, transform.position, Quaternion.Euler (new Vector3 (0, 0, angle)));
+
+			Player temp = GameObject.Find ("Player").GetComponent<Player> ();
+			temp.spellTime = Time.time - .3f;
+		}
+	}
+
+	public void speedSpell() {
+		if (PlayerStatistics.mana >= 1) {
+			PlayerStatistics.mana -= 1;
+			Instantiate (speed, transform.position, Quaternion.identity);
 		}
 	}
 

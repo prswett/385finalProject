@@ -25,6 +25,17 @@ public class PortalController : MonoBehaviour {
 		if (Input.GetKey(KeyCode.W)) {
 			if (near) {
 				player.resetKills ();
+				player.stageCount++;
+				if (player.dupeSpeed) {
+					player.dupeSpeed = false;
+					player.speed /= 1.5f;
+					player.jumpSpeed /= 1.1f;
+				}
+				if (player.stageCount == 10) {
+					//Load boss
+				} else if (player.stageCount == 11) {
+					SceneManager.LoadScene (1, LoadSceneMode.Single);
+				}
 				SceneManager.LoadScene (nextScene, LoadSceneMode.Single);
 				player.anim.SetBool ("attacking", false);
 				player.anim.SetBool ("walking", false);

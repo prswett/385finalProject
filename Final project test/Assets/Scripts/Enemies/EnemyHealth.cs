@@ -18,10 +18,12 @@ public class EnemyHealth : MonoBehaviour {
 	public GameObject coin;
 	public GameObject item;
 	public GameObject spell;
+	public GameObject rareItem;
 
 	public TextMesh control;
 	public GameObject damageNumber;
 	Renderer render;
+
 
 	void Awake() {
 	}
@@ -49,14 +51,23 @@ public class EnemyHealth : MonoBehaviour {
 			dropCoin ();
 			int dropRate = Random.Range (0, 10);
 			if (dropRate < 4) {
-				dropItem ();
+				int roll = Random.Range (0, 10);
+				if (roll < 2) {
+					dropRareItem ();
+				} else {
+					dropItem ();
+				}
 			}
 			if (dropRate < 2) {
 				dropSpell ();
 			}
 			Player killCount = target.GetComponent<Player> ();
 			killCount.killCount++;
-			PlayerStatistics.exp += 5 * PlayerStatistics.level / 4;
+			if (killCount.expBoost) {
+				PlayerStatistics.exp += 2 * (5 * PlayerStatistics.level / 4);
+			} else {
+				PlayerStatistics.exp += 5 * PlayerStatistics.level / 4;
+			}
 			parentController.destroy();
 		}
 	}
@@ -99,15 +110,23 @@ public class EnemyHealth : MonoBehaviour {
 		Instantiate (spell, transform.position, Quaternion.identity);
 	}
 
+	public void dropRareItem() {
+		Instantiate (rareItem, transform.position, Quaternion.identity);
+	}
+
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject.CompareTag ("Player")) {
-			PlayerStatistics.takeDamage(1);
+			if (parentController.active == true) {
+				PlayerStatistics.takeDamage (1);
+			}
 		}
 	}
 
 	void OnTriggerStay2D(Collider2D other) {
 		if (other.gameObject.CompareTag ("Player")) {
-			PlayerStatistics.takeDamage(1);
+			if (parentController.active == true) {
+				PlayerStatistics.takeDamage (1);
+			}
 		}
 	}
 }

@@ -475,6 +475,7 @@ MonoBehaviour:
   coin: {fileID: 1737900479247222, guid: 8ab8938d30b21824fac94b23fea85cb1, type: 2}
   item: {fileID: 1570605163964070, guid: 05273a26aef75114596c8d69be1934a6, type: 2}
   spell: {fileID: 1248215226356444, guid: 9f15010bb78a7054ebb6520e6caf6f52, type: 2}
+  rareItem: {fileID: 1265602660170940, guid: 575ca9e376ae6874483f88d682305569, type: 2}
   control: {fileID: 0}
   damageNumber: {fileID: 1888548063201054, guid: 9043e4b5a85fbc140915b0ee7b37e82a,
     type: 2}

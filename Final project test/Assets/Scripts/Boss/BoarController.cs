@@ -16,9 +16,14 @@ public class BoarController : MonoBehaviour {
 	int count = 1;
 	public bool charged = false;
 
+	public BossHealth myHealth;
+	int damage = 10;
+	public float selfHeal;
+
 	void Awake() {
 		target = GameObject.FindWithTag ("Player").transform;
 		anim = GetComponent<Animator> ();
+		myHealth = GetComponent<BossHealth> ();
 		//myself = GameObject.FindWithTag("Boss").transform;
 	}
 		
@@ -29,7 +34,13 @@ public class BoarController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+		if (myHealth.currentHealth / myHealth.maxHealth <= .5f) {
+			speed = 6;
+			damage = 20;
+			if (Time.time - selfHeal > 2f) {
+				myHealth.currentHealth += 100;
+			}
+		}
 		if (running == false) {
 			anim.SetBool ("Charging", true);
 			if (!charged) {
@@ -69,13 +80,13 @@ public class BoarController : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject.CompareTag ("Player")) {
-			PlayerStatistics.takeDamage(10);
+			PlayerStatistics.takeDamage(damage);
 		}
 	}
 
 	void OnTriggerStay2D(Collider2D other) {
 		if (other.gameObject.CompareTag ("Player")) {
-			PlayerStatistics.takeDamage(10);
+			PlayerStatistics.takeDamage(damage);
 		}
 	}
 

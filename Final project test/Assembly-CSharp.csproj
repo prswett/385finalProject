@@ -51,12 +51,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\addStat.cs" />
      <Compile Include="Assets\BombController.cs" />
      <Compile Include="Assets\DamageNumber.cs" />
      <Compile Include="Assets\EmptyClass.cs" />
+     <Compile Include="Assets\FlamethrowerController.cs" />
      <Compile Include="Assets\HealingController.cs" />
      <Compile Include="Assets\LightningController.cs" />
      <Compile Include="Assets\PlayerSpells.cs" />
+     <Compile Include="Assets\PlayerStatUI.cs" />
      <Compile Include="Assets\RareItemController.cs" />
      <Compile Include="Assets\Scripts\Boss\BoarController.cs" />
      <Compile Include="Assets\Scripts\Boss\BossHealth.cs" />
@@ -134,6 +137,7 @@
      <Compile Include="Assets\Scripts\Tutorial\TutorialSpearController.cs" />
      <Compile Include="Assets\Scripts\Tutorial\TutorialSwordController.cs" />
      <Compile Include="Assets\Scripts\Tutorial\TutorialWall.cs" />
+     <Compile Include="Assets\SpeedController.cs" />
      <Compile Include="Assets\SpellBookController.cs" />
      <Compile Include="Assets\TreasureChestController.cs" />
  <Reference Include="UnityEngine.UI">
