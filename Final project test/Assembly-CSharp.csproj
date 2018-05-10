@@ -55,6 +55,7 @@
      <Compile Include="Assets\BombController.cs" />
      <Compile Include="Assets\DamageNumber.cs" />
      <Compile Include="Assets\EmptyClass.cs" />
+     <Compile Include="Assets\EnemyList.cs" />
      <Compile Include="Assets\FlamethrowerController.cs" />
      <Compile Include="Assets\HealingController.cs" />
      <Compile Include="Assets\LightningController.cs" />

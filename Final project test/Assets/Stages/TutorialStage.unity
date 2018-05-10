@@ -822,7 +822,7 @@ Prefab:
     - target: {fileID: 224001275808219270, guid: 140741f6fe9352f49b078b3d387dd8cd,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -763
+      value: -887
       objectReference: {fileID: 0}
     - target: {fileID: 224001275808219270, guid: 140741f6fe9352f49b078b3d387dd8cd,
         type: 2}
@@ -25043,7 +25043,7 @@ Prefab:
     - target: {fileID: 102190853272358306, guid: a86b626f528949346b7bce2c75f38e34,
         type: 2}
       propertyPath: m_Text
-      value: 'Good luck on the defeating the eye of doom
+      value: 'Good luck on defeating the eye of doom
 
         adventurer!'
       objectReference: {fileID: 0}

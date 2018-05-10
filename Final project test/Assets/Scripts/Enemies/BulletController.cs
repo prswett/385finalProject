@@ -85,7 +85,7 @@ public class BulletController : MonoBehaviour {
 
 	void OnTriggerStay2D(Collider2D other) {
 		if (other.gameObject.CompareTag ("Player")) {
-			PlayerStatistics.takeDamage(1);
+			PlayerStatistics.takeDamage(1 + PlayerStatistics.level / 2);
 		}
 	}
 

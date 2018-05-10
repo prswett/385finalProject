@@ -7,7 +7,6 @@ public class EnemyManager : MonoBehaviour {
 	public float spawnTime = 3;
 	public int maxNumber = 3;
 
-	public GameObject enemy;
 	public bool bossStage = false;
 	public float horiPos = .5f;
 	public float horiNeg = -.5f;
@@ -46,7 +45,8 @@ public class EnemyManager : MonoBehaviour {
 		}
 		if (!bossStage) {
 			Vector3 position = new Vector3 (Random.Range (horiNeg + x, horiPos + x), Random.Range (vertiNeg + y, vertiPos + y), 0);
-			Instantiate (enemy,position, Quaternion.identity);
+			int selectEnemy = Random.Range (0, EnemyList.numberEnemies);
+			Instantiate (EnemyList.enemyList[selectEnemy],position, Quaternion.identity);
 		}
 	}
 }

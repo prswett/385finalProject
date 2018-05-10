@@ -197,6 +197,7 @@ public class Player : MonoBehaviour {
 				SceneManager.LoadScene (1);
 				resources.setArmorOn ();
 				PlayerStatistics.coins /= 2;
+				PlayerStatistics.coins = (float)(int)PlayerStatistics.coins;
 				PlayerStatistics.exp = 0;
 				anim.SetBool ("dead", false);
 				playerReset ();
@@ -219,7 +220,7 @@ public class Player : MonoBehaviour {
 					attacking = false;
 				}
 
-				if (Input.GetKeyDown (KeyCode.Space) && onGround && !jumpDown && !Input.GetKeyDown(KeyCode.S)) {
+				if (Input.GetKeyDown (KeyCode.Space) && onGround && !jumpDown && !Input.GetKey(KeyCode.S)) {
 					rb2d.velocity = new Vector2 (rb2d.velocity.x, jumpSpeed);
 				}
 
@@ -300,6 +301,7 @@ public class Player : MonoBehaviour {
 	public void playerReset() {
 		PlayerStatistics.health = PlayerStatistics.maxHealth;
 		PlayerStatistics.mana = PlayerStatistics.maxMana;
+		stageCount = 0;
 	}
 
 		public void jumpingDown() {

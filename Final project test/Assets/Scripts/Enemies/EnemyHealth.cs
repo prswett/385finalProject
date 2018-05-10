@@ -33,7 +33,7 @@ public class EnemyHealth : MonoBehaviour {
 		if (maxHealth == 0) {
 			maxHealth = 100;
 		}
-		maxHealth = (maxHealth * PlayerStatistics.level) / 4f;
+		maxHealth = (maxHealth * PlayerStatistics.level) / 2f;
 		lastHit = 0;
 		target = GameObject.FindWithTag ("Player").transform;
 		parent = transform.parent.gameObject;
@@ -58,7 +58,8 @@ public class EnemyHealth : MonoBehaviour {
 					dropItem ();
 				}
 			}
-			if (dropRate < 2) {
+			dropRate = Random.Range (0, 10);
+			if (dropRate < 1) {
 				dropSpell ();
 			}
 			Player killCount = target.GetComponent<Player> ();
@@ -117,7 +118,7 @@ public class EnemyHealth : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject.CompareTag ("Player")) {
 			if (parentController.active == true) {
-				PlayerStatistics.takeDamage (1);
+				PlayerStatistics.takeDamage (1 + PlayerStatistics.level / 2);
 			}
 		}
 	}
@@ -125,7 +126,7 @@ public class EnemyHealth : MonoBehaviour {
 	void OnTriggerStay2D(Collider2D other) {
 		if (other.gameObject.CompareTag ("Player")) {
 			if (parentController.active == true) {
-				PlayerStatistics.takeDamage (1);
+				PlayerStatistics.takeDamage (1 + PlayerStatistics.level / 2);
 			}
 		}
 	}

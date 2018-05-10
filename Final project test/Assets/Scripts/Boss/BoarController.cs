@@ -19,6 +19,7 @@ public class BoarController : MonoBehaviour {
 	public BossHealth myHealth;
 	int damage = 10;
 	public float selfHeal;
+	public bool selfHealing = false;
 
 	void Awake() {
 		target = GameObject.FindWithTag ("Player").transform;
@@ -37,8 +38,11 @@ public class BoarController : MonoBehaviour {
 		if (myHealth.currentHealth / myHealth.maxHealth <= .5f) {
 			speed = 6;
 			damage = 20;
+			selfHealing = true;
+		}
+		if (selfHealing) {
 			if (Time.time - selfHeal > 2f) {
-				myHealth.currentHealth += 100;
+				myHealth.currentHealth += 50;
 			}
 		}
 		if (running == false) {

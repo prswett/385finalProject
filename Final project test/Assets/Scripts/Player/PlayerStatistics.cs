@@ -181,7 +181,8 @@ public class PlayerStatistics  : MonoBehaviour
 			// next level reached
 			exp -= nextLevel;
 			// exp to next level += 20
-			nextLevel += 20;
+			nextLevel *= 1.25f;
+			nextLevel = (float)(int)nextLevel + 1;
 			// more stat points
 			statPoints += 3;
 			level++;

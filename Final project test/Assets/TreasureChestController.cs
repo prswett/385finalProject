@@ -26,6 +26,8 @@ public class TreasureChestController : MonoBehaviour {
 	void Start () {
 		anim = GetComponent<Animator> ();
 		startTime = 3f;
+
+		numberHeld = Random.Range (0, numberHeld + 1);
 	}
 	
 	// Update is called once per frame

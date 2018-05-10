@@ -155,12 +155,12 @@ Prefab:
     - target: {fileID: 114866180376637772, guid: f7e2e38104e396c4e9c9e01df593d44c,
         type: 2}
       propertyPath: vertiNeg
-      value: 0
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 114866180376637772, guid: f7e2e38104e396c4e9c9e01df593d44c,
         type: 2}
       propertyPath: vertiPos
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 114866180376637772, guid: f7e2e38104e396c4e9c9e01df593d44c,
         type: 2}
@@ -171,12 +171,12 @@ Prefab:
     - target: {fileID: 114866180376637772, guid: f7e2e38104e396c4e9c9e01df593d44c,
         type: 2}
       propertyPath: horiPos
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114866180376637772, guid: f7e2e38104e396c4e9c9e01df593d44c,
         type: 2}
       propertyPath: horiNeg
-      value: -1
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 1175165491971266, guid: f7e2e38104e396c4e9c9e01df593d44c, type: 2}
       propertyPath: m_Name
@@ -278,12 +278,12 @@ Prefab:
     - target: {fileID: 114866180376637772, guid: f7e2e38104e396c4e9c9e01df593d44c,
         type: 2}
       propertyPath: vertiNeg
-      value: 0
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 114866180376637772, guid: f7e2e38104e396c4e9c9e01df593d44c,
         type: 2}
       propertyPath: vertiPos
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 114866180376637772, guid: f7e2e38104e396c4e9c9e01df593d44c,
         type: 2}
@@ -294,12 +294,12 @@ Prefab:
     - target: {fileID: 114866180376637772, guid: f7e2e38104e396c4e9c9e01df593d44c,
         type: 2}
       propertyPath: horiPos
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114866180376637772, guid: f7e2e38104e396c4e9c9e01df593d44c,
         type: 2}
       propertyPath: horiNeg
-      value: -1
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 114866180376637772, guid: f7e2e38104e396c4e9c9e01df593d44c,
         type: 2}
@@ -364,6 +364,11 @@ Prefab:
     - target: {fileID: 4718805989086536, guid: 6e4e12ea35e44c74aa335634a0057881, type: 2}
       propertyPath: m_LocalPosition.y
       value: 0.854
+      objectReference: {fileID: 0}
+    - target: {fileID: 224910463777641068, guid: 6e4e12ea35e44c74aa335634a0057881,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -49
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6e4e12ea35e44c74aa335634a0057881, type: 2}
@@ -19293,12 +19298,12 @@ Prefab:
     - target: {fileID: 114866180376637772, guid: f7e2e38104e396c4e9c9e01df593d44c,
         type: 2}
       propertyPath: vertiNeg
-      value: 0
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 114866180376637772, guid: f7e2e38104e396c4e9c9e01df593d44c,
         type: 2}
       propertyPath: vertiPos
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 114866180376637772, guid: f7e2e38104e396c4e9c9e01df593d44c,
         type: 2}
@@ -19309,12 +19314,12 @@ Prefab:
     - target: {fileID: 114866180376637772, guid: f7e2e38104e396c4e9c9e01df593d44c,
         type: 2}
       propertyPath: horiPos
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114866180376637772, guid: f7e2e38104e396c4e9c9e01df593d44c,
         type: 2}
       propertyPath: horiNeg
-      value: -1
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 1175165491971266, guid: f7e2e38104e396c4e9c9e01df593d44c, type: 2}
       propertyPath: m_Name
@@ -19370,12 +19375,12 @@ Prefab:
     - target: {fileID: 114866180376637772, guid: f7e2e38104e396c4e9c9e01df593d44c,
         type: 2}
       propertyPath: vertiNeg
-      value: 0
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 114866180376637772, guid: f7e2e38104e396c4e9c9e01df593d44c,
         type: 2}
       propertyPath: vertiPos
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 114866180376637772, guid: f7e2e38104e396c4e9c9e01df593d44c,
         type: 2}
@@ -19386,12 +19391,12 @@ Prefab:
     - target: {fileID: 114866180376637772, guid: f7e2e38104e396c4e9c9e01df593d44c,
         type: 2}
       propertyPath: horiPos
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114866180376637772, guid: f7e2e38104e396c4e9c9e01df593d44c,
         type: 2}
       propertyPath: horiNeg
-      value: -1
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 1175165491971266, guid: f7e2e38104e396c4e9c9e01df593d44c, type: 2}
       propertyPath: m_Name

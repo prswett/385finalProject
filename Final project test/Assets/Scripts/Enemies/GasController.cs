@@ -13,7 +13,7 @@ public class GasController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (inGas) {
-			PlayerStatistics.takeDamage(2);
+			PlayerStatistics.takeDamage(2 + PlayerStatistics.level / 2);
 		}
 	}
 

@@ -28,12 +28,16 @@ public class coinController : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
-		if (other.gameObject.CompareTag ("Player")) {
-			if (player.goldBoost) {
-				PlayerStatistics.coins += 3;
-			} else {
-				PlayerStatistics.coins++;
+		if (player != null) {
+			if (other.gameObject.CompareTag ("Player")) {
+				if (player.goldBoost) {
+					PlayerStatistics.coins += 3;
+				} else {
+					PlayerStatistics.coins++;
+				}
+				Destroy (gameObject);
 			}
+		} else {
 			Destroy (gameObject);
 		}
 

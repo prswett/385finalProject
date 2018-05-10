@@ -1126,6 +1126,7 @@ GameObject:
   - component: {fileID: 114054524480591170}
   - component: {fileID: 114532009080085640}
   - component: {fileID: 114764097861628118}
+  - component: {fileID: 114662028211550192}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -3556,6 +3557,7 @@ MonoBehaviour:
   bomb: {fileID: 1479940894767100, guid: c1dba75963366be4ea69116c2b6d1510, type: 2}
   flamethrower: {fileID: 1217380946036432, guid: fdaf470493ba36d489ddf4d6dc7a3e90,
     type: 2}
+  speed: {fileID: 1596639478083016, guid: c9b9e0ae888ffe944a4819e1cc82bd25, type: 2}
   unlocked: 
   selectedSpell: 0
   numberOfSpells: 0
@@ -3909,6 +3911,25 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114662028211550192
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1660909760183058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81878dd6e09040740a0bdf0db8bff58d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blackslime: {fileID: 1280779890624146, guid: 9d5ec687731ef574fb598c2269e38e8b, type: 2}
+  blueportal: {fileID: 1648411544400318, guid: 91f054e541fd1a54fb3097bad3073759, type: 2}
+  blueknight: {fileID: 1447697052579072, guid: 131849d62ac54ac4188df70f8ea5a34e, type: 2}
+  bluemushroom: {fileID: 1348966307472472, guid: 66ca2acedbd60dd48a7df1e509520578,
+    type: 2}
+  fireballenemy: {fileID: 1806709411387380, guid: c96ecc43e882ba24b8a5e9b7c2da85d2,
+    type: 2}
+  whitebunny: {fileID: 1446601695001950, guid: e5d9c61b633245242806fb42e540da61, type: 2}
 --- !u!114 &114669138377797060
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4130,6 +4151,7 @@ MonoBehaviour:
   spells: {fileID: 0}
   coinText: {fileID: 114933255429131130}
   door: 0
+  stageCount: 0
   healthbar: {fileID: 0}
   manabar: {fileID: 0}
   expbar: {fileID: 0}
@@ -4149,6 +4171,7 @@ MonoBehaviour:
   attacking: 0
   playerCanvas: {fileID: 0}
   spellTime: 0
+  dupeSpeed: 0
   lastHit: 0
   killCount: 0
   killedBoss: 0
@@ -6149,10 +6172,10 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
+  - {fileID: 224891450786122470}
   - {fileID: 224141426035255792}
   - {fileID: 224584117525846198}
   - {fileID: 224623159906507766}
-  - {fileID: 224891450786122470}
   m_Father: {fileID: 4340119248068926}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6193,7 +6216,7 @@ RectTransform:
   - {fileID: 224066646969925288}
   - {fileID: 224765223819202618}
   m_Father: {fileID: 224095075319436100}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6577,7 +6600,7 @@ RectTransform:
   - {fileID: 224246161333963392}
   - {fileID: 224756151159243462}
   m_Father: {fileID: 224095075319436100}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6636,7 +6659,7 @@ RectTransform:
   - {fileID: 224879804331623816}
   - {fileID: 224519321660245850}
   m_Father: {fileID: 224095075319436100}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -7087,7 +7110,7 @@ RectTransform:
   - {fileID: 224850350056416896}
   - {fileID: 4241567999715076}
   m_Father: {fileID: 224095075319436100}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -7151,7 +7174,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -757, y: -416}
+  m_AnchoredPosition: {x: -646, y: -416}
   m_SizeDelta: {x: 600, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224947699701635306

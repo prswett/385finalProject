@@ -11,6 +11,7 @@ public class PortalController : MonoBehaviour {
 	Player player;
 	public TextMesh control;
 
+
 	void Awake() {
 		target = GameObject.FindWithTag ("Player").transform;
 		player = target.GetComponent<Player> ();
@@ -25,18 +26,20 @@ public class PortalController : MonoBehaviour {
 		if (Input.GetKey(KeyCode.W)) {
 			if (near) {
 				player.resetKills ();
-				player.stageCount++;
 				if (player.dupeSpeed) {
 					player.dupeSpeed = false;
 					player.speed /= 1.5f;
 					player.jumpSpeed /= 1.1f;
 				}
 				if (player.stageCount == 10) {
-					//Load boss
+					SceneManager.LoadScene (3, LoadSceneMode.Single);
 				} else if (player.stageCount == 11) {
 					SceneManager.LoadScene (1, LoadSceneMode.Single);
+					player.stageCount = 0;
+				} else {
+					int next = Random.Range (5, 11);
+					SceneManager.LoadScene (next, LoadSceneMode.Single);
 				}
-				SceneManager.LoadScene (nextScene, LoadSceneMode.Single);
 				player.anim.SetBool ("attacking", false);
 				player.anim.SetBool ("walking", false);
 			}

@@ -49,6 +49,7 @@ public class StageController : MonoBehaviour {
 		}
 		if (killCount.killCount >= monstersNeeded || killCount.killedBoss) {
 			if (portalSpawned == false) {
+				killCount.stageCount++;
 				PortalController temp = portal.GetComponent<PortalController> ();
 				temp.gameObject.SetActive (true);
 				temp.setNextScene (nextScene);
