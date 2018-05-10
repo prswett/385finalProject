@@ -1352,6 +1352,26 @@ Prefab:
       propertyPath: m_TileAssetArray.Array.data[1].m_RefCount
       value: 58
       objectReference: {fileID: 0}
+    - target: {fileID: 3664157345030967842, guid: b10115baabab7714da1ddc0a9a88beb9,
+        type: 2}
+      propertyPath: m_SortingLayerID
+      value: -1111279711
+      objectReference: {fileID: 0}
+    - target: {fileID: 3664157345030967842, guid: b10115baabab7714da1ddc0a9a88beb9,
+        type: 2}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3664157343287155058, guid: b10115baabab7714da1ddc0a9a88beb9,
+        type: 2}
+      propertyPath: m_SortingLayerID
+      value: -1111279711
+      objectReference: {fileID: 0}
+    - target: {fileID: 3664157343287155058, guid: b10115baabab7714da1ddc0a9a88beb9,
+        type: 2}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b10115baabab7714da1ddc0a9a88beb9, type: 2}
   m_IsPrefabParent: 0

@@ -44,12 +44,10 @@ public class BombController : MonoBehaviour {
 		if (other.gameObject.CompareTag ("EnemyHealth")) {
 			EnemyHealth health = other.GetComponent<EnemyHealth> ();
 			health.takeDamage (modifiedDamage + (int)PlayerStatistics.calcMD());
-			Destroy (gameObject);
 		}
 		if (other.gameObject.CompareTag ("Boss")) {
 			BossHealth health = other.GetComponent<BossHealth> ();
 			health.takeDamage (modifiedDamage + (int)PlayerStatistics.calcMD());
-			Destroy (gameObject);
 		} 
 	}
 
