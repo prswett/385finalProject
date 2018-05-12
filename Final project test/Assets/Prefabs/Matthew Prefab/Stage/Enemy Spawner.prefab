@@ -78,7 +78,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnTime: 3
-  maxNumber: 15
+  maxNumber: 3
   bossStage: 0
   horiPos: 2
   horiNeg: -2

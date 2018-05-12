@@ -40,7 +40,7 @@ public class GEnemyWep : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (!location) {
-			Destroy (gameObject);
+			transform.position = new Vector3 (0, 0, 0);
 		}
 		playerX = target.transform.position.x;
 		enemyX = transform.position.x;
@@ -153,12 +153,16 @@ public class GEnemyWep : MonoBehaviour {
 		if (other.gameObject.CompareTag ("Player")) {
 			PlayerStatistics.takeDamage(1);
 		}
+		if (other.gameObject.CompareTag ("outofbounds")) {
+			location = true;
+		}
 	}
 
 	void OnTriggerExit2D(Collider2D other) {
 		if (other.gameObject.CompareTag ("outofbounds")) {
 			location = false;
 		}
+
 	}
 
 	void flip() {

@@ -7,6 +7,8 @@ public class FlamethrowerController : MonoBehaviour {
 	public float velocityY;
 	Rigidbody2D rb2d;
 
+	public string description = "Send flames out that do damage and disappear after a little while/nShoots where the mouse is";
+
 	public int baseDamage = 25;
 	public int modifiedDamage = 0;
 	// Use this for initialization

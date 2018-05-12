@@ -65,6 +65,7 @@ public class Player : MonoBehaviour {
 	public Inventory inv;
 	public PotionInventory pInv;
 	public Equipment eInv;
+	public bool tryingToDelete = false;
 
 	//Time stops
 	public bool menu = false;
@@ -77,7 +78,12 @@ public class Player : MonoBehaviour {
 	public bool expBoost = false;
 	public float goldTime;
 	public float expTime;
-	//
+
+	//Location
+	public bool location = false;
+	float x;
+	float y;
+
 	void Awake() {
 		if (Instance == null) {
 			DontDestroyOnLoad (gameObject);
@@ -109,6 +115,8 @@ public class Player : MonoBehaviour {
 	}
 
 	public void getSpawnLocation(float x, float y) {
+		this.x = x;
+		this.y = y;
 		transform.position = new Vector3(x, y, 0);
 		healthbar = GameObject.Find ("Health").GetComponent<Image> ();
 		manabar = GameObject.Find ("Mana").GetComponent<Image> ();
@@ -155,6 +163,9 @@ public class Player : MonoBehaviour {
 
 	//
 	void Update () {
+		if (location = false) {
+			transform.position = new Vector3(x, y, 0);
+		}
 		timeStop = (menu || inventory || shop);
 		if (loadedChar) {
 			LoadPlayer load = new LoadPlayer ();
@@ -304,9 +315,27 @@ public class Player : MonoBehaviour {
 		stageCount = 0;
 	}
 
-		public void jumpingDown() {
+	public void jumpingDown() {
 			jumpDown = !jumpDown;
+	}
+
+	void OnTriggerEnter2D(Collider2D other) {
+		if (other.gameObject.CompareTag("outofbounds")) {
+			location = true;
 		}
+	}
+
+	void OnTriggerStay2D(Collider2D other) {
+		if (other.gameObject.CompareTag("outofbounds")) {
+			location = true;
+		}
+	}
+
+	void OnTriggerExit2D(Collider2D other) {
+		if (other.gameObject.CompareTag("outofbounds")) {
+			location = false;
+		}
+	}
 
 	void changeWeapon(bool up) {
 		if (up) {
@@ -356,4 +385,10 @@ public class Player : MonoBehaviour {
 				killCount = 0;
 				killedBoss = false;
 		}
+
+		public void delete() {
+			Destroy (gameObject);
+		}
 	}
+	
+	

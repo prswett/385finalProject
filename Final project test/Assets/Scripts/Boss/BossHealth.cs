@@ -35,7 +35,7 @@ public class BossHealth : MonoBehaviour {
 	void Awake() {
 		anim = GetComponent<Animator> ();
 		healthbar = GameObject.Find ("BossHealth").GetComponent<Image> ();
-		currentHealth = currentHealth * (PlayerStatistics.level) / 1.5f;
+		currentHealth = currentHealth * (PlayerStatistics.level) / 4f;
 		maxHealth = currentHealth;
 		target = GameObject.FindWithTag ("Boss").transform;
 

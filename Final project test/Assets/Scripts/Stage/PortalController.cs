@@ -31,9 +31,9 @@ public class PortalController : MonoBehaviour {
 					player.speed /= 1.5f;
 					player.jumpSpeed /= 1.1f;
 				}
-				if (player.stageCount == 10) {
+				if (player.stageCount == 4) {
 					SceneManager.LoadScene (3, LoadSceneMode.Single);
-				} else if (player.stageCount == 11) {
+				} else if (player.stageCount == 5) {
 					SceneManager.LoadScene (1, LoadSceneMode.Single);
 					player.stageCount = 0;
 				} else {

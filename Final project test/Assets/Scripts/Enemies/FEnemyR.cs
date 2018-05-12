@@ -34,6 +34,7 @@ public class FEnemyR : MonoBehaviour {
 	public float upCoordinate;
 	public float downCoordinate;
 
+
 	void Start () {
 		parent = GetComponent<EnemyController> ();
 		lastFire = 0;
@@ -44,7 +45,7 @@ public class FEnemyR : MonoBehaviour {
 
 	void Update () {
 		if (!location) {
-			Destroy (gameObject);
+			transform.position = new Vector3 (0, 0, 0);
 		}
 
 		playerX = target.transform.position.x;
@@ -136,6 +137,10 @@ public class FEnemyR : MonoBehaviour {
 	void OnTriggerStay2D(Collider2D other) {
 		if (other.gameObject.CompareTag ("Player")) {
 			PlayerStatistics.takeDamage(1);
+		}
+
+		if (other.gameObject.CompareTag ("outofbounds")) {
+			location = true;
 		}
 	}
 

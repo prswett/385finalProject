@@ -9,17 +9,17 @@ public class PlayerStatistics  : MonoBehaviour
 
 	public static float lastHit = 0;
 
-	public static float baseHealth = 100;
+	public static float baseHealth = 125;
 	// current hp
-	public static float health = 100;
+	public static float health = 125;
 	// maximum health points
-	public static float maxHealth = 100;
+	public static float maxHealth = 125;
 
-	public static float baseMana = 5;
+	public static float baseMana = 10;
 	// current mp
-	public static float mana = 5;
+	public static float mana = 10;
 	// maximum mana points
-	public static float maxMana = 5;
+	public static float maxMana = 10;
 
 	// speed of the character
 	//public static float speed;
@@ -80,7 +80,7 @@ public class PlayerStatistics  : MonoBehaviour
 	public static float statPoints = 5;
 
 	public static void load() {
-		maxHealth = baseHealth + (3 * str);
+		maxHealth = baseHealth + (4 * str);
 		maxMana = baseMana + (float)(int)(wis / 3);
 		health = maxHealth;
 		mana = maxMana;
@@ -105,7 +105,7 @@ public class PlayerStatistics  : MonoBehaviour
 	}
 
 	public static void takeDamage(float damage) {
-		if (Time.time - lastHit >= 0.5) {
+		if (Time.time - lastHit >= 1f) {
 			health -= (damage * (1 + (level / 50)) * (1000 / (def + 1000)));
 			lastHit = Time.time;
 			health = (float)(int)health;

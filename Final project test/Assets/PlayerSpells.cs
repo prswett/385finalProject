@@ -7,6 +7,7 @@ public class PlayerSpells : MonoBehaviour {
 
 	//All spell objects
 	public GameObject[] spells;
+	public string[] descriptions;
 	public GameObject fireball;
 	public GameObject lightning;
 	public GameObject heal;
@@ -16,6 +17,8 @@ public class PlayerSpells : MonoBehaviour {
 
 	public bool[] unlocked;
 	public int selectedSpell;
+	public int plus;
+	public int minus;
 	public int numberOfSpells;
 
 	public int[] level;
@@ -43,12 +46,19 @@ public class PlayerSpells : MonoBehaviour {
 
 	void loadSpells() {
 		spells = new GameObject[numberOfSpells];
+		descriptions = new string[numberOfSpells];
 		spells [0] = fireball;
+		descriptions [0] = "Shoot a fireball that does damage and pierces enemies. \nDisappears on collision with wall\nShoots where the mouse is";
 		spells [1] = lightning;
+		descriptions [1] = "Create a lightning bolt where the mouse is that flies downward\nDisappears after touching a wall";
 		spells [2] = heal;
+		descriptions [2] = "Heal yourself";
 		spells [3] = bomb;
+		descriptions [3] = "Throw a bomb that explodes and does damage\nExplodes on contact with enemy or on collision with wall";
 		spells [4] = flamethrower;
+		descriptions [4] = "Send flames out that do damage and disappear after a little while\nShoots where the mouse is";
 		spells [5] = speed;
+		descriptions [5] = "Increase your move and jump speed for a little while";
 	}
 
 	void Start () {
@@ -80,11 +90,11 @@ public class PlayerSpells : MonoBehaviour {
 	public void spellUIUpdate() {
 		currentSpell.sprite = spells[selectedSpell].GetComponent<SpriteRenderer> ().sprite;
 		currentSpellLevel.text = "Level " + level [selectedSpell];
-		int plus = selectedSpell + 1;
+		plus = selectedSpell + 1;
 		if (plus == numberOfSpells) {
 			plus = 0;
 		}
-		int minus = selectedSpell - 1;
+		minus = selectedSpell - 1;
 		if (minus == -1) {
 			minus = numberOfSpells - 1;
 		}

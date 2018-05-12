@@ -5,6 +5,8 @@ using UnityEngine;
 public class HealingController : MonoBehaviour {
 	public int baseHealing = 10;
 	public int modifiedHealing = 0;
+
+	public string description = "Heal yourself";
 	// Use this for initialization
 	void Start () {
 		float healing = modifiedHealing + PlayerStatistics.calcMD ();

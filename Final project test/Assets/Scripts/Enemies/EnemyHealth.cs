@@ -33,7 +33,7 @@ public class EnemyHealth : MonoBehaviour {
 		if (maxHealth == 0) {
 			maxHealth = 100;
 		}
-		maxHealth = (maxHealth * PlayerStatistics.level) / 2f;
+		maxHealth = (maxHealth * PlayerStatistics.level) / 10f;
 		lastHit = 0;
 		target = GameObject.FindWithTag ("Player").transform;
 		parent = transform.parent.gameObject;
@@ -118,7 +118,7 @@ public class EnemyHealth : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject.CompareTag ("Player")) {
 			if (parentController.active == true) {
-				PlayerStatistics.takeDamage (1 + PlayerStatistics.level / 2);
+				PlayerStatistics.takeDamage (1 + PlayerStatistics.level / 5);
 			}
 		}
 	}
@@ -126,7 +126,7 @@ public class EnemyHealth : MonoBehaviour {
 	void OnTriggerStay2D(Collider2D other) {
 		if (other.gameObject.CompareTag ("Player")) {
 			if (parentController.active == true) {
-				PlayerStatistics.takeDamage (1 + PlayerStatistics.level / 2);
+				PlayerStatistics.takeDamage (1 + PlayerStatistics.level / 5);
 			}
 		}
 	}

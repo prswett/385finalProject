@@ -7,7 +7,9 @@ public class LightningController : MonoBehaviour {
 	public float velocityY;
 	Rigidbody2D rb2d;
 
-	public int baseDamage = 100;
+	public string description = "Create a lightning bolt where the mouse is that flies downward/nDisappears after touching a wall";
+
+	public int baseDamage = 200;
 	public int modifiedDamage = 0;
 	// Use this for initialization
 	void Start () {
@@ -36,6 +38,17 @@ public class LightningController : MonoBehaviour {
 		if (other.gameObject.CompareTag ("Ground")) {
 			Destroy (gameObject);
 		}
+	}
+
+	void OnTriggerStay2D(Collider2D other) {
+		if (other.gameObject.CompareTag ("EnemyHealth")) {
+			EnemyHealth health = other.GetComponent<EnemyHealth> ();
+			health.takeDamage (modifiedDamage + (int)PlayerStatistics.calcMD());
+		}
+		if (other.gameObject.CompareTag ("Boss")) {
+			BossHealth health = other.GetComponent<BossHealth> ();
+			health.takeDamage (modifiedDamage + (int)PlayerStatistics.calcMD());
+		} 
 	}
 
 	public void rotate(Vector3 input) {

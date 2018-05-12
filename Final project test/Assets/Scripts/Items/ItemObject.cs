@@ -26,6 +26,7 @@ public class ItemObject : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 
 	public bool tutorial = false;
 	public PlayerResources player;
+	public bool multiDelete = false;
 
 	void Start() {
 		inv = GameObject.Find("Inventory").GetComponent<Inventory>();
@@ -304,20 +305,26 @@ public class ItemObject : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 	
 	// Update is called once per frame
 	void Update () {
+		GameObject delete = GameObject.Find ("Delete");
+		if (delete != null) {
 		if (showQuestion) {
-			if (question.clicked) {
-				if (question.answer == true) {
-					inv.RemoveItemSlot (slot);
-					question.hideQuestion ();
-					question.clicked = false;
-				} else {
-					noDelete = false;
-					showQuestion = false;
-					question.hideQuestion ();
-					question.clicked = false;
+				if (question.clicked) {
+					if (question.answer == true) {
+						inv.RemoveItemSlot (slot);
+						question.hideQuestion ();
+						question.clicked = false;
+						target.tryingToDelete = false;
+					} else {
+						noDelete = false;
+						showQuestion = false;
+						question.hideQuestion ();
+						question.clicked = false;
+						target.tryingToDelete = false;
+					}
 				}
 			}
 		}
+
 	}
 
 

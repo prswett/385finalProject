@@ -20,7 +20,7 @@ public class PotionObject : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 	public PlayerTutorial target2;
 
 	public bool tutorial = false;
-
+	public bool multiDelete = false;
 	// Use this for initialization
 	void Start () {
 		pInv = GameObject.Find ("InventoryP").GetComponent<PotionInventory> ();
@@ -145,19 +145,28 @@ public class PotionObject : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 	}
 
 	void Update () {
-		if (showQuestion) {
-			if (question.clicked) {
-				if (question.answer == true) {
-					pInv.RemoveItemSlot (slot);
-					question.hideQuestion ();
-					question.clicked = false;
-				} else {
-					noDelete = false;
-					showQuestion = false;
-					question.hideQuestion ();
-					question.clicked = false;
+		GameObject delete = GameObject.Find ("Delete");
+		if (delete != null) {
+			if (showQuestion) {
+				target.tryingToDelete = true;
+				if (question.clicked) {
+					if (question.answer == true) {
+						pInv.RemoveItemSlot (slot);
+						question.hideQuestion ();
+						question.clicked = false;
+						target.tryingToDelete = false;
+					} else {
+						noDelete = false;
+						showQuestion = false;
+						question.hideQuestion ();
+						question.clicked = false;
+						target.tryingToDelete = false;
+					}
 				}
+
+
 			}
 		}
+
 	}
 }

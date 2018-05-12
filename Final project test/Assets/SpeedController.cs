@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpeedController : MonoBehaviour {
 	public Player temp;
-
+	public string description = "Increase your move and jump speed for a little while";
 	// Use this for initialization
 	void Start () {
 		temp = GameObject.Find ("Player").GetComponent<Player> ();

@@ -1,7 +1,13 @@
-More bosses, more variety in stages/difficulty
-More enemies
-Equip system
-Upgrading system
-More spells
-More stages
-Art, music
+Need music
+
+Bug fixes
+Shop screen show prices, item tool tips
+Spell tool tips
+Information page
+Controls page
+Monsters not spawning glitch
+Decrease scaling
+Make spells more viable
+Decrease monster spawning
+delete item bug
+restart button

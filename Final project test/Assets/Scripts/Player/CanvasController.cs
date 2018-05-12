@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CanvasController : MonoBehaviour {
 	GameObject[] pause;
@@ -48,11 +49,13 @@ public class CanvasController : MonoBehaviour {
 		}
 
 		if (!tutorial) {
-			if (Input.GetKeyDown (KeyCode.I)) {
+			if (Input.GetKeyDown (KeyCode.C)) {
 				if (!inventoryOpen) {
 					showInventory ();
 				} else {
-					hideInventory ();
+					if (!player.tryingToDelete) {
+						hideInventory ();
+					}
 				}
 			}
 		}
@@ -142,6 +145,13 @@ public class CanvasController : MonoBehaviour {
 	public void no() {
 		clicked = true;
 		answer = false;
+	}
+
+	public void mainMenu() {
+		SceneManager.LoadScene (0, LoadSceneMode.Single);
+		if (!tutorial) {
+			player.delete ();
+		}
 	}
 
     public void Quit()
