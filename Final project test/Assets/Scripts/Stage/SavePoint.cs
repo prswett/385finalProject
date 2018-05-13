@@ -84,6 +84,7 @@ public class SavePoint : MonoBehaviour
 		data.coins = PlayerStatistics.coins;
 		data.nextLevel = PlayerStatistics.nextLevel;
 		data.level = PlayerStatistics.level;
+		data.statPoints = PlayerStatistics.statPoints;
 
 		int numberItems = Inventory.saveItems.Count;
 		int count = 0;
@@ -319,6 +320,7 @@ class PlayerData
 	public float nextLevel;
 	public float level;
 	public float coins;
+	public float statPoints;
 
 	public bool[] unlocked;
 	public int[] spellLevel;

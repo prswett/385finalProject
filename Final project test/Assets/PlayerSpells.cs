@@ -42,6 +42,7 @@ public class PlayerSpells : MonoBehaviour {
 	public void load() {
 		unlocked = saveUnlocked;
 		level = saveLevel;
+		spellUIUpdate ();
 	}
 
 	void loadSpells() {

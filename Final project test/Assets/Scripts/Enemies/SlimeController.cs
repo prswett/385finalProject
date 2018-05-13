@@ -67,17 +67,19 @@ public class SlimeController : MonoBehaviour {
 	void collideMove() {
 		anim.SetBool ("attacking", false);
 		if (jumping) {
-			transform.position += Vector3.up * jumpSpeed * .07f;
-			if (enemyX - playerX < -MinDist) {
-				if (facing) {
-					flip ();
+			if (Time.timeScale != 0) {
+				transform.position += Vector3.up * jumpSpeed * .07f;
+				if (enemyX - playerX < -MinDist) {
+					if (facing) {
+						flip ();
+					}
+					transform.position += Vector3.right * speed * Time.deltaTime;
+				} else {
+					if (!facing) {
+						flip ();
+					}
+					transform.position += Vector3.left * speed * Time.deltaTime;
 				}
-				transform.position += Vector3.right * speed * Time.deltaTime;
-			} else {
-				if (!facing) {
-					flip ();
-				}
-				transform.position += Vector3.left * speed * Time.deltaTime;
 			}
 		} else {
 			if (enemyX - playerX < -MinDist || enemyX - playerX > MinDist) {
@@ -101,20 +103,23 @@ public class SlimeController : MonoBehaviour {
 	void zoneMove() {
 		anim.SetBool ("attacking", false);
 		if (jumping) {
-			transform.position += Vector3.up * jumpSpeed * .07f;
-			if (enemyX - playerX < -MinDist) {
-				if (facing) {
-					flip ();
-				}
-				if (enemyX < rightCoordinate) {
-					transform.position += Vector3.right * speed * Time.deltaTime;
-				}
-			} else {
-				if (!facing) {
-					flip ();
-				}
-				if (enemyX > leftCoordinate) {
-					transform.position += Vector3.left * speed * Time.deltaTime;
+			if (Time.timeScale != 0) {
+				transform.position += Vector3.up * jumpSpeed * .07f;
+				if (enemyX - playerX < -MinDist) {
+					if (facing) {
+						flip ();
+					}
+					if (enemyX < rightCoordinate) {
+						transform.position += Vector3.right * speed * Time.deltaTime;
+					}
+
+				} else {
+					if (!facing) {
+						flip ();
+					}
+					if (enemyX > leftCoordinate) {
+						transform.position += Vector3.left * speed * Time.deltaTime;
+					}
 				}
 			}
 		} else {

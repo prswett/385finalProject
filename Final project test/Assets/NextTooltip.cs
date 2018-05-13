@@ -21,7 +21,7 @@ public class NextTooltip : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 	
 	// Update is called once per frame
 	void Update () {
-
+		
 	}
 
 	public void OnPointerEnter(PointerEventData eventData)

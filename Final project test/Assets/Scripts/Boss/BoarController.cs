@@ -43,6 +43,7 @@ public class BoarController : MonoBehaviour {
 		if (selfHealing) {
 			if (Time.time - selfHeal > 2f) {
 				myHealth.currentHealth += 50;
+				selfHeal = Time.time;
 			}
 		}
 		if (running == false) {

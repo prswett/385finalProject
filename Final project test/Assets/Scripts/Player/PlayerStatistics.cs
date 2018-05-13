@@ -154,7 +154,7 @@ public class PlayerStatistics  : MonoBehaviour
 	private void Update()
 	{
 		//
-		maxHealth = baseHealth + (3 * str);
+		maxHealth = baseHealth + (4 * str);
 		maxMana = baseMana + (float)(int)(wis / 3);
 		// atk scales off WA + 0.5*Str + 0.25Dex
 		atk = (float)((str * 0.5) + (dex * 0.25) + wa);

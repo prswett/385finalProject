@@ -107,7 +107,7 @@ public class Player : MonoBehaviour {
 		spells = GetComponent<PlayerSpells> ();
 		count = resources.weaponCount;
 
-		spells.load ();
+
 		//Player inventory UI
 		inv = GameObject.Find ("Inventory").GetComponent<Inventory> ();
 		pInv = GameObject.Find ("InventoryP").GetComponent<PotionInventory> ();
@@ -158,12 +158,13 @@ public class Player : MonoBehaviour {
 		anim = GetComponent<Animator> ();
 		killCount = 0;
 		gravityStore = rb2d.gravityScale;
+
 		//GetComponent<SpriteRenderer> ().color = Color.blue;
 	}
 
 	//
 	void Update () {
-		if (location = false) {
+		if (location == false) {
 			transform.position = new Vector3(x, y, 0);
 		}
 		timeStop = (menu || inventory || shop);
@@ -171,6 +172,7 @@ public class Player : MonoBehaviour {
 			LoadPlayer load = new LoadPlayer ();
 			load.Load (this);
 			loadedChar = false;
+			spells.load ();
 		}
 
 		if (Time.time - goldTime > 30) {

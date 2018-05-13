@@ -92,11 +92,13 @@ public class GEnemyR : MonoBehaviour {
 	void collideMove() {
 		anim.SetBool ("attacking", false);
 		if (jumping) {
-			transform.position += Vector3.up * jumpSpeed * .07f;
-			if (enemyX - playerX < -MinDist) {
-				transform.position += Vector3.right * speed * Time.deltaTime;
-			} else {
-				transform.position += Vector3.left * speed * Time.deltaTime;
+			if (Time.timeScale != 0) {
+				transform.position += Vector3.up * jumpSpeed * .07f;
+				if (enemyX - playerX < -MinDist) {
+					transform.position += Vector3.right * speed * Time.deltaTime;
+				} else {
+					transform.position += Vector3.left * speed * Time.deltaTime;
+				}
 			}
 		} else {
 			
@@ -115,14 +117,16 @@ public class GEnemyR : MonoBehaviour {
 	void zoneMove() {
 		anim.SetBool ("attacking", false);
 		if (jumping) {
-			transform.position += Vector3.up * jumpSpeed * .07f;
-			if (enemyX - playerX < -MinDist) {
-				if (enemyX < rightCoordinate) {
-					transform.position += Vector3.right * speed * Time.deltaTime;
-				}
-			} else {
-				if (enemyX > leftCoordinate) {
-					transform.position += Vector3.left * speed * Time.deltaTime;
+			if (Time.timeScale != 0) {
+				transform.position += Vector3.up * jumpSpeed * .07f;
+				if (enemyX - playerX < -MinDist) {
+					if (enemyX < rightCoordinate) {
+						transform.position += Vector3.right * speed * Time.deltaTime;
+					}
+				} else {
+					if (enemyX > leftCoordinate) {
+						transform.position += Vector3.left * speed * Time.deltaTime;
+					}
 				}
 			}
 		} else {

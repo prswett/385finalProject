@@ -77,8 +77,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d9ffc0381ce01e428759056fb307470, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnTime: 3
-  maxNumber: 3
+  spawnTime: 0
+  maxNumber: 5
   bossStage: 0
   horiPos: 2
   horiNeg: -2

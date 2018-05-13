@@ -36,6 +36,7 @@ public class LoadPlayer : MonoBehaviour {
 			PlayerStatistics.nextLevel = data.nextLevel;
 			PlayerStatistics.coins = data.coins;
 			PlayerStatistics.level = data.level;
+			PlayerStatistics.statPoints = data.statPoints;
 
 			PlayerSpells.saveLevel = data.spellLevel;
 			PlayerSpells.saveUnlocked = data.unlocked;

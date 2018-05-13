@@ -24,7 +24,7 @@ public class EnemyHealth : MonoBehaviour {
 	public GameObject damageNumber;
 	Renderer render;
 
-
+	public float spawnTime;
 	void Awake() {
 	}
 
@@ -33,7 +33,11 @@ public class EnemyHealth : MonoBehaviour {
 		if (maxHealth == 0) {
 			maxHealth = 100;
 		}
-		maxHealth = (maxHealth * PlayerStatistics.level) / 10f;
+		if (PlayerStatistics.level <= 20) {
+			maxHealth = (maxHealth * PlayerStatistics.level) / 10f;
+		} else {
+			maxHealth = (maxHealth * PlayerStatistics.level) / 5f;
+		}
 		lastHit = 0;
 		target = GameObject.FindWithTag ("Player").transform;
 		parent = transform.parent.gameObject;
@@ -43,9 +47,18 @@ public class EnemyHealth : MonoBehaviour {
 		control = GetComponentInChildren<TextMesh> ();
 		control.text = monsterName;
 		render = parent.GetComponent<Renderer> ();
+
+		spawnTime = Time.time;
 	}
 
 	void Update () {
+		if (Time.time - lastHit > 10 && lastHit != 0) {
+			transform.parent.position = new Vector2 (0, 0);
+		}
+
+		if (Time.time - spawnTime > 10 && lastHit == 0) {
+			transform.parent.position = new Vector2 (0, 0);
+		}
 		healthbar.fillAmount = currentHealth / maxHealth;
 		if (currentHealth <= 0) {
 			dropCoin ();
@@ -118,7 +131,11 @@ public class EnemyHealth : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject.CompareTag ("Player")) {
 			if (parentController.active == true) {
-				PlayerStatistics.takeDamage (1 + PlayerStatistics.level / 5);
+				if (PlayerStatistics.level <= 20) {
+					PlayerStatistics.takeDamage (1 + PlayerStatistics.level / 5);
+				} else {
+					PlayerStatistics.takeDamage (1 + PlayerStatistics.level / 2);
+				}
 			}
 		}
 	}
@@ -126,7 +143,11 @@ public class EnemyHealth : MonoBehaviour {
 	void OnTriggerStay2D(Collider2D other) {
 		if (other.gameObject.CompareTag ("Player")) {
 			if (parentController.active == true) {
-				PlayerStatistics.takeDamage (1 + PlayerStatistics.level / 5);
+				if (PlayerStatistics.level <= 20) {
+					PlayerStatistics.takeDamage (1 + PlayerStatistics.level / 5);
+				} else {
+					PlayerStatistics.takeDamage (1 + PlayerStatistics.level / 2);
+				}
 			}
 		}
 	}
