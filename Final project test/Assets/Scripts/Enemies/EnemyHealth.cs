@@ -103,10 +103,12 @@ public class EnemyHealth : MonoBehaviour {
 			if (Time.time - lastHit > 0.5) {
 				damageAnimation ();
 				Invoke ("damageAnimation", .1f);
+				lastHit = Time.time;
 			}
-			lastHit = Time.time;
 		}
 	}
+
+
 
 	public void damageAnimation() {
 		render.enabled = !render.enabled;

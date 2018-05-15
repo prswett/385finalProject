@@ -32,7 +32,12 @@ public class PortalController : MonoBehaviour {
 					player.jumpSpeed /= 1.1f;
 				}
 				if (player.stageCount == 4) {
-					SceneManager.LoadScene (3, LoadSceneMode.Single);
+					int temp = Random.Range (0, 2);
+					if (temp == 0) {
+						SceneManager.LoadScene (3, LoadSceneMode.Single);
+					} else {
+						SceneManager.LoadScene (4, LoadSceneMode.Single);
+					}
 				} else if (player.stageCount == 5) {
 					SceneManager.LoadScene (1, LoadSceneMode.Single);
 					player.stageCount = 0;

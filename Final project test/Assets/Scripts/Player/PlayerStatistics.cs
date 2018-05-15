@@ -105,7 +105,7 @@ public class PlayerStatistics  : MonoBehaviour
 	}
 
 	public static void takeDamage(float damage) {
-		if (Time.time - lastHit >= 1f) {
+		if (Time.time - lastHit >= .4f) {
 			health -= (damage * (1 + (level / 50)) * (1000 / (def + 1000)));
 			lastHit = Time.time;
 			health = (float)(int)health;

@@ -10,7 +10,7 @@ public class BombController : MonoBehaviour {
 	public bool hit = false;
 	public Animator anim;
 
-	public int baseDamage = 150;
+	public int baseDamage = 250;
 	public int modifiedDamage = 0;
 	public float start;
 	// Use this for initialization

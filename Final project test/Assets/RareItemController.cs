@@ -47,7 +47,12 @@ public class RareItemController : MonoBehaviour {
 	void generateItem() {
 		int roll = Random.Range (0, 10);
 		if (roll < 6) {
-			ID = Random.Range (6, 18);
+			roll = Random.Range (0, 10);
+			if (roll < 3) {
+				ID = Random.Range (30, 36);
+			} else {
+				ID = Random.Range (6, 30);
+			}
 		} else {
 			ID = Random.Range (0, 5);
 		}

@@ -42,7 +42,12 @@ public class ItemController : MonoBehaviour {
 	void generateItem() {
 		int roll = Random.Range (0, 10);
 		if (roll < 4) {
-			ID = Random.Range (6, 18);
+			roll = Random.Range (0, 10);
+			if (roll < 2) {
+				ID = Random.Range (30, 36);
+			} else {
+				ID = Random.Range (6, 30);
+			}
 		} else {
 			ID = Random.Range (0, 5);
 		}
