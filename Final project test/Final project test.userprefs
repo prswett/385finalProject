@@ -1,11 +1,19 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Enemies\EnemyHealth.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Player\CanvasController.cs">
     <Files>
-      <File FileName="Assets\FlowerController.cs" Line="25" Column="31" />
-      <File FileName="Assets\Scripts\Boss\BossHealth.cs" Line="79" Column="2" />
-      <File FileName="Assets\Scripts\Enemies\EnemyHealth.cs" Line="107" Column="5" />
-      <File FileName="Assets\Scripts\Boss\BoarController.cs" Line="92" Column="2" NotebookId="1" />
+      <File FileName="Assets\Scripts\Enemies\BulletController.cs" Line="42" Column="2" />
+      <File FileName="Assets\Scripts\Player\PlayerStatistics.cs" Line="38" Column="29" />
+      <File FileName="Assets\FinalBoss3Controller.cs" Line="111" Column="14" />
+      <File FileName="Assets\Scripts\Boss\BossHealth.cs" Line="60" Column="25" />
+      <File FileName="Assets\TargetBullet.cs" Line="20" Column="24" />
+      <File FileName="Assets\Scripts\Stage\PortalController.cs" Line="70" Column="47" />
+      <File FileName="Assets\Scripts\Menu\MainMenuController.cs" Line="51" Column="11" />
+      <File FileName="Assets\FinalBoss1Controller.cs" Line="15" Column="2" NotebookId="1" />
+      <File FileName="Assets\spawnPhase.cs" Line="22" Column="1" NotebookId="1" />
+      <File FileName="Assets\FinalBoss2Controller.cs" Line="98" Column="34" NotebookId="1" />
+      <File FileName="Assets\Scripts\Stage\StageController.cs" Line="51" Column="1" NotebookId="1" />
+      <File FileName="Assets\Scripts\Player\CanvasController.cs" Line="150" Column="35" NotebookId="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

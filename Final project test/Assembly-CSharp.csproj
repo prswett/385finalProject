@@ -57,6 +57,9 @@
      <Compile Include="Assets\DamageNumber.cs" />
      <Compile Include="Assets\EmptyClass.cs" />
      <Compile Include="Assets\EnemyList.cs" />
+     <Compile Include="Assets\FinalBoss1Controller.cs" />
+     <Compile Include="Assets\FinalBoss2Controller.cs" />
+     <Compile Include="Assets\FinalBoss3Controller.cs" />
      <Compile Include="Assets\FlamethrowerController.cs" />
      <Compile Include="Assets\FlowerController.cs" />
      <Compile Include="Assets\HealingController.cs" />
@@ -144,10 +147,12 @@
      <Compile Include="Assets\Scripts\Tutorial\TutorialSwordController.cs" />
      <Compile Include="Assets\Scripts\Tutorial\TutorialWall.cs" />
      <Compile Include="Assets\ShopTooltip.cs" />
+     <Compile Include="Assets\spawnPhase.cs" />
      <Compile Include="Assets\SpeedController.cs" />
      <Compile Include="Assets\SpellBookController.cs" />
      <Compile Include="Assets\statDescription.cs" />
      <Compile Include="Assets\StatUITooltip.cs" />
+     <Compile Include="Assets\TargetBullet.cs" />
      <Compile Include="Assets\TreasureChestController.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

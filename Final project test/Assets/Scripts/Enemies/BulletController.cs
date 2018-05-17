@@ -20,6 +20,10 @@ public class BulletController : MonoBehaviour {
 	public bool explosion = false;
 	public bool portal = false;
 
+	public bool delayShot = true;
+	public bool activate = false;
+
+	public int damage;
 	void Awake() {
 		target = GameObject.FindWithTag ("Player").transform;
 	}
@@ -40,8 +44,15 @@ public class BulletController : MonoBehaviour {
 	//If its an enemy shooting, remove after 4 seconds, if its a boss
 	//Remove after 8 seconds
 	void Update () {
-		//transform.localScale = new Vector3 (1, 1, 1f);
-		rb2d.velocity = new Vector2 (velocityX, velocityY) * 3;
+
+		if (delayShot) {
+			rb2d.velocity = new Vector2 (velocityX, velocityY) * 3;
+		}
+
+		if (!delayShot && !activate) {
+			Invoke ("sendShot", 3f);
+			activate = true;
+		}
 
 		if (enemyUnit) {
 			Destroy (gameObject, 4f);
@@ -49,6 +60,10 @@ public class BulletController : MonoBehaviour {
 			Destroy (gameObject, 8f);
 		}
 
+	}
+
+	public void sendShot() {
+		delayShot = true;
 	}
 
 	//Set velocity
@@ -61,7 +76,7 @@ public class BulletController : MonoBehaviour {
 	//On collision with ground dissapear
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject.CompareTag ("Player")) {
-			PlayerStatistics.takeDamage(1);
+			PlayerStatistics.takeDamage(1 + (PlayerStatistics.level / 2) + damage);
 			if (!explosion) {
 				Destroy (gameObject);
 			} else {
@@ -85,7 +100,7 @@ public class BulletController : MonoBehaviour {
 
 	void OnTriggerStay2D(Collider2D other) {
 		if (other.gameObject.CompareTag ("Player")) {
-			PlayerStatistics.takeDamage(1 + PlayerStatistics.level / 2);
+			PlayerStatistics.takeDamage(1 + (PlayerStatistics.level / 2) + damage);
 		}
 	}
 

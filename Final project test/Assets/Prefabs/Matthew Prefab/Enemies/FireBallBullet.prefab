@@ -89,11 +89,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c55eb88a6e77e94f97f5b8eb14375c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocityX: 0.7086272
-  velocityY: -0.70558304
+  velocityX: 0
+  velocityY: 0
   enemyUnit: 1
   groundCollide: 1
   target: {fileID: 0}
+  anim: {fileID: 0}
+  explosion: 0
+  portal: 0
 --- !u!212 &212325840304803188
 SpriteRenderer:
   m_ObjectHideFlags: 1

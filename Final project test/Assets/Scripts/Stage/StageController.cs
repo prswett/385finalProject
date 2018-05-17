@@ -29,8 +29,6 @@ public class StageController : MonoBehaviour {
 		nextScene = temp.nextScene;
 		temp.deactivate ();
 
-
-
 	}
 	// Use this for initialization
 	void Start () {

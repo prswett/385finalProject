@@ -12,6 +12,8 @@ public class CanvasController : MonoBehaviour {
 	public bool questionOpen = false;
 	public bool clicked = false;
 	public bool answer = false;
+	GameObject[] control;
+	public bool controls = false;
 
 	public Player player;
 	public PlayerTutorial playerTutorial;
@@ -36,6 +38,11 @@ public class CanvasController : MonoBehaviour {
 		question = GameObject.FindGameObjectsWithTag ("QuestionBox");
 		foreach (GameObject questionObject in question) {
 			questionObject.SetActive (false);
+		}
+
+		control = GameObject.FindGameObjectsWithTag ("Controls");
+		foreach (GameObject controlObject in control) {
+			controlObject.SetActive (false);
 		}
 	}
 
@@ -134,6 +141,20 @@ public class CanvasController : MonoBehaviour {
 	public void hideQuestion() {
 		foreach (GameObject questionObject in question) {
 			questionObject.SetActive (false);
+		}
+	}
+
+	public void showControls() {
+		controls = true;
+		foreach (GameObject controlObject in control) {
+			controlObject.SetActive (true);
+		}
+	}
+
+	public void hideControls() {
+		controls = false;
+		foreach (GameObject controlObject in control) {
+			controlObject.SetActive (false);
 		}
 	}
 

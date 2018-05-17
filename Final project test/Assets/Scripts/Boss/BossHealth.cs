@@ -20,7 +20,7 @@ public class BossHealth : MonoBehaviour {
 	//Start variables
 	public float lastHit;
 	//Update variables
-	public float currentHealth = 100;
+	public float currentHealth;
 
 
 	public GameObject item;
@@ -30,6 +30,7 @@ public class BossHealth : MonoBehaviour {
 	public int numberHeld = 1;
 
 	Renderer render;
+	public bool increaseKill = true;
 
 	//Gets all variables and components before initialization
 	void Awake() {
@@ -51,9 +52,16 @@ public class BossHealth : MonoBehaviour {
 	//Updates health bar
 	void Update () {
 		if (currentHealth <= 0) {
+			spawnPhase spawn = GetComponent<spawnPhase> ();
+			if (spawn != null) {
+				spawn.spawn ();
+			}
+
 			Destroy (gameObject);
 			Player temp = GameObject.FindWithTag ("Player").transform.GetComponent<Player>();
-			temp.killedBoss = true;
+			if (increaseKill) {
+				temp.killedBoss = true;
+			}
 			if (temp.expBoost) {
 				PlayerStatistics.exp += 2 * (10 * PlayerStatistics.level / 4);
 			} else {

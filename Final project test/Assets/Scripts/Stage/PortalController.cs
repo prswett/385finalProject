@@ -11,6 +11,8 @@ public class PortalController : MonoBehaviour {
 	Player player;
 	public TextMesh control;
 
+	public bool finalBoss = false;
+	public bool boss = false;
 
 	void Awake() {
 		target = GameObject.FindWithTag ("Player").transform;
@@ -31,19 +33,23 @@ public class PortalController : MonoBehaviour {
 					player.speed /= 1.5f;
 					player.jumpSpeed /= 1.1f;
 				}
-				if (player.stageCount == 4) {
-					int temp = Random.Range (0, 2);
-					if (temp == 0) {
-						SceneManager.LoadScene (3, LoadSceneMode.Single);
+				if (!finalBoss) {
+					if (player.stageCount == 4) {
+						int temp = Random.Range (0, 2);
+						if (temp == 0) {
+							SceneManager.LoadScene (3, LoadSceneMode.Single);
+						} else {
+							SceneManager.LoadScene (4, LoadSceneMode.Single);
+						}
+					} else if (player.stageCount == 5) {
+						SceneManager.LoadScene (1, LoadSceneMode.Single);
+						player.stageCount = 0;
 					} else {
-						SceneManager.LoadScene (4, LoadSceneMode.Single);
+						int next = Random.Range (5, 11);
+						SceneManager.LoadScene (next, LoadSceneMode.Single);
 					}
-				} else if (player.stageCount == 5) {
-					SceneManager.LoadScene (1, LoadSceneMode.Single);
-					player.stageCount = 0;
 				} else {
-					int next = Random.Range (5, 11);
-					SceneManager.LoadScene (next, LoadSceneMode.Single);
+					SceneManager.LoadScene (nextScene, LoadSceneMode.Single);
 				}
 				player.anim.SetBool ("attacking", false);
 				player.anim.SetBool ("walking", false);
@@ -58,7 +64,11 @@ public class PortalController : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject.CompareTag ("Player")) {
 			near = true;
-			control.text = "W";
+			if (!boss) {
+				control.text = "W";
+			} else {
+				control.text = "W \nFight the final boss";
+			}
 		}
 	}
 

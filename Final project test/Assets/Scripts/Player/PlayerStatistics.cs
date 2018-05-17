@@ -76,6 +76,8 @@ public class PlayerStatistics  : MonoBehaviour
 	// exp needed to reach next level
 	public static float nextLevel = 10;
 
+	public float manaRegen = 0;
+
 	// everyone starts with 5 stat points
 	public static float statPoints = 5;
 
@@ -107,6 +109,9 @@ public class PlayerStatistics  : MonoBehaviour
 	public static void takeDamage(float damage) {
 		if (Time.time - lastHit >= .4f) {
 			health -= (damage * (1 + (level / 50)) * (1000 / (def + 1000)));
+			if (health <= 0) {
+				health = 0;
+			}
 			lastHit = Time.time;
 			health = (float)(int)health;
 		}
@@ -153,6 +158,17 @@ public class PlayerStatistics  : MonoBehaviour
 
 	private void Update()
 	{
+		if (maxMana > 50) {
+			if (Time.time - manaRegen > 5) {
+				float manaAdd = maxMana / 10;
+				if (mana + manaAdd > maxMana) {
+					mana = maxMana;
+				} else {
+					mana += manaAdd;
+				}
+				manaRegen = Time.time;
+			}
+		}
 		//
 		maxHealth = baseHealth + (4 * str);
 		maxMana = baseMana + (float)(int)(wis / 3);

@@ -25,7 +25,6 @@ public class BoarController : MonoBehaviour {
 		target = GameObject.FindWithTag ("Player").transform;
 		anim = GetComponent<Animator> ();
 		myHealth = GetComponent<BossHealth> ();
-		//myself = GameObject.FindWithTag("Boss").transform;
 	}
 		
 	// Use this for initialization
