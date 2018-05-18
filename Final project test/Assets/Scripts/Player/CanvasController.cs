@@ -60,7 +60,11 @@ public class CanvasController : MonoBehaviour {
 				if (!inventoryOpen) {
 					showInventory ();
 				} else {
-					if (!player.tryingToDelete) {
+					if (player != null) {
+						if (!player.tryingToDelete) {
+							hideInventory ();
+						}
+					} else {
 						hideInventory ();
 					}
 				}

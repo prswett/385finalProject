@@ -54,10 +54,12 @@ public class EnemyHealth : MonoBehaviour {
 	void Update () {
 		if (Time.time - lastHit > 10 && lastHit != 0) {
 			transform.parent.position = new Vector2 (0, 0);
+			lastHit = Time.time;
 		}
 
 		if (Time.time - spawnTime > 10 && lastHit == 0) {
 			transform.parent.position = new Vector2 (0, 0);
+			spawnTime = Time.time;
 		}
 		healthbar.fillAmount = currentHealth / maxHealth;
 		if (currentHealth <= 0) {

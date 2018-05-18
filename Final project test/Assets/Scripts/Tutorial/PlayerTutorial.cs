@@ -226,11 +226,11 @@ public class PlayerTutorial : MonoBehaviour {
 				}
 
 				if (tutorialAttacking) {
-					if (Input.GetKey (KeyCode.J) || Input.GetMouseButton (0)) {
+					if (Input.GetMouseButton (0)) {
 						anim.SetBool ("attacking", true);
 						attacking = true;
 					}
-					if (Input.GetKeyUp (KeyCode.J) || Input.GetMouseButtonUp (0)) {
+					if (Input.GetMouseButtonUp (0)) {
 						anim.SetBool ("attacking", false);
 						attacking = false;
 					}
