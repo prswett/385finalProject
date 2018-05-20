@@ -187,7 +187,7 @@ public class PlayerStatistics  : MonoBehaviour
 		// ied
 		ied = 30 + (float)(luk * 0.05);
 		//crit damage
-		cd = 50 + (float)(luk * 0.05);
+		cd = 50 + (float)((dex * 0.005) + (luk * 0.5));
 
 		// check if exp reached
 		if(exp >= nextLevel)
@@ -197,10 +197,10 @@ public class PlayerStatistics  : MonoBehaviour
 			// next level reached
 			exp -= nextLevel;
 			// exp to next level += 20
-			nextLevel *= 1.25f;
+			nextLevel *= 1.2f;
 			nextLevel = (float)(int)nextLevel + 1;
 			// more stat points
-			statPoints += 3;
+			statPoints += 5;
 			level++;
 		}
 	}
