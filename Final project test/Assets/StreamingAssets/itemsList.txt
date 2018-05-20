@@ -1,0 +1,78 @@
+id	name		Tier
+0	iron helmet	0
+1	iron armor	0
+2	iron sword	0
+3	iron spear	0
+4	iron axe	0
+5	iron dagger	0
+
+6	fire helmet	1
+7	fire armor	1
+8	fire sword	1
+9	fire spear	1
+10	fire axe	1
+11	fire dagger	1
+
+12	water helmet	1
+13	water armor	1
+14	water sword	1
+15	water spear	1
+16	water axe	1
+17	water dagger	1
+
+18	Wind Helmet	1
+19	Wind armor	1
+20	Wind Sword	1
+21	wind spear	1
+22	wind axe	1
+23	wind dagger	1
+
+24	earth helmet	1
+25	earth armor	1
+26	earth sword	1
+27	earth spear	1
+28	earth axe	1
+29	earth dagger	1
+
+30	obsidian helmet	2
+31	obsidian armor	2
+32	obsidian sword	2
+33	obsidian spear	2
+34	obsidian axe	2
+35	obsidian dagger	2
+
+ADDITIONS
+36	Bens helmet	3
+37	Bens armor	3
+38	Bens sword	3
+39	Bens spear	3
+40	Bens axe	3
+41	Bens dagger	3
+
+42	Hansels helmet	3
+43	Hansels armor	3
+44	Hansels sword	3
+45	Hansels spear	3
+46	Hansels axe	3
+47	Hansels dagger	3
+
+48	Matthews helmet	3
+49	Matthews armor	3
+50	Matthews sword	3
+51	Matthews spear	3
+52	Matthews axe	3
+53	Matthews dagger	3
+
+54	Patricks helmet	3
+55	Patricks armor	3
+56	Patricks sword	3
+57	Patricks spear	3
+58	Patricks axe	3
+59	Patricks dagger	3
+
+60	TL helmet	-1
+61	TL armor	-1
+62	TL sword	-1
+63	TL spear	-1
+64	TL axe		-1
+65	TL dagger	-1

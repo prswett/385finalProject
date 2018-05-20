@@ -610,5 +610,515 @@
     "description": "A Dagger from lavasat",
     "rarity": 1,
     "slug":  "ObsidianDagger"
+  },
+    {
+    "id": 36,
+    "title": "Bens Helmet",
+	"type": "Helmet",
+    "value": 500,
+    "stats": {
+      "str": 20,
+	  "dex": 100,
+	  "wis": 20,
+	  "luk": 20,
+	  "atk": 20,
+	  "def": 100
+    },
+    "description": "A helmet from one of the gods",
+    "rarity": 3,
+    "slug":  "BensHelmet"
+  },
+  {
+    "id": 37,
+    "title": "Bens Armor",
+	"type": "Armor",
+    "value": 500,
+    "stats": {
+      "str": 20,
+	  "dex": 200,
+	  "wis": 40,
+	  "luk": 40,
+	  "atk": 40,
+	  "def": 200
+    },
+    "description": "A helmet from one of the gods",
+    "rarity": 3,
+    "slug":  "BensArmor"
+  },
+  {
+    "id": 38,
+    "title": "Bens Sword",
+	"type": "Sword",
+    "value": 1000,
+    "stats": {
+      "str": 100,
+	  "dex": 1000,
+	  "wis": 100,
+	  "luk": 100,
+	  "atk": 500,
+	  "def": 100
+    },
+    "description": "A sword from one of the gods",
+    "rarity": 3,
+    "slug":  "BensSword"
+  },
+  {
+    "id": 39,
+    "title": "Bens Spear",
+	"type": "Spear",
+    "value": 1000,
+    "stats": {
+      "str": 80,
+	  "dex": 800,
+	  "wis": 80,
+	  "luk": 180,
+	  "atk": 400,
+	  "def": 150
+    },
+    "description": "A spear from one of the gods",
+    "rarity": 3,
+    "slug":  "BensSpear"
+  },
+  {
+    "id": 40,
+    "title": "Bens Axe",
+	"type": "Axe",
+    "value": 1000,
+    "stats": {
+      "str": 150,
+	  "dex": 1500,
+	  "wis": 120,
+	  "luk": 120,
+	  "atk": 750,
+	  "def": 80
+    },
+    "description": "An axe from one of the gods",
+    "rarity": 3,
+    "slug":  "BensAxe"
+  },
+  {
+    "id": 41,
+    "title": "Bens Dagger",
+	"type": "Dagger",
+    "value": 100,
+    "stats": {
+      "str": 50,
+	  "dex": 600,
+	  "wis": 60,
+	  "luk": 60,
+	  "atk": 60,
+	  "def": 120
+    },
+    "description": "A dagger from one of the gods",
+    "rarity": 3,
+    "slug":  "BensDagger"
+  },
+    {
+    "id": 42,
+    "title": "Hansels Helmet",
+	"type": "Helmet",
+    "value": 500,
+    "stats": {
+      "str": 20,
+	  "dex": 20,
+	  "wis": 20,
+	  "luk": 100,
+	  "atk": 20,
+	  "def": 100
+    },
+    "description": "A helmet from one of the gods",
+    "rarity": 3,
+    "slug":  "HanselsHelmet"
+  },
+  {
+    "id": 43,
+    "title": "Hansels Armor",
+	"type": "Armor",
+    "value": 500,
+    "stats": {
+      "str": 40,
+	  "dex": 40,
+	  "wis": 40,
+	  "luk": 200,
+	  "atk": 40,
+	  "def": 200
+    },
+    "description": "A helmet from one of the gods",
+    "rarity": 3,
+    "slug":  "HanselsArmor"
+  },
+  {
+    "id": 44,
+    "title": "Hansels Sword",
+	"type": "Sword",
+    "value": 1000,
+    "stats": {
+      "str": 100,
+	  "dex": 100,
+	  "wis": 100,
+	  "luk": 1000,
+	  "atk": 500,
+	  "def": 100
+    },
+    "description": "A sword from one of the gods",
+    "rarity": 3,
+    "slug":  "HanselsSword"
+  },
+  {
+    "id": 45,
+    "title": "Hansels Spear",
+	"type": "Spear",
+    "value": 1000,
+    "stats": {
+      "str": 80,
+	  "dex": 180,
+	  "wis": 80,
+	  "luk": 800,
+	  "atk": 400,
+	  "def": 150
+    },
+    "description": "A spear from one of the gods",
+    "rarity": 3,
+    "slug":  "HanselsSpear"
+  },
+  {
+    "id": 46,
+    "title": "Hansels Axe",
+	"type": "Axe",
+    "value": 1000,
+    "stats": {
+      "str": 150,
+	  "dex": 120,
+	  "wis": 120,
+	  "luk": 1500,
+	  "atk": 750,
+	  "def": 80
+    },
+    "description": "An axe from one of the gods",
+    "rarity": 3,
+    "slug":  "HanselsAxe"
+  },
+  {
+    "id": 47,
+    "title": "Hansels Dagger",
+	"type": "Dagger",
+    "value": 1000,
+    "stats": {
+      "str": 50,
+	  "dex": 60,
+	  "wis": 60,
+	  "luk": 600,
+	  "atk": 60,
+	  "def": 120
+    },
+    "description": "A dagger from one of the gods",
+    "rarity": 3,
+    "slug":  "HanselsDagger"
+  },
+    {
+    "id": 48,
+    "title": "Matthews Helmet",
+	"type": "Helmet",
+    "value": 500,
+    "stats": {
+      "str": 20,
+	  "dex": 20,
+	  "wis": 100,
+	  "luk": 20,
+	  "atk": 20,
+	  "def": 100
+    },
+    "description": "A helmet from one of the gods",
+    "rarity": 3,
+    "slug":  "MatthewsHelmet"
+  },
+  {
+    "id": 49,
+    "title": "Matthews Armor",
+	"type": "Armor",
+    "value": 500,
+    "stats": {
+      "str": 40,
+	  "dex": 40,
+	  "wis": 200,
+	  "luk": 40,
+	  "atk": 40,
+	  "def": 200
+    },
+    "description": "A helmet from one of the gods",
+    "rarity": 3,
+    "slug":  "MatthewsArmor"
+  },
+  {
+    "id": 50,
+    "title": "Matthews Sword",
+	"type": "Sword",
+    "value": 1000,
+    "stats": {
+      "str": 100,
+	  "dex": 100,
+	  "wis": 1000,
+	  "luk": 100,
+	  "atk": 500,
+	  "def": 100
+    },
+    "description": "A sword from one of the gods",
+    "rarity": 3,
+    "slug":  "MatthewsSword"
+  },
+  {
+    "id": 51,
+    "title": "Matthews Spear",
+	"type": "Spear",
+    "value": 1000,
+    "stats": {
+      "str": 80,
+	  "dex": 80,
+	  "wis": 800,
+	  "luk": 180,
+	  "atk": 400,
+	  "def": 150
+    },
+    "description": "A spear from one of the gods",
+    "rarity": 3,
+    "slug":  "MatthewsSpear"
+  },
+  {
+    "id": 52,
+    "title": "Matthews Axe",
+	"type": "Axe",
+    "value": 1000,
+    "stats": {
+      "str": 150,
+	  "dex": 120,
+	  "wis": 1500,
+	  "luk": 120,
+	  "atk": 750,
+	  "def": 80
+    },
+    "description": "An axe from one of the gods",
+    "rarity": 3,
+    "slug":  "MatthewsAxe"
+  },
+  {
+    "id": 53,
+    "title": "Matthews Dagger",
+	"type": "Dagger",
+    "value": 1000,
+    "stats": {
+      "str": 50,
+	  "dex": 60,
+	  "wis": 600,
+	  "luk": 60,
+	  "atk": 60,
+	  "def": 120
+    },
+    "description": "A dagger from one of the gods",
+    "rarity": 3,
+    "slug":  "MatthewsDagger"
+  },
+    {
+    "id": 54,
+    "title": "Patricks Helmet",
+	"type": "Helmet",
+    "value": 500,
+    "stats": {
+      "str": 100,
+	  "dex": 20,
+	  "wis": 20,
+	  "luk": 20,
+	  "atk": 20,
+	  "def": 100
+    },
+    "description": "A helmet from one of the gods",
+    "rarity": 3,
+    "slug":  "PatricksHelmet"
+  },
+  {
+    "id": 55,
+    "title": "Patricks Armor",
+	"type": "Armor",
+    "value": 500,
+    "stats": {
+      "str": 200,
+	  "dex": 40,
+	  "wis": 40,
+	  "luk": 40,
+	  "atk": 40,
+	  "def": 200
+    },
+    "description": "A helmet from one of the gods",
+    "rarity": 3,
+    "slug":  "PatricksArmor"
+  },
+  {
+    "id": 56,
+    "title": "Patricks Sword",
+	"type": "Sword",
+    "value": 1000,
+    "stats": {
+      "str": 1000,
+	  "dex": 100,
+	  "wis": 100,
+	  "luk": 100,
+	  "atk": 500,
+	  "def": 100
+    },
+    "description": "A sword from one of the gods",
+    "rarity": 3,
+    "slug":  "PatricksSword"
+  },
+  {
+    "id": 57,
+    "title": "Patricks Spear",
+	"type": "Spear",
+    "value": 1000,
+    "stats": {
+      "str": 800,
+	  "dex": 180,
+	  "wis": 80,
+	  "luk": 80,
+	  "atk": 400,
+	  "def": 150
+    },
+    "description": "A spear from one of the gods",
+    "rarity": 3,
+    "slug":  "PatricksSpear"
+  },
+  {
+    "id": 58,
+    "title": "Patricks Axe",
+	"type": "Axe",
+    "value": 1000,
+    "stats": {
+      "str": 1500,
+	  "dex": 150,
+	  "wis": 120,
+	  "luk": 120,
+	  "atk": 750,
+	  "def": 80
+    },
+    "description": "An axe from one of the gods",
+    "rarity": 3,
+    "slug":  "PatricksAxe"
+  },
+  {
+    "id": 59,
+    "title": "Patricks Dagger",
+	"type": "Dagger",
+    "value": 1000,
+    "stats": {
+      "str": 600,
+	  "dex": 60,
+	  "wis": 60,
+	  "luk": 50,
+	  "atk": 60,
+	  "def": 120
+    },
+    "description": "A dagger from one of the gods",
+    "rarity": 3,
+    "slug":  "PatricksDagger"
+  },
+    {
+    "id": 60,
+    "title": "TL Helmet",
+	"type": "Helmet",
+    "value": 1,
+    "stats": {
+      "str": -10,
+	  "dex": -10,
+	  "wis": -10,
+	  "luk": -10,
+	  "atk": -10,
+	  "def": -100
+    },
+    "description": "Well delivered",
+    "rarity": -1,
+    "slug":  "TLHelmet"
+  },
+  {
+    "id": 61,
+    "title": "TL Armor",
+	"type": "Armor",
+    "value": 1,
+    "stats": {
+      "str": -40,
+	  "dex": -20,
+	  "wis": -20,
+	  "luk": -20,
+	  "atk": -20,
+	  "def": -200
+    },
+    "description": "Armor made of paper",
+    "rarity": -1,
+    "slug":  "TLArmor"
+  },
+  {
+    "id": 62,
+    "title": "TL Sword",
+	"type": "Sword",
+    "value": 1,
+    "stats": {
+      "str": -1000,
+	  "dex": -100,
+	  "wis": -100,
+	  "luk": -100,
+	  "atk": -500,
+	  "def": -100
+    },
+    "description": "A foam stick",
+    "rarity": -1,
+    "slug":  "TLSword"
+  },
+  {
+    "id": 63,
+    "title": "TL Spear",
+	"type": "Spear",
+    "value": 1,
+    "stats": {
+      "str": -800,
+	  "dex": -180,
+	  "wis": -80,
+	  "luk": -80,
+	  "atk": -400,
+	  "def": -150
+    },
+    "description": "A piece of paper rolled into the shape of a long stick",
+    "rarity": -1,
+    "slug":  "TLSpear"
+  },
+  {
+    "id": 64,
+    "title": "TL Axe",
+	"type": "Axe",
+    "value": 1,
+    "stats": {
+      "str": -1500,
+	  "dex": -150,
+	  "wis": -120,
+	  "luk": -120,
+	  "atk": -750,
+	  "def": -80
+    },
+    "description": "An axe made of popsicle sticks",
+    "rarity": -1,
+    "slug":  "TLAxe"
+  },
+  {
+    "id": 65,
+    "title": "TL Dagger",
+	"type": "Dagger",
+    "value": 1,
+    "stats": {
+      "str": -600,
+	  "dex": -60,
+	  "wis": -60,
+	  "luk": -50,
+	  "atk": -60,
+	  "def": -120
+    },
+    "description": "A piece of mail",
+    "rarity": -1,
+    "slug":  "TLDagger"
   }
 ]
