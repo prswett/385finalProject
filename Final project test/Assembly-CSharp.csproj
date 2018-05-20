@@ -154,6 +154,7 @@
      <Compile Include="Assets\StatUITooltip.cs" />
      <Compile Include="Assets\TargetBullet.cs" />
      <Compile Include="Assets\TreasureChestController.cs" />
+     <None Include="Assets\StreamingAssets\itemsList.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

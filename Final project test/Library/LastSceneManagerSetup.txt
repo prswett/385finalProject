@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Stages/Ben Version/map1.unity
+- path: Assets/Stages/Matthew Version/TownStage.unity
   isLoaded: 1
   isActive: 1
