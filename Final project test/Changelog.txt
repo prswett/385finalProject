@@ -1,3 +1,8 @@
+Version 3.4
+Added new stages to Ben Version
+Added new stage images for a square stage and a tall stage
+Adjusted item stats and added new tier 3 equips
+
 Version 3.3
 Added bomb spell
 Added spell UI
@@ -45,7 +50,7 @@ Shop key is now 'F' instead of 'O'
 Time resume bug fixed on opening menu, inventory, and shop
 Equipment drop rate decreased from 30% to 10%
 
-Version 3.0 
+Version 3.0
 Enemies no longer get stuck in walls
 Added fireball spell
 Added equips
