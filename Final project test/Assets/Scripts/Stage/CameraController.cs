@@ -11,6 +11,7 @@ public class CameraController : MonoBehaviour {
 	}
 
 	void Start () {
+		target = GameObject.FindWithTag ("Player").transform;
 		transform.position = new Vector3 (target.position.x, target.position.y, -10);
 		offset = transform.position - target.position;
 	}
@@ -22,6 +23,8 @@ public class CameraController : MonoBehaviour {
 
 	void LateUpdate () 
 	{
-		transform.position = target.position + offset;
+		if (target != null) {
+			transform.position = target.position + offset;
+		}
 	}
 }

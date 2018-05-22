@@ -45,7 +45,7 @@ public class PortalController : MonoBehaviour {
 						SceneManager.LoadScene (1, LoadSceneMode.Single);
 						player.stageCount = 0;
 					} else {
-						int next = Random.Range (5, 11);
+						int next = Random.Range (6, 11);
 						SceneManager.LoadScene (next, LoadSceneMode.Single);
 					}
 				} else {

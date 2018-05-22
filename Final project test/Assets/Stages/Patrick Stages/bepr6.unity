@@ -1171,7 +1171,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 28
+  m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1553445066
 Prefab:
@@ -20480,6 +20480,11 @@ Prefab:
         type: 2}
       propertyPath: m_AnchoredPosition.y
       value: -59
+      objectReference: {fileID: 0}
+    - target: {fileID: 114639693662508774, guid: 6e4e12ea35e44c74aa335634a0057881,
+        type: 2}
+      propertyPath: monstersNeeded
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6e4e12ea35e44c74aa335634a0057881, type: 2}

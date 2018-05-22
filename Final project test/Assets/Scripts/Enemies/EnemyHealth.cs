@@ -34,9 +34,9 @@ public class EnemyHealth : MonoBehaviour {
 			maxHealth = 100;
 		}
 		if (PlayerStatistics.level <= 20) {
-			maxHealth = (maxHealth * PlayerStatistics.level) / 10f;
+			maxHealth = (maxHealth * PlayerStatistics.level) / 6f;
 		} else {
-			maxHealth = (maxHealth * PlayerStatistics.level) / 5f;
+			maxHealth = (maxHealth * PlayerStatistics.level) / 3f;
 		}
 		lastHit = 0;
 		target = GameObject.FindWithTag ("Player").transform;
@@ -80,9 +80,9 @@ public class EnemyHealth : MonoBehaviour {
 			Player killCount = target.GetComponent<Player> ();
 			killCount.killCount++;
 			if (killCount.expBoost) {
-				PlayerStatistics.exp += 2 * (5 * PlayerStatistics.level / 4);
+				PlayerStatistics.exp += 2 * (2 * PlayerStatistics.level / 4);
 			} else {
-				PlayerStatistics.exp += 5 * PlayerStatistics.level / 4;
+				PlayerStatistics.exp += 2 * PlayerStatistics.level / 4;
 			}
 			parentController.destroy();
 		}

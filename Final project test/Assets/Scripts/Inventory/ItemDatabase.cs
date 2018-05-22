@@ -51,7 +51,6 @@ public class ItemDatabase : MonoBehaviour
 		} else {
 			input.str -= 1;
 		}
-		input.str += (int)PlayerStatistics.level;
 
 		random = Random.Range (0, 3);
 		if (random == 0) {
@@ -61,7 +60,6 @@ public class ItemDatabase : MonoBehaviour
 		} else {
 			input.dex -= 1;
 		}
-		input.dex += (int)PlayerStatistics.level;
 
 		random = Random.Range (0, 3);
 		if (random == 0) {
@@ -71,7 +69,6 @@ public class ItemDatabase : MonoBehaviour
 		} else {
 			input.wis -= 1;
 		}
-		input.wis += (int)PlayerStatistics.level;
 
 		random = Random.Range (0, 3);
 		if (random == 0) {
@@ -81,7 +78,6 @@ public class ItemDatabase : MonoBehaviour
 		} else {
 			input.luk -= 1;
 		}
-		input.luk += (int)PlayerStatistics.level;
 
 		random = Random.Range (0, 3);
 		if (random == 0) {
@@ -91,7 +87,6 @@ public class ItemDatabase : MonoBehaviour
 		} else {
 			input.atk -= 1;
 		}
-		input.atk += (int)PlayerStatistics.level;
 
 		random = Random.Range (0, 3);
 		if (random == 0) {
@@ -101,7 +96,6 @@ public class ItemDatabase : MonoBehaviour
 		} else {
 			input.def -= 1;
 		}
-		input.def += (int)PlayerStatistics.level;
 
 		return input;
 	}

@@ -30,8 +30,7 @@ public class EnemyManager : MonoBehaviour {
 	}
 
 	void Start () {
-		InvokeRepeating ("Spawn", spawnTime, spawnTime);
-
+		InvokeRepeating ("Spawn", spawnTime, 1f);
 	}
 
 	void Update () {
@@ -41,6 +40,7 @@ public class EnemyManager : MonoBehaviour {
 
 	void Spawn() {
 		if (GameObject.FindGameObjectsWithTag("Enemy").Length >= maxNumber) {
+			Debug.Log ("done");
 			return;
 		}
 		if (!bossStage) {

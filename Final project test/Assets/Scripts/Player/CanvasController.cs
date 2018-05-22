@@ -173,6 +173,7 @@ public class CanvasController : MonoBehaviour {
 	}
 
 	public void mainMenu() {
+		Time.timeScale = 1;
 		SceneManager.LoadScene (0, LoadSceneMode.Single);
 		if (!tutorial) {
 			player.delete ();
