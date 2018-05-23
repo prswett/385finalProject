@@ -40,7 +40,7 @@ TagManager:
   - Spell
   - Ground
   - Enemy
-  - 
+  - Damage Numbers
   - 
   - 
   - 
@@ -81,3 +81,6 @@ TagManager:
   - name: UI
     uniqueID: 3376621861
     locked: 1
+  - name: Damage Numbers
+    uniqueID: 1836247765
+    locked: 0

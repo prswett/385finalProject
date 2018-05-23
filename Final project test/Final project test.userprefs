@@ -1,22 +1,13 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Tutorial\TutorialFireballController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Stage\PortalController.cs">
     <Files>
-      <File FileName="Assets\Scripts\Enemies\SlimeController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Player\PlayerStatistics.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Inventory\ItemDatabase.cs" Line="1" Column="1" />
-      <File FileName="Assets\EnemyList.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Enemies\EnemyManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Tutorial\TutorialSign.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Stage\PortalController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Enemies\EnemyHealth.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Stage\CameraController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Player\CanvasController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Items\EquipmentTooltip.cs" Line="40" Column="21" />
-      <File FileName="Assets\PrevTooltip.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Tutorial\TutorialWall.cs" Line="94" Column="28" />
-      <File FileName="Assets\Scripts\Tutorial\TutorialFireballController.cs" Line="29" Column="25" />
-      <File FileName="Assets\Scripts\Tutorial\TutorialEnemyHealth.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Inventory\Inventory.cs" Line="128" Column="51" />
+      <File FileName="Assets\Scripts\Inventory\PotionInventory.cs" Line="161" Column="2" />
+      <File FileName="Assets\Scripts\Inventory\Slot.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Player\Player.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Stage\PortalController.cs" Line="48" Column="14" />
+      <File FileName="Assets\Scripts\Stage\StageController.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

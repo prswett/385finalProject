@@ -307,19 +307,22 @@ public class ItemObject : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 	void Update () {
 		GameObject delete = GameObject.Find ("Delete");
 		if (delete != null) {
-		if (showQuestion) {
-				if (question.clicked) {
-					if (question.answer == true) {
-						inv.RemoveItemSlot (slot);
-						question.hideQuestion ();
-						question.clicked = false;
-						target.tryingToDelete = false;
-					} else {
-						noDelete = false;
-						showQuestion = false;
-						question.hideQuestion ();
-						question.clicked = false;
-						target.tryingToDelete = false;
+			if (showQuestion) {
+				if (target != null) {
+					target.tryingToDelete = true;
+					if (question.clicked) {
+						if (question.answer == true) {
+							inv.RemoveItemSlot (slot);
+							question.hideQuestion ();
+							question.clicked = false;
+							target.tryingToDelete = false;
+						} else {
+							noDelete = false;
+							showQuestion = false;
+							question.hideQuestion ();
+							question.clicked = false;
+							target.tryingToDelete = false;
+						}
 					}
 				}
 			}

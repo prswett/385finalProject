@@ -161,6 +161,7 @@ public class PotionInventory : MonoBehaviour {
 
 	public void RemoveItemSlot(int slot) {
 		PotionSlot temp = slots[slot].GetComponent<PotionSlot>();
+		PlayerStatistics.coins += temp.potion.GetComponent<PotionStats> ().Value;
 		Destroy (temp.potion);
 		temp.potion = null;
 	}

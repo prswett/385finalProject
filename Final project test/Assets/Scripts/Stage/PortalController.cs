@@ -36,6 +36,7 @@ public class PortalController : MonoBehaviour {
 				if (!finalBoss) {
 					if (player.stageCount == 4) {
 						int temp = Random.Range (0, 2);
+						player.stageCount++;
 						if (temp == 0) {
 							SceneManager.LoadScene (3, LoadSceneMode.Single);
 						} else {

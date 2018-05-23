@@ -87,9 +87,7 @@
      <Compile Include="Assets\Scripts\Enemies\SlimeController.cs" />
      <Compile Include="Assets\Scripts\Environment\SpikeDamager.cs" />
      <Compile Include="Assets\Scripts\Inventory\Inventory.cs" />
-     <Compile Include="Assets\Scripts\Inventory\ItemData.cs" />
      <Compile Include="Assets\Scripts\Inventory\ItemDatabase.cs" />
-     <Compile Include="Assets\Scripts\Inventory\PotionData.cs" />
      <Compile Include="Assets\Scripts\Inventory\PotionDatabase.cs" />
      <Compile Include="Assets\Scripts\Inventory\PotionInventory.cs" />
      <Compile Include="Assets\Scripts\Inventory\PotionSlot.cs" />
