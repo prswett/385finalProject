@@ -134,10 +134,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
-  maxHealth: 0
+  maxHealth: 25000
   target: {fileID: 0}
   lastHit: 0
-  currentHealth: 50000
+  currentHealth: 25000
   item: {fileID: 1989801539787162, guid: 8d42d871c6d0f41489bc9ee355d43bc2, type: 2}
   coin: {fileID: 1737900479247222, guid: 8ab8938d30b21824fac94b23fea85cb1, type: 2}
   spellBook: {fileID: 1248215226356444, guid: 9f15010bb78a7054ebb6520e6caf6f52, type: 2}

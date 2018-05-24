@@ -16,7 +16,7 @@ public class FinalBoss1Controller : MonoBehaviour {
 	Vector2 bulletPos;
 
 	public BossHealth myHealth;
-	int baseDamage = 100;
+	int baseDamage = 10;
 	int damage = 100;
 	public float increaseDamage;
 
@@ -41,8 +41,9 @@ public class FinalBoss1Controller : MonoBehaviour {
 	}
 
 	void Update () {
-		if (Time.time - increaseDamage > 15f) {
+		if (Time.time - increaseDamage > 25f) {
 			damage += baseDamage;
+			increaseDamage = Time.time;
 		}
 
 		playerX = target.transform.position.x;

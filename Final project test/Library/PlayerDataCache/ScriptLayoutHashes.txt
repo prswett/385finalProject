@@ -53,7 +53,7 @@ df374c01140c2d578bf70cbd60073d1d UnityEngine.Timeline.dll:UnityEngine.Timeline.T
 12b95c8f2b54918ab14825a44eeb4bd5 Assembly-CSharp.dll:.NextTooltip
 c297f9af6d4faa61d21637f5c49a1fa2 Assembly-CSharp.dll:.GEnemyWep
 3561a72e9b74683a0e9610dde8b2d56f Assembly-CSharp.dll:.TreasureChestController
-feca42a4c086c0535d9455c4acf1ea09 Assembly-CSharp.dll:.ItemController
+cab392a220234ba7ca7b11f1b14a7419 Assembly-CSharp.dll:.ItemController
 5bb83369a08900fbf5bf9fbcebbe7540 Assembly-CSharp.dll:.FEnemyR
 a35dc9cca2faebc5f5f1aeb9e8e47bbe UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.UI.dll:UnityEngine.EventSystems.BaseInput
@@ -125,7 +125,7 @@ f61c0793411f10cf5fbfa1473fef5ef2 UnityEngine.UI.dll:UnityEngine.UI.ToggleGroup
 ba88d252ef6090222e28279a17a9f02d Assembly-CSharp.dll:.PlayerResources
 390a0de324525f76de7bc53a557f10c3 Assembly-CSharp.dll:.spawnPhase
 246a32bd03303df9611d74c754dbdb51 Assembly-CSharp.dll:.FlipText
-45438c0da813a35b3b81e639fe9e9159 Assembly-CSharp.dll:.PlayerStatistics
+b27736df79c71bd78f78bb4d09534d95 Assembly-CSharp.dll:.PlayerStatistics
 ef6d0e553809d01b920239c399ba8915 Assembly-CSharp.dll:.Slot
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.addStat
 ac49a7bf3e3653957884df3ee9e048a8 Assembly-CSharp.dll:.EnemyManager
@@ -168,7 +168,7 @@ e9bdabf9265d758d56f01bb188916fa8 UnityEngine.Networking.dll:UnityEngine.Networki
 74fa7834c0d6411276eb68adc118628a Assembly-CSharp.dll:.coinController
 4968f0d3b3fbd9b566cee9d5d1090815 Assembly-CSharp.dll:.FinalBoss2Controller
 a72d8a5a83fdd7f10228592b563c10a8 Assembly-CSharp.dll:.PotionInventory
-feca42a4c086c0535d9455c4acf1ea09 Assembly-CSharp.dll:.RareItemController
+cab392a220234ba7ca7b11f1b14a7419 Assembly-CSharp.dll:.RareItemController
 dc42b00dc04fd541388728f3ea717c98 Assembly-CSharp.dll:.PotionSlot
 322cb40e1e282f28af980cbef7922a90 UnityEngine.Analytics.dll:UnityEngine.Analytics.AnalyticsEventTracker
 dc07d7ad69b399a46e92c483bf1c04ca UnityEngine.Analytics.dll:UnityEngine.Analytics.AnalyticsTracker
@@ -200,7 +200,7 @@ e5e6e02f7202af0d775ff0154a487ce4 Assembly-CSharp.dll:.StageController
 8538d50c4e67285a96f8f3ebe5e575c3 Assembly-CSharp.dll:.BulletController
 8c60f5ff007782675db3e63d4d9d3ee4 Assembly-CSharp.dll:.FinalBoss3Controller
 ce09cb02e2f857c8aa562f2552261f90 Assembly-CSharp.dll:.WeaponController
-3786b2dd5003ee49f6f9a05313a15803 Assembly-CSharp.dll:.Player
+3718d067f68e03e2afab433c6d48f481 Assembly-CSharp.dll:.Player
 120fb81302abec2fb005bcbca5fd03c0 Assembly-CSharp.dll:.SlimeController
 f39111988ceb368d6e39330aadccfa87 Assembly-CSharp.dll:.AxeController
 7461d52d4a02444ab89f9d5f53a8d8fb Assembly-CSharp.dll:.SpeedController

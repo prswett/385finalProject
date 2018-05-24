@@ -72,11 +72,12 @@ public class PlayerStatistics  : MonoBehaviour
 	// multiplier for exp
 	public static float expMod = 1;
 
-	public static float level = 1;
+	public static float level = 20;
 	// exp needed to reach next level
 	public static float nextLevel = 10;
 
 	public float manaRegen = 0;
+	public bool updateTextIcon = false;
 
 	// everyone starts with 5 stat points
 	public static float statPoints = 5;
@@ -129,7 +130,7 @@ public class PlayerStatistics  : MonoBehaviour
 	public static void takeDamage(float damage) {
 		if (Time.time - lastHit >= .4f) {
 			int avoid = UnityEngine.Random.Range (0, 100);
-			if (avoid < (1000 / (avo + 50))) {
+			if (avoid < avo) {
 				health -= (damage * (1 + (level / 50)) * (1000 / (def + 1000)));
 				if (health <= 0) {
 					health = 0;
@@ -192,6 +193,9 @@ public class PlayerStatistics  : MonoBehaviour
 				manaRegen = Time.time;
 			}
 		}
+		if (!updateTextIcon) {
+			text.updateLevel ();
+		}
 		//
 		maxHealth = baseHealth + (4 * str);
 		maxMana = baseMana + (float)(int)(wis / 3);
@@ -207,8 +211,8 @@ public class PlayerStatistics  : MonoBehaviour
 		acc = 90 + (float)(dex * 0.5);
 		// chance to get hit
 		float nAvo = 10 + (float)((dex * 0.2) + (luk * 0.5));
-		if(nAvo > 70){
-			avo = 70;
+		if(nAvo > 40){
+			avo = 40;
 		}
 		else{
 			avo = nAvo;

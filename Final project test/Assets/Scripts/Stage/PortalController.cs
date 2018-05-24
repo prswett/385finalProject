@@ -78,7 +78,7 @@ public class PortalController : MonoBehaviour {
 							}
 						}
 					} else {
-						if (PlayerStatistics.level > 20) {
+						if (PlayerStatistics.level >= 20) {
 							SceneManager.LoadScene (nextScene, LoadSceneMode.Single);
 						}
 					}

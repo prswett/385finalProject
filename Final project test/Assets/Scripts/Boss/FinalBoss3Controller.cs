@@ -27,7 +27,7 @@ public class FinalBoss3Controller : MonoBehaviour {
 	public bool goUp = false;
 
 	public BossHealth myHealth;
-	int baseDamage = 100;
+	int baseDamage = 30;
 	int damage = 200;
 	public float increaseDamage;
 
@@ -54,8 +54,9 @@ public class FinalBoss3Controller : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Time.time - increaseDamage > 15f) {
+		if (Time.time - increaseDamage > 20f) {
 			damage += baseDamage;
+			increaseDamage = Time.time;
 		}
 
 		playerX = target.transform.position.x;
@@ -95,18 +96,18 @@ public class FinalBoss3Controller : MonoBehaviour {
 		}
 
 		if (shooting) {
-			if (Time.time - shootTime > 1f) {
+			if (Time.time - shootTime > .5f) {
 				fire ();
 				shootTime = Time.time;
 			}
 		}
 
-		if (Time.time - sideShot > 3f) {
+		if (Time.time - sideShot > 2f) {
 			sideFire ();
 			sideShot = Time.time;
 		}
 
-		if (Time.time - targetShoot > 4f) {
+		if (Time.time - targetShoot > 2f) {
 			targetShot ();
 			targetShoot = Time.time;
 		}
@@ -123,13 +124,13 @@ public class FinalBoss3Controller : MonoBehaviour {
 
 	void sideFire() {
 		BulletController shot = bullet2.GetComponent<BulletController>();
-		shot.setVelocity ((playerX - left) / 5, 0);
+		shot.setVelocity (3, 0);
 		shot.damage = damage;
 		bulletPos = new Vector2 (left, playerY);
 		Instantiate (bullet2, bulletPos, Quaternion.identity);
 
 		BulletController shot2 = bullet2.GetComponent<BulletController>();
-		shot2.setVelocity ((playerX - right) / 5, 0);
+		shot2.setVelocity (-3, 0);
 		shot2.damage = damage;
 		bulletPos = new Vector2 (right, playerY);
 		Instantiate (bullet2, bulletPos, Quaternion.identity);

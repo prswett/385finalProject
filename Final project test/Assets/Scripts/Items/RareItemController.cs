@@ -102,4 +102,25 @@ public class RareItemController : MonoBehaviour {
 			location = true;
 		}
 	}
+
+	void OnTriggerStay2D(Collider2D other) {
+		if (other.gameObject.CompareTag ("Player")) {
+			if (type == "Potion") {
+				if (player.pInv.checkEmpty ()) {
+					player.addPotion (ID);
+					Destroy (transform.parent.gameObject);
+				}
+			} else {
+				if (player.inv.checkEmpty ()) {
+					player.addItem (ID);
+					Destroy (transform.parent.gameObject);
+				}
+			}
+
+		}
+
+		if (other.gameObject.CompareTag ("outofbounds")) {
+			location = true;
+		}
+	}
 }

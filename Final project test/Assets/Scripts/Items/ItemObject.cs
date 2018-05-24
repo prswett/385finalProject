@@ -317,7 +317,7 @@ public class ItemObject : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 				if (target != null) {
 					target.tryingToDelete = true;
 					if (question.clicked) {
-						if (question.answer == true) {
+						if (question.answer == true || Input.GetKeyDown(KeyCode.KeypadEnter)) {
 							inv.RemoveItemSlot (slot);
 							question.hideQuestion ();
 							question.clicked = false;

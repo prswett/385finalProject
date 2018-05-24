@@ -195,7 +195,6 @@ public class Player : MonoBehaviour {
 		healthbar.fillAmount = PlayerStatistics.health / PlayerStatistics.maxHealth;
 		manabar.fillAmount = PlayerStatistics.mana / PlayerStatistics.maxMana;
 		expbar.fillAmount = PlayerStatistics.exp / PlayerStatistics.nextLevel;
-
 		healthText.text = PlayerStatistics.health + "/" + PlayerStatistics.maxHealth;
 		manaText.text = PlayerStatistics.mana + "/" + PlayerStatistics.maxMana;
 		expText.text = PlayerStatistics.exp + "/" + PlayerStatistics.nextLevel;

@@ -155,7 +155,7 @@ Prefab:
     - target: {fileID: 114316788418827404, guid: ca9506a9b694c1f4786c8238db136355,
         type: 2}
       propertyPath: maxHealth
-      value: 50000
+      value: 25000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ca9506a9b694c1f4786c8238db136355, type: 2}
@@ -512,6 +512,11 @@ Prefab:
     - target: {fileID: 114255762166747166, guid: a6a3cf96cc99d024e9188e56890b8804,
         type: 2}
       propertyPath: finalBoss
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114255762166747166, guid: a6a3cf96cc99d024e9188e56890b8804,
+        type: 2}
+      propertyPath: nextScene
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
