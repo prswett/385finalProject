@@ -434,7 +434,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   parentController: {fileID: 0}
   fill: 0
-  monsterName: Black Slime
+  monsterName: Purple Slime
   healthbar: {fileID: 114022295275312852}
   coin: {fileID: 1737900479247222, guid: 8ab8938d30b21824fac94b23fea85cb1, type: 2}
   item: {fileID: 1570605163964070, guid: 05273a26aef75114596c8d69be1934a6, type: 2}
@@ -443,6 +443,7 @@ MonoBehaviour:
   control: {fileID: 0}
   damageNumber: {fileID: 1888548063201054, guid: 9043e4b5a85fbc140915b0ee7b37e82a,
     type: 2}
+  tutorial: 0
   spawnTime: 0
 --- !u!114 &114624647300234334
 MonoBehaviour:

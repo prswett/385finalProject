@@ -8,12 +8,13 @@ public class TutorialPortal : MonoBehaviour {
 	public int nextScene;
 	bool near = false;
 	public Transform target;
-	PlayerTutorial player;
+	Player player;
 	public TextMesh control;
 
+	public bool finishTutorial = false;
 	void Awake() {
 		target = GameObject.FindWithTag ("Player").transform;
-		player = target.GetComponent<PlayerTutorial> ();
+		player = target.GetComponent<Player> ();
 	}
 
 	void Start () {
@@ -24,7 +25,13 @@ public class TutorialPortal : MonoBehaviour {
 
 		if (Input.GetKey(KeyCode.W)) {
 			if (near) {
-				SceneManager.LoadScene (nextScene, LoadSceneMode.Single);
+				if (!finishTutorial) {
+					DestroyObject (player);
+					SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex + 1, LoadSceneMode.Single);
+				} else {
+					DestroyObject (player);
+					SceneManager.LoadScene (1, LoadSceneMode.Single);
+				}
 			}
 		}
 	}

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerResources : MonoBehaviour {
 	//Weapons
@@ -26,6 +27,9 @@ public class PlayerResources : MonoBehaviour {
 	public int weaponCount = 4;
 	public int armorCount = 2;
 
+	public Image currentWep;
+	public Text currentWepType;
+
 	// Use this for initialization
 	void Start () {
         wepEQPD = 1;
@@ -43,6 +47,11 @@ public class PlayerResources : MonoBehaviour {
 		armors = new GameObject[armorCount];
 		armors [0] = helmet;
 		armors [1] = armor;
+
+		currentWep = GameObject.Find ("WeaponImage").GetComponent<Image> ();
+		currentWepType = GameObject.Find ("CurrentWep").GetComponent<Text> ();
+		currentWep.sprite = sword.GetComponent<SpriteRenderer> ().sprite;
+		currentWepType.text = "Sword";
 	}
 
 	public void changeHelmet(string path) {
@@ -96,6 +105,22 @@ public class PlayerResources : MonoBehaviour {
 
 	void Update () {
 		
+	}
+
+	public void UIChange() {
+		if (wepEQPD == 1) {
+			currentWep.sprite = sword.GetComponent<SpriteRenderer> ().sprite;
+			currentWepType.text = "Sword";
+		} else if (wepEQPD == 2) {
+			currentWep.sprite = spear.GetComponent<SpriteRenderer> ().sprite;
+			currentWepType.text = "Spear";
+		} else if (wepEQPD == 3) {
+			currentWep.sprite = axe.GetComponent<SpriteRenderer> ().sprite;
+			currentWepType.text = "Axe";
+		} else {
+			currentWep.sprite = dagger.GetComponent<SpriteRenderer> ().sprite;
+			currentWepType.text = "Dagger";
+		}
 	}
 
 	public void setActiveTrue(int item) {

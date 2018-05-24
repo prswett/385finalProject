@@ -1,3 +1,17 @@
+Version 4.0 (Alpha version)
+Added many new stages
+Fixed many bugs
+Updated spear sprite
+Added new items
+Added new enemies
+Rebalanced enemy damage + health
+Increased Boar boss difficulty
+Decreased Flower boss difficulty
+Decreased Final boss difficulty
+Final boss level requirement is now 20
+Modified item drop rates
+Redid tutorial
+
 Version 3.4
 Added new stages to Ben Version
 Added new stage images for a square stage and a tall stage

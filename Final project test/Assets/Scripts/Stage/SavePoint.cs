@@ -27,7 +27,7 @@ public class SavePoint : MonoBehaviour
 	{
 		if (other.gameObject.CompareTag ("Player")) {
 			inside = true;
-			control.text = "S";
+			control.text = "Press S to save";
 		}
 	}
 

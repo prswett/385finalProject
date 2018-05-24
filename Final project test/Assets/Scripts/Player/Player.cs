@@ -346,11 +346,13 @@ public class Player : MonoBehaviour {
 				resources.wepEQPD++;
 				anim.SetInteger ("weapon equipped", resources.wepEQPD);
 				resources.setActiveTrue (resources.wepEQPD - 1);
+				resources.UIChange ();
 			} else {
 				resources.setActiveFalse (resources.wepEQPD - 1);
 				resources.wepEQPD = 1;
 				anim.SetInteger ("weapon equipped", resources.wepEQPD);
 				resources.setActiveTrue (resources.wepEQPD - 1);
+				resources.UIChange ();
 			}
 		} else {
 			if (resources.wepEQPD > 1) {
@@ -358,12 +360,13 @@ public class Player : MonoBehaviour {
 				resources.wepEQPD--;
 				anim.SetInteger ("weapon equipped", resources.wepEQPD);
 				resources.setActiveTrue (resources.wepEQPD - 1);
+				resources.UIChange ();
 			} else {
 				resources.setActiveFalse (resources.wepEQPD - 1);
 				resources.wepEQPD = 4;
 				anim.SetInteger ("weapon equipped", resources.wepEQPD);
 				resources.setActiveTrue (resources.wepEQPD - 1);
-			
+				resources.UIChange ();
 			}
 
 		}
@@ -391,6 +394,8 @@ public class Player : MonoBehaviour {
 		public void delete() {
 			Destroy (gameObject);
 		}
+		
 	}
+	
 	
 	

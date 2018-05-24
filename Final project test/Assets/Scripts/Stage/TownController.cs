@@ -13,9 +13,11 @@ public class TownController : MonoBehaviour {
 			Transform door = GameObject.FindWithTag ("Door").transform;
 			target.GetComponent<Player> ().door = false;
 			target.GetComponent<Player> ().getSpawnLocation (door.position.x, door.position.y + .1f);
+			target.GetComponent<Player> ().stageCount = 0;
 		} else {
 			target.GetComponent<Player> ().getSpawnLocation (playerX, playerY);
 			target.GetComponent<Player> ().door = false;
+			target.GetComponent<Player> ().stageCount = 0;
 		}
 	}
 

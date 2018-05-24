@@ -41,7 +41,7 @@ public class BoarController : MonoBehaviour {
 		}
 		if (selfHealing) {
 			if (Time.time - selfHeal > 2f) {
-				myHealth.currentHealth += 50;
+				myHealth.currentHealth += 100;
 				selfHeal = Time.time;
 			}
 		}
@@ -84,13 +84,13 @@ public class BoarController : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject.CompareTag ("Player")) {
-			PlayerStatistics.takeDamage(damage);
+			PlayerStatistics.takeDamage(damage + (PlayerStatistics.level / 3));
 		}
 	}
 
 	void OnTriggerStay2D(Collider2D other) {
 		if (other.gameObject.CompareTag ("Player")) {
-			PlayerStatistics.takeDamage(damage);
+			PlayerStatistics.takeDamage(damage + (PlayerStatistics.level / 3));
 		}
 	}
 

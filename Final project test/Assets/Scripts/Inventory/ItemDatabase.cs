@@ -43,59 +43,18 @@ public class ItemDatabase : MonoBehaviour
     }
 
 	Item rerollStats(Item input) {
-		int random = Random.Range (0, 3);
-		if (random == 0) {
-
-		} else if (random == 1) {
-			input.str += 1;
-		} else {
-			input.str -= 1;
-		}
-
-		random = Random.Range (0, 3);
-		if (random == 0) {
-
-		} else if (random == 1) {
-			input.dex += 1;
-		} else {
-			input.dex -= 1;
-		}
-
-		random = Random.Range (0, 3);
-		if (random == 0) {
-
-		} else if (random == 1) {
-			input.wis += 1;
-		} else {
-			input.wis -= 1;
-		}
-
-		random = Random.Range (0, 3);
-		if (random == 0) {
-
-		} else if (random == 1) {
-			input.luk += 1;
-		} else {
-			input.luk -= 1;
-		}
-
-		random = Random.Range (0, 3);
-		if (random == 0) {
-
-		} else if (random == 1) {
-			input.atk += 1;
-		} else {
-			input.atk -= 1;
-		}
-
-		random = Random.Range (0, 3);
-		if (random == 0) {
-
-		} else if (random == 1) {
-			input.def += 1;
-		} else {
-			input.def -= 1;
-		}
+		int random = Random.Range ((int)-PlayerStatistics.level, (int)PlayerStatistics.level);
+		input.str += random;
+		random = Random.Range ((int)-PlayerStatistics.level, (int)PlayerStatistics.level);
+		input.dex += random;
+		random = Random.Range ((int)-PlayerStatistics.level, (int)PlayerStatistics.level);
+		input.wis += random;
+		random = Random.Range ((int)-PlayerStatistics.level, (int)PlayerStatistics.level);
+		input.luk += random;
+		random = Random.Range ((int)-PlayerStatistics.level, (int)PlayerStatistics.level);
+		input.atk += random;
+		random = Random.Range ((int)-PlayerStatistics.level, (int)PlayerStatistics.level);
+		input.def += random;
 
 		return input;
 	}

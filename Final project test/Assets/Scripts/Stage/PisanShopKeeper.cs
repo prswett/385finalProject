@@ -18,7 +18,7 @@ public class PisanShopKeeper : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject.CompareTag ("Player")) {
 			near = true;
-			control.text = "Hello! Welcome to Pisan's goods!";
+			control.text = "Hello! Welcome to Pisan's goods! \nPress F to start shopping";
 		}
 	}
 

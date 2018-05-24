@@ -24,6 +24,8 @@ public class EnemyHealth : MonoBehaviour {
 	public GameObject damageNumber;
 	Renderer render;
 
+	public bool tutorial = false;
+
 	public float spawnTime;
 	void Awake() {
 	}
@@ -133,24 +135,32 @@ public class EnemyHealth : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
-		if (other.gameObject.CompareTag ("Player")) {
-			if (parentController.active == true) {
-				if (PlayerStatistics.level <= 20) {
-					PlayerStatistics.takeDamage (1 + PlayerStatistics.level / 5);
-				} else {
-					PlayerStatistics.takeDamage (1 + PlayerStatistics.level / 2);
+		if (!tutorial) {
+			if (other.gameObject.CompareTag ("Player")) {
+				if (parentController.active == true) {
+					if (PlayerStatistics.level <= 5) {
+						PlayerStatistics.takeDamage (1 + PlayerStatistics.level / 7);
+					} else if (PlayerStatistics.level <= 20) {
+						PlayerStatistics.takeDamage (1 + PlayerStatistics.level / 4);
+					} else {
+						PlayerStatistics.takeDamage (1 + PlayerStatistics.level / 2);
+					}
 				}
 			}
 		}
 	}
 
 	void OnTriggerStay2D(Collider2D other) {
-		if (other.gameObject.CompareTag ("Player")) {
-			if (parentController.active == true) {
-				if (PlayerStatistics.level <= 20) {
-					PlayerStatistics.takeDamage (1 + PlayerStatistics.level / 5);
-				} else {
-					PlayerStatistics.takeDamage (1 + PlayerStatistics.level / 2);
+		if (!tutorial) {
+			if (other.gameObject.CompareTag ("Player")) {
+				if (parentController.active == true) {
+					if (PlayerStatistics.level <= 5) {
+						PlayerStatistics.takeDamage (1 + PlayerStatistics.level / 7);
+					} else if (PlayerStatistics.level <= 20) {
+						PlayerStatistics.takeDamage (1 + PlayerStatistics.level / 4);
+					} else {
+						PlayerStatistics.takeDamage (1 + PlayerStatistics.level / 2);
+					}
 				}
 			}
 		}

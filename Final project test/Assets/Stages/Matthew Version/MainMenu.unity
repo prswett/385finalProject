@@ -328,6 +328,39 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1816540087}
+    - target: {fileID: 114443703096509978, guid: 56edc5e274dc46b429d152c521573b03,
+        type: 2}
+      propertyPath: m_Text
+      value: 'Press A to move left
+
+        Press W to move right
+
+        Press Space to jump
+
+        Press Space + S to jump down
+
+        Press Q to go to a previous spell
+
+        Press E to go to a next spell
+
+        Press R when you''re dead to return to town
+
+        Press left mouse button to attack
+
+        Press middle mouse button to switch weapons
+
+        Scroll up or down to switch weapons
+
+        Press right mouse button to use a spell
+
+        Press C to open inventory
+
+        Right click and item to equip it or use it
+
+        Press F next to a shop keeper to use the shop
+
+        Press escape to open menu'
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 56edc5e274dc46b429d152c521573b03, type: 2}
   m_IsPrefabParent: 0
@@ -1745,7 +1778,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 23
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0

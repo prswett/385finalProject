@@ -81,6 +81,26 @@ public class PlayerStatistics  : MonoBehaviour
 	// everyone starts with 5 stat points
 	public static float statPoints = 5;
 
+	public LevelText text;
+
+	void Start() {
+		text = GameObject.Find ("LevelText").GetComponent<LevelText> ();
+		text.updateLevel ();
+	}
+
+	public static void reset() {
+		exp = 0;
+		coins = 50;
+		str = 1;
+		dex = 1;
+		wis = 1;
+		luk = 1;
+		atk = 0;
+		matk = 0;
+		mana = baseMana;
+		health = baseHealth;
+	}
+
 	public static void load() {
 		maxHealth = baseHealth + (4 * str);
 		maxMana = baseMana + (float)(int)(wis / 3);
@@ -108,12 +128,15 @@ public class PlayerStatistics  : MonoBehaviour
 
 	public static void takeDamage(float damage) {
 		if (Time.time - lastHit >= .4f) {
-			health -= (damage * (1 + (level / 50)) * (1000 / (def + 1000)));
-			if (health <= 0) {
-				health = 0;
+			int avoid = UnityEngine.Random.Range (0, 100);
+			if (avoid < (1000 / (avo + 50))) {
+				health -= (damage * (1 + (level / 50)) * (1000 / (def + 1000)));
+				if (health <= 0) {
+					health = 0;
+				}
+				lastHit = Time.time;
+				health = (float)(int)health;
 			}
-			lastHit = Time.time;
-			health = (float)(int)health;
 		}
 	}
 
@@ -202,6 +225,7 @@ public class PlayerStatistics  : MonoBehaviour
 			// more stat points
 			statPoints += 5;
 			level++;
+			text.updateLevel ();
 		}
 	}
 }

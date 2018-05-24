@@ -124,7 +124,7 @@ MonoBehaviour:
   maxHealth: 0
   target: {fileID: 0}
   lastHit: 0
-  currentHealth: 1000000
+  currentHealth: 100000
   item: {fileID: 1570605163964070, guid: 05273a26aef75114596c8d69be1934a6, type: 2}
   coin: {fileID: 1737900479247222, guid: 8ab8938d30b21824fac94b23fea85cb1, type: 2}
   spellBook: {fileID: 1248215226356444, guid: 9f15010bb78a7054ebb6520e6caf6f52, type: 2}

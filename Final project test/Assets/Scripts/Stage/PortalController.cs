@@ -14,6 +14,11 @@ public class PortalController : MonoBehaviour {
 	public bool finalBoss = false;
 	public bool boss = false;
 
+	public bool finishTutorial = false;
+	public bool tutorial = false;
+
+	public bool sent = false;
+
 	void Awake() {
 		target = GameObject.FindWithTag ("Player").transform;
 		player = target.GetComponent<Player> ();
@@ -33,24 +38,50 @@ public class PortalController : MonoBehaviour {
 					player.speed /= 1.5f;
 					player.jumpSpeed /= 1.1f;
 				}
-				if (!finalBoss) {
-					if (player.stageCount == 4) {
-						int temp = Random.Range (0, 2);
-						player.stageCount++;
-						if (temp == 0) {
-							SceneManager.LoadScene (3, LoadSceneMode.Single);
-						} else {
-							SceneManager.LoadScene (4, LoadSceneMode.Single);
-						}
-					} else if (player.stageCount == 5) {
-						SceneManager.LoadScene (1, LoadSceneMode.Single);
-						player.stageCount = 0;
+
+				if (tutorial) {
+					if (!finishTutorial) {
+						player.delete ();
+						SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex + 1, LoadSceneMode.Single);
 					} else {
-						int next = Random.Range (6, 11);
-						SceneManager.LoadScene (next, LoadSceneMode.Single);
+						player.delete ();
+						PlayerStatistics.reset ();
+						SceneManager.LoadScene (1, LoadSceneMode.Single);
 					}
 				} else {
-					SceneManager.LoadScene (nextScene, LoadSceneMode.Single);
+
+					if (!finalBoss) {
+						
+						if (player.stageCount == 4) {
+							int temp = Random.Range (0, 2);
+							if (temp == 0) {
+								if (!sent) {
+									sent = true;
+									SceneManager.LoadScene (3, LoadSceneMode.Single);
+								}
+							} else {
+								if (!sent) {
+									sent = true;
+									SceneManager.LoadScene (4, LoadSceneMode.Single);
+								}
+							}
+						} else if (player.stageCount == 5) {
+							if (!sent) {
+								sent = true;
+								SceneManager.LoadScene (1, LoadSceneMode.Single);
+							}
+						} else {
+							if (!sent) {
+								sent = true;
+								int next = Random.Range (5, 22);
+								SceneManager.LoadScene (next, LoadSceneMode.Single);
+							}
+						}
+					} else {
+						if (PlayerStatistics.level > 20) {
+							SceneManager.LoadScene (nextScene, LoadSceneMode.Single);
+						}
+					}
 				}
 				player.anim.SetBool ("attacking", false);
 				player.anim.SetBool ("walking", false);
@@ -68,7 +99,7 @@ public class PortalController : MonoBehaviour {
 			if (!boss) {
 				control.text = "W";
 			} else {
-				control.text = "W \nFight the final boss";
+				control.text = "W \nFight the final boss\nRequires level 20 or above";
 			}
 		}
 	}

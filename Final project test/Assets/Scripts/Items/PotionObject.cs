@@ -49,7 +49,6 @@ public class PotionObject : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 						PlayerStatistics.health = PlayerStatistics.maxHealth;
 					}
 					amount--;
-					Debug.Log (transform.GetChild (0).GetComponent<Text> ().text);
 					transform.GetChild (0).GetComponent<Text> ().text = amount.ToString ();
 					if (amount == 0) {
 						tooltip.Deactivate ();

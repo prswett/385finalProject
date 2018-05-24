@@ -25,7 +25,7 @@ public class EnemyController : MonoBehaviour {
 	}
 
 	void FixedUpdate() {
-		if (Time.time - spawnTime < 3f) {
+		if (Time.time - spawnTime < 1.5f) {
 			float alpha = 1 - (1 / countdownTime * startTime);
 			Color tempColor = GetComponent<SpriteRenderer> ().color;
 			tempColor.a = alpha;

@@ -134,6 +134,7 @@ public class ItemObject : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 						eInv.RemoveItemSlot (2);
 						inv.AddItem (temp2);
 						eInv.AddItem (temp, 2, true);
+						player.UIChange ();
 					} else {
 						inv.RemoveItemSlot (slot);
 						eInv.AddItem (temp, 2, true);
@@ -145,6 +146,7 @@ public class ItemObject : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 						PlayerStatistics.luk += temp.luk;
 						PlayerStatistics.atk += temp.atk;
 						PlayerStatistics.def += temp.atk;
+						player.UIChange ();
 					}
 				}
 
@@ -157,6 +159,7 @@ public class ItemObject : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 						eInv.RemoveItemSlot (3);
 						inv.AddItem (temp2);
 						eInv.AddItem (temp, 3, true);
+						player.UIChange ();
 					} else {
 						inv.RemoveItemSlot (slot);
 						eInv.AddItem (temp, 3, true);
@@ -168,6 +171,7 @@ public class ItemObject : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 						PlayerStatistics.luk += temp.luk;
 						PlayerStatistics.atk += temp.atk;
 						PlayerStatistics.def += temp.atk;
+						player.UIChange ();
 					}
 				}
 
@@ -180,6 +184,7 @@ public class ItemObject : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 						eInv.RemoveItemSlot (4);
 						inv.AddItem (temp2);
 						eInv.AddItem (temp, 4, true);
+						player.UIChange ();
 					} else {
 						inv.RemoveItemSlot (slot);
 						eInv.AddItem (temp, 4, true);
@@ -191,6 +196,7 @@ public class ItemObject : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 						PlayerStatistics.luk += temp.luk;
 						PlayerStatistics.atk += temp.atk;
 						PlayerStatistics.def += temp.atk;
+						player.UIChange ();
 					}
 				}
 
@@ -203,6 +209,7 @@ public class ItemObject : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 						eInv.RemoveItemSlot (5);
 						inv.AddItem (temp2);
 						eInv.AddItem (temp, 5, true);
+						player.UIChange ();
 					} else {
 						inv.RemoveItemSlot (slot);
 						eInv.AddItem (temp, 5, true);
@@ -214,6 +221,7 @@ public class ItemObject : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 						PlayerStatistics.luk += temp.luk;
 						PlayerStatistics.atk += temp.atk;
 						PlayerStatistics.def += temp.atk;
+						player.UIChange ();
 					}
 				}
 			} else {
@@ -240,6 +248,8 @@ public class ItemObject : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 					} else if (temp.type == "Dagger") {
 						player.resetDagger ();
 					}
+					tooltip.Deactivate ();
+					player.UIChange ();
 				}
 			}
 		}

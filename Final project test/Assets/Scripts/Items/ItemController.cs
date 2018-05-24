@@ -41,9 +41,13 @@ public class ItemController : MonoBehaviour {
 
 	void generateItem() {
 		int roll = Random.Range (0, 10);
-		if (roll < 4) {
-			roll = Random.Range (0, 10);
-			if (roll < 2) {
+		if (roll < 3) {
+			roll = Random.Range (0, 100);
+			if (roll < 5) {
+				ID = Random.Range (36, 60);
+			} else if (roll < 15) {
+				ID = Random.Range (60, 66);
+			} else if (roll < 35) {
 				ID = Random.Range (30, 36);
 			} else {
 				ID = Random.Range (6, 30);
@@ -75,9 +79,11 @@ public class ItemController : MonoBehaviour {
 					Destroy (transform.parent.gameObject);
 				}
 			} else {
-				if (player.inv.checkEmpty()) {
+				if (player.inv.checkEmpty ()) {
 					player.addItem (ID);
 					Destroy (transform.parent.gameObject);
+				} else {
+					Debug.Log ("full");
 				}
 			}
 
@@ -85,6 +91,25 @@ public class ItemController : MonoBehaviour {
 
 		if (other.gameObject.CompareTag ("outofbounds")) {
 			location = true;
+		}
+	}
+
+	void OnTriggerStay2D(Collider2D other) {
+		if (other.gameObject.CompareTag ("Player")) {
+			if (type == "Potion") {
+				if (player.pInv.checkEmpty()) {
+					player.addPotion (ID);
+					Destroy (transform.parent.gameObject);
+				}
+			} else {
+				if (player.inv.checkEmpty ()) {
+					player.addItem (ID);
+					Destroy (transform.parent.gameObject);
+				} else {
+					Debug.Log ("full");
+				}
+			}
+
 		}
 	}
 }
