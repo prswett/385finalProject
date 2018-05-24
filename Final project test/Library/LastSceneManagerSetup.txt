@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Stages/Matthew Version/FlowerBossStage.unity
+- path: Assets/Stages/Matthew Version/MainMenu.unity
   isLoaded: 1
   isActive: 1

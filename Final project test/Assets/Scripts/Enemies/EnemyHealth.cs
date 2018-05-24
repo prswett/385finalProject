@@ -55,12 +55,12 @@ public class EnemyHealth : MonoBehaviour {
 
 	void Update () {
 		if (Time.time - lastHit > 10 && lastHit != 0) {
-			transform.parent.position = new Vector2 (0, 0);
+			transform.parent.position = new Vector2 (Random.Range(target.position.x -.5f, target.position.x +.5f), Random.Range(target.position.y -.5f, target.position.y +.5f));
 			lastHit = Time.time;
 		}
 
 		if (Time.time - spawnTime > 10 && lastHit == 0) {
-			transform.parent.position = new Vector2 (0, 0);
+			transform.parent.position = new Vector2 (Random.Range(target.position.x -.5f, target.position.x +.5f), Random.Range(target.position.y -.5f, target.position.y +.5f));
 			spawnTime = Time.time;
 		}
 		healthbar.fillAmount = currentHealth / maxHealth;
@@ -68,8 +68,8 @@ public class EnemyHealth : MonoBehaviour {
 			dropCoin ();
 			int dropRate = Random.Range (0, 10);
 			if (dropRate < 4) {
-				int roll = Random.Range (0, 10);
-				if (roll < 2) {
+				int roll = Random.Range (0, 100);
+				if (roll < 15) {
 					dropRareItem ();
 				} else {
 					dropItem ();

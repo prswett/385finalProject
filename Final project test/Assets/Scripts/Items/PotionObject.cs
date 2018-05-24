@@ -17,7 +17,6 @@ public class PotionObject : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 	public bool showQuestion = false;
 	CanvasController question;
 	public Player target;
-	public PlayerTutorial target2;
 
 	public bool tutorial = false;
 	public bool multiDelete = false;
@@ -27,21 +26,13 @@ public class PotionObject : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 		tooltip = pInv.GetComponent<PotionTooltip> ();
 
 		target = GameObject.FindGameObjectWithTag ("Player").GetComponent<Player> ();
-		if (!tutorial) {
 			question = target.playerCanvas;
-		} else {
-			target2 = GameObject.FindGameObjectWithTag ("Player").GetComponent<PlayerTutorial> ();
-			question = target2.playerCanvas;
-		}
 	}
 
 	public void OnPointerClick(PointerEventData eventData) {
 		if (eventData.button == PointerEventData.InputButton.Right) {
 			PotionStats temp = pInv.slots [slot].GetComponent<PotionSlot> ().potion.GetComponent<PotionStats> ();
 			if (temp.type == "Health") {
-				if (tutorial) {
-					target2.Health += temp.healing;
-				} else {
 					int healing = temp.healing;
 					if (PlayerStatistics.health <= PlayerStatistics.maxHealth - healing) {
 						PlayerStatistics.health += healing;
@@ -54,13 +45,9 @@ public class PotionObject : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 						tooltip.Deactivate ();
 						pInv.RemoveItemSlot (slot);
 					}
-				}
 			}
 
 			if (temp.type == "Mana") {
-				if (tutorial) {
-					target2.Mana += temp.healing;
-				} else {
 					int healing = temp.healing;
 					if (PlayerStatistics.mana <= PlayerStatistics.maxMana - healing) {
 						PlayerStatistics.mana += healing;
@@ -74,7 +61,6 @@ public class PotionObject : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 						tooltip.Deactivate ();
 						pInv.RemoveItemSlot (slot);
 					}
-				}
 			}
 
 			if (temp.type == "Gold") {

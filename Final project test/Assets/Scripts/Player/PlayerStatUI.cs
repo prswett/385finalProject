@@ -14,6 +14,8 @@ public class PlayerStatUI : MonoBehaviour {
     public Text matk;
 
     public Text crit;
+	public Text def;
+	public Text avo;
 
     public Text sP;
 
@@ -26,6 +28,8 @@ public class PlayerStatUI : MonoBehaviour {
 		matk = GameObject.Find ("matk").GetComponentInChildren<Text> ();
 		crit = GameObject.Find ("critical").GetComponentInChildren<Text> ();
 		sP = GameObject.Find ("sP").GetComponentInChildren<Text> ();
+		def = GameObject.Find ("def").GetComponentInChildren<Text> ();
+		avo = GameObject.Find ("avo").GetComponentInChildren<Text> ();
 	}
 
     void Start () {
@@ -44,6 +48,8 @@ public class PlayerStatUI : MonoBehaviour {
         crit.text = "critical: " + PlayerStatistics.cc.ToString();
 
         sP.text = "stat points left: " + PlayerStatistics.statPoints.ToString();
+		def.text = "def: " + PlayerStatistics.def.ToString ();
+		avo.text = "avo: " + PlayerStatistics.avo.ToString ();
     }
 
 }

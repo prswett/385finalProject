@@ -85,30 +85,6 @@ public class Inventory : MonoBehaviour
     	}
     }
 
-	public void AddItem(int id, bool tutorial)
-	{
-		if (id < 0) {
-			return;
-		}
-
-		for (int i = 0; i < slotAmount; i++)
-		{
-			if (slots [i].GetComponent<Slot> ().item == null) {
-				
-				Slot temp = slots [i].GetComponent<Slot> ();
-				temp.item = Instantiate (inventoryItem);
-				temp.item.transform.SetParent (slots [i].transform);
-				temp.item.transform.position = slots [i].transform.position;
-				temp.item.GetComponent<Image> ().sprite = database.FetchItemByID (id).Sprite;
-				temp.item.transform.localScale = new Vector3 (.5f, .5f, 0);
-				temp.item.GetComponent<ItemObject> ().slot = i;
-				temp.item.GetComponent<ItemObject> ().tutorial = tutorial;
-				temp.item.GetComponent<ItemStats> ().loadStats(database.FetchItemByID(id));
-				break;
-			}
-		}
-	}
-
 	public void AddItem(ItemStats inputStats) {
 		for (int i = 0; i < slotAmount; i++) {
 			if (slots [i].GetComponent<Slot> ().item == null) {

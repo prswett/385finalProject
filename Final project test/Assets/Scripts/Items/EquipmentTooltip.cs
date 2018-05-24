@@ -11,7 +11,7 @@ public class EquipmentTooltip : MonoBehaviour {
 
 	void Start()
 	{
-		tooltip = GameObject.Find("Tooltip");
+		tooltip = GameObject.Find("EquipTooltip");
 		tooltip.SetActive(false);
 	}
 

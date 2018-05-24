@@ -16,17 +16,12 @@ public class CanvasController : MonoBehaviour {
 	public bool controls = false;
 
 	public Player player;
-	public PlayerTutorial playerTutorial;
 	public bool tutorial = false;
 	public bool tutorialReady = false;
 
 	void Start () {
 		
-		if (tutorial) {
-			playerTutorial = GameObject.FindGameObjectWithTag ("Player").GetComponent<PlayerTutorial> ();
-		} else {
-			player = GameObject.FindGameObjectWithTag ("Player").GetComponent<Player> ();
-		}
+		player = GameObject.FindGameObjectWithTag ("Player").GetComponent<Player> ();
 		pause = GameObject.FindGameObjectsWithTag ("Pause");
 		foreach (GameObject pauseObject in pause) {
 			pauseObject.SetActive (false);
@@ -74,11 +69,7 @@ public class CanvasController : MonoBehaviour {
 
 	public void Pause() {
 		paused = true;
-		if (tutorial) {
-			playerTutorial.menu = true;
-		} else {
 			player.menu = true;
-		}
 		Time.timeScale = 0;
 		foreach (GameObject pauseObject in pause) {
 			pauseObject.SetActive (true);
@@ -87,17 +78,10 @@ public class CanvasController : MonoBehaviour {
 
 	public void UnPause() {
 		paused = false;
-		if (tutorial) {
-			playerTutorial.menu = false;
-			if (!playerTutorial.menu && !playerTutorial.inventory && !playerTutorial.shop) {
-				Time.timeScale = 1;
-			}
-		} else {
 			player.menu = false;
 			if (!player.menu && !player.inventory && !player.shop) {
 				Time.timeScale = 1;
 			}
-		}
 
 		foreach (GameObject pauseObject in pause) {
 			pauseObject.SetActive (false);
@@ -106,11 +90,7 @@ public class CanvasController : MonoBehaviour {
 
 	public void showInventory() {
 		inventoryOpen = true;
-		if (tutorialReady) {
-			playerTutorial.inventory = true;
-		} else {
 			player.inventory = true;
-		}
 		Time.timeScale = 0;
 		foreach (GameObject inventoryObject in inventory) {
 			inventoryObject.SetActive (true);
@@ -119,17 +99,10 @@ public class CanvasController : MonoBehaviour {
 
 	public void hideInventory() {
 		inventoryOpen = false;
-		if (tutorialReady) {
-			playerTutorial.inventory = false;
-			if (!playerTutorial.menu && !playerTutorial.inventory && !playerTutorial.shop) {
-				Time.timeScale = 1;
-			}
-		} else {
 			player.inventory = false;
 			if (!player.menu && !player.inventory && !player.shop) {
 				Time.timeScale = 1;
 			}
-		}
 
 		foreach (GameObject inventoryObject in inventory) {
 			inventoryObject.SetActive (false);

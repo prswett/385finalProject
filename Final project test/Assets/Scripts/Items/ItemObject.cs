@@ -10,7 +10,7 @@ public class ItemObject : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 	public int slot;
 	public Vector2 offset;
 	public Inventory inv;
-	private Equipment eInv;
+	public Equipment eInv;
 
 
 	public Tooltip tooltip;
@@ -22,9 +22,7 @@ public class ItemObject : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 	public bool showQuestion = false;
 	CanvasController question;
 	public Player target;
-	public PlayerTutorial target2;
 
-	public bool tutorial = false;
 	public PlayerResources player;
 	public bool multiDelete = false;
 
@@ -36,12 +34,7 @@ public class ItemObject : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 
 		player = GameObject.Find ("Player").GetComponent<PlayerResources> ();
 		target = GameObject.FindGameObjectWithTag ("Player").GetComponent<Player> ();
-		if (!tutorial) {
 			question = target.playerCanvas;
-		} else {
-			target2 = GameObject.FindGameObjectWithTag ("Player").GetComponent<PlayerTutorial> ();
-			question = target2.playerCanvas;
-		}
 	}
 
 	public void removeStats(ItemStats temp) {
@@ -77,179 +70,182 @@ public class ItemObject : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 
 	public void OnPointerClick(PointerEventData eventData) {
 		if (eventData.button == PointerEventData.InputButton.Right) {
-			if (!equipped) {
-				ItemStats temp = inv.slots[slot].GetComponent<Slot> ().item.GetComponent<ItemStats> ();
-				if (temp.type == "Helmet") {
-					if (eInv.slots[0].GetComponent<EquipmentSlot> ().item != null) {
-						ItemStats temp2 = eInv.slots[0].GetComponent<EquipmentSlot> ().item.GetComponent<ItemStats> ();
-						removeStats (temp2);
-						addStats (temp);
-						inv.RemoveItemSlot (slot);
-						eInv.RemoveItemSlot (0);
-						inv.AddItem (temp2);
-						eInv.AddItem (temp, 0, true);
-					} else {
-						inv.RemoveItemSlot (slot);
-						eInv.AddItem (temp, 0, true);
-						tooltip.Deactivate ();
-						player.changeHelmet ("DrawingsV2/Items/Equipment/" + temp.Slug);
-						PlayerStatistics.str += temp.str;
-						PlayerStatistics.dex += temp.dex;
-						PlayerStatistics.wis += temp.wis;
-						PlayerStatistics.luk += temp.luk;
-						PlayerStatistics.atk += temp.atk;
-						PlayerStatistics.def += temp.atk;
-					}
-				}
-
-				if (temp.type == "Armor") {
-					if (eInv.slots[1].GetComponent<EquipmentSlot> ().item != null) {
-						ItemStats temp2 = eInv.slots[1].GetComponent<EquipmentSlot> ().item.GetComponent<ItemStats> ();
-						removeStats (temp2);
-						addStats (temp);
-						inv.RemoveItemSlot (slot);
-						eInv.RemoveItemSlot (1);
-						inv.AddItem (temp2);
-						eInv.AddItem (temp, 1, true);
-					} else {
-						inv.RemoveItemSlot (slot);
-						eInv.AddItem (temp, 1, true);
-						tooltip.Deactivate ();
-						player.changeArmor("DrawingsV2/Items/Equipment/" + temp.Slug);
-						PlayerStatistics.str += temp.str;
-						PlayerStatistics.dex += temp.dex;
-						PlayerStatistics.wis += temp.wis;
-						PlayerStatistics.luk += temp.luk;
-						PlayerStatistics.atk += temp.atk;
-						PlayerStatistics.def += temp.atk;
-					}
-				}
-
-				if (temp.type == "Sword") {
-					if (eInv.slots[2].GetComponent<EquipmentSlot> ().item != null) {
-						ItemStats temp2 = eInv.slots[2].GetComponent<EquipmentSlot> ().item.GetComponent<ItemStats> ();
-						removeStats (temp2);
-						addStats (temp);
-						inv.RemoveItemSlot (slot);
-						eInv.RemoveItemSlot (2);
-						inv.AddItem (temp2);
-						eInv.AddItem (temp, 2, true);
-						player.UIChange ();
-					} else {
-						inv.RemoveItemSlot (slot);
-						eInv.AddItem (temp, 2, true);
-						tooltip.Deactivate ();
-						player.changeSword ("DrawingsV2/Items/Equipment/" + temp.Slug);
-						PlayerStatistics.str += temp.str;
-						PlayerStatistics.dex += temp.dex;
-						PlayerStatistics.wis += temp.wis;
-						PlayerStatistics.luk += temp.luk;
-						PlayerStatistics.atk += temp.atk;
-						PlayerStatistics.def += temp.atk;
-						player.UIChange ();
-					}
-				}
-
-				if (temp.type == "Spear") {
-					if (eInv.slots[3].GetComponent<EquipmentSlot> ().item != null) {
-						ItemStats temp2 = eInv.slots[3].GetComponent<EquipmentSlot> ().item.GetComponent<ItemStats> ();
-						removeStats (temp2);
-						addStats (temp);
-						inv.RemoveItemSlot (slot);
-						eInv.RemoveItemSlot (3);
-						inv.AddItem (temp2);
-						eInv.AddItem (temp, 3, true);
-						player.UIChange ();
-					} else {
-						inv.RemoveItemSlot (slot);
-						eInv.AddItem (temp, 3, true);
-						tooltip.Deactivate ();
-						player.changeSpear ("DrawingsV2/Items/Equipment/" + temp.Slug);
-						PlayerStatistics.str += temp.str;
-						PlayerStatistics.dex += temp.dex;
-						PlayerStatistics.wis += temp.wis;
-						PlayerStatistics.luk += temp.luk;
-						PlayerStatistics.atk += temp.atk;
-						PlayerStatistics.def += temp.atk;
-						player.UIChange ();
-					}
-				}
-
-				if (temp.type == "Axe") {
-					if (eInv.slots[4].GetComponent<EquipmentSlot> ().item != null) {
-						ItemStats temp2 = eInv.slots[4].GetComponent<EquipmentSlot> ().item.GetComponent<ItemStats> ();
-						removeStats (temp2);
-						addStats (temp);
-						inv.RemoveItemSlot (slot);
-						eInv.RemoveItemSlot (4);
-						inv.AddItem (temp2);
-						eInv.AddItem (temp, 4, true);
-						player.UIChange ();
-					} else {
-						inv.RemoveItemSlot (slot);
-						eInv.AddItem (temp, 4, true);
-						tooltip.Deactivate ();
-						player.changeAxe ("DrawingsV2/Items/Equipment/" + temp.Slug);
-						PlayerStatistics.str += temp.str;
-						PlayerStatistics.dex += temp.dex;
-						PlayerStatistics.wis += temp.wis;
-						PlayerStatistics.luk += temp.luk;
-						PlayerStatistics.atk += temp.atk;
-						PlayerStatistics.def += temp.atk;
-						player.UIChange ();
-					}
-				}
-
-				if (temp.type == "Dagger") {
-					if (eInv.slots[5].GetComponent<EquipmentSlot> ().item != null) {
-						ItemStats temp2 = eInv.slots[5].GetComponent<EquipmentSlot> ().item.GetComponent<ItemStats> ();
-						removeStats (temp2);
-						addStats (temp);
-						inv.RemoveItemSlot (slot);
-						eInv.RemoveItemSlot (5);
-						inv.AddItem (temp2);
-						eInv.AddItem (temp, 5, true);
-						player.UIChange ();
-					} else {
-						inv.RemoveItemSlot (slot);
-						eInv.AddItem (temp, 5, true);
-						tooltip.Deactivate ();
-						player.changeDagger ("DrawingsV2/Items/Equipment/" + temp.Slug);
-						PlayerStatistics.str += temp.str;
-						PlayerStatistics.dex += temp.dex;
-						PlayerStatistics.wis += temp.wis;
-						PlayerStatistics.luk += temp.luk;
-						PlayerStatistics.atk += temp.atk;
-						PlayerStatistics.def += temp.atk;
-						player.UIChange ();
-					}
-				}
-			} else {
-				if (eventData.button == PointerEventData.InputButton.Right) {
-					ItemStats temp = eInv.slots[slot].GetComponent<EquipmentSlot> ().item.GetComponent<ItemStats> ();
-					eInv.RemoveItemSlot (slot);
-					inv.AddItem (temp);
-					PlayerStatistics.str -= temp.str;
-					PlayerStatistics.dex -= temp.dex;
-					PlayerStatistics.wis -= temp.wis;
-					PlayerStatistics.luk -= temp.luk;
-					PlayerStatistics.atk -= temp.atk;
-					PlayerStatistics.def -= temp.def;
+			GameObject delete = GameObject.Find ("Delete");
+			if (delete == null) {
+				if (!equipped) {
+					ItemStats temp = inv.slots [slot].GetComponent<Slot> ().item.GetComponent<ItemStats> ();
 					if (temp.type == "Helmet") {
-						player.resetHelmet ();
-					} else if (temp.type == "Armor") {
-						player.resetArmor ();
-					} else if (temp.type == "Sword") {
-						player.resetSword ();
-					} else if (temp.type == "Spear") {
-						player.resetSpear ();
-					} else if (temp.type == "Axe") {
-						player.resetAxe ();
-					} else if (temp.type == "Dagger") {
-						player.resetDagger ();
+						if (eInv.slots [0].GetComponent<EquipmentSlot> ().item != null) {
+							ItemStats temp2 = eInv.slots [0].GetComponent<EquipmentSlot> ().item.GetComponent<ItemStats> ();
+							removeStats (temp2);
+							addStats (temp);
+							inv.RemoveItemSlot (slot);
+							eInv.RemoveItemSlot (0);
+							inv.AddItem (temp2);
+							eInv.AddItem (temp, 0, true);
+						} else {
+							inv.RemoveItemSlot (slot);
+							eInv.AddItem (temp, 0, true);
+							tooltip.Deactivate ();
+							player.changeHelmet ("DrawingsV2/Items/Equipment/" + temp.Slug);
+							PlayerStatistics.str += temp.str;
+							PlayerStatistics.dex += temp.dex;
+							PlayerStatistics.wis += temp.wis;
+							PlayerStatistics.luk += temp.luk;
+							PlayerStatistics.atk += temp.atk;
+							PlayerStatistics.def += temp.atk;
+						}
 					}
-					tooltip.Deactivate ();
-					player.UIChange ();
+
+					if (temp.type == "Armor") {
+						if (eInv.slots [1].GetComponent<EquipmentSlot> ().item != null) {
+							ItemStats temp2 = eInv.slots [1].GetComponent<EquipmentSlot> ().item.GetComponent<ItemStats> ();
+							removeStats (temp2);
+							addStats (temp);
+							inv.RemoveItemSlot (slot);
+							eInv.RemoveItemSlot (1);
+							inv.AddItem (temp2);
+							eInv.AddItem (temp, 1, true);
+						} else {
+							inv.RemoveItemSlot (slot);
+							eInv.AddItem (temp, 1, true);
+							tooltip.Deactivate ();
+							player.changeArmor ("DrawingsV2/Items/Equipment/" + temp.Slug);
+							PlayerStatistics.str += temp.str;
+							PlayerStatistics.dex += temp.dex;
+							PlayerStatistics.wis += temp.wis;
+							PlayerStatistics.luk += temp.luk;
+							PlayerStatistics.atk += temp.atk;
+							PlayerStatistics.def += temp.atk;
+						}
+					}
+
+					if (temp.type == "Sword") {
+						if (eInv.slots [2].GetComponent<EquipmentSlot> ().item != null) {
+							ItemStats temp2 = eInv.slots [2].GetComponent<EquipmentSlot> ().item.GetComponent<ItemStats> ();
+							removeStats (temp2);
+							addStats (temp);
+							inv.RemoveItemSlot (slot);
+							eInv.RemoveItemSlot (2);
+							inv.AddItem (temp2);
+							eInv.AddItem (temp, 2, true);
+							player.UIChange ();
+						} else {
+							inv.RemoveItemSlot (slot);
+							eInv.AddItem (temp, 2, true);
+							tooltip.Deactivate ();
+							player.changeSword ("DrawingsV2/Items/Equipment/" + temp.Slug);
+							PlayerStatistics.str += temp.str;
+							PlayerStatistics.dex += temp.dex;
+							PlayerStatistics.wis += temp.wis;
+							PlayerStatistics.luk += temp.luk;
+							PlayerStatistics.atk += temp.atk;
+							PlayerStatistics.def += temp.atk;
+							player.UIChange ();
+						}
+					}
+
+					if (temp.type == "Spear") {
+						if (eInv.slots [3].GetComponent<EquipmentSlot> ().item != null) {
+							ItemStats temp2 = eInv.slots [3].GetComponent<EquipmentSlot> ().item.GetComponent<ItemStats> ();
+							removeStats (temp2);
+							addStats (temp);
+							inv.RemoveItemSlot (slot);
+							eInv.RemoveItemSlot (3);
+							inv.AddItem (temp2);
+							eInv.AddItem (temp, 3, true);
+							player.UIChange ();
+						} else {
+							inv.RemoveItemSlot (slot);
+							eInv.AddItem (temp, 3, true);
+							tooltip.Deactivate ();
+							player.changeSpear ("DrawingsV2/Items/Equipment/" + temp.Slug);
+							PlayerStatistics.str += temp.str;
+							PlayerStatistics.dex += temp.dex;
+							PlayerStatistics.wis += temp.wis;
+							PlayerStatistics.luk += temp.luk;
+							PlayerStatistics.atk += temp.atk;
+							PlayerStatistics.def += temp.atk;
+							player.UIChange ();
+						}
+					}
+
+					if (temp.type == "Axe") {
+						if (eInv.slots [4].GetComponent<EquipmentSlot> ().item != null) {
+							ItemStats temp2 = eInv.slots [4].GetComponent<EquipmentSlot> ().item.GetComponent<ItemStats> ();
+							removeStats (temp2);
+							addStats (temp);
+							inv.RemoveItemSlot (slot);
+							eInv.RemoveItemSlot (4);
+							inv.AddItem (temp2);
+							eInv.AddItem (temp, 4, true);
+							player.UIChange ();
+						} else {
+							inv.RemoveItemSlot (slot);
+							eInv.AddItem (temp, 4, true);
+							tooltip.Deactivate ();
+							player.changeAxe ("DrawingsV2/Items/Equipment/" + temp.Slug);
+							PlayerStatistics.str += temp.str;
+							PlayerStatistics.dex += temp.dex;
+							PlayerStatistics.wis += temp.wis;
+							PlayerStatistics.luk += temp.luk;
+							PlayerStatistics.atk += temp.atk;
+							PlayerStatistics.def += temp.atk;
+							player.UIChange ();
+						}
+					}
+
+					if (temp.type == "Dagger") {
+						if (eInv.slots [5].GetComponent<EquipmentSlot> ().item != null) {
+							ItemStats temp2 = eInv.slots [5].GetComponent<EquipmentSlot> ().item.GetComponent<ItemStats> ();
+							removeStats (temp2);
+							addStats (temp);
+							inv.RemoveItemSlot (slot);
+							eInv.RemoveItemSlot (5);
+							inv.AddItem (temp2);
+							eInv.AddItem (temp, 5, true);
+							player.UIChange ();
+						} else {
+							inv.RemoveItemSlot (slot);
+							eInv.AddItem (temp, 5, true);
+							tooltip.Deactivate ();
+							player.changeDagger ("DrawingsV2/Items/Equipment/" + temp.Slug);
+							PlayerStatistics.str += temp.str;
+							PlayerStatistics.dex += temp.dex;
+							PlayerStatistics.wis += temp.wis;
+							PlayerStatistics.luk += temp.luk;
+							PlayerStatistics.atk += temp.atk;
+							PlayerStatistics.def += temp.atk;
+							player.UIChange ();
+						}
+					}
+				} else {
+					if (eventData.button == PointerEventData.InputButton.Right) {
+						ItemStats temp = eInv.slots [slot].GetComponent<EquipmentSlot> ().item.GetComponent<ItemStats> ();
+						eInv.RemoveItemSlot (slot);
+						inv.AddItem (temp);
+						PlayerStatistics.str -= temp.str;
+						PlayerStatistics.dex -= temp.dex;
+						PlayerStatistics.wis -= temp.wis;
+						PlayerStatistics.luk -= temp.luk;
+						PlayerStatistics.atk -= temp.atk;
+						PlayerStatistics.def -= temp.def;
+						if (temp.type == "Helmet") {
+							player.resetHelmet ();
+						} else if (temp.type == "Armor") {
+							player.resetArmor ();
+						} else if (temp.type == "Sword") {
+							player.resetSword ();
+						} else if (temp.type == "Spear") {
+							player.resetSpear ();
+						} else if (temp.type == "Axe") {
+							player.resetAxe ();
+						} else if (temp.type == "Dagger") {
+							player.resetDagger ();
+						}
+						eTooltip.Deactivate ();
+						player.UIChange ();
+					}
 				}
 			}
 		}

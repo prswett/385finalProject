@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 102481716372271596}
   - component: {fileID: 222247841595267954}
   - component: {fileID: 114102898407424474}
-  m_Layer: 15
+  m_Layer: 16
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -142,7 +142,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1280779890624146}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.9491363, y: -0.8594736, z: 0}
+  m_LocalPosition: {x: -3.4818954, y: 0.57054806, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224647924425239448}
@@ -487,6 +487,8 @@ MonoBehaviour:
   control: {fileID: 0}
   damageNumber: {fileID: 1888548063201054, guid: 9043e4b5a85fbc140915b0ee7b37e82a,
     type: 2}
+  tutorial: 0
+  spawnTime: 0
 --- !u!212 &212850640606521946
 SpriteRenderer:
   m_ObjectHideFlags: 1

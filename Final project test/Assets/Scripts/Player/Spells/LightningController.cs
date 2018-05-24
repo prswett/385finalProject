@@ -9,7 +9,7 @@ public class LightningController : MonoBehaviour {
 
 	public string description = "Create a lightning bolt where the mouse is that flies downward/nDisappears after touching a wall";
 
-	public int baseDamage = 300;
+	public int baseDamage = 100;
 	public int modifiedDamage = 0;
 	// Use this for initialization
 	void Start () {
