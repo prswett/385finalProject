@@ -40,7 +40,7 @@ public class GEnemyWep : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (!location) {
-			transform.position = new Vector3 (0, 0, 0);
+			transform.position = new Vector2 (Random.Range(target.position.x -.5f, target.position.x +.5f), Random.Range(target.position.y -.5f, target.position.y +.5f));
 		}
 		playerX = target.transform.position.x;
 		enemyX = transform.position.x;

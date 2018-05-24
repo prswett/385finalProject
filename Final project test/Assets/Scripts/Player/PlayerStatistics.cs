@@ -206,7 +206,13 @@ public class PlayerStatistics  : MonoBehaviour
 		// enemy avo - acc is hit chance
 		acc = 90 + (float)(dex * 0.5);
 		// chance to get hit
-		avo = 10 + (float)((dex * 0.2) + (luk * 0.5));
+		float nAvo = 10 + (float)((dex * 0.2) + (luk * 0.5));
+		if(nAvo > 70){
+			avo = 70;
+		}
+		else{
+			avo = nAvo;
+		}
 		// ied
 		ied = 30 + (float)(luk * 0.05);
 		//crit damage

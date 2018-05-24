@@ -84,6 +84,8 @@ public class Player : MonoBehaviour {
 	float x;
 	float y;
 
+	public TextMesh text;
+
 	void Awake() {
 		if (Instance == null) {
 			DontDestroyOnLoad (gameObject);
@@ -206,6 +208,7 @@ public class Player : MonoBehaviour {
 			anim.SetBool ("attacking", false);
 			anim.SetBool ("dead", true);
 
+			text.text = "Press R to respawn";
 			if (Input.GetKeyDown (KeyCode.R)) {
 				SceneManager.LoadScene (1);
 				resources.setArmorOn ();
@@ -213,6 +216,7 @@ public class Player : MonoBehaviour {
 				PlayerStatistics.coins = (float)(int)PlayerStatistics.coins;
 				PlayerStatistics.exp = 0;
 				anim.SetBool ("dead", false);
+				text.text = "";
 				playerReset ();
 			}
 		} else {

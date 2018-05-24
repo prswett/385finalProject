@@ -14,6 +14,7 @@ public class RareItemController : MonoBehaviour {
 
 	public bool location = false;
 	float spawnTime;
+	public bool rareItem = false;
 	// Use this for initialization
 	void Awake() {
 
@@ -48,11 +49,11 @@ public class RareItemController : MonoBehaviour {
 		int roll = Random.Range (0, 10);
 		if (roll < 4) {
 			roll = Random.Range (0, 100);
-			if (roll < 6) {
+			if (roll < 20 && rareItem) {
 				ID = Random.Range (36, 60);
-			} else if (roll < 12) {
+			} else if (roll < 25) {
 				ID = Random.Range (60, 66);
-			} else if (roll < 35) {
+			} else if (roll < 45) {
 				ID = Random.Range (30, 36);
 			} else {
 				ID = Random.Range (6, 30);

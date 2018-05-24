@@ -156,6 +156,11 @@ Prefab:
       propertyPath: m_Name
       value: Main Camera
       objectReference: {fileID: 0}
+    - target: {fileID: 82923482036627796, guid: 165fe1aeb64655944ab075d6384950c9,
+        type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 1f6c3c66e15bfea4ebe16ecf9efffa11, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 165fe1aeb64655944ab075d6384950c9, type: 2}
   m_IsPrefabParent: 0
@@ -2829,6 +2834,18 @@ Prefab:
       propertyPath: currentHealth
       value: 1000
       objectReference: {fileID: 0}
+    - target: {fileID: 114274012108326384, guid: d92a377786f8d1c47afad2747797eb0e,
+        type: 2}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 1989801539787162, guid: 8d42d871c6d0f41489bc9ee355d43bc2,
+        type: 2}
+    - target: {fileID: 114274012108326384, guid: d92a377786f8d1c47afad2747797eb0e,
+        type: 2}
+      propertyPath: rareItem
+      value: 
+      objectReference: {fileID: 1018896885028278, guid: cad8f98312da4324ab3e9aad959742a2,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d92a377786f8d1c47afad2747797eb0e, type: 2}
   m_IsPrefabParent: 0

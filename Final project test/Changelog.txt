@@ -1,3 +1,11 @@
+Version 4.1
+Added music
+Fixed final boss bug
+Fixed UI bugs
+Changed drop rates
+Legendary weapons only drop from bosses
+EnemySpawn fixed
+
 Version 4.0 (Alpha version)
 Added many new stages
 Fixed many bugs

@@ -40,7 +40,7 @@ public class EnemyHealth : MonoBehaviour {
 		} else {
 			maxHealth = (maxHealth * PlayerStatistics.level) / 3f;
 		}
-		lastHit = 0;
+		lastHit = Time.time;
 		target = GameObject.FindWithTag ("Player").transform;
 		parent = transform.parent.gameObject;
 		parentController = parent.GetComponent<EnemyController> ();
@@ -67,7 +67,7 @@ public class EnemyHealth : MonoBehaviour {
 		if (currentHealth <= 0) {
 			dropCoin ();
 			int dropRate = Random.Range (0, 10);
-			if (dropRate < 4) {
+			if (dropRate < 3) {
 				int roll = Random.Range (0, 100);
 				if (roll < 15) {
 					dropRareItem ();
@@ -111,8 +111,6 @@ public class EnemyHealth : MonoBehaviour {
 			}
 		}
 	}
-
-
 
 	public void damageAnimation() {
 		render.enabled = !render.enabled;

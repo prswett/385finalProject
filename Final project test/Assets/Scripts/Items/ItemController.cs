@@ -15,6 +15,8 @@ public class ItemController : MonoBehaviour {
 	public bool location = false;
 	float spawnTime;
 
+	public bool rareItem = false;
+
 	void Start () {
 		target = GameObject.FindGameObjectWithTag ("Player").transform;
 		player = target.GetComponent<Player> ();
@@ -43,7 +45,7 @@ public class ItemController : MonoBehaviour {
 		int roll = Random.Range (0, 10);
 		if (roll < 3) {
 			roll = Random.Range (0, 100);
-			if (roll < 5) {
+			if (roll < 10 && rareItem) {
 				ID = Random.Range (36, 60);
 			} else if (roll < 15) {
 				ID = Random.Range (60, 66);
