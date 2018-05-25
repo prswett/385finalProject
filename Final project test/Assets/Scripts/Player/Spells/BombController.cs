@@ -38,7 +38,7 @@ public class BombController : MonoBehaviour {
 			rb2d.velocity = new Vector2 (0, 0);
 			hit = true;
 			anim.SetBool ("Exploding", true);
-			Invoke("Destroy", .3f);
+			Invoke("Destroy", 1f);
 		}
 
 		if (other.gameObject.CompareTag ("EnemyHealth")) {

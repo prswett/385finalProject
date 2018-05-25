@@ -26,7 +26,7 @@ public class SpikeDamager : MonoBehaviour {
     {
         while (true)
         {
-            PlayerStatistics.health -= damage;
+			PlayerStatistics.health -= ((PlayerStatistics.maxHealth / 100) * 5);
             yield return new WaitForSeconds(1f);
         }
     }

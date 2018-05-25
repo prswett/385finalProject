@@ -16,6 +16,8 @@ public class StageController : MonoBehaviour {
 	int nextScene;
 	Player killCount;
 
+	public bool bossStage = false;
+
 	public Text monsters;
 
 	public float playerX;
@@ -39,13 +41,26 @@ public class StageController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		int mon = monstersNeeded - killCount.killCount;
-		if (mon >= 0 && !portalSpawned) {
-			monsters.text = mon.ToString () + " Monsters Remaining";
+		if (!bossStage) {
+			if (mon >= 0 && !portalSpawned) {
+				monsters.text = mon.ToString () + " Monsters Remaining";
+			}
+			if (portalSpawned) {
+				monsters.text = "Find the portal to move on";
+			}
 		}
-		if (portalSpawned) {
-			monsters.text = "Find the portal to move on";
+		if (killCount.killCount >= monstersNeeded && !bossStage) {
+			if (portalSpawned == false) {
+				killCount.stageCount++;
+				PortalController temp = portal.GetComponent<PortalController> ();
+				temp.gameObject.SetActive (true);
+				temp.setNextScene (nextScene);
+				Instantiate (portal, location, Quaternion.identity);
+				portalSpawned = true;
+			}
 		}
-		if (killCount.killCount >= monstersNeeded || killCount.killedBoss) {
+
+		if (killCount.killedBoss) {
 			if (portalSpawned == false) {
 				killCount.stageCount++;
 				PortalController temp = portal.GetComponent<PortalController> ();

@@ -44,7 +44,7 @@ public class FEnemyR : MonoBehaviour {
 	
 
 	void Update () {
-		if (!location) {
+		if (!location && Time.timeScale != 0) {
 			transform.position = new Vector2 (Random.Range(target.position.x -.5f, target.position.x +.5f), Random.Range(target.position.y -.5f, target.position.y +.5f));
 		}
 

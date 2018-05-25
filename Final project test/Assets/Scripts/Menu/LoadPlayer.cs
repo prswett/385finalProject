@@ -26,7 +26,7 @@ public class LoadPlayer : MonoBehaviour {
 
 			PlayerStatistics.wa = data.wa;
 			PlayerStatistics.ma = data.ma;
-
+			PlayerStatistics.def = data.def;
 			PlayerStatistics.str = data.str;
 			PlayerStatistics.dex = data.dex;
 			PlayerStatistics.wis = data.wis;

@@ -37,7 +37,7 @@ public class PotionTooltip : MonoBehaviour {
 
 	public void ConstructDataString()
 	{
-		data = "<color=#0473f0><b>" + potion.Title + "</b></color>\n" + potion.Description + "\nHealing: " + potion.healing;
+		data = "<color=#0473f0><b>" + potion.Title + "</b></color>\n" + potion.Description + "\nPercent Heal: " + potion.healing;
 		tooltip.transform.GetChild(0).GetComponent<Text>().text = data;
 	}
 }

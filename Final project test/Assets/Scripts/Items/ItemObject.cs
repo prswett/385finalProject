@@ -20,7 +20,7 @@ public class ItemObject : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 	//Question
 	public bool noDelete = false;
 	public bool showQuestion = false;
-	CanvasController question;
+	public CanvasController question;
 	public Player target;
 
 	public PlayerResources player;
@@ -34,7 +34,7 @@ public class ItemObject : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 
 		player = GameObject.Find ("Player").GetComponent<PlayerResources> ();
 		target = GameObject.FindGameObjectWithTag ("Player").GetComponent<Player> ();
-			question = target.playerCanvas;
+		question = target.playerCanvas;
 	}
 
 	public void removeStats(ItemStats temp) {
@@ -69,6 +69,36 @@ public class ItemObject : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 	}
 
 	public void OnPointerClick(PointerEventData eventData) {
+		if (eventData.button == PointerEventData.InputButton.Left) {
+			if (question.upgrading) {
+				if (!equipped) {
+					ItemStats temp = inv.slots [slot].GetComponent<Slot> ().item.GetComponent<ItemStats> ();
+					if (PlayerStatistics.coins >= temp.Rarity * temp.Value) {
+						PlayerStatistics.coins -= temp.Rarity * temp.Value;
+						int greatSuccess = UnityEngine.Random.Range (0, 10);
+						if (greatSuccess > 0) {
+							temp.str += (int)temp.Value / 10;
+							temp.dex += (int)temp.Value / 10;
+							temp.wis += (int)temp.Value / 10;
+							temp.luk += (int)temp.Value / 10;
+							temp.atk += (int)temp.Value / 10;
+							temp.def += (int)temp.Value / 10;
+							temp.Value += temp.Value / 10;
+						} else {
+							temp.str += (int)temp.Value / 8;
+							temp.dex += (int)temp.Value / 8;
+							temp.wis += (int)temp.Value / 8;
+							temp.luk += (int)temp.Value / 8;
+							temp.atk += (int)temp.Value / 8;
+							temp.def += (int)temp.Value / 8;
+							temp.Value += temp.Value / 8;
+						}
+					}
+					tooltip.Deactivate ();
+					tooltip.Activate (inv.slots [slot].GetComponent<Slot> ().item.GetComponent<ItemStats> ());
+				}
+			}
+		}
 		if (eventData.button == PointerEventData.InputButton.Right) {
 			GameObject delete = GameObject.Find ("Delete");
 			if (delete == null) {
@@ -116,7 +146,7 @@ public class ItemObject : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 							PlayerStatistics.wis += temp.wis;
 							PlayerStatistics.luk += temp.luk;
 							PlayerStatistics.atk += temp.atk;
-							PlayerStatistics.def += temp.atk;
+							PlayerStatistics.def += temp.def;
 						}
 					}
 
@@ -140,7 +170,7 @@ public class ItemObject : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 							PlayerStatistics.wis += temp.wis;
 							PlayerStatistics.luk += temp.luk;
 							PlayerStatistics.atk += temp.atk;
-							PlayerStatistics.def += temp.atk;
+							PlayerStatistics.def += temp.def;
 							player.UIChange ();
 						}
 					}
@@ -165,7 +195,7 @@ public class ItemObject : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 							PlayerStatistics.wis += temp.wis;
 							PlayerStatistics.luk += temp.luk;
 							PlayerStatistics.atk += temp.atk;
-							PlayerStatistics.def += temp.atk;
+							PlayerStatistics.def += temp.def;
 							player.UIChange ();
 						}
 					}
@@ -190,7 +220,7 @@ public class ItemObject : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 							PlayerStatistics.wis += temp.wis;
 							PlayerStatistics.luk += temp.luk;
 							PlayerStatistics.atk += temp.atk;
-							PlayerStatistics.def += temp.atk;
+							PlayerStatistics.def += temp.def;
 							player.UIChange ();
 						}
 					}
@@ -215,7 +245,7 @@ public class ItemObject : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 							PlayerStatistics.wis += temp.wis;
 							PlayerStatistics.luk += temp.luk;
 							PlayerStatistics.atk += temp.atk;
-							PlayerStatistics.def += temp.atk;
+							PlayerStatistics.def += temp.def;
 							player.UIChange ();
 						}
 					}
@@ -317,7 +347,8 @@ public class ItemObject : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 				if (target != null) {
 					target.tryingToDelete = true;
 					if (question.clicked) {
-						if (question.answer == true || Input.GetKeyDown(KeyCode.KeypadEnter)) {
+						if (question.answer == true) {
+							PlayerStatistics.coins += inv.slots [slot].GetComponent<Slot> ().item.GetComponent<ItemStats> ().Value;
 							inv.RemoveItemSlot (slot);
 							question.hideQuestion ();
 							question.clicked = false;
@@ -329,6 +360,13 @@ public class ItemObject : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 							question.clicked = false;
 							target.tryingToDelete = false;
 						}
+					} else if (Input.GetKeyDown (KeyCode.Return)) {
+						PlayerStatistics.coins += inv.slots [slot].GetComponent<Slot> ().item.GetComponent<ItemStats> ().Value;
+						inv.RemoveItemSlot (slot);
+						question.hideQuestion ();
+						question.clicked = false;
+						target.tryingToDelete = false;
+
 					}
 				}
 			}

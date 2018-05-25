@@ -92,15 +92,15 @@ public class PlayerResources : MonoBehaviour {
 	}
 
 	public void resetSpear() {
-		spear.GetComponent<SpriteRenderer> ().sprite = Resources.Load<Sprite> ("DrawingsV2/Weapons/Spear");
+		spear.GetComponent<SpriteRenderer> ().sprite = Resources.Load<Sprite> ("DrawingsV2/Weapons/2HSpear");
 	}
 
 	public void resetAxe() {
-		axe.GetComponent<SpriteRenderer> ().sprite = Resources.Load<Sprite> ("DrawingsV2/Weapons/Axe");
+		axe.GetComponent<SpriteRenderer> ().sprite = Resources.Load<Sprite> ("DrawingsV2/Weapons/1HAxe");
 	}
 
 	public void resetDagger() {
-		dagger.GetComponent<SpriteRenderer> ().sprite = Resources.Load<Sprite> ("DrawingsV2/Weapons/Dagger");
+		dagger.GetComponent<SpriteRenderer> ().sprite = Resources.Load<Sprite> ("DrawingsV2/Weapons/1HDagger");
 	}
 
 	void Update () {

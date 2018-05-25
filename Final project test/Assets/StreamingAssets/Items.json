@@ -13,7 +13,7 @@
 	  "def": 3
     },
     "description": "A helmet made of iron",
-    "rarity": 0,
+    "rarity": 1,
     "slug":  "IronHelmet"
   },
   {
@@ -30,7 +30,7 @@
 	  "def": 5
     },
     "description": "Armor made of iron",
-    "rarity": 0,
+    "rarity": 1,
     "slug":  "IronArmor"
   },
   {
@@ -47,7 +47,7 @@
 	  "def": 1
     },
     "description": "A Sword made of iron",
-    "rarity": 0,
+    "rarity": 1,
     "slug":  "IronSword"
   },
   {
@@ -64,7 +64,7 @@
 	  "def": 1
     },
     "description": "A Spear made of iron",
-    "rarity": 0,
+    "rarity": 1,
     "slug":  "IronSpear"
   },
   {
@@ -81,7 +81,7 @@
 	  "def": 1
     },
     "description": "An Axe made of iron",
-    "rarity": 0,
+    "rarity": 1,
     "slug":  "IronAxe"
   },
   {
@@ -98,7 +98,7 @@
 	  "def": 1
     },
     "description": "A Dagger made of iron",
-    "rarity": 0,
+    "rarity": 1,
     "slug":  "IronDagger"
   },
   {
@@ -1033,7 +1033,7 @@
 	  "def": -100
     },
     "description": "Well delivered",
-    "rarity": -1,
+    "rarity": 1,
     "slug":  "TLHelmet"
   },
   {
@@ -1050,7 +1050,7 @@
 	  "def": -200
     },
     "description": "Armor made of paper",
-    "rarity": -1,
+    "rarity": 1,
     "slug":  "TLArmor"
   },
   {
@@ -1067,7 +1067,7 @@
 	  "def": -100
     },
     "description": "A foam stick",
-    "rarity": -1,
+    "rarity": 1,
     "slug":  "TLSword"
   },
   {
@@ -1084,7 +1084,7 @@
 	  "def": -150
     },
     "description": "A piece of paper rolled into the shape of a long stick",
-    "rarity": -1,
+    "rarity": 1,
     "slug":  "TLSpear"
   },
   {
@@ -1101,7 +1101,7 @@
 	  "def": -80
     },
     "description": "An axe made of popsicle sticks",
-    "rarity": -1,
+    "rarity": 1,
     "slug":  "TLAxe"
   },
   {
@@ -1118,7 +1118,7 @@
 	  "def": -120
     },
     "description": "A piece of mail",
-    "rarity": -1,
+    "rarity": 1,
     "slug":  "TLDagger"
   }
 ]

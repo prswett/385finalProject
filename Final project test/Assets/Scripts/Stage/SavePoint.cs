@@ -74,7 +74,8 @@ public class SavePoint : MonoBehaviour
 		data.maxMP = PlayerStatistics.maxMana;
 
 		data.wa = PlayerStatistics.wa;
-		data.ma = PlayerStatistics.wa;
+		data.ma = PlayerStatistics.ma;
+		data.def = PlayerStatistics.def;
 		data.str = PlayerStatistics.str;
 		data.dex = PlayerStatistics.dex;
 		data.wis = PlayerStatistics.wis;
@@ -311,6 +312,7 @@ class PlayerData
 
 	public float wa;
 	public float ma;
+	public float def;
 	public float str;
 	public float dex;
 	public float wis;

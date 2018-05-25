@@ -114,7 +114,6 @@ public class Inventory : MonoBehaviour
 
 	public void RemoveItemSlot(int slot) {
 		Slot temp = slots[slot].GetComponent<Slot>();
-		PlayerStatistics.coins += temp.item.GetComponent<ItemStats> ().Value;
 		Destroy (temp.item);
 		temp.item = null;
 	}

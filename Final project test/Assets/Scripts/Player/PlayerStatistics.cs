@@ -72,7 +72,7 @@ public class PlayerStatistics  : MonoBehaviour
 	// multiplier for exp
 	public static float expMod = 1;
 
-	public static float level = 20;
+	public static float level = 1;
 	// exp needed to reach next level
 	public static float nextLevel = 10;
 
@@ -198,11 +198,27 @@ public class PlayerStatistics  : MonoBehaviour
 		}
 		//
 		maxHealth = baseHealth + (4 * str);
-		maxMana = baseMana + (float)(int)(wis / 3);
+		if (maxHealth <= 0) {
+			maxHealth = 1;
+		}
+		maxMana = (float)(int)(baseMana + (float)(int)(wis / 3));
+		if (maxMana <= 0) {
+			maxMana = 1;
+		}
 		// atk scales off WA + 0.5*Str + 0.25Dex
-		atk = (float)((str * 0.5) + (dex * 0.25) + wa);
+		float natk = (float)((str * 0.5) + (dex * 0.25) + wa);
+		if (natk <= 0) {
+			atk = 1;
+		} else {
+			atk = natk;
+		}
 		// matk scales off MA + 0.8*wis
-		matk = ma + (float)(wis * 0.8);
+		float nmatk = ma + (float)(wis * 0.8);
+		if (nmatk <= 0) {
+			matk = 1;
+		} else {
+			matk = nmatk;
+		}
 		// crit chance scales off of 0.5 * luk
 		cc = 5 + (float)(luk * 0.5);
 		// more luk more crit

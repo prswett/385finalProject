@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class CanvasController : MonoBehaviour {
 	GameObject[] pause;
@@ -15,9 +16,10 @@ public class CanvasController : MonoBehaviour {
 	GameObject[] control;
 	public bool controls = false;
 
+	public bool upgrading = false;
+
 	public Player player;
-	public bool tutorial = false;
-	public bool tutorialReady = false;
+	public Image upgradeImage;
 
 	void Start () {
 		
@@ -39,6 +41,7 @@ public class CanvasController : MonoBehaviour {
 		foreach (GameObject controlObject in control) {
 			controlObject.SetActive (false);
 		}
+
 	}
 
 	void Update () {
@@ -46,23 +49,37 @@ public class CanvasController : MonoBehaviour {
 			if (paused) {
 				UnPause ();
 			} else {
+				player.anim.SetBool ("attacking", false);
 				Pause ();
 			}
 		}
-
-		if (!tutorial) {
-			if (Input.GetKeyDown (KeyCode.C)) {
-				if (!inventoryOpen) {
-					showInventory ();
-				} else {
-					if (player != null) {
-						if (!player.tryingToDelete) {
-							hideInventory ();
-						}
-					} else {
+			
+		if (Input.GetKeyDown (KeyCode.C)) {
+			if (!inventoryOpen) {
+				showInventory ();
+				player.anim.SetBool ("attacking", false);
+			} else {
+				if (player != null) {
+					if (!player.tryingToDelete) {
 						hideInventory ();
+						upgrading = false;
+						upgradeImage.sprite = Resources.Load<Sprite> ("DrawingsV2/UI/UpgradeUnActive");
 					}
+				} else {
+					hideInventory ();
+					upgrading = false;
+					upgradeImage.sprite = Resources.Load<Sprite> ("DrawingsV2/UI/UpgradeUnActive");
 				}
+			}
+		}
+
+		if (Input.GetKeyDown(KeyCode.U) && SceneManager.GetActiveScene ().buildIndex == 1) {
+			if (!upgrading && inventoryOpen) {
+				upgrading = true;
+				upgradeImage.sprite = Resources.Load<Sprite> ("DrawingsV2/UI/UpgradeActive");
+			} else if (upgrading && inventoryOpen) {
+				upgrading = false;
+				upgradeImage.sprite = Resources.Load<Sprite> ("DrawingsV2/UI/UpgradeUnActive");
 			}
 		}
 	}
@@ -148,9 +165,7 @@ public class CanvasController : MonoBehaviour {
 	public void mainMenu() {
 		Time.timeScale = 1;
 		SceneManager.LoadScene (0, LoadSceneMode.Single);
-		if (!tutorial) {
-			player.delete ();
-		}
+		player.delete ();
 	}
 
     public void Quit()

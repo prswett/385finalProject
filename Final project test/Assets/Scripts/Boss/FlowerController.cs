@@ -8,6 +8,8 @@ public class FlowerController : MonoBehaviour {
 	public Animator anim;
 	public BossHealth myHealth;
 
+	public float hitTime;
+
 	int damage = 20;
 	void Awake() {
 		target = GameObject.FindWithTag ("Player").transform;
@@ -17,14 +19,17 @@ public class FlowerController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+		hitTime = Time.time;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (GameObject.FindGameObjectsWithTag ("Enemy").Length <= 10) {
+		if (GameObject.FindGameObjectsWithTag ("Enemy").Length <= 5) {
 			int selectEnemy = Random.Range (0, EnemyList.numberEnemies);
 			Instantiate (EnemyList.enemyList[selectEnemy],transform.position, Quaternion.identity);
+		}
+		if (Time.time - hitTime > 3f) {
+			PlayerStatistics.takeDamage((PlayerStatistics.maxHealth / 100) * 2);
 		}
 	}
 

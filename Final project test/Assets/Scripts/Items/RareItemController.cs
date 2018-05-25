@@ -82,20 +82,23 @@ public class RareItemController : MonoBehaviour {
 		}
 	}
 
+	void pickUP() {
+		if (type == "Potion") {
+			if (player.pInv.checkEmpty ()) {
+				player.addPotion (ID);
+				Destroy (transform.parent.gameObject);
+			}
+		} else {
+			if (player.inv.checkEmpty ()) {
+				player.addItem (ID);
+				Destroy (transform.parent.gameObject);
+			}
+		}
+	}
+
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject.CompareTag ("Player")) {
-			if (type == "Potion") {
-				if (player.pInv.checkEmpty ()) {
-					player.addPotion (ID);
-					Destroy (transform.parent.gameObject);
-				}
-			} else {
-				if (player.inv.checkEmpty ()) {
-					player.addItem (ID);
-					Destroy (transform.parent.gameObject);
-				}
-			}
-
+			pickUP ();
 		}
 
 		if (other.gameObject.CompareTag ("outofbounds")) {
@@ -105,22 +108,11 @@ public class RareItemController : MonoBehaviour {
 
 	void OnTriggerStay2D(Collider2D other) {
 		if (other.gameObject.CompareTag ("Player")) {
-			if (type == "Potion") {
-				if (player.pInv.checkEmpty ()) {
-					player.addPotion (ID);
-					Destroy (transform.parent.gameObject);
-				}
-			} else {
-				if (player.inv.checkEmpty ()) {
-					player.addItem (ID);
-					Destroy (transform.parent.gameObject);
-				}
-			}
-
+			pickUP ();
 		}
+	}
 
-		if (other.gameObject.CompareTag ("outofbounds")) {
-			location = true;
-		}
+	void OnTriggerExit2D(Collider2D other) {
+
 	}
 }

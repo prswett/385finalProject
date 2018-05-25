@@ -1,13 +1,8 @@
-Need music
-
-Bug fixes
-Shop screen show prices, item tool tips
-Spell tool tips
-Information page
-Controls page
-Monsters not spawning glitch
-Decrease scaling
-Make spells more viable
-Decrease monster spawning
-delete item bug
-restart button
+Fix title icons
+Add more bosses
+Add more items
+Balance
+Ask if want to save
+Change tooltip text to black
+Adjust monster spawn patterns (around player)
+	note: check start location, if not same, dont move, esle move

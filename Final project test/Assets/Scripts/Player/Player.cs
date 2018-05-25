@@ -79,6 +79,7 @@ public class Player : MonoBehaviour {
 	public float goldTime;
 	public float expTime;
 
+	public bool jumping;
 	//Location
 	public bool location = false;
 	float x;
@@ -222,11 +223,10 @@ public class Player : MonoBehaviour {
 			anim.SetInteger ("weapon state", wepState);
 			anim.SetInteger ("weapon equipped", resources.wepEQPD);
 			onGround = Physics2D.OverlapCircle (groundCheck.position, groundCheckRadius, groundLayer);
-			//For moving left
-
 			if (!timeStop) {
-				
-
+				if (onGround) {
+					jumping = false;
+				}
 				if (Input.GetMouseButton (0)) {
 					anim.SetBool ("attacking", true);
 					attacking = true;
@@ -237,7 +237,9 @@ public class Player : MonoBehaviour {
 				}
 
 				if (Input.GetKeyDown (KeyCode.Space) && onGround && !jumpDown && !Input.GetKey(KeyCode.S)) {
+					rb2d.gravityScale = gravityStore;
 					rb2d.velocity = new Vector2 (rb2d.velocity.x, jumpSpeed);
+					jumping = true;
 				}
 
 				if (Input.GetKeyDown (KeyCode.S)) {
@@ -281,12 +283,18 @@ public class Player : MonoBehaviour {
 				}
 			}
 
-			if (onLadder) {
-				rb2d.gravityScale = 0f;
+			if (onLadder ) {
+				if (Input.GetKeyDown (KeyCode.Space)) {
+					rb2d.gravityScale = gravityStore;
+					rb2d.velocity = new Vector2 (rb2d.velocity.x, jumpSpeed);
+					jumping = true;
+				} 
+				if (!jumping) {
+					rb2d.gravityScale = 0f;
+					climbVelocity = climbSpeed * Input.GetAxisRaw ("Vertical");
 
-				climbVelocity = climbSpeed * Input.GetAxisRaw ("Vertical");
-
-				rb2d.velocity = new Vector2 (rb2d.velocity.x, climbVelocity);
+					rb2d.velocity = new Vector2 (rb2d.velocity.x, climbVelocity);
+				}
 			}
 
 			if (!onLadder) {

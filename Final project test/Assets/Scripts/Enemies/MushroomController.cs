@@ -43,7 +43,7 @@ public class MushroomController : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if (!location) {
+		if (!location && Time.timeScale != 0) {
 			transform.position = new Vector2 (Random.Range(target.position.x -.5f, target.position.x +.5f), Random.Range(target.position.y -.5f, target.position.y +.5f));
 		}
 
@@ -53,11 +53,11 @@ public class MushroomController : MonoBehaviour {
 		enemyY = transform.position.y;
 
 		if (parent.active == true) {
-			if (Time.time - jumpTime > .4) {
+			if (Time.time - jumpTime > 1) {
 				jumping = false;
 			}
 
-			if (playerY - enemyY > .6) {
+			if (playerY - enemyY > .5 && !jumping) {
 				jumping = true;
 				jumpTime = Time.time;
 			}

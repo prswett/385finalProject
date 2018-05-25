@@ -452,26 +452,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 61074214484109938, guid: 3df5be59c4c02de4c855f4df170e86ef,
-        type: 2}
-      propertyPath: m_Offset.y
-      value: 0.053581
-      objectReference: {fileID: 0}
-    - target: {fileID: 61074214484109938, guid: 3df5be59c4c02de4c855f4df170e86ef,
-        type: 2}
-      propertyPath: m_Size.y
-      value: 2.2056785
-      objectReference: {fileID: 0}
-    - target: {fileID: 61074214484109938, guid: 3df5be59c4c02de4c855f4df170e86ef,
-        type: 2}
-      propertyPath: m_Offset.x
-      value: -0.051413536
-      objectReference: {fileID: 0}
-    - target: {fileID: 61074214484109938, guid: 3df5be59c4c02de4c855f4df170e86ef,
-        type: 2}
-      propertyPath: m_Size.x
-      value: 8.791372
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3df5be59c4c02de4c855f4df170e86ef, type: 2}
   m_IsPrefabParent: 0
@@ -19333,6 +19313,7 @@ MonoBehaviour:
   location: {x: 0, y: 0, z: 0}
   spawned: 0
   monstersNeeded: 15
+  bossStage: 0
   monsters: {fileID: 851701104}
   playerX: -4.4
   playerY: 0.6

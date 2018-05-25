@@ -30,7 +30,7 @@ public class PotionInventory : MonoBehaviour {
 
 	void Awake() {
 		database = GetComponent<PotionDatabase>();
-		slotAmount = 4;
+		slotAmount = 8;
 		inventoryPanel = GameObject.Find("Inventory Panel");
 
 
@@ -161,7 +161,6 @@ public class PotionInventory : MonoBehaviour {
 
 	public void RemoveItemSlot(int slot) {
 		PotionSlot temp = slots[slot].GetComponent<PotionSlot>();
-		PlayerStatistics.coins += temp.potion.GetComponent<PotionStats> ().Value;
 		Destroy (temp.potion);
 		temp.potion = null;
 	}

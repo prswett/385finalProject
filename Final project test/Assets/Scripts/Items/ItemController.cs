@@ -70,48 +70,40 @@ public class ItemController : MonoBehaviour {
 		}
 		if (Time.time - spawnTime > 10) {
 			transform.position = target.position;
+			spawnTime = Time.time;
+		}
+	}
+
+	void pickUP() {
+		if (type == "Potion") {
+			if (player.pInv.checkEmpty()) {
+				player.addPotion (ID);
+				Destroy (transform.parent.gameObject);
+			}
+		} else {
+			if (player.inv.checkEmpty ()) {
+				player.addItem (ID);
+				Destroy (transform.parent.gameObject);
+			}
 		}
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject.CompareTag ("Player")) {
-			if (type == "Potion") {
-				if (player.pInv.checkEmpty()) {
-					player.addPotion (ID);
-					Destroy (transform.parent.gameObject);
-				}
-			} else {
-				if (player.inv.checkEmpty ()) {
-					player.addItem (ID);
-					Destroy (transform.parent.gameObject);
-				} else {
-					Debug.Log ("full");
-				}
-			}
-
+			pickUP ();
 		}
 
 		if (other.gameObject.CompareTag ("outofbounds")) {
 			location = true;
 		}
 	}
-
 	void OnTriggerStay2D(Collider2D other) {
 		if (other.gameObject.CompareTag ("Player")) {
-			if (type == "Potion") {
-				if (player.pInv.checkEmpty()) {
-					player.addPotion (ID);
-					Destroy (transform.parent.gameObject);
-				}
-			} else {
-				if (player.inv.checkEmpty ()) {
-					player.addItem (ID);
-					Destroy (transform.parent.gameObject);
-				} else {
-					Debug.Log ("full");
-				}
-			}
-
+			pickUP ();
 		}
+	}
+
+	void OnTriggerExit2D(Collider2D other) {
+		
 	}
 }

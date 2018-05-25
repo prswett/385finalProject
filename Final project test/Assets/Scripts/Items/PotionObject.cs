@@ -33,7 +33,7 @@ public class PotionObject : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 		if (eventData.button == PointerEventData.InputButton.Right) {
 			PotionStats temp = pInv.slots [slot].GetComponent<PotionSlot> ().potion.GetComponent<PotionStats> ();
 			if (temp.type == "Health") {
-					int healing = temp.healing;
+				int healing = (int)((PlayerStatistics.maxHealth / 100) * temp.healing);
 					if (PlayerStatistics.health <= PlayerStatistics.maxHealth - healing) {
 						PlayerStatistics.health += healing;
 					} else {
@@ -48,7 +48,7 @@ public class PotionObject : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 			}
 
 			if (temp.type == "Mana") {
-					int healing = temp.healing;
+				int healing = (int)((PlayerStatistics.maxMana / 100) * temp.healing);
 					if (PlayerStatistics.mana <= PlayerStatistics.maxMana - healing) {
 						PlayerStatistics.mana += healing;
 					} else {
@@ -137,6 +137,7 @@ public class PotionObject : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 					target.tryingToDelete = true;
 					if (question.clicked) {
 						if (question.answer == true) {
+							PlayerStatistics.coins += pInv.slots [slot].GetComponent<PotionSlot> ().potion.GetComponent<PotionStats> ().Value;
 							pInv.RemoveItemSlot (slot);
 							question.hideQuestion ();
 							question.clicked = false;
@@ -148,6 +149,13 @@ public class PotionObject : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 							question.clicked = false;
 							target.tryingToDelete = false;
 						}
+					} else if (Input.GetKeyDown (KeyCode.Return)) {
+						PlayerStatistics.coins += pInv.slots [slot].GetComponent<PotionSlot> ().potion.GetComponent<PotionStats> ().Value;
+						pInv.RemoveItemSlot (slot);
+						question.hideQuestion ();
+						question.clicked = false;
+						target.tryingToDelete = false;
+
 					}
 				}
 

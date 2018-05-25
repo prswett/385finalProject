@@ -43,17 +43,17 @@ public class ItemDatabase : MonoBehaviour
     }
 
 	Item rerollStats(Item input) {
-		int random = Random.Range ((int)-PlayerStatistics.level, (int)PlayerStatistics.level);
+		int random = Random.Range (-5, (int)PlayerStatistics.level);
 		input.str += random;
-		random = Random.Range ((int)-PlayerStatistics.level, (int)PlayerStatistics.level);
+		random = Random.Range (-5, (int)PlayerStatistics.level);
 		input.dex += random;
-		random = Random.Range ((int)-PlayerStatistics.level, (int)PlayerStatistics.level);
+		random = Random.Range (-5, (int)PlayerStatistics.level);
 		input.wis += random;
-		random = Random.Range ((int)-PlayerStatistics.level, (int)PlayerStatistics.level);
+		random = Random.Range (-5, (int)PlayerStatistics.level);
 		input.luk += random;
-		random = Random.Range ((int)-PlayerStatistics.level, (int)PlayerStatistics.level);
+		random = Random.Range (-5, (int)PlayerStatistics.level);
 		input.atk += random;
-		random = Random.Range ((int)-PlayerStatistics.level, (int)PlayerStatistics.level);
+		random = Random.Range (-5, (int)PlayerStatistics.level);
 		input.def += random;
 
 		return input;

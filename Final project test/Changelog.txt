@@ -1,3 +1,12 @@
+Version 4.2
+Fixed item inventory full bug
+Modified monster move location
+Decreased final boss health
+Added upgrade system
+Quality of life changes
+Tool tip QOL
+Player can now jump from ladders, onto ladders
+
 Version 4.1
 Added music
 Fixed final boss bug
