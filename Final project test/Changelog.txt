@@ -1,3 +1,14 @@
+Version 4.3
+Added 2 new bosses (sun boss and crusher boss)
+Added medium and large potions
+Increased potion inventory size
+changed save point sprite
+Saving now shows a question box
+fixed avoidability bug
+moving an item from its slot into the old slot no longer shows sell option
+added anvil for upgrade system
+added new tutorial stages
+
 Version 4.2
 Fixed item inventory full bug
 Modified monster move location
