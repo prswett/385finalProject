@@ -20,7 +20,7 @@ public class ItemController : MonoBehaviour {
 	void Start () {
 		target = GameObject.FindGameObjectWithTag ("Player").transform;
 		player = target.GetComponent<Player> ();
-		spawnTime = Time.time;
+
 		typeSet ();
 	}
 
@@ -45,7 +45,7 @@ public class ItemController : MonoBehaviour {
 		int roll = Random.Range (0, 10);
 		if (roll < 3) {
 			roll = Random.Range (0, 100);
-			if (roll < 10 && rareItem) {
+			if (roll < 7 && rareItem) {
 				ID = Random.Range (36, 60);
 			} else if (roll < 15) {
 				ID = Random.Range (60, 66);
@@ -60,11 +60,21 @@ public class ItemController : MonoBehaviour {
 	}
 
 	void generatePotion() {
-		ID = Random.Range (0, 2);
+		int potionSize = Random.Range (0, 10);
+		if (potionSize < 1) {
+			ID = Random.Range (6, 8);
+		} else if (potionSize < 4) {
+			ID = Random.Range (4, 6);
+		} else {
+			ID = Random.Range (0, 2);
+		}
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		if (spawnTime == 0) {
+			spawnTime = Time.time;
+		}
 		if (!location) {
 			transform.position = target.position;
 		}

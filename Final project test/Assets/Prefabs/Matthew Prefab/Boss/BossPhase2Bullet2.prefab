@@ -117,6 +117,7 @@ MonoBehaviour:
   portal: 0
   delayShot: 0
   activate: 0
+  bossBullet: 1
   damage: 100
 --- !u!212 &212323493369834456
 SpriteRenderer:

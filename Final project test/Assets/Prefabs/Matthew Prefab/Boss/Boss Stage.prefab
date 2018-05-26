@@ -59,8 +59,10 @@ MonoBehaviour:
   location: {x: 0, y: 0, z: 0}
   spawned: 0
   monstersNeeded: 10
-  playerX: -2.85
-  playerY: -1.7
+  bossStage: 0
+  monsters: {fileID: 0}
+  playerX: -2.306603
+  playerY: -1.538646
 --- !u!212 &212378463067058452
 SpriteRenderer:
   m_ObjectHideFlags: 1

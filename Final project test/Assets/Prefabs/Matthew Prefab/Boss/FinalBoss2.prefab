@@ -39,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1972685033983026}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.3127427, y: 0.63068885, z: 0}
+  m_LocalPosition: {x: 2.381, y: 0.79393435, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -93,7 +93,7 @@ MonoBehaviour:
   left: -2.249
   right: 2.332
   down: -1.588
-  up: 0.324
+  up: 0.8738803
   goLeft: 1
   goRight: 0
   goDown: 1
@@ -121,7 +121,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   phase: {fileID: 1217406550077780, guid: 725159c10fd829242851a1803663c099, type: 2}
   x: 0
-  y: 0
+  y: 0.8738803
+  boss: 1
 --- !u!114 &114247267640711342
 MonoBehaviour:
   m_ObjectHideFlags: 1

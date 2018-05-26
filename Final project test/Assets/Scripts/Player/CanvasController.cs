@@ -15,6 +15,8 @@ public class CanvasController : MonoBehaviour {
 	public bool answer = false;
 	GameObject[] control;
 	public bool controls = false;
+	GameObject[] save;
+	public bool saveOpen = false;
 
 	public bool upgrading = false;
 
@@ -40,6 +42,11 @@ public class CanvasController : MonoBehaviour {
 		control = GameObject.FindGameObjectsWithTag ("Controls");
 		foreach (GameObject controlObject in control) {
 			controlObject.SetActive (false);
+		}
+
+		save = GameObject.FindGameObjectsWithTag ("SaveQuestion");
+		foreach (GameObject saveObject in save) {
+			saveObject.SetActive (false);
 		}
 
 	}
@@ -73,7 +80,7 @@ public class CanvasController : MonoBehaviour {
 			}
 		}
 
-		if (Input.GetKeyDown(KeyCode.U) && SceneManager.GetActiveScene ().buildIndex == 1) {
+		if (Input.GetKeyDown(KeyCode.U) && player.upgradeAvailable) {
 			if (!upgrading && inventoryOpen) {
 				upgrading = true;
 				upgradeImage.sprite = Resources.Load<Sprite> ("DrawingsV2/UI/UpgradeActive");
@@ -150,6 +157,26 @@ public class CanvasController : MonoBehaviour {
 		foreach (GameObject controlObject in control) {
 			controlObject.SetActive (false);
 		}
+	}
+
+	public void showSave() {
+		saveOpen = true;
+		foreach (GameObject saveObject in save) {
+			saveObject.SetActive (true);
+		}
+	}
+
+	public void hideSave() {
+		saveOpen = false;
+		foreach (GameObject saveObject in save) {
+			saveObject.SetActive (false);
+		}
+	}
+
+	public void saveGame() {
+		GameObject temp = GameObject.Find ("SavePoint");
+		SavePoint savepoint = temp.GetComponent<SavePoint> ();
+		savepoint.prepareSave ();
 	}
 
 	public void yes() {

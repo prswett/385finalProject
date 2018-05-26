@@ -1,21 +1,10 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Inventory\Tooltip.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Stage\PortalController.cs">
     <Files>
-      <File FileName="Assets\Scripts\Enemies\EnemyHealth.cs" Line="62" Column="72" />
-      <File FileName="Assets\Scripts\Items\ItemController.cs" Line="84" Column="35" />
-      <File FileName="Assets\Scripts\Items\PotionStats.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Items\RareItemController.cs" Line="111" Column="14" />
-      <File FileName="Assets\Scripts\Items\ItemObject.cs" Line="363" Column="7" />
-      <File FileName="Assets\Scripts\Inventory\Inventory.cs" Line="116" Column="48" />
-      <File FileName="Assets\Scripts\Items\PotionObject.cs" Line="157" Column="37" />
-      <File FileName="Assets\Scripts\Player\CanvasController.cs" Line="43" Column="4" />
-      <File FileName="Assets\Scripts\Inventory\Tooltip.cs" Line="134" Column="68" />
-      <File FileName="Assets\Scripts\Player\PlayerResources.cs" Line="83" Column="51" />
-      <File FileName="Assets\Scripts\Stage\PortalController.cs" Line="45" Column="31" />
-      <File FileName="Assets\Scripts\Inventory\PotionInventory.cs" Line="163" Column="60" />
-      <File FileName="Assets\Scripts\Player\PlayerStatistics.cs" Line="197" Column="1" />
-      <File FileName="Assets\Scripts\Player\Player.cs" Line="222" Column="11" />
+      <File FileName="Assets\CrusherBoss.cs" Line="54" Column="20" />
+      <File FileName="Assets\Scripts\Stage\PortalController.cs" Line="86" Column="39" />
+      <File FileName="Assets\Scripts\Boss\FinalBoss2Controller.cs" Line="63" Column="32" NotebookId="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -86,6 +86,7 @@ public class Player : MonoBehaviour {
 	float y;
 
 	public TextMesh text;
+	public bool upgradeAvailable = false;
 
 	void Awake() {
 		if (Instance == null) {
@@ -336,6 +337,10 @@ public class Player : MonoBehaviour {
 		if (other.gameObject.CompareTag("outofbounds")) {
 			location = true;
 		}
+
+		if (other.gameObject.CompareTag ("Anvil")) {
+			upgradeAvailable = true;
+		}
 	}
 
 	void OnTriggerStay2D(Collider2D other) {
@@ -347,6 +352,10 @@ public class Player : MonoBehaviour {
 	void OnTriggerExit2D(Collider2D other) {
 		if (other.gameObject.CompareTag("outofbounds")) {
 			location = false;
+		}
+
+		if (other.gameObject.CompareTag ("Anvil")) {
+			upgradeAvailable = false;
 		}
 	}
 

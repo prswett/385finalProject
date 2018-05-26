@@ -26,6 +26,8 @@ public class ItemObject : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 	public PlayerResources player;
 	public bool multiDelete = false;
 
+	public bool inInventory = true;
+
 	void Start() {
 		inv = GameObject.Find("Inventory").GetComponent<Inventory>();
 		eInv = GameObject.Find ("EquipmentInventory").GetComponent<Equipment> ();
@@ -295,6 +297,8 @@ public class ItemObject : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 			noDelete = false;
 			this.transform.SetParent (this.transform.parent.parent);
 			GetComponent<CanvasGroup> ().blocksRaycasts = false;
+
+
 		}
 	}
 
@@ -307,16 +311,21 @@ public class ItemObject : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 
 	public void OnEndDrag(PointerEventData eventData)
 	{
+
 		if (!equipped) {
+			float x = this.transform.position.x;
+			float y = this.transform.position.y;
+
 			this.transform.SetParent (inv.slots [slot].transform);
 			this.transform.position = inv.slots [slot].transform.position;
 			GetComponent<CanvasGroup> ().blocksRaycasts = true;
 
-			if (noDelete == false) {
-				showQuestion = true;
-				question.showQuestion ();
-			} else {
-				showQuestion = false;
+			if ((x < this.transform.position.x - 30 || x > this.transform.position.x + 30) || (y < this.transform.position.y - 30 || y > this.transform.position.y + 30)) {
+
+				if (noDelete == false) {
+					showQuestion = true;
+					question.showQuestion ();
+				}
 			}
 		}
 	}
@@ -341,6 +350,7 @@ public class ItemObject : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 	
 	// Update is called once per frame
 	void Update () {
+		
 		GameObject delete = GameObject.Find ("Delete");
 		if (delete != null) {
 			if (showQuestion) {

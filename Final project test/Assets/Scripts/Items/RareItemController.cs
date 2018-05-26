@@ -23,7 +23,6 @@ public class RareItemController : MonoBehaviour {
 	void Start () {
 		target = GameObject.FindGameObjectWithTag ("Player").transform;
 		player = target.GetComponent<Player> ();
-		spawnTime = Time.time;
 
 		typeSet ();
 	}
@@ -49,7 +48,7 @@ public class RareItemController : MonoBehaviour {
 		int roll = Random.Range (0, 10);
 		if (roll < 4) {
 			roll = Random.Range (0, 100);
-			if (roll < 20 && rareItem) {
+			if (roll < 10 && rareItem) {
 				ID = Random.Range (36, 60);
 			} else if (roll < 25) {
 				ID = Random.Range (60, 66);
@@ -64,9 +63,13 @@ public class RareItemController : MonoBehaviour {
 	}
 
 	void generatePotion() {
-		int roll = Random.Range (0, 10);
-		if (roll < 1) {
+		int potionSize = Random.Range (0, 10);
+		if (potionSize < 1) {
 			ID = Random.Range (2, 4);
+		} else if (potionSize < 3) {
+			ID = Random.Range (6, 8);
+		} else if (potionSize < 6) {
+			ID = Random.Range (4, 6);
 		} else {
 			ID = Random.Range (0, 2);
 		}
@@ -74,6 +77,9 @@ public class RareItemController : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+		if (spawnTime == 0) {
+			spawnTime = Time.time;
+		}
 		if (!location) {
 			transform.position = target.position;
 		}

@@ -44,7 +44,7 @@ public class GEnemyR : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (!location && Time.timeScale != 0) {
-			transform.position = new Vector2 (Random.Range(target.position.x -.5f, target.position.x +.5f), Random.Range(target.position.y -.5f, target.position.y +.5f));
+			Destroy (gameObject);
 		}
 
 		playerX = target.transform.position.x;

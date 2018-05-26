@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class FinalBoss2Controller : MonoBehaviour {
 
-	private float playerX;
-	private float enemyX;
-	private float playerY;
-	private float enemyY;
+	public float playerX;
+	public float enemyX;
+	public float playerY;
+	public float enemyY;
 	public Transform target;
 	public Animator anim;
 

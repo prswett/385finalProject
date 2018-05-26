@@ -23,10 +23,11 @@ public class EnemyHealth : MonoBehaviour {
 	public TextMesh control;
 	public GameObject damageNumber;
 	Renderer render;
+	public Vector3 current;
 
 	public bool tutorial = false;
-
 	public float spawnTime;
+	bool checkInvalid = false;
 	void Awake() {
 	}
 
@@ -50,18 +51,18 @@ public class EnemyHealth : MonoBehaviour {
 		control.text = monsterName;
 		render = parent.GetComponent<Renderer> ();
 
-		spawnTime = Time.time;
+		current = transform.position;
 	}
 
 	void Update () {
-		if (Time.time - lastHit > 10 && lastHit != 0 && Time.timeScale != 0) {
-			transform.parent.position = new Vector2 (Random.Range(target.position.x -.5f, target.position.x +.5f), Random.Range(target.position.y -.5f, target.position.y +.5f));
-			lastHit = Time.time;
-		}
-
-		if (Time.time - spawnTime > 10 && lastHit == 0 && Time.timeScale != 0) {
-			transform.parent.position = new Vector2 (Random.Range(target.position.x -.5f, target.position.x +.5f), Random.Range(target.position.y -.5f, target.position.y +.5f));
+		if (spawnTime == 0) {
 			spawnTime = Time.time;
+		}
+		if (Time.time - spawnTime > 10 && transform.position == current && !checkInvalid) {
+			parentController.destroy();
+		}
+		if (Time.time - spawnTime > 10) {
+			checkInvalid = true;
 		}
 		healthbar.fillAmount = currentHealth / maxHealth;
 		if (currentHealth <= 0) {

@@ -17,10 +17,11 @@ public class Slot : MonoBehaviour, IDropHandler {
 		if (item == null) {
 			ItemObject droppedItem = eventData.pointerDrag.GetComponent<ItemObject> ();
 			ItemStats droppedStats = eventData.pointerDrag.GetComponent<ItemStats> ();
-
-			if (droppedItem.slot != id) {
-				inv.RemoveItemSlot (droppedItem.slot);
-				inv.AddItemSlot (id, droppedStats);
+			if (!droppedItem.equipped) {
+				if (droppedItem.slot != id) {
+					inv.RemoveItemSlot (droppedItem.slot);
+					inv.AddItemSlot (id, droppedStats);
+				}
 			}
 		} else {
 			ItemObject droppedItem = eventData.pointerDrag.GetComponent<ItemObject> ();
@@ -28,13 +29,14 @@ public class Slot : MonoBehaviour, IDropHandler {
 
 			ItemObject replacedItem = item.GetComponent<ItemObject> ();
 			ItemStats replacedStats = item.GetComponent<ItemStats> ();
+			if (!droppedItem.equipped) {
+				if (droppedItem.slot != id) {
+					inv.RemoveItemSlot (droppedItem.slot);
+					inv.RemoveItemSlot (id);
 
-			if (droppedItem.slot != id) {
-				inv.RemoveItemSlot(droppedItem.slot);
-				inv.RemoveItemSlot(id);
-
-				inv.AddItemSlot (id, droppedStats);
-				inv.AddItemSlot (droppedItem.slot, replacedStats);
+					inv.AddItemSlot (id, droppedStats);
+					inv.AddItemSlot (droppedItem.slot, replacedStats);
+				}
 			}
 		}
     }

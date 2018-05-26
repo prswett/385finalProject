@@ -197,7 +197,7 @@ Prefab:
     - target: {fileID: 114878580829973524, guid: 9426e9bad9e4dd84e8c612d942a84e95,
         type: 2}
       propertyPath: finishTutorial
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9426e9bad9e4dd84e8c612d942a84e95, type: 2}

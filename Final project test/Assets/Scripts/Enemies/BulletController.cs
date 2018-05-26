@@ -14,7 +14,6 @@ public class BulletController : MonoBehaviour {
 	public float velocityY;
 	Rigidbody2D rb2d;
 	public bool enemyUnit = true;
-	public bool groundCollide = true;
 	public Transform target;
 	public Animator anim;
 	public bool explosion = false;
@@ -22,6 +21,8 @@ public class BulletController : MonoBehaviour {
 
 	public bool delayShot = true;
 	public bool activate = false;
+
+	public bool bossBullet = false;
 
 	public int damage;
 	void Awake() {
@@ -37,6 +38,10 @@ public class BulletController : MonoBehaviour {
 			} else {
 				transform.position = new Vector3 (transform.position.x + 0.1f, transform.position.y, 1);
 			}
+		}
+
+		if (bossBullet) {
+			Destroy (gameObject, 2f);
 		}
 	}
 	
@@ -57,7 +62,7 @@ public class BulletController : MonoBehaviour {
 		if (enemyUnit) {
 			Destroy (gameObject, 4f);
 		} else {
-			Destroy (gameObject, 8f);
+			Destroy (gameObject, 6f);
 		}
 
 	}
@@ -77,6 +82,8 @@ public class BulletController : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject.CompareTag ("Player")) {
 			PlayerStatistics.takeDamage(1 + (PlayerStatistics.level / 2) + damage);
+			Debug.Log (1 + (PlayerStatistics.level / 2) + damage);
+			Debug.Log ("hit");
 			if (!explosion) {
 				Destroy (gameObject);
 			} else {
@@ -86,7 +93,6 @@ public class BulletController : MonoBehaviour {
 			}
 		}
 		if (other.gameObject.CompareTag ("Ground")) {
-			if (groundCollide) {
 				if (!explosion) {
 					Destroy (gameObject);
 				} else {
@@ -94,7 +100,6 @@ public class BulletController : MonoBehaviour {
 					anim.SetBool ("hit", true);
 					setVelocity (0, 0);
 				}
-			}
 		}
 	}
 
@@ -107,9 +112,5 @@ public class BulletController : MonoBehaviour {
 	void remove() {
 		Destroy (gameObject);
 	}
-
-	//Used 
-	public void setGroundCollide(bool input) {
-		groundCollide = input;
-	}
+		
 }

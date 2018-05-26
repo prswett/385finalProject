@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 114836282974769098}
   m_Layer: 12
   m_Name: GameObject
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -160,6 +160,7 @@ MonoBehaviour:
   target: {fileID: 0}
   player: {fileID: 0}
   location: 0
+  rareItem: 0
 --- !u!212 &212380115737053410
 SpriteRenderer:
   m_ObjectHideFlags: 1

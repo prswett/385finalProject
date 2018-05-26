@@ -20,7 +20,6 @@ public class SavePoint : MonoBehaviour
 		target = GameObject.FindGameObjectWithTag ("Player").transform;
 		player = target.GetComponent<Player> ();
 		control = GetComponentInChildren<TextMesh> ();
-
 	}
 
 	void OnTriggerEnter2D (Collider2D other)
@@ -43,14 +42,27 @@ public class SavePoint : MonoBehaviour
 	{
 		if (inside) {
 			if (Input.GetKeyDown (KeyCode.S)) {
-				player.inv.save ();
-				player.pInv.save ();
-				player.eInv.save ();
-				player.spells.save ();
-				Save ();
-
+				GameObject save = GameObject.Find ("Save");
+				if (save == null) {
+					player.playerCanvas.showSave ();
+				}
+			}
+		} else {
+			GameObject save = GameObject.Find ("Save");
+			if (save != null) {
+				player.playerCanvas.hideSave ();
 			}
 		}
+	}
+
+	public void prepareSave() {
+		Debug.Log ("Save");
+		player.playerCanvas.hideSave ();
+		player.inv.save ();
+		player.pInv.save ();
+		player.eInv.save ();
+		player.spells.save ();
+		Save ();
 	}
 
 	// saving data into a file (.sb)
@@ -231,8 +243,52 @@ public class SavePoint : MonoBehaviour
 			data.potion3Desc = PotionInventory.savePotions [3].Description;
 			data.potion3 = PotionInventory.savePotions [3].ID + " " + PotionInventory.savePotions [3].type + " " +
 				PotionInventory.savePotions [3].Value + " " + PotionInventory.savePotions [3].healing + " " +
-				PotionInventory.savePotions [3].Stackable + " " + PotionInventory.savePotions [3].Rarity + " " + PotionInventory.savePotions[2].Slug + " " +
+				PotionInventory.savePotions [3].Stackable + " " + PotionInventory.savePotions [3].Rarity + " " + PotionInventory.savePotions[3].Slug + " " +
 				PotionInventory.savePotions [3].stack;
+		}
+
+		if (count < numberItems) {
+			count++;
+
+			data.potion4Title = PotionInventory.savePotions [ 4].Title;
+			data.potion4Desc = PotionInventory.savePotions [ 4].Description;
+			data.potion4 = PotionInventory.savePotions [ 4].ID + " " + PotionInventory.savePotions [ 4].type + " " +
+				PotionInventory.savePotions [ 4].Value + " " + PotionInventory.savePotions [ 4].healing + " " +
+				PotionInventory.savePotions [ 4].Stackable + " " + PotionInventory.savePotions [ 4].Rarity + " " + PotionInventory.savePotions[ 4].Slug + " " +
+				PotionInventory.savePotions [ 4].stack;
+		}
+
+		if (count < numberItems) {
+			count++;
+
+			data.potion5Title = PotionInventory.savePotions [ 5].Title;
+			data.potion5Desc = PotionInventory.savePotions [ 5].Description;
+			data.potion5 = PotionInventory.savePotions [ 5].ID + " " + PotionInventory.savePotions [ 5].type + " " +
+				PotionInventory.savePotions [ 5].Value + " " + PotionInventory.savePotions [ 5].healing + " " +
+				PotionInventory.savePotions [ 5].Stackable + " " + PotionInventory.savePotions [ 5].Rarity + " " + PotionInventory.savePotions[ 5].Slug + " " +
+				PotionInventory.savePotions [ 5].stack;
+		}
+
+		if (count < numberItems) {
+			count++;
+
+			data.potion6Title = PotionInventory.savePotions [ 6].Title;
+			data.potion6Desc = PotionInventory.savePotions [ 6].Description;
+			data.potion6 = PotionInventory.savePotions [ 6].ID + " " + PotionInventory.savePotions [ 6].type + " " +
+				PotionInventory.savePotions [ 6].Value + " " + PotionInventory.savePotions [ 6].healing + " " +
+				PotionInventory.savePotions [ 6].Stackable + " " + PotionInventory.savePotions [ 6].Rarity + " " + PotionInventory.savePotions[ 6].Slug + " " +
+				PotionInventory.savePotions [ 6].stack;
+		}
+
+		if (count < numberItems) {
+			count++;
+
+			data.potion7Title = PotionInventory.savePotions [ 7].Title;
+			data.potion7Desc = PotionInventory.savePotions [ 7].Description;
+			data.potion7 = PotionInventory.savePotions [ 7].ID + " " + PotionInventory.savePotions [ 7].type + " " +
+				PotionInventory.savePotions [ 7].Value + " " + PotionInventory.savePotions [ 7].healing + " " +
+				PotionInventory.savePotions [ 7].Stackable + " " + PotionInventory.savePotions [ 7].Rarity + " " + PotionInventory.savePotions[ 7].Slug + " " +
+				PotionInventory.savePotions [ 7].stack;
 		}
 
 		if (Equipment.saveItems [0].ID != -1) {
@@ -385,6 +441,21 @@ class PlayerData
 	public string potion3Title;
 	public string potion3Desc;
 
+	public string potion4;
+	public string potion4Title;
+	public string potion4Desc;
+
+	public string potion5;
+	public string potion5Title;
+	public string potion5Desc;
+
+	public string potion6;
+	public string potion6Title;
+	public string potion6Desc;
+
+	public string potion7;
+	public string potion7Title;
+	public string potion7Desc;
 	//Equipment
 	public string equip0;
 	public string equip0Title;

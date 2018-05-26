@@ -31,9 +31,11 @@ public class coinController : MonoBehaviour {
 		if (player != null) {
 			if (other.gameObject.CompareTag ("Player")) {
 				if (player.goldBoost) {
-					PlayerStatistics.coins += 3;
+					int coin = Random.Range (1, 11);
+					PlayerStatistics.coins += coin * 3;
 				} else {
-					PlayerStatistics.coins++;
+					int coin = Random.Range (1, 11);
+					PlayerStatistics.coins += coin;
 				}
 				Destroy (gameObject);
 			}

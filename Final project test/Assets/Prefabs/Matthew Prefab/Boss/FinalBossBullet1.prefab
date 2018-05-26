@@ -99,15 +99,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c55eb88a6e77e94f97f5b8eb14375c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocityX: 0
-  velocityY: 0
+  velocityX: -0.09876111
+  velocityY: -0.99511117
   enemyUnit: 0
   groundCollide: 1
   target: {fileID: 0}
   anim: {fileID: 0}
   explosion: 0
   portal: 0
-  damage: 0
+  delayShot: 1
+  activate: 0
+  bossBullet: 0
+  damage: 100
 --- !u!212 &212353097416669262
 SpriteRenderer:
   m_ObjectHideFlags: 1

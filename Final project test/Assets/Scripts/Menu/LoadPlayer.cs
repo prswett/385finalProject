@@ -173,6 +173,34 @@ public class LoadPlayer : MonoBehaviour {
 				}
 			}
 
+			if (data.potion4 != null) {
+				split = data.potion4.Split (new string[] { " " }, System.StringSplitOptions.None);
+				for (int i = 0; i < int.Parse(split[7]); i++) {
+					a.addPotion (int.Parse(split[0]));
+				}
+			}
+
+			if (data.potion5 != null) {
+				split = data.potion5.Split (new string[] { " " }, System.StringSplitOptions.None);
+				for (int i = 0; i < int.Parse(split[7]); i++) {
+					a.addPotion (int.Parse(split[0]));
+				}
+			}
+
+			if (data.potion6 != null) {
+				split = data.potion6.Split (new string[] { " " }, System.StringSplitOptions.None);
+				for (int i = 0; i < int.Parse(split[7]); i++) {
+					a.addPotion (int.Parse(split[0]));
+				}
+			}
+
+			if (data.potion7 != null) {
+				split = data.potion7.Split (new string[] { " " }, System.StringSplitOptions.None);
+				for (int i = 0; i < int.Parse(split[7]); i++) {
+					a.addPotion (int.Parse(split[0]));
+				}
+			}
+
 			if (data.equip0 != null) {
 				split = data.equip0.Split (new string[] { " " }, System.StringSplitOptions.None);
 				temp = new Item (int.Parse (split [0]), data.equip0Title, split [1], int.Parse (split [2]),

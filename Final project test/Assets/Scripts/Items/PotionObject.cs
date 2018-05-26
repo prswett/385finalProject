@@ -107,15 +107,19 @@ public class PotionObject : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 
 	public void OnEndDrag(PointerEventData eventData)
 	{
+		float x = this.transform.position.x;
+		float y = this.transform.position.y;
+
 		this.transform.SetParent (pInv.slots [slot].transform);
 		this.transform.position = pInv.slots [slot].transform.position;
 		GetComponent<CanvasGroup> ().blocksRaycasts = true;
-
-		if (noDelete == false) {
-			showQuestion = true;
-			question.showQuestion ();
-		} else {
-			showQuestion = false;
+		if ((x < this.transform.position.x - 30 || x > this.transform.position.x + 30) || (y < this.transform.position.y - 30 || y > this.transform.position.y + 30)) {
+			if (noDelete == false) {
+				showQuestion = true;
+				question.showQuestion ();
+			} else {
+				showQuestion = false;
+			}
 		}
 	}
 

@@ -23,6 +23,8 @@ TagManager:
   - Pickup
   - EnemyHealth
   - Controls
+  - SaveQuestion
+  - Anvil
   layers:
   - Default
   - TransparentFX

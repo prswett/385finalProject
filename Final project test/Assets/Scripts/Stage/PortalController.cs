@@ -53,16 +53,26 @@ public class PortalController : MonoBehaviour {
 					if (!finalBoss) {
 						
 						if (player.stageCount == 4) {
-							int temp = Random.Range (0, 2);
+							int temp = Random.Range (0, 4);
 							if (temp == 0) {
 								if (!sent) {
 									sent = true;
 									SceneManager.LoadScene (3, LoadSceneMode.Single);
 								}
-							} else {
+							} else if (temp == 1) {
 								if (!sent) {
 									sent = true;
 									SceneManager.LoadScene (4, LoadSceneMode.Single);
+								}
+							} else if (temp == 2) {
+								if (!sent) {
+									sent = true;
+									SceneManager.LoadScene (5, LoadSceneMode.Single);
+								}
+							} else if (temp == 3) {
+								if (!sent) {
+									sent = true;
+									SceneManager.LoadScene (6, LoadSceneMode.Single);
 								}
 							}
 						} else if (player.stageCount == 5) {
@@ -73,7 +83,7 @@ public class PortalController : MonoBehaviour {
 						} else {
 							if (!sent) {
 								sent = true;
-								int next = Random.Range (5, 22);
+								int next = Random.Range (7, 24);
 								SceneManager.LoadScene (next, LoadSceneMode.Single);
 							}
 						}

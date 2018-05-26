@@ -3,6 +3,3 @@ Add more bosses
 Add more items
 Balance
 Ask if want to save
-Change tooltip text to black
-Adjust monster spawn patterns (around player)
-	note: check start location, if not same, dont move, esle move

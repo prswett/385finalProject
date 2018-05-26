@@ -5,15 +5,15 @@ using UnityEngine.UI;
 
 public class PisanController : MonoBehaviour {
 
-	private float playerX;
-	private float enemyX;
-	private float playerY;
-	private float enemyY;
+	public float playerX;
+	public float enemyX;
+	public float playerY;
+	public float enemyY;
 	public Transform target;
 
 	public GameObject bullet;
 	Vector2 bulletPos;
-	private float fireRate = 1;
+	public float fireRate = 1;
 	public float lastFire;
 
 	public float left;
@@ -26,8 +26,8 @@ public class PisanController : MonoBehaviour {
 	public bool bulletGround = true;
 	public Animator anim;
 
-	private Transform myself;
-	private BossHealth temp;
+	public Transform myself;
+	public BossHealth temp;
 
 	float currentHealth;
 	float maxHealth;
@@ -38,15 +38,7 @@ public class PisanController : MonoBehaviour {
 		myself = GameObject.FindWithTag("Boss").transform;
 		temp = myself.GetComponent<BossHealth>();
 	}
-	//Declare target as player (who hes gonna shoot at)
-	//Set health and attach it to health bar
-	void Start () {
-
-
-	}
-
-	//Move pattern is in a square, top left to the left then down etc.
-	//Can change as hp gets lower
+		
 	void Update () {
 		currentHealth = temp.currentHealth;
 		maxHealth = temp.maxHealth;
@@ -91,15 +83,12 @@ public class PisanController : MonoBehaviour {
 		} else {
 			anim.SetBool ("Attacking", false);
 		}
-
-
 	}
 
 	//Instantiate bullet and shoot it at players location
 	void fire() {
 		float divider = Mathf.Sqrt (Mathf.Pow (playerX - enemyX, 2) + Mathf.Pow (playerY - enemyY , 2));
 		BulletController shot = bullet.GetComponent<BulletController>();
-		shot.setGroundCollide (bulletGround);
 		shot.setVelocity ((playerX - enemyX) / divider, (playerY - enemyY + .5f) / divider);
 		bulletPos = new Vector2 (transform.position.x, transform.position.y- .5f);
 		Instantiate (bullet, bulletPos, Quaternion.identity);

@@ -128,9 +128,10 @@ public class PlayerStatistics  : MonoBehaviour
 	}
 
 	public static void takeDamage(float damage) {
+		
 		if (Time.time - lastHit >= .4f) {
 			int avoid = UnityEngine.Random.Range (0, 100);
-			if (avoid < avo) {
+			if (avoid > avo) {
 				health -= (damage * (1 + (level / 50)) * (1000 / (def + 1000)));
 				if (health <= 0) {
 					health = 0;
