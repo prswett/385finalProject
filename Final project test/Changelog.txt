@@ -16,6 +16,8 @@ Readjusted base item upgrade amount
 added more randomization to item stat reroll and upgrade
 decreased highest gold possible per coin
 increased base gold possible per coin
+changing equips in town keeps health/mana percentages (100%)
+changed hp color text from black to white
 
 Version 4.4
 Melee weapon balancing

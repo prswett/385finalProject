@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using System;
+using UnityEngine.SceneManagement;
 
 
 public class ItemObject : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerDownHandler, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler {
@@ -280,6 +281,10 @@ public class ItemObject : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 							player.UIChange ();
 						}
 					}
+				}
+				if (SceneManager.GetActiveScene ().buildIndex == 1) {
+					PlayerStatistics.health = PlayerStatistics.maxHealth;
+					PlayerStatistics.mana = PlayerStatistics.maxMana;
 				}
 			}
 		}
