@@ -16,9 +16,7 @@ public class CameraController : MonoBehaviour {
 	}
 
 	void Start () {
-		target = GameObject.FindWithTag ("Player").transform;
 		transform.position = target.position;
-
 		if (transform.position.x < negX) {
 			transform.position = new Vector3 (negX, transform.position.y, -10);
 		} else if (transform.position.x > posX) {

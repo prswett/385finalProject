@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Stages/Matthew Version/ShopStage.unity
     guid: 80d197b31c6502745ae0c0405e0939e6
   - enabled: 1
+    path: Assets/Stages/Matthew Version/FinalBossStage.unity
+    guid: 79ebf078487cc0948ace16fd6575ea73
+  - enabled: 1
     path: Assets/Stages/Matthew Version/BoarBossStage.unity
     guid: 5d42fcd7e43731048ba621f412bca80b
   - enabled: 1
@@ -77,9 +80,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Stages/Patrick Stages/oped.unity
     guid: f3e67796f860bdc449b197719c600264
-  - enabled: 1
-    path: Assets/Stages/Matthew Version/FinalBossStage.unity
-    guid: 79ebf078487cc0948ace16fd6575ea73
   - enabled: 1
     path: Assets/Stages/TutorialStages/Tutorial1.unity
     guid: a57da40a760cfaa4ca75428b7f6dcc9d

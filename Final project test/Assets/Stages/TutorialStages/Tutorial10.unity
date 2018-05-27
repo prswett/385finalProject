@@ -707,13 +707,14 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4237716849331084, guid: 999f1ff8c549c9b41b16d013968adab0, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0.866
+      value: -1.006
       objectReference: {fileID: 0}
     - target: {fileID: 102501646063254850, guid: 999f1ff8c549c9b41b16d013968adab0,
         type: 2}
       propertyPath: m_Text
       value: "Drag an item in your inventory outside \nthe inventory space. \n\nYou
-        can press Yes to sell the item \nor no to cancel"
+        can press Yes to sell the item \nor no to cancel\n\nYou can also hit enter
+        to sell it"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 999f1ff8c549c9b41b16d013968adab0, type: 2}

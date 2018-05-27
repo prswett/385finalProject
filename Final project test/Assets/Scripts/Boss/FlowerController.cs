@@ -29,7 +29,13 @@ public class FlowerController : MonoBehaviour {
 			Instantiate (EnemyList.enemyList[selectEnemy],transform.position, Quaternion.identity);
 		}
 		if (Time.time - hitTime > 3f) {
-			PlayerStatistics.takeDamage((PlayerStatistics.maxHealth / 100) * 2);
+			if (PlayerStatistics.level <= 5) {
+				PlayerStatistics.takeDamage ((PlayerStatistics.maxHealth / 100) * 2);
+			} else if (PlayerStatistics.level <= 15) {
+				PlayerStatistics.takeDamage ((PlayerStatistics.maxHealth / 100) * 3);
+			} else {
+				PlayerStatistics.takeDamage ((PlayerStatistics.maxHealth / 100) * 4);
+			}
 		}
 	}
 

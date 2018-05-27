@@ -178,6 +178,7 @@ GameObject:
   - component: {fileID: 224584117525846198}
   - component: {fileID: 222489855014828984}
   - component: {fileID: 114783462187993500}
+  - component: {fileID: 61217883950033910}
   m_Layer: 5
   m_Name: Item inventory
   m_TagString: Inventory
@@ -976,7 +977,7 @@ GameObject:
   - component: {fileID: 4903755589496248}
   - component: {fileID: 212900552078684192}
   - component: {fileID: 61153501854941688}
-  - component: {fileID: 114233669407249206}
+  - component: {fileID: 114817399386302476}
   m_Layer: 9
   m_Name: 2HSpear
   m_TagString: Weapon
@@ -1045,7 +1046,7 @@ GameObject:
   - component: {fileID: 4633909689678930}
   - component: {fileID: 212172940991413004}
   - component: {fileID: 61244817616039900}
-  - component: {fileID: 114669138377797060}
+  - component: {fileID: 114076008833301976}
   m_Layer: 9
   m_Name: 1HSword
   m_TagString: Weapon
@@ -1991,7 +1992,7 @@ GameObject:
   - component: {fileID: 4861157631606004}
   - component: {fileID: 212392191807915630}
   - component: {fileID: 61588124137562284}
-  - component: {fileID: 114283170521336624}
+  - component: {fileID: 114789251636903482}
   m_Layer: 9
   m_Name: 1HDagger
   m_TagString: Weapon
@@ -2044,8 +2045,8 @@ GameObject:
   - component: {fileID: 4845458246927208}
   - component: {fileID: 212503377875716502}
   - component: {fileID: 61062679928514138}
-  - component: {fileID: 114026353894587228}
   - component: {fileID: 61311422509104076}
+  - component: {fileID: 114014141690961874}
   m_Layer: 9
   m_Name: 1HAxe
   m_TagString: Weapon
@@ -2199,7 +2200,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1660909760183058}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.0438223, y: -0.82, z: 0}
+  m_LocalPosition: {x: -4.125, y: -0.707, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4389832058666502}
@@ -2360,7 +2361,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1079896049959340}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.056, y: -0.011, z: 0}
+  m_LocalPosition: {x: 0.068, y: -0.011, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4633909689678930}
@@ -2440,7 +2441,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1252741386839172}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0014276505, y: -0.033, z: 0}
+  m_LocalPosition: {x: -0.003, y: -0.033, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4083459952852254}
@@ -2549,6 +2550,31 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 0.1618042, y: 0.09615344}
+  m_EdgeRadius: 0
+--- !u!61 &61217883950033910
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1111050489323976}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 1.0982056, y: -0.5465851}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 363.1095, y: 161.18484}
   m_EdgeRadius: 0
 --- !u!61 &61244817616039900
 BoxCollider2D:
@@ -2802,6 +2828,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   line: Increasing strength increases attack for weapons and hp
+--- !u!114 &114014141690961874
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1927982653655568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce03e509211815845bf8bf9abd87eaa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseDamage: 50
+  damage: 50
 --- !u!114 &114014747921710774
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2873,19 +2912,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &114026353894587228
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1927982653655568}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce03e509211815845bf8bf9abd87eaa4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseDamage: 20
-  damage: 15
 --- !u!114 &114030735585497248
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2998,6 +3024,19 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: 
+--- !u!114 &114076008833301976
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1449877967416506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4150b1aaf0359404895f2160a93bb07c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseDamage: 25
+  damage: 25
 --- !u!114 &114080409520095180
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3567,19 +3606,6 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 
---- !u!114 &114233669407249206
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1436586754687406}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44bcf17349e28e844a95b7bc4fafc591, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseDamage: 8
-  damage: 8
 --- !u!114 &114241067665338794
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3792,19 +3818,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   line: How much damage spells do (scales with base spell damage)
---- !u!114 &114283170521336624
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1892816653216326}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fe6ed6a1d2897d4d94a79989344fdd6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseDamage: 5
-  damage: 5
 --- !u!114 &114283322321754320
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5398,6 +5411,14 @@ MonoBehaviour:
     type: 2}
   purpleknight: {fileID: 1053869004902264, guid: dbbc8b996cc5a5a499087666d703f514,
     type: 2}
+  redmushroom: {fileID: 1258463634718476, guid: cb35cf0539f326e4ebde9d629335e1f4,
+    type: 2}
+  orangemushroom: {fileID: 1731949916266828, guid: e53af68c9acbc2042994fae12fc3cbfd,
+    type: 2}
+  yellowmushroom: {fileID: 1654079946359418, guid: e2366f03f5f21174e86d8be95026cf54,
+    type: 2}
+  greenmushroom: {fileID: 1842253151625704, guid: 5b07a2c492a98844499d28eb8c72a666,
+    type: 2}
 --- !u!114 &114667539584163262
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5450,19 +5471,6 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &114669138377797060
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1449877967416506}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4150b1aaf0359404895f2160a93bb07c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseDamage: 10
-  damage: 10
 --- !u!114 &114669146171479896
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5801,6 +5809,7 @@ MonoBehaviour:
   jumping: 0
   location: 0
   text: {fileID: 102772376994991952}
+  upgradeAvailable: 0
 --- !u!114 &114738183898218320
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6231,6 +6240,19 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: New Text
+--- !u!114 &114789251636903482
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1892816653216326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fe6ed6a1d2897d4d94a79989344fdd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseDamage: 15
+  damage: 15
 --- !u!114 &114797067805609636
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6366,6 +6388,19 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 
+--- !u!114 &114817399386302476
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1436586754687406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44bcf17349e28e844a95b7bc4fafc591, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseDamage: 25
+  damage: 25
 --- !u!114 &114829433127654208
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10023,9 +10058,9 @@ RectTransform:
   m_Father: {fileID: 224264541090767634}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -1789, y: 913}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -631, y: 373}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224879804331623816

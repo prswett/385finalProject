@@ -42,6 +42,7 @@ public class PortalController : MonoBehaviour {
 				if (tutorial) {
 					if (!finishTutorial) {
 						player.delete ();
+						PlayerStatistics.reset ();
 						SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex + 1, LoadSceneMode.Single);
 					} else {
 						player.delete ();
@@ -53,27 +54,9 @@ public class PortalController : MonoBehaviour {
 					if (!finalBoss) {
 						
 						if (player.stageCount == 4) {
-							int temp = Random.Range (0, 4);
-							if (temp == 0) {
-								if (!sent) {
-									sent = true;
-									SceneManager.LoadScene (3, LoadSceneMode.Single);
-								}
-							} else if (temp == 1) {
-								if (!sent) {
-									sent = true;
-									SceneManager.LoadScene (4, LoadSceneMode.Single);
-								}
-							} else if (temp == 2) {
-								if (!sent) {
-									sent = true;
-									SceneManager.LoadScene (5, LoadSceneMode.Single);
-								}
-							} else if (temp == 3) {
-								if (!sent) {
-									sent = true;
-									SceneManager.LoadScene (6, LoadSceneMode.Single);
-								}
+							if (!sent) {
+								sent = true;
+								SceneManager.LoadScene (Random.Range (4, 8), LoadSceneMode.Single);
 							}
 						} else if (player.stageCount == 5) {
 							if (!sent) {
@@ -83,7 +66,7 @@ public class PortalController : MonoBehaviour {
 						} else {
 							if (!sent) {
 								sent = true;
-								int next = Random.Range (7, 24);
+								int next = Random.Range (8, 25);
 								SceneManager.LoadScene (next, LoadSceneMode.Single);
 							}
 						}

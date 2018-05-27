@@ -1,3 +1,22 @@
+Version 4.5
+Camera bug fixes
+stat save/load fixes
+added ~70 new items
+modified some item stats
+fixed def bug
+increased item drop rate
+randomized enemy and boss drops
+randomized treasure chest drops
+decreased spell book drop rate
+decreased exp needed for each level slightly
+fixed item ID sprite bug
+fixed enemy out of bounds bug
+fixed tutorial bugs
+Readjusted base item upgrade amount
+added more randomization to item stat reroll and upgrade
+decreased highest gold possible per coin
+increased base gold possible per coin
+
 Version 4.4
 Melee weapon balancing
 Spell nerf (mana cost increased, mana potion cost increased, mana potion drop rate decreased

@@ -39,9 +39,9 @@ public class EnemyHealth : MonoBehaviour {
 			maxHealth = 100;
 		}
 		if (PlayerStatistics.level <= 20) {
-			maxHealth = (maxHealth * PlayerStatistics.level) / 6f;
+			maxHealth = (maxHealth * PlayerStatistics.level) / 4f;
 		} else {
-			maxHealth = (maxHealth * PlayerStatistics.level) / 3f;
+			maxHealth = (maxHealth * PlayerStatistics.level) / 2f;
 		}
 		lastHit = Time.time;
 		target = GameObject.FindWithTag ("Player").transform;
@@ -74,28 +74,28 @@ public class EnemyHealth : MonoBehaviour {
 		}
 		healthbar.fillAmount = currentHealth / maxHealth;
 		if (currentHealth <= 0) {
-			if (Random.Range (0, 10) < 5) {
+			if (Random.Range (0, 10) < 5 + (int)(PlayerStatistics.luk / 50)) {
 				dropCoin ();
 			}
 			int dropRate = Random.Range (0, 100);
-			if (dropRate < 10) {
+			if (dropRate < 25 + (int)(PlayerStatistics.luk / 50)) {
 				int roll = Random.Range (0, 100);
-				if (roll < 10) {
+				if (roll < 15 + (int)(PlayerStatistics.luk / 100)) {
 					dropRareItem ();
 				} else {
 					dropItem ();
 				}
 			}
 			dropRate = Random.Range (0, 100);
-			if (dropRate < 5) {
+			if (dropRate < 5 + (int)(PlayerStatistics.luk / 50)) {
 				dropSpell ();
 			}
 			Player killCount = target.GetComponent<Player> ();
 			killCount.killCount++;
 			if (killCount.expBoost) {
-				PlayerStatistics.exp += 2 * (2 * PlayerStatistics.level / 4);
+				PlayerStatistics.exp += 2 * (3 * PlayerStatistics.level / 4);
 			} else {
-				PlayerStatistics.exp += 2 * PlayerStatistics.level / 4;
+				PlayerStatistics.exp += 3 * PlayerStatistics.level / 4;
 			}
 			parentController.destroy();
 		}

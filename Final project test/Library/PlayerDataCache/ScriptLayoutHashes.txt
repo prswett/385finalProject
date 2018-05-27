@@ -5,6 +5,7 @@ SceneListBegin?
 Assets/Stages/Matthew Version/MainMenu.unity
 Assets/Stages/Matthew Version/TownStage.unity
 Assets/Stages/Matthew Version/ShopStage.unity
+Assets/Stages/Matthew Version/FinalBossStage.unity
 Assets/Stages/Matthew Version/BoarBossStage.unity
 Assets/Stages/Matthew Version/FlowerBossStage.unity
 Assets/Stages/Matthew Version/SunBossStage.unity
@@ -26,7 +27,6 @@ Assets/Stages/Patrick Stages/JSP7.unity
 Assets/Stages/Patrick Stages/map10.unity
 Assets/Stages/Patrick Stages/NHF3.unity
 Assets/Stages/Patrick Stages/oped.unity
-Assets/Stages/Matthew Version/FinalBossStage.unity
 Assets/Stages/TutorialStages/Tutorial1.unity
 Assets/Stages/TutorialStages/Tutorial2.unity
 Assets/Stages/TutorialStages/Tutorial3.unity
@@ -57,7 +57,7 @@ df374c01140c2d578bf70cbd60073d1d UnityEngine.Timeline.dll:UnityEngine.Timeline.T
 12b95c8f2b54918ab14825a44eeb4bd5 Assembly-CSharp.dll:.NextTooltip
 c297f9af6d4faa61d21637f5c49a1fa2 Assembly-CSharp.dll:.GEnemyWep
 3561a72e9b74683a0e9610dde8b2d56f Assembly-CSharp.dll:.TreasureChestController
-cab392a220234ba7ca7b11f1b14a7419 Assembly-CSharp.dll:.ItemController
+967133652f921b0c6f434ca94fa567ab Assembly-CSharp.dll:.ItemController
 5bb83369a08900fbf5bf9fbcebbe7540 Assembly-CSharp.dll:.FEnemyR
 a35dc9cca2faebc5f5f1aeb9e8e47bbe UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.UI.dll:UnityEngine.EventSystems.BaseInput
@@ -173,7 +173,7 @@ e9bdabf9265d758d56f01bb188916fa8 UnityEngine.Networking.dll:UnityEngine.Networki
 74fa7834c0d6411276eb68adc118628a Assembly-CSharp.dll:.coinController
 256a1141f7805a5789014849c064cf53 Assembly-CSharp.dll:.FinalBoss2Controller
 a72d8a5a83fdd7f10228592b563c10a8 Assembly-CSharp.dll:.PotionInventory
-cab392a220234ba7ca7b11f1b14a7419 Assembly-CSharp.dll:.RareItemController
+967133652f921b0c6f434ca94fa567ab Assembly-CSharp.dll:.RareItemController
 dc42b00dc04fd541388728f3ea717c98 Assembly-CSharp.dll:.PotionSlot
 322cb40e1e282f28af980cbef7922a90 UnityEngine.Analytics.dll:UnityEngine.Analytics.AnalyticsEventTracker
 dc07d7ad69b399a46e92c483bf1c04ca UnityEngine.Analytics.dll:UnityEngine.Analytics.AnalyticsTracker

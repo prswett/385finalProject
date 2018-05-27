@@ -36,7 +36,7 @@ public class EnemyList : MonoBehaviour {
 
 
 	void Start () {
-		numberEnemies = 31;
+		numberEnemies = 27;
 		enemyList = new GameObject[numberEnemies];
 		enemyList [0] = blackslime;
 		enemyList [1] = blueportal;
@@ -64,11 +64,7 @@ public class EnemyList : MonoBehaviour {
 		enemyList [23] = yellowmushroom;
 		enemyList [24] = greenmushroom;
 		enemyList [25] = blueportal;
-		enemyList [26] = blueportal;
-		enemyList [27] = blueportal;
-		enemyList [28] = fireballenemy;
-		enemyList [29] = fireballenemy;
-		enemyList [30] = fireballenemy;
+		enemyList [26] = fireballenemy;
 	}
 	
 	// Update is called once per frame

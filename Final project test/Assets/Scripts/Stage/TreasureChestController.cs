@@ -33,10 +33,8 @@ public class TreasureChestController : MonoBehaviour {
 		if (Input.GetKey (KeyCode.F)) {
 			if (near && !opened) {
 				anim.SetBool ("Open", true);
-				float length = 1f;
-				float spawnLocation = length / numberHeld;
-				for (int i = 0; i <= numberHeld; i++) {
-					Instantiate (item, new Vector3 ((transform.position.x - (length / 2f)) + (i * spawnLocation), transform.position.y, 0), 
+				for (int i = 0; i <= Random.Range(1, 5); i++) {
+					Instantiate (item, new Vector3 ((transform.position.x + Random.Range(-.3f, .3f)), transform.position.y, 0), 
 						Quaternion.identity);
 				}
 				opened = true;

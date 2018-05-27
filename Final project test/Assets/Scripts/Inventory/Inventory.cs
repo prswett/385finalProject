@@ -42,6 +42,7 @@ public class Inventory : MonoBehaviour
 
     void Start()
     {
+		
     }
 
 	public void showData() {

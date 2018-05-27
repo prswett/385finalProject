@@ -36,6 +36,7 @@ public class StageController : MonoBehaviour {
 	void Start () {
 		target.GetComponent<Player> ().getSpawnLocation (playerX, playerY);
 		killCount = target.GetComponent<Player> ();
+		monstersNeeded = Random.Range (6, 15);
 	}
 
 	// Update is called once per frame

@@ -41,7 +41,7 @@ public class BoarController : MonoBehaviour {
 		}
 		if (selfHealing) {
 			if (Time.time - selfHeal > 2f) {
-				myHealth.currentHealth += 100;
+				myHealth.currentHealth += 25 + PlayerStatistics.level;
 				selfHeal = Time.time;
 			}
 		}

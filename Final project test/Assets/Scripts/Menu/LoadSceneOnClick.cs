@@ -7,6 +7,9 @@ public class LoadSceneOnClick : MonoBehaviour {
 
 	public void LoadScene(int sceneIndex)
     {
+		if (sceneIndex == 1) {
+			PlayerStatistics.reset ();
+		}
         SceneManager.LoadScene(sceneIndex);
     }
 }

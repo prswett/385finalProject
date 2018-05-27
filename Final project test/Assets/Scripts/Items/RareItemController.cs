@@ -15,6 +15,8 @@ public class RareItemController : MonoBehaviour {
 	public bool location = false;
 	float spawnTime;
 	public bool rareItem = false;
+
+	public bool set = false;
 	// Use this for initialization
 	void Awake() {
 
@@ -37,28 +39,87 @@ public class RareItemController : MonoBehaviour {
 			}
 
 			if (type == "Item") {
-				generateItem ();
+				if (PlayerStatistics.level <= 3) {
+					generateBeginnerItem ();
+				} else if (PlayerStatistics.level <= 8) {
+					generateIntermediateItem ();
+				} else if (PlayerStatistics.level <= 12) {
+					generateIntermediateItemv2 ();
+				} else if (PlayerStatistics.level <= 16) {
+					generateAdvancedItem ();
+				} else if (PlayerStatistics.level <= 22) {
+					generateAdvancedItemv2 ();
+				} else {
+					generateGodItem ();
+				}
 			} else {
 				generatePotion ();
 			}
 		}
 	}
 
-	void generateItem() {
-		int roll = Random.Range (0, 10);
-		if (roll < 4) {
-			roll = Random.Range (0, 100);
-			if (roll < 10 && rareItem) {
-				ID = Random.Range (36, 60);
-			} else if (roll < 25) {
-				ID = Random.Range (60, 66);
-			} else if (roll < 45) {
-				ID = Random.Range (30, 36);
+	void generateBeginnerItem() {
+		ID = Random.Range (0, 12);
+	}
+
+	void generateIntermediateItem() {
+		int roll = Random.Range (0, 100);
+		if (roll < 40) {
+			ID = Random.Range (12, 36);
+		} else {
+			ID = Random.Range (0, 36);
+		}
+	}
+
+	void generateIntermediateItemv2() {
+		int roll = Random.Range (0, 100);
+		if (roll < 40) {
+			ID = Random.Range (36, 67);
+		} else if (roll < 70) {
+			ID = Random.Range (12, 67);
+		} else {
+			ID = Random.Range (0, 67);
+		}
+	}
+
+	void generateAdvancedItem() {
+		int roll = Random.Range (0, 100);
+		if (roll < 30) {
+			ID = Random.Range (67, 91);
+		} else if (roll < 60) {
+			ID = Random.Range (36, 91);
+		} else if (roll < 90) {
+			ID = Random.Range (12, 91);
+		} else {
+			ID = Random.Range (0, 91);
+		}
+	}
+
+	void generateAdvancedItemv2() {
+		int roll = Random.Range (0, 100);
+		if (roll < 40) {
+			ID = Random.Range (91, 109);
+		} else if (roll < 60) {
+			ID = Random.Range (67, 109);
+		} else if (roll < 90) {
+			ID = Random.Range (36, 109);
+		} else {
+			ID = Random.Range (12, 109);
+		}
+	}
+
+	void generateGodItem() {
+		if (rareItem) {
+			int roll = Random.Range (0, 100);
+			if (roll < 5) {
+				ID = Random.Range (109, 133);
+			} else if (roll < 15) {
+				ID = Random.Range (133, 139);
 			} else {
-				ID = Random.Range (6, 30);
+				generateAdvancedItemv2 ();
 			}
 		} else {
-			ID = Random.Range (0, 5);
+			generateAdvancedItemv2 ();
 		}
 	}
 
@@ -92,8 +153,9 @@ public class RareItemController : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if (spawnTime == 0) {
+		if (!set) {
 			spawnTime = Time.time;
+			set = true;
 		}
 		if (!location) {
 			transform.position = target.position;

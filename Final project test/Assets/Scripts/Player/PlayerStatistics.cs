@@ -98,8 +98,11 @@ public class PlayerStatistics  : MonoBehaviour
 		luk = 1;
 		atk = 0;
 		matk = 0;
+		def = 1;
 		mana = baseMana;
 		health = baseHealth;
+		level = 1;
+		statPoints = 10;
 	}
 
 	public static void load() {
@@ -202,9 +205,15 @@ public class PlayerStatistics  : MonoBehaviour
 		if (maxHealth <= 0) {
 			maxHealth = 1;
 		}
+		if (health > maxHealth) {
+			health = maxHealth;
+		}
 		maxMana = (float)(int)(baseMana + (float)(int)(wis / 3));
 		if (maxMana <= 0) {
 			maxMana = 1;
+		}
+		if (mana > maxMana) {
+			mana = maxMana;
 		}
 		// atk scales off WA + 0.5*Str + 0.25Dex
 		float natk = (float)((str * 0.5) + (dex * 0.25) + wa);
@@ -247,7 +256,7 @@ public class PlayerStatistics  : MonoBehaviour
 			// next level reached
 			exp -= nextLevel;
 			// exp to next level += 20
-			nextLevel *= 1.6f;
+			nextLevel *= 1.5f;
 			nextLevel = (float)(int)nextLevel + 1;
 			// more stat points
 			statPoints += 7;

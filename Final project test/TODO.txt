@@ -1,3 +1,6 @@
-stage tilesets
-add more items
 stat balancing
+bug testing
+enemy health/damage balancing
+exp balancing
+adjust stages (make sure they look nice)
+boss balancing

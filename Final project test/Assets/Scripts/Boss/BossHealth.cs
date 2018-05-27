@@ -67,16 +67,21 @@ public class BossHealth : MonoBehaviour {
 			} else {
 				PlayerStatistics.exp += 10 * PlayerStatistics.level / 4;
 			}
-			float length = 1f;
-			float spawnLocation = length / numberHeld;
-			for (int i = 0; i < numberHeld; i++) {
-				Instantiate (item, new Vector3 ((transform.position.x - (length / 2f)) + (i * spawnLocation), transform.position.y, 0), 
+			for (int i = 0; i < Random.Range (0, 4); i++) {
+				
+				Instantiate (item, new Vector3 ((transform.position.x + Random.Range (-.3f, .3f)), transform.position.y, 0), 
 					Quaternion.identity);
-				Instantiate (coin, new Vector3 ((transform.position.x - (length / 2f)) + (i * spawnLocation), transform.position.y, 0), 
+			}
+			for (int i = 0; i < Random.Range (0, 4); i++) {
+				Instantiate (coin, new Vector3 ((transform.position.x + Random.Range (-.3f, .3f)), transform.position.y, 0), 
 					Quaternion.identity);
-				Instantiate (rareItem, new Vector3 ((transform.position.x - (length / 2f)) + (i * spawnLocation), transform.position.y, 0), 
+			}
+			for (int i = 0; i < Random.Range (0, 4); i++) {
+				Instantiate (rareItem, new Vector3 ((transform.position.x + Random.Range (-.3f, .3f)), transform.position.y, 0), 
 					Quaternion.identity);
-				Instantiate (spellBook, new Vector3 ((transform.position.x - (length / 2f)) + (i * spawnLocation), transform.position.y, 0), 
+			}
+			for (int i = 0; i < Random.Range (0, 4); i++) {
+				Instantiate (spellBook, new Vector3 ((transform.position.x + Random.Range (-.3f, .3f)), transform.position.y, 0), 
 					Quaternion.identity);
 			}
 		}

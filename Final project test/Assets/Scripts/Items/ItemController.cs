@@ -16,6 +16,7 @@ public class ItemController : MonoBehaviour {
 	float spawnTime;
 
 	public bool rareItem = false;
+	public bool set = false;
 
 	void Start () {
 		target = GameObject.FindGameObjectWithTag ("Player").transform;
@@ -29,33 +30,94 @@ public class ItemController : MonoBehaviour {
 			int randType = Random.Range (0, 10);
 			if (randType < 4) {
 				type = "Item";
-			} else {
+			} else if (randType < 8) {
 				type = "Potion";
+			} else {
+				Destroy (gameObject);
 			}
 
 			if (type == "Item") {
-				generateItem ();
+				if (PlayerStatistics.level <= 3) {
+					generateBeginnerItem ();
+				} else if (PlayerStatistics.level <= 8) {
+					generateIntermediateItem ();
+				} else if (PlayerStatistics.level <= 12) {
+					generateIntermediateItemv2 ();
+				} else if (PlayerStatistics.level <= 16) {
+					generateAdvancedItem ();
+				} else if (PlayerStatistics.level <= 22) {
+					generateAdvancedItemv2 ();
+				} else {
+					generateGodItem ();
+				}
 			} else {
 				generatePotion ();
 			}
 		}
 	}
 
-	void generateItem() {
-		int roll = Random.Range (0, 10);
-		if (roll < 3) {
-			roll = Random.Range (0, 100);
-			if (roll < 7 && rareItem) {
-				ID = Random.Range (36, 60);
-			} else if (roll < 15) {
-				ID = Random.Range (60, 66);
-			} else if (roll < 35) {
-				ID = Random.Range (30, 36);
+	void generateBeginnerItem() {
+		ID = Random.Range (0, 12);
+	}
+
+	void generateIntermediateItem() {
+		int roll = Random.Range (0, 100);
+		if (roll < 30) {
+			ID = Random.Range (12, 36);
+		} else {
+			ID = Random.Range (0, 36);
+		}
+	}
+
+	void generateIntermediateItemv2() {
+		int roll = Random.Range (0, 100);
+		if (roll < 30) {
+			ID = Random.Range (36, 67);
+		} else if (roll < 60) {
+			ID = Random.Range (12, 67);
+		} else {
+			ID = Random.Range (0, 67);
+		}
+	}
+
+	void generateAdvancedItem() {
+		int roll = Random.Range (0, 100);
+		if (roll < 20) {
+			ID = Random.Range (67, 91);
+		} else if (roll < 50) {
+			ID = Random.Range (36, 91);
+		} else if (roll < 80) {
+			ID = Random.Range (12, 91);
+		} else {
+			ID = Random.Range (0, 91);
+		}
+	}
+
+	void generateAdvancedItemv2() {
+		int roll = Random.Range (0, 100);
+		if (roll < 30) {
+			ID = Random.Range (91, 109);
+		} else if (roll < 50) {
+			ID = Random.Range (67, 109);
+		} else if (roll < 80) {
+			ID = Random.Range (36, 109);
+		} else {
+			ID = Random.Range (12, 109);
+		}
+	}
+		
+	void generateGodItem() {
+		if (rareItem) {
+			int roll = Random.Range (0, 100);
+			if (roll < 1) {
+				ID = Random.Range (109, 133);
+			} else if (roll < 10) {
+				ID = Random.Range (133, 139);
 			} else {
-				ID = Random.Range (6, 30);
+				generateAdvancedItemv2 ();
 			}
 		} else {
-			ID = Random.Range (0, 5);
+			generateAdvancedItemv2 ();
 		}
 	}
 
@@ -87,8 +149,9 @@ public class ItemController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (spawnTime == 0) {
+		if (!set) {
 			spawnTime = Time.time;
+			set = true;
 		}
 		if (!location) {
 			transform.position = target.position;
