@@ -471,7 +471,7 @@ MonoBehaviour:
   location: 0
   parent: {fileID: 0}
   speed: 1
-  jumpSpeed: 1
+  jumpSpeed: 0.5
   facing: 0
   zone: 0
   leftCoordinate: 0
@@ -541,8 +541,10 @@ MonoBehaviour:
   control: {fileID: 0}
   damageNumber: {fileID: 1888548063201054, guid: 9043e4b5a85fbc140915b0ee7b37e82a,
     type: 2}
+  current: {x: 0, y: 0, z: 0}
   tutorial: 0
   spawnTime: 0
+  stay: 0
 --- !u!114 &114426122962416348
 MonoBehaviour:
   m_ObjectHideFlags: 1

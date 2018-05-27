@@ -283,7 +283,7 @@ Animator:
   m_GameObject: {fileID: 1446601695001950}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e81691d3e532ec6469a449362de350eb, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -379,6 +379,7 @@ MonoBehaviour:
   control: {fileID: 0}
   damageNumber: {fileID: 1888548063201054, guid: 9043e4b5a85fbc140915b0ee7b37e82a,
     type: 2}
+  current: {x: 0, y: 0, z: 0}
   tutorial: 0
   spawnTime: 0
 --- !u!114 &114718342124079020

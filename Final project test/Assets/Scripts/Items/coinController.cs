@@ -30,11 +30,10 @@ public class coinController : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other) {
 		if (player != null) {
 			if (other.gameObject.CompareTag ("Player")) {
+				int coin = Random.Range (1, 6);
 				if (player.goldBoost) {
-					int coin = Random.Range (1, 11);
 					PlayerStatistics.coins += coin * 3;
 				} else {
-					int coin = Random.Range (1, 11);
 					PlayerStatistics.coins += coin;
 				}
 				Destroy (gameObject);

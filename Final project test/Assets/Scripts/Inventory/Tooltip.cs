@@ -46,7 +46,6 @@ public class Tooltip : MonoBehaviour {
 
     public void ConstructDataString()
     {
-		string upgradeCost;
 		if (item.type == "Helmet") {
 			if (eInv.slots [0].GetComponent<EquipmentSlot> ().item != null) {
 				ItemStats temp = eInv.slots [0].GetComponent<EquipmentSlot> ().item.GetComponent<ItemStats> ();
@@ -91,7 +90,6 @@ public class Tooltip : MonoBehaviour {
 					"\nUpgrade Cost: " + item.Rarity * item.Value + "</b></color>";
 				tooltip.transform.GetChild(0).GetComponent<Text>().text = data;
 			} else {
-				upgradeCost = "<color=#e9f004><b>" + (item.Rarity * item.Value);
 				if (item.str < 0) {
 					strdiff = "<color=#f00b04><b>" + (item.str - 0);
 				} else {
@@ -177,7 +175,6 @@ public class Tooltip : MonoBehaviour {
 					"\nUpgrade Cost: " + item.Rarity * item.Value + "</b></color>";
 				tooltip.transform.GetChild(0).GetComponent<Text>().text = data;
 			} else {
-				 upgradeCost = "<color=#e9f004><b>" + item.Rarity * item.Value;
 				if (item.str < 0) {
 					strdiff = "<color=#f00b04><b>" + (item.str - 0);
 				} else {
@@ -263,7 +260,6 @@ public class Tooltip : MonoBehaviour {
 					"\nUpgrade Cost: " + item.Rarity * item.Value + "</b></color>";
 				tooltip.transform.GetChild(0).GetComponent<Text>().text = data;
 			} else {
-				 upgradeCost = "<color=#e9f004><b>" + item.Rarity * item.Value;
 				if (item.str < 0) {
 					strdiff = "<color=#f00b04><b>" + (item.str - 0);
 				} else {
@@ -349,7 +345,6 @@ public class Tooltip : MonoBehaviour {
 					"\nUpgrade Cost: " + item.Rarity * item.Value + "</b></color>";
 				tooltip.transform.GetChild(0).GetComponent<Text>().text = data;
 			} else {
-				 upgradeCost = "<color=#e9f004><b>" + item.Rarity * item.Value;
 				if (item.str < 0) {
 					strdiff = "<color=#f00b04><b>" + (item.str - 0);
 				} else {
@@ -435,7 +430,6 @@ public class Tooltip : MonoBehaviour {
 					"\nUpgrade Cost: " + item.Rarity * item.Value + "</b></color>";
 				tooltip.transform.GetChild(0).GetComponent<Text>().text = data;
 			} else {
-				 upgradeCost = "<color=#e9f004><b>" + item.Rarity * item.Value;
 				if (item.str < 0) {
 					strdiff = "<color=#f00b04><b>" + (item.str - 0);
 				} else {
@@ -478,7 +472,6 @@ public class Tooltip : MonoBehaviour {
 				tooltip.transform.GetChild(0).GetComponent<Text>().text = data;
 			}
 		} else {
-			upgradeCost = "<color=#e9f004><b>" + item.Rarity * item.Value;
 			if (eInv.slots [5].GetComponent<EquipmentSlot> ().item != null) {
 				ItemStats temp = eInv.slots [5].GetComponent<EquipmentSlot> ().item.GetComponent<ItemStats> ();
 				if (item.str < temp.str) {
@@ -522,7 +515,6 @@ public class Tooltip : MonoBehaviour {
 					"\nUpgrade Cost: " + item.Rarity * item.Value + "</b></color>";
 				tooltip.transform.GetChild(0).GetComponent<Text>().text = data;
 			} else {
-				 upgradeCost = "<color=#e9f004><b>" + item.Rarity * item.Value;
 				if (item.str < 0) {
 					strdiff = "<color=#f00b04><b>" + (item.str - 0);
 				} else {

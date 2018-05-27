@@ -1,5 +1,3 @@
-Fix title icons
-Add more bosses
-Add more items
-Balance
-Ask if want to save
+stage tilesets
+add more items
+stat balancing

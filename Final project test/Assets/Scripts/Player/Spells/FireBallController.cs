@@ -8,7 +8,7 @@ public class FireBallController : MonoBehaviour {
 	Rigidbody2D rb2d;
 	public string description = "Shoot a fireball that does damage and pierces enemies. /nDisappears on collision with wall/nShoots where the mouse is";
 
-	public int baseDamage = 100;
+	public int baseDamage = 50;
 	public int modifiedDamage = 0;
 
 	void Start () {

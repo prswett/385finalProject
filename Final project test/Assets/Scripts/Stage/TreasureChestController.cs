@@ -5,7 +5,6 @@ using UnityEngine;
 public class TreasureChestController : MonoBehaviour {
 	bool near = false;
 	public Transform target;
-	Player player;
 	public TextMesh control;
 	public Animator anim;
 
@@ -19,7 +18,6 @@ public class TreasureChestController : MonoBehaviour {
 
 	void Awake() {
 		target = GameObject.FindWithTag ("Player").transform;
-		player = target.GetComponent<Player> ();
 	}
 
 	// Use this for initialization
@@ -37,7 +35,7 @@ public class TreasureChestController : MonoBehaviour {
 				anim.SetBool ("Open", true);
 				float length = 1f;
 				float spawnLocation = length / numberHeld;
-				for (int i = 0; i < numberHeld; i++) {
+				for (int i = 0; i <= numberHeld; i++) {
 					Instantiate (item, new Vector3 ((transform.position.x - (length / 2f)) + (i * spawnLocation), transform.position.y, 0), 
 						Quaternion.identity);
 				}

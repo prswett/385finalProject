@@ -6,7 +6,6 @@ using LitJson;
 
 public class Equipment : MonoBehaviour {
 
-	GameObject inventoryPanel;
 	public GameObject slotPanel;
 	public GameObject inventorySlot;
 	public GameObject inventoryItem;
@@ -35,8 +34,6 @@ public class Equipment : MonoBehaviour {
 		database = GetComponent<ItemDatabase>();
 
 		slotAmount = 6;
-		inventoryPanel = GameObject.Find("Inventory Panel");
-		// slotPanel = inventoryPanel.transform.Find("Slot Panel").gameObject;
 
 		for (int i = 0; i < slotAmount; i++)
 		{

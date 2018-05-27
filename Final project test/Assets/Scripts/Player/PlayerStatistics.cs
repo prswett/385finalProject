@@ -80,7 +80,7 @@ public class PlayerStatistics  : MonoBehaviour
 	public bool updateTextIcon = false;
 
 	// everyone starts with 5 stat points
-	public static float statPoints = 5;
+	public static float statPoints = 10;
 
 	public LevelText text;
 
@@ -247,10 +247,10 @@ public class PlayerStatistics  : MonoBehaviour
 			// next level reached
 			exp -= nextLevel;
 			// exp to next level += 20
-			nextLevel *= 1.2f;
+			nextLevel *= 1.6f;
 			nextLevel = (float)(int)nextLevel + 1;
 			// more stat points
-			statPoints += 5;
+			statPoints += 7;
 			level++;
 			text.updateLevel ();
 		}

@@ -6,7 +6,6 @@ using LitJson;
 
 public class PotionInventory : MonoBehaviour {
 
-	GameObject inventoryPanel;
 	public GameObject slotPanel;
 	public GameObject inventorySlot;
 	public GameObject inventoryPotion;
@@ -31,8 +30,6 @@ public class PotionInventory : MonoBehaviour {
 	void Awake() {
 		database = GetComponent<PotionDatabase>();
 		slotAmount = 8;
-		inventoryPanel = GameObject.Find("Inventory Panel");
-
 
 		for (int i = 0; i < slotAmount; i++)
 		{
@@ -72,17 +69,16 @@ public class PotionInventory : MonoBehaviour {
 
 		if (itemToAdd.Stackable && CheckIfItemIsInInventory(itemToAdd.ID))
 		{
-			for(int i = 0; i < slotAmount; i++)
-			{
-				if(slots[i].GetComponent<PotionSlot>().potion.GetComponent<PotionStats>().ID == itemToAdd.ID)
-				{
+			for (int i = 0; i < slotAmount; i++) {
+				if (slots [i].GetComponent<PotionSlot> ().potion != null)
+				if (slots [i].GetComponent<PotionSlot> ().potion.GetComponent<PotionStats> ().ID == itemToAdd.ID) {
 					PotionObject data = slots [i].GetComponent<PotionSlot> ().potion.GetComponent<PotionObject> ();
 					data.amount++;
-					data.transform.GetChild(0).GetComponent<Text>().text = data.amount.ToString();
+					data.transform.GetChild (0).GetComponent<Text> ().text = data.amount.ToString ();
 					break;
 				}
-
 			}
+				
 
 		}
 		else

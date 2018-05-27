@@ -1,3 +1,12 @@
+Version 4.4
+Melee weapon balancing
+Spell nerf (mana cost increased, mana potion cost increased, mana potion drop rate decreased
+Camera adjusted (QOL)
+New enemy colors added
+Readjusted enemy spawning probability
+Decreased item drop rate
+Increased exp increase for each level
+
 Version 4.3
 Added 2 new bosses (sun boss and crusher boss)
 Added medium and large potions

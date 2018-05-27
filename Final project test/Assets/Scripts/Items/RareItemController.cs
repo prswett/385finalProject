@@ -67,11 +67,26 @@ public class RareItemController : MonoBehaviour {
 		if (potionSize < 1) {
 			ID = Random.Range (2, 4);
 		} else if (potionSize < 3) {
-			ID = Random.Range (6, 8);
+			int hm = Random.Range (0, 10);
+			if (hm < 3) {
+				ID = 7;
+			} else {
+				ID = 6;
+			}
 		} else if (potionSize < 6) {
-			ID = Random.Range (4, 6);
+			int hm = Random.Range (0, 10);
+			if (hm < 3) {
+				ID = 4;
+			} else {
+				ID = 5;
+			}
 		} else {
-			ID = Random.Range (0, 2);
+			int hm = Random.Range (0, 10);
+			if (hm < 3) {
+				ID = 0;
+			} else {
+				ID = 1;
+			}
 		}
 	}
 

@@ -94,7 +94,7 @@ public class GEnemyR : MonoBehaviour {
 		if (jumping) {
 			if (Time.timeScale != 0) {
 				transform.position += Vector3.up * jumpSpeed * .07f;
-				if (enemyX - playerX < -MinDist) {
+				if (enemyX - playerX < 0) {
 					transform.position += Vector3.right * speed * Time.deltaTime;
 				} else {
 					transform.position += Vector3.left * speed * Time.deltaTime;
@@ -155,16 +155,9 @@ public class GEnemyR : MonoBehaviour {
 		if (other.gameObject.CompareTag ("outofbounds")) {
 			location = true;
 		}
-		if (other.gameObject.CompareTag ("Player")) {
-			PlayerStatistics.takeDamage(1);
-		}
 	}
 
 	void OnTriggerStay2D(Collider2D other) {
-		if (other.gameObject.CompareTag ("Player")) {
-			PlayerStatistics.takeDamage(1);
-		}
-
 		if (other.gameObject.CompareTag ("outofbounds")) {
 			location = true;
 		}

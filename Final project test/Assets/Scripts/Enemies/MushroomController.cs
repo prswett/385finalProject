@@ -106,14 +106,10 @@ public class MushroomController : MonoBehaviour {
 			if (enemyX - playerX < -MinDist || enemyX - playerX > MinDist) {
 				anim.SetBool ("walking", true);
 				if (enemyX - playerX < -MinDist) {
-					if (enemyX < rightCoordinate) {
-						transform.position += Vector3.right * speed * Time.deltaTime;
-					}
+					transform.position += Vector3.right * speed * Time.deltaTime;
 				}
 				if (enemyX - playerX > MinDist) {
-					if (enemyX > leftCoordinate) {
-						transform.position += Vector3.left * speed * Time.deltaTime;
-					}
+					transform.position += Vector3.left * speed * Time.deltaTime;
 				}
 			}
 		}
@@ -150,18 +146,12 @@ public class MushroomController : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
-		if (other.gameObject.CompareTag ("Player")) {
-			PlayerStatistics.takeDamage(1);
-		}
 		if (other.gameObject.CompareTag ("outofbounds")) {
 			location = true;
 		}
 	}
 
 	void OnTriggerStay2D(Collider2D other) {
-		if (other.gameObject.CompareTag ("Player")) {
-			PlayerStatistics.takeDamage(1);
-		}
 		if (other.gameObject.CompareTag ("outofbounds")) {
 			location = true;
 		}

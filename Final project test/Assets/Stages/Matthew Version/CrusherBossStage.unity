@@ -241,9 +241,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerX: 0
-  enemyX: 0
   playerY: 0
-  enemyY: 0
   target: {fileID: 0}
   anim: {fileID: 0}
   myHealth: {fileID: 0}
@@ -261,6 +259,7 @@ MonoBehaviour:
   goDown: 1
   goUp: 0
   attack: 0
+  speed: 2
 --- !u!61 &20846996
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -743,11 +742,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4299058879534818, guid: a6a3cf96cc99d024e9188e56890b8804, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 2.627388
+      value: 2.635
       objectReference: {fileID: 0}
     - target: {fileID: 4299058879534818, guid: a6a3cf96cc99d024e9188e56890b8804, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -1.600635
+      value: -1.514
       objectReference: {fileID: 0}
     - target: {fileID: 4299058879534818, guid: a6a3cf96cc99d024e9188e56890b8804, type: 2}
       propertyPath: m_LocalPosition.z

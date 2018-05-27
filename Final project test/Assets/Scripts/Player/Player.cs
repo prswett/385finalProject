@@ -282,6 +282,10 @@ public class Player : MonoBehaviour {
 				if (Input.GetKeyUp (KeyCode.D)) {
 					anim.SetBool ("walking", false);
 				}
+
+				if (Input.GetKeyDown (KeyCode.W)) {
+					jumping = false;
+				}
 			}
 
 			if (onLadder ) {

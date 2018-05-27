@@ -61,9 +61,9 @@ public class ShopController : MonoBehaviour {
 
 	public void buyMana() {
 		Player temp = target.GetComponent<Player> ();
-		if (PlayerStatistics.coins >= 10) {
+		if (PlayerStatistics.coins >= 30) {
 			temp.addPotion (1);
-			PlayerStatistics.coins -= 10;
+			PlayerStatistics.coins -= 30;
 		}
 	}
 

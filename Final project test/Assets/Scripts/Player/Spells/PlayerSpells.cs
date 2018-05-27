@@ -142,13 +142,13 @@ public class PlayerSpells : MonoBehaviour {
 	}
 
 	public void fireballSpell() {
-		if (PlayerStatistics.mana >= 2) {
-			PlayerStatistics.mana -= 2;
+		if (PlayerStatistics.mana >= 2 + (float)(int)(level[selectedSpell] / 4)) {
+			PlayerStatistics.mana -= 2 + (float)(int)(level[selectedSpell] / 4);
 			PlayerStatistics.mana = (float)(int)PlayerStatistics.mana;
 			Vector2 cursorL = Camera.main.ScreenToWorldPoint (Input.mousePosition);
 			float divider = Mathf.Sqrt (Mathf.Pow (cursorL.x - transform.position.x, 2) + Mathf.Pow (cursorL.y - transform.position.y, 2));
 			FireBallController shot = fireball.GetComponent<FireBallController> ();
-			shot.modifiedDamage = shot.baseDamage + (level [selectedSpell] * 10);
+			shot.modifiedDamage = shot.baseDamage + (level [selectedSpell] * 15);
 			shot.setVelocity ((cursorL.x - transform.position.x) / divider, (cursorL.y - transform.position.y) / divider);
 			float angle = Mathf.Atan2 (transform.position.x - cursorL.x, cursorL.y - transform.position.y) * Mathf.Rad2Deg;
 			Instantiate (fireball, transform.position, Quaternion.Euler (new Vector3 (0, 0, angle)));
@@ -156,20 +156,20 @@ public class PlayerSpells : MonoBehaviour {
 	}
 
 	public void lightningSpell() {
-		if (PlayerStatistics.mana >= 2) {
-			PlayerStatistics.mana -= 2;
+		if (PlayerStatistics.mana >= 2 + (float)(int)(level[selectedSpell] / 4)) {
+			PlayerStatistics.mana -= 2 + (float)(int)(level[selectedSpell] / 4);
 			PlayerStatistics.mana = (float)(int)PlayerStatistics.mana;
 			Vector2 cursorL = Camera.main.ScreenToWorldPoint (Input.mousePosition);
 			LightningController shot = lightning.GetComponent<LightningController> ();
-			shot.modifiedDamage = shot.baseDamage + (level [selectedSpell] * 10);
+			shot.modifiedDamage = shot.baseDamage + (level [selectedSpell] * 15);
 			shot.setVelocity (0, -1f);
 			Instantiate (lightning, cursorL, Quaternion.identity);
 		}
 	}
 
 	public void healingSpell() {
-		if (PlayerStatistics.mana >= 4) {
-			PlayerStatistics.mana -= 4;
+		if (PlayerStatistics.mana >= 4 + (float)(int)(level[selectedSpell] / 4)) {
+			PlayerStatistics.mana -= 4 + (float)(int)(level[selectedSpell] / 4);
 			PlayerStatistics.mana = (float)(int)PlayerStatistics.mana;
 			HealingController shot = heal.GetComponent<HealingController> ();
 			shot.modifiedHealing = shot.baseHealing + level [selectedSpell];
@@ -178,13 +178,13 @@ public class PlayerSpells : MonoBehaviour {
 	}
 
 	public void bombSpell() {
-		if (PlayerStatistics.mana >= 3) {
-			PlayerStatistics.mana -= 3;
+		if (PlayerStatistics.mana >= 3 + (float)(int)(level[selectedSpell] / 4)) {
+			PlayerStatistics.mana -= 3 + (float)(int)(level[selectedSpell] / 4);
 			PlayerStatistics.mana = (float)(int)PlayerStatistics.mana;
 			Vector2 cursorL = Camera.main.ScreenToWorldPoint (Input.mousePosition);
 			float divider = Mathf.Sqrt (Mathf.Pow (cursorL.x - transform.position.x, 2) + Mathf.Pow (cursorL.y - transform.position.y, 2));
 			BombController shot = bomb.GetComponent<BombController> ();
-			shot.modifiedDamage = shot.baseDamage + level [selectedSpell] * 5;
+			shot.modifiedDamage = shot.baseDamage + level [selectedSpell] * 15;
 			shot.setVelocity ((cursorL.x - transform.position.x) / divider, (cursorL.y - transform.position.y) / divider);
 			float angle = Mathf.Atan2 (transform.position.x - cursorL.x, cursorL.y - transform.position.y) * Mathf.Rad2Deg;
 			Instantiate (bomb, transform.position, Quaternion.Euler (new Vector3 (0, 0, angle)));
@@ -193,13 +193,13 @@ public class PlayerSpells : MonoBehaviour {
 	}
 
 	public void flamethrowerSpell() {
-		if (PlayerStatistics.mana >= 1f) {
-			PlayerStatistics.mana -= 1f;
+		if (PlayerStatistics.mana >= 1f + (float)(int)(level[selectedSpell] / 4)) {
+			PlayerStatistics.mana -= 1f + (float)(int)(level[selectedSpell] / 4);
 			PlayerStatistics.mana = (float)(int)PlayerStatistics.mana;
 			Vector2 cursorL = Camera.main.ScreenToWorldPoint (Input.mousePosition);
 			float divider = Mathf.Sqrt (Mathf.Pow (cursorL.x - transform.position.x, 2) + Mathf.Pow (cursorL.y - transform.position.y, 2));
 			FlamethrowerController shot = flamethrower.GetComponent<FlamethrowerController> ();
-			shot.modifiedDamage = shot.baseDamage + level [selectedSpell] * 5;
+			shot.modifiedDamage = shot.baseDamage + level [selectedSpell] * 15;
 			shot.setVelocity ((cursorL.x - transform.position.x) / divider, (cursorL.y - transform.position.y) / divider);
 			float angle = Mathf.Atan2 (transform.position.x - cursorL.x, cursorL.y - transform.position.y) * Mathf.Rad2Deg;
 			Instantiate (flamethrower, transform.position, Quaternion.Euler (new Vector3 (0, 0, angle)));

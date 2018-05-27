@@ -58,13 +58,6 @@ public class BulletController : MonoBehaviour {
 			Invoke ("sendShot", 3f);
 			activate = true;
 		}
-
-		if (enemyUnit) {
-			Destroy (gameObject, 4f);
-		} else {
-			Destroy (gameObject, 6f);
-		}
-
 	}
 
 	public void sendShot() {
@@ -82,8 +75,6 @@ public class BulletController : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject.CompareTag ("Player")) {
 			PlayerStatistics.takeDamage(1 + (PlayerStatistics.level / 2) + damage);
-			Debug.Log (1 + (PlayerStatistics.level / 2) + damage);
-			Debug.Log ("hit");
 			if (!explosion) {
 				Destroy (gameObject);
 			} else {

@@ -28,11 +28,15 @@ public class EnemyList : MonoBehaviour {
 	public GameObject yellowknight;
 	public GameObject greenknight;
 	public GameObject purpleknight;
+	public GameObject redmushroom;
+	public GameObject orangemushroom;
+	public GameObject yellowmushroom;
+	public GameObject greenmushroom;
 	// Use this for initialization
 
 
 	void Start () {
-		numberEnemies = 21;
+		numberEnemies = 31;
 		enemyList = new GameObject[numberEnemies];
 		enemyList [0] = blackslime;
 		enemyList [1] = blueportal;
@@ -55,7 +59,16 @@ public class EnemyList : MonoBehaviour {
 		enemyList [18] = yellowknight;
 		enemyList [19] = greenknight;
 		enemyList [20] = purpleknight;
-
+		enemyList [21] = redmushroom;
+		enemyList [22] = orangemushroom;
+		enemyList [23] = yellowmushroom;
+		enemyList [24] = greenmushroom;
+		enemyList [25] = blueportal;
+		enemyList [26] = blueportal;
+		enemyList [27] = blueportal;
+		enemyList [28] = fireballenemy;
+		enemyList [29] = fireballenemy;
+		enemyList [30] = fireballenemy;
 	}
 	
 	// Update is called once per frame

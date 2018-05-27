@@ -28,6 +28,8 @@ public class EnemyHealth : MonoBehaviour {
 	public bool tutorial = false;
 	public float spawnTime;
 	bool checkInvalid = false;
+
+	public bool stay = false;
 	void Awake() {
 	}
 
@@ -58,7 +60,13 @@ public class EnemyHealth : MonoBehaviour {
 		if (spawnTime == 0) {
 			spawnTime = Time.time;
 		}
-		if (Time.time - spawnTime > 10 && transform.position == current && !checkInvalid) {
+		if (Mathf.Abs (transform.position.x - current.x) < .2f) {
+			stay = true;
+		} else {
+			stay = false;
+		}
+
+		if (Time.time - spawnTime > 10 && stay && !checkInvalid) {
 			parentController.destroy();
 		}
 		if (Time.time - spawnTime > 10) {
@@ -66,18 +74,20 @@ public class EnemyHealth : MonoBehaviour {
 		}
 		healthbar.fillAmount = currentHealth / maxHealth;
 		if (currentHealth <= 0) {
-			dropCoin ();
-			int dropRate = Random.Range (0, 10);
-			if (dropRate < 3) {
+			if (Random.Range (0, 10) < 5) {
+				dropCoin ();
+			}
+			int dropRate = Random.Range (0, 100);
+			if (dropRate < 10) {
 				int roll = Random.Range (0, 100);
-				if (roll < 15) {
+				if (roll < 10) {
 					dropRareItem ();
 				} else {
 					dropItem ();
 				}
 			}
-			dropRate = Random.Range (0, 10);
-			if (dropRate < 1) {
+			dropRate = Random.Range (0, 100);
+			if (dropRate < 5) {
 				dropSpell ();
 			}
 			Player killCount = target.GetComponent<Player> ();
@@ -107,7 +117,7 @@ public class EnemyHealth : MonoBehaviour {
 			currentHealth -= damage;
 			if (Time.time - lastHit > 0.5) {
 				damageAnimation ();
-				Invoke ("damageAnimation", .1f);
+				Invoke ("damageAnimation", .2f);
 				lastHit = Time.time;
 			}
 		}

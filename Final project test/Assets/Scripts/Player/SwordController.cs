@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class SwordController : MonoBehaviour {
 
-	public int baseDamage = 10;
-	public int damage = 10;
+	public int baseDamage = 25;
+	public int damage = 25;
 
 	// Use this for initialization
 	void Start () {

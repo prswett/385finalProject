@@ -27,7 +27,6 @@ public class Slot : MonoBehaviour, IDropHandler {
 			ItemObject droppedItem = eventData.pointerDrag.GetComponent<ItemObject> ();
 			ItemStats droppedStats = eventData.pointerDrag.GetComponent<ItemStats> ();
 
-			ItemObject replacedItem = item.GetComponent<ItemObject> ();
 			ItemStats replacedStats = item.GetComponent<ItemStats> ();
 			if (!droppedItem.equipped) {
 				if (droppedItem.slot != id) {

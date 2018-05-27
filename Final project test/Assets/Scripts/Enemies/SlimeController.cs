@@ -65,7 +65,6 @@ public class SlimeController : MonoBehaviour {
 	}
 
 	void collideMove() {
-		anim.SetBool ("attacking", false);
 		if (jumping) {
 			if (Time.timeScale != 0) {
 				transform.position += Vector3.up * jumpSpeed * .07f;
@@ -83,7 +82,6 @@ public class SlimeController : MonoBehaviour {
 			}
 		} else {
 			if (enemyX - playerX < -MinDist || enemyX - playerX > MinDist) {
-				anim.SetBool ("walking", true);
 				if (enemyX - playerX < -MinDist) {
 					if (facing) {
 						flip ();
@@ -101,7 +99,6 @@ public class SlimeController : MonoBehaviour {
 	}
 
 	void zoneMove() {
-		anim.SetBool ("attacking", false);
 		if (jumping) {
 			if (Time.timeScale != 0) {
 				transform.position += Vector3.up * jumpSpeed * .07f;
@@ -124,7 +121,6 @@ public class SlimeController : MonoBehaviour {
 			}
 		} else {
 			if (enemyX - playerX < -MinDist || enemyX - playerX > MinDist) {
-				anim.SetBool ("walking", true);
 				if (enemyX - playerX < -MinDist && enemyX < rightCoordinate) {
 					if (facing) {
 						flip ();
@@ -146,17 +142,9 @@ public class SlimeController : MonoBehaviour {
 		if (other.gameObject.CompareTag ("outofbounds")) {
 			location = true;
 		}
-
-		if (other.gameObject.CompareTag ("Player")) {
-			PlayerStatistics.takeDamage(1);
-		}
 	}
 
 	void OnTriggerStay2D(Collider2D other) {
-		if (other.gameObject.CompareTag ("Player")) {
-			PlayerStatistics.takeDamage(1);
-		}
-
 		if (other.gameObject.CompareTag ("outofbounds")) {
 			location = true;
 		}

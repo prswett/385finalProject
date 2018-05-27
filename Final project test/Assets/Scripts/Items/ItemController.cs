@@ -62,11 +62,26 @@ public class ItemController : MonoBehaviour {
 	void generatePotion() {
 		int potionSize = Random.Range (0, 10);
 		if (potionSize < 1) {
-			ID = Random.Range (6, 8);
+			int hm = Random.Range (0, 10);
+			if (hm < 3) {
+				ID = 7;
+			} else {
+				ID = 6;
+			}
 		} else if (potionSize < 4) {
-			ID = Random.Range (4, 6);
+			int hm = Random.Range (0, 10);
+			if (hm < 3) {
+				ID = 5;
+			} else {
+				ID = 4;
+			}
 		} else {
-			ID = Random.Range (0, 2);
+			int hm = Random.Range (0, 10);
+			if (hm < 3) {
+				ID = 1;
+			} else {
+				ID = 0;
+			}
 		}
 	}
 	

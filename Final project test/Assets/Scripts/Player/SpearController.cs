@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SpearController : MonoBehaviour {
-	public int baseDamage = 8;
-	public int damage = 8;
+	public int baseDamage = 25;
+	public int damage = 25;
 	void Start () {
 
 	}

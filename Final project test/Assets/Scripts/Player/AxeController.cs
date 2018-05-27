@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class AxeController : MonoBehaviour {
-	public int baseDamage = 20;
-	public int damage = 20;
+	public int baseDamage = 50;
+	public int damage = 50;
 	void Start () {
 
 	}
@@ -36,7 +36,7 @@ public class AxeController : MonoBehaviour {
 			health.takeDamage (damage);
 		}
 	}
-
+		
 	public void changeDamage(int input) {
 		damage = input;
 	}
