@@ -1,6 +1,6 @@
-WindowsStandalone
+WebGL
 PlayerPath?
-C:/Users/Matthew/Desktop/CSS 385/Final Project/Final project test/SuperBigQuest.exe
+C:/Users/Matthew/Desktop/CSS 385/GameWebsite
 SceneListBegin?
 Assets/Stages/Matthew Version/MainMenu.unity
 Assets/Stages/Matthew Version/TownStage.unity
@@ -37,6 +37,7 @@ Assets/Stages/TutorialStages/Tutorial7.unity
 Assets/Stages/TutorialStages/Tutorial8.unity
 Assets/Stages/TutorialStages/Tutorial9.unity
 Assets/Stages/TutorialStages/Tutorial10.unity
+Assets/Stages/TutorialStages/Tutorial11.unity
 SceneListEnd?
 48f70d6fcaa2903f5e89925a9fd04ed1 Assembly-CSharp.dll:.BoarController
 f4a1315b5f390a8132ca9eb90ab3dfe3 Assembly-CSharp.dll:.FinalBoss1Controller
@@ -57,7 +58,7 @@ df374c01140c2d578bf70cbd60073d1d UnityEngine.Timeline.dll:UnityEngine.Timeline.T
 12b95c8f2b54918ab14825a44eeb4bd5 Assembly-CSharp.dll:.NextTooltip
 c297f9af6d4faa61d21637f5c49a1fa2 Assembly-CSharp.dll:.GEnemyWep
 3561a72e9b74683a0e9610dde8b2d56f Assembly-CSharp.dll:.TreasureChestController
-967133652f921b0c6f434ca94fa567ab Assembly-CSharp.dll:.ItemController
+02fa3f8c8f2173930fd67b3021aa1ccc Assembly-CSharp.dll:.ItemController
 5bb83369a08900fbf5bf9fbcebbe7540 Assembly-CSharp.dll:.FEnemyR
 a35dc9cca2faebc5f5f1aeb9e8e47bbe UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.UI.dll:UnityEngine.EventSystems.BaseInput
@@ -132,7 +133,7 @@ ba88d252ef6090222e28279a17a9f02d Assembly-CSharp.dll:.PlayerResources
 b27736df79c71bd78f78bb4d09534d95 Assembly-CSharp.dll:.PlayerStatistics
 ef6d0e553809d01b920239c399ba8915 Assembly-CSharp.dll:.Slot
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.addStat
-ac49a7bf3e3653957884df3ee9e048a8 Assembly-CSharp.dll:.EnemyManager
+e913cdb2c2ebed342298b549d2fcc996 Assembly-CSharp.dll:.EnemyManager
 12b95c8f2b54918ab14825a44eeb4bd5 Assembly-CSharp.dll:.PrevTooltip
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
 dbc29a6f2739d277c10da432d73adb6d UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
@@ -172,8 +173,8 @@ e9bdabf9265d758d56f01bb188916fa8 UnityEngine.Networking.dll:UnityEngine.Networki
 7061fb870d883fdfc9fac27d48aa9065 Assembly-CSharp.dll:.JumpThrough
 74fa7834c0d6411276eb68adc118628a Assembly-CSharp.dll:.coinController
 256a1141f7805a5789014849c064cf53 Assembly-CSharp.dll:.FinalBoss2Controller
-a72d8a5a83fdd7f10228592b563c10a8 Assembly-CSharp.dll:.PotionInventory
-967133652f921b0c6f434ca94fa567ab Assembly-CSharp.dll:.RareItemController
+20a8aae521191c15fc13491ace0fc1aa Assembly-CSharp.dll:.PotionInventory
+02fa3f8c8f2173930fd67b3021aa1ccc Assembly-CSharp.dll:.RareItemController
 dc42b00dc04fd541388728f3ea717c98 Assembly-CSharp.dll:.PotionSlot
 322cb40e1e282f28af980cbef7922a90 UnityEngine.Analytics.dll:UnityEngine.Analytics.AnalyticsEventTracker
 dc07d7ad69b399a46e92c483bf1c04ca UnityEngine.Analytics.dll:UnityEngine.Analytics.AnalyticsTracker
@@ -193,7 +194,6 @@ d64a7f935a1332310951c3185b31bd6b Assembly-CSharp.dll:.DoorController
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.EnemyWeaponController
 aa2e7797e2822bdedff620e81d324838 Assembly-CSharp.dll:.CrusherBoss
 4d52fd7a07270a80d14d2a1963a229e0 Assembly-CSharp.dll:.PisanShopKeeper
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.AudioController
 89c1990330271e9ae41ed0c7a914ee48 Assembly-CSharp.dll:.PlayerMusic
 6325068068b7444039497b3406f6fcc4 Assembly-CSharp.dll:.BossHealth
 492db5ae4fd998f0212061c83ff0ee74 Assembly-CSharp.dll:.TownController
@@ -209,12 +209,12 @@ c70b0bcae44aef9e96ae6ca2e2ed18bc Assembly-CSharp.dll:.StageController
 210d400b4e8d41292552a64ec6abcbbd Assembly-CSharp.dll:.BulletController
 8c60f5ff007782675db3e63d4d9d3ee4 Assembly-CSharp.dll:.FinalBoss3Controller
 ce09cb02e2f857c8aa562f2552261f90 Assembly-CSharp.dll:.WeaponController
-efa293afa40544f06fb4ae78472e8aa5 Assembly-CSharp.dll:.Player
+0fc6d85cecee8bb9f5cecd6d8251cabe Assembly-CSharp.dll:.Player
 120fb81302abec2fb005bcbca5fd03c0 Assembly-CSharp.dll:.SlimeController
 f39111988ceb368d6e39330aadccfa87 Assembly-CSharp.dll:.AxeController
 7461d52d4a02444ab89f9d5f53a8d8fb Assembly-CSharp.dll:.SpeedController
 b7f53e1dfc067c0f467a664d623ba576 Assembly-CSharp.dll:.SavePoint
-ea9b6cdce4014f611452508d6f009e08 Assembly-CSharp.dll:.Inventory
+1f075c8b934d4791e4fa324cc1122bcf Assembly-CSharp.dll:.Inventory
 fc1e0f4d8439d9928083474691511a13 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Networking.dll:UnityEngine.Networking.NetworkBehaviour
 60b2bb652410a5867a5ab9a01cd38461 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkDiscovery
@@ -268,9 +268,10 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 5845f717f96906afdaa5742d8f732e22 Assembly-CSharp.dll:.SpikeDamager
 ce9cd4b8d999269aba58dbfe044b2b24 Assembly-CSharp.dll:.PotionDescription
 4d52fd7a07270a80d14d2a1963a229e0 Assembly-CSharp.dll:.DamageNumber
+f4dc4786aa07b8ab2c854a2c4fe97ebb Assembly-CSharp.dll:.ItemPickupController
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.LevelText
 8d58eedc8e1ad2a521bfe3b859be7569 Assembly-CSharp.dll:.PisanController
-7fdcceb62787570d4fd667e845815da7 Assembly-CSharp.dll:.CameraController
+180c81b8a31c8197f48521b935174e1e Assembly-CSharp.dll:.CameraController
 8f081f4a91dbd893b93bdb583c09a08c Assembly-CSharp.dll:.ShopController
 ce9cd4b8d999269aba58dbfe044b2b24 Assembly-CSharp.dll:.statDescription
 feca42a4c086c0535d9455c4acf1ea09 Assembly-CSharp.dll:.SpellBookController

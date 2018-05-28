@@ -81,7 +81,6 @@ public class Player : MonoBehaviour {
 
 	public bool jumping;
 	//Location
-	public bool location = false;
 	float x;
 	float y;
 
@@ -168,9 +167,6 @@ public class Player : MonoBehaviour {
 
 	//
 	void Update () {
-		if (location == false) {
-			transform.position = new Vector3(x, y, 0);
-		}
 		timeStop = (menu || inventory || shop);
 		if (loadedChar) {
 			LoadPlayer load = new LoadPlayer ();
@@ -299,7 +295,7 @@ public class Player : MonoBehaviour {
 					rb2d.gravityScale = 0f;
 					climbVelocity = climbSpeed * Input.GetAxisRaw ("Vertical");
 
-					rb2d.velocity = new Vector2 (rb2d.velocity.x, climbVelocity);
+					rb2d.velocity = new Vector2 (0, climbVelocity);
 				}
 			}
 
@@ -339,25 +335,14 @@ public class Player : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
-		if (other.gameObject.CompareTag("outofbounds")) {
-			location = true;
-		}
 
 		if (other.gameObject.CompareTag ("Anvil")) {
 			upgradeAvailable = true;
 		}
 	}
-
-	void OnTriggerStay2D(Collider2D other) {
-		if (other.gameObject.CompareTag("outofbounds")) {
-			location = true;
-		}
-	}
+		
 
 	void OnTriggerExit2D(Collider2D other) {
-		if (other.gameObject.CompareTag("outofbounds")) {
-			location = false;
-		}
 
 		if (other.gameObject.CompareTag ("Anvil")) {
 			upgradeAvailable = false;

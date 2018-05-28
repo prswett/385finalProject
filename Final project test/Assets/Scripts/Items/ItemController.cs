@@ -17,11 +17,11 @@ public class ItemController : MonoBehaviour {
 
 	public bool rareItem = false;
 	public bool set = false;
-
+	public ItemPickupController itempickup;
 	void Start () {
 		target = GameObject.FindGameObjectWithTag ("Player").transform;
 		player = target.GetComponent<Player> ();
-
+		itempickup = GameObject.Find ("ItemPickup").GetComponent<ItemPickupController> ();
 		typeSet ();
 	}
 
@@ -30,8 +30,10 @@ public class ItemController : MonoBehaviour {
 			int randType = Random.Range (0, 10);
 			if (randType < 4) {
 				type = "Item";
-			} else {
+			} else if (randType < 8) {
 				type = "Potion";
+			} else {
+				Destroy (transform.parent.gameObject);
 			}
 
 			if (type == "Item") {
@@ -152,24 +154,30 @@ public class ItemController : MonoBehaviour {
 			set = true;
 		}
 		if (!location) {
-			transform.position = target.position;
+			transform.parent.transform.position = target.position;
 		}
-		if (Time.time - spawnTime > 10) {
-			transform.position = target.position;
+		if (Time.time - spawnTime > 3f) {
+			transform.parent.transform.position = target.position;
 			spawnTime = Time.time;
 		}
 	}
 
 	void pickUP() {
 		if (type == "Potion") {
-			if (player.pInv.checkEmpty()) {
+			if (player.pInv.checkEmpty ()) {
 				player.addPotion (ID);
+				itempickup.showItem ("Picked up: " + player.pInv.database.FetchItemName (ID));
 				Destroy (transform.parent.gameObject);
+			} else {
+				itempickup.showItem ("Potion Inventory Full");
 			}
 		} else {
 			if (player.inv.checkEmpty ()) {
 				player.addItem (ID);
+				itempickup.showItem ("Picked up: " + player.inv.database.FetchItemName (ID));
 				Destroy (transform.parent.gameObject);
+			} else {
+				itempickup.showItem ("Item Inventory Full");
 			}
 		}
 	}

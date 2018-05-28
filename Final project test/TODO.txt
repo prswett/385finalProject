@@ -3,3 +3,8 @@ bug testing
 enemy health/damage balancing
 exp balancing
 boss balancing
+
+
+Bugs
+-----
+

@@ -5,16 +5,24 @@ using LitJson;
 using System.IO;
 
 public class PotionDatabase : MonoBehaviour {
-	private List<Potion> database = new List<Potion> ();
-	private JsonData potionData;
-	// Use this for initialization
+	public List<Potion> database = new List<Potion> ();
+	public JsonData potionData;
 
+	bool isDone = false;
+	string url = "http://students.washington.edu/mattphan/StreamingAssets/Potions.json";
 	void Awake() {
-		potionData = JsonMapper.ToObject (File.ReadAllText (Application.dataPath + "/StreamingAssets/Potions.json"));
-		ConstructPotionDatabase ();
+		Start ();
 	}
-	void Start () {
-		
+
+	IEnumerator Start() {
+		WWW link = new WWW (url);
+		yield return link;
+		isDone = true;
+		if (isDone) {
+			Debug.Log ("finished");
+			potionData = JsonMapper.ToObject (new LitJson.JsonReader (link.text));
+			ConstructPotionDatabase ();
+		}
 	}
 
 	public Potion FetchItemByID(int id)
@@ -25,8 +33,18 @@ public class PotionDatabase : MonoBehaviour {
 		return null;
 	}
 
+	public string FetchItemName(int id) {
+		for (int i = 0; i < database.Count; i++)
+			if (database [i].ID == id) {
+				Potion temp = database [id];
+				return temp.Title;
+			}
+		return null;
+	}
+
 	void ConstructPotionDatabase()
 	{
+		database = new List<Potion> ();
 		for (int i = 0; i < potionData.Count; i++) {
 			database.Add (new Potion ((int)potionData [i] ["id"], potionData [i] ["title"].ToString (), potionData [i] ["type"].ToString (), (int)potionData [i] ["value"], 
 				(int)potionData [i] ["healing"], potionData [i] ["description"].ToString (), (bool)potionData [i] ["stackable"],

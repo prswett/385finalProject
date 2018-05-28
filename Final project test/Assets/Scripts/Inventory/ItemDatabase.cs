@@ -6,18 +6,25 @@ using System.IO;
 
 public class ItemDatabase : MonoBehaviour
 {
-    private List<Item> database = new List<Item>();
-    private JsonData itemData;
-
-
+    public List<Item> database = new List<Item>();
+    public JsonData itemData;
+	bool isDone = false;
+	string url = "http://students.washington.edu/mattphan/StreamingAssets/Items.json";
 	void Awake() {
-		itemData = JsonMapper.ToObject(File.ReadAllText(Application.dataPath + "/StreamingAssets/Items.json"));
-		ConstructItemDatabase();
+		Start ();
+
 	}
-    void Start()
-    {
-       
-    }
+			
+	IEnumerator Start() {
+		WWW link = new WWW (url);
+		yield return link;
+		isDone = true;
+		if (isDone) {
+			Debug.Log ("finished");
+			itemData = JsonMapper.ToObject (new LitJson.JsonReader (link.text));
+			ConstructItemDatabase ();
+		}
+	}
 
     public Item FetchItemByID(int id)
     {
@@ -30,8 +37,18 @@ public class ItemDatabase : MonoBehaviour
         return null;
     }
 
+	public string FetchItemName(int id) {
+		for (int i = 0; i < database.Count; i++)
+			if (database [i].ID == id) {
+				Item temp = database [id];
+				return temp.Title;
+			}
+		return null;
+	}
+
     void ConstructItemDatabase()
     {
+		database = new List<Item> ();
         for (int i = 0; i < itemData.Count; i++)
         {
 			Item temp = new Item ((int)itemData [i] ["id"], itemData [i] ["title"].ToString (), itemData [i] ["type"].ToString (), (int)itemData [i] ["value"],

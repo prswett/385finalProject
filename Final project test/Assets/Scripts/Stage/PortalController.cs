@@ -46,14 +46,11 @@ public class PortalController : MonoBehaviour {
 
 				if (tutorial) {
 					if (!finishTutorial) {
-						player.delete ();
-						PlayerStatistics.reset ();
 						SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex + 1, LoadSceneMode.Single);
 					} else {
 						player.delete ();
 						PlayerStatistics.reset ();
 						SceneManager.LoadScene (1, LoadSceneMode.Single);
-						playermusic.TM ();
 					}
 				} else {
 
@@ -76,7 +73,6 @@ public class PortalController : MonoBehaviour {
 								sent = true;
 								if (!testing) {
 									int next = Random.Range (8, 25);
-									Debug.Log (next);
 									SceneManager.LoadScene (next, LoadSceneMode.Single);
 								} else {
 									SceneManager.LoadScene (test, LoadSceneMode.Single);

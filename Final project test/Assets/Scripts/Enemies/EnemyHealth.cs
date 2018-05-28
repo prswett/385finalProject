@@ -75,40 +75,6 @@ public class EnemyHealth : MonoBehaviour {
 			checkInvalid = true;
 		}
 		healthbar.fillAmount = currentHealth / maxHealth;
-		if (currentHealth <= 0) {
-			if (Random.Range (0, 10) < 5 + (int)(PlayerStatistics.luk / 50)) {
-				dropCoin ();
-			}
-			int dropRate = Random.Range (0, 100);
-			if (dropRate < 25 + (int)(PlayerStatistics.luk / 50)) {
-				int roll = Random.Range (0, 100);
-				if (roll < 15 + (int)(PlayerStatistics.luk / 100)) {
-					dropRareItem ();
-				} else {
-					dropItem ();
-				}
-			}
-			dropRate = Random.Range (0, 100);
-			if (dropRate < 5 + (int)(PlayerStatistics.luk / 50)) {
-				dropSpell ();
-			}
-			Player killCount = target.GetComponent<Player> ();
-			killCount.killCount++;
-			if (killCount.expBoost) {
-				if (PlayerStatistics.level <= 10) {
-					PlayerStatistics.exp += 2 * 3 * PlayerStatistics.level / 4;
-				} else {
-					PlayerStatistics.exp += 2 * 3 * PlayerStatistics.level / 2;
-				}
-			} else {
-				if (PlayerStatistics.level <= 10) {
-					PlayerStatistics.exp += 3 * PlayerStatistics.level / 4;
-				} else {
-					PlayerStatistics.exp += 3 * PlayerStatistics.level / 2;
-				}
-			}
-			parentController.destroy();
-		}
 	}
 
 	//Takes in an int and decreases player health by an amount
@@ -129,6 +95,41 @@ public class EnemyHealth : MonoBehaviour {
 				damageAnimation ();
 				Invoke ("damageAnimation", .2f);
 				lastHit = Time.time;
+			}
+
+			if (currentHealth <= 0) {
+				if (Random.Range (0, 10) < 5 + (int)(PlayerStatistics.luk / 50)) {
+					dropCoin ();
+				}
+				int dropRate = Random.Range (0, 100);
+				if (dropRate < 25 + (int)(PlayerStatistics.luk / 50)) {
+					int roll = Random.Range (0, 100);
+					if (roll < 15 + (int)(PlayerStatistics.luk / 100)) {
+						dropRareItem ();
+					} else {
+						dropItem ();
+					}
+				}
+				dropRate = Random.Range (0, 100);
+				if (dropRate < 5 + (int)(PlayerStatistics.luk / 50)) {
+					dropSpell ();
+				}
+				Player killCount = target.GetComponent<Player> ();
+				killCount.killCount++;
+				if (killCount.expBoost) {
+					if (PlayerStatistics.level <= 10) {
+						PlayerStatistics.exp += 2 * 3 * PlayerStatistics.level / 4;
+					} else {
+						PlayerStatistics.exp += 2 * 3 * PlayerStatistics.level / 2;
+					}
+				} else {
+					if (PlayerStatistics.level <= 10) {
+						PlayerStatistics.exp += 3 * PlayerStatistics.level / 4;
+					} else {
+						PlayerStatistics.exp += 3 * PlayerStatistics.level / 2;
+					}
+				}
+				parentController.destroy();
 			}
 		}
 	}

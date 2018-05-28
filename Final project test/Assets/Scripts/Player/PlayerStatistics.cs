@@ -131,16 +131,32 @@ public class PlayerStatistics  : MonoBehaviour
 	}
 
 	public static void takeDamage(float damage) {
-		
-		if (Time.time - lastHit >= .4f) {
-			int avoid = UnityEngine.Random.Range (0, 100);
-			if (avoid > avo) {
-				health -= (damage * (1 + (level / 50)) * (1000 / (def + 1000)));
-				if (health <= 0) {
-					health = 0;
+
+		if (Time.time - lastHit >= .2f) {
+			if (def < 0) {
+				int avoid = UnityEngine.Random.Range (0, 100);
+				if (avoid > avo) {
+					float damageIncrease = Mathf.Abs (def) / 25;
+					damageIncrease *= 5;
+					health -= (damage / 100) * (100 + damageIncrease);
+					if (health <= 0) {
+						health = 0;
+					}
+					lastHit = Time.time;
+					health = (float)(int)health;
 				}
-				lastHit = Time.time;
-				health = (float)(int)health;
+			} else {
+				int avoid = UnityEngine.Random.Range (0, 100);
+				if (avoid > avo) {
+					float damageReduction = def / 50;
+					damageReduction *= 4;
+					health -= (damage / 100) * (100 - damageReduction);
+					if (health <= 0) {
+						health = 0;
+					}
+					lastHit = Time.time;
+					health = (float)(int)health;
+				}
 			}
 		}
 	}

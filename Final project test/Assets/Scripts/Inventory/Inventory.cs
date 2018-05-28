@@ -10,7 +10,7 @@ public class Inventory : MonoBehaviour
     public GameObject slotPanel;
     public GameObject inventorySlot;
     public GameObject inventoryItem;
-    ItemDatabase database;
+    public ItemDatabase database;
 
     private int slotAmount;
     public List<GameObject> slots = new List<GameObject>();
@@ -28,7 +28,7 @@ public class Inventory : MonoBehaviour
 	}
 
 	void Awake() {
-		database = GetComponent<ItemDatabase>();
+		database = GameObject.Find ("Player").GetComponent<ItemDatabase> ();
 
 		slotAmount = 10;
 		for (int i = 0; i < slotAmount; i++)

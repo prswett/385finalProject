@@ -9,7 +9,7 @@ public class PotionInventory : MonoBehaviour {
 	public GameObject slotPanel;
 	public GameObject inventorySlot;
 	public GameObject inventoryPotion;
-	PotionDatabase database;
+	public PotionDatabase database;
 
 	private int slotAmount;
 
@@ -28,7 +28,7 @@ public class PotionInventory : MonoBehaviour {
 	}
 
 	void Awake() {
-		database = GetComponent<PotionDatabase>();
+		database = GameObject.Find ("Player").GetComponent<PotionDatabase> ();
 		slotAmount = 8;
 
 		for (int i = 0; i < slotAmount; i++)

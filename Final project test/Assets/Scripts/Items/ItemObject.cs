@@ -68,7 +68,7 @@ public class ItemObject : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 		PlayerStatistics.wis += temp.wis;
 		PlayerStatistics.luk += temp.luk;
 		PlayerStatistics.atk += temp.atk;
-		PlayerStatistics.def += temp.atk;
+		PlayerStatistics.def += temp.def;
 	}
 
 	public void OnPointerClick(PointerEventData eventData) {
@@ -255,30 +255,33 @@ public class ItemObject : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 						}
 					} else {
 						if (eventData.button == PointerEventData.InputButton.Right) {
-							ItemStats temp = eInv.slots [slot].GetComponent<EquipmentSlot> ().item.GetComponent<ItemStats> ();
-							eInv.RemoveItemSlot (slot);
-							inv.AddItem (temp);
-							PlayerStatistics.str -= temp.str;
-							PlayerStatistics.dex -= temp.dex;
-							PlayerStatistics.wis -= temp.wis;
-							PlayerStatistics.luk -= temp.luk;
-							PlayerStatistics.atk -= temp.atk;
-							PlayerStatistics.def -= temp.def;
-							if (temp.type == "Helmet") {
-								player.resetHelmet ();
-							} else if (temp.type == "Armor") {
-								player.resetArmor ();
-							} else if (temp.type == "Sword") {
-								player.resetSword ();
-							} else if (temp.type == "Spear") {
-								player.resetSpear ();
-							} else if (temp.type == "Axe") {
-								player.resetAxe ();
-							} else if (temp.type == "Dagger") {
-								player.resetDagger ();
+							if (inv.checkEmpty()) {
+								Debug.Log (inv.checkEmpty());
+								ItemStats temp = eInv.slots [slot].GetComponent<EquipmentSlot> ().item.GetComponent<ItemStats> ();
+								eInv.RemoveItemSlot (slot);
+								inv.AddItem (temp);
+								PlayerStatistics.str -= temp.str;
+								PlayerStatistics.dex -= temp.dex;
+								PlayerStatistics.wis -= temp.wis;
+								PlayerStatistics.luk -= temp.luk;
+								PlayerStatistics.atk -= temp.atk;
+								PlayerStatistics.def -= temp.def;
+								if (temp.type == "Helmet") {
+									player.resetHelmet ();
+								} else if (temp.type == "Armor") {
+									player.resetArmor ();
+								} else if (temp.type == "Sword") {
+									player.resetSword ();
+								} else if (temp.type == "Spear") {
+									player.resetSpear ();
+								} else if (temp.type == "Axe") {
+									player.resetAxe ();
+								} else if (temp.type == "Dagger") {
+									player.resetDagger ();
+								}
+								eTooltip.Deactivate ();
+								player.UIChange ();
 							}
-							eTooltip.Deactivate ();
-							player.UIChange ();
 						}
 					}
 				}

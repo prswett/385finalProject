@@ -1841,11 +1841,11 @@
 	"type": "Helmet",
     "value": 250,
     "stats": {
-      "str": 20,
-	  "dex": 100,
-	  "wis": 20,
-	  "luk": 20,
-	  "atk": 20,
+      "str": 200,
+	  "dex": 1000,
+	  "wis": 200,
+	  "luk": 200,
+	  "atk": 200,
 	  "def": 100
     },
     "description": "A helmet from one of the gods",
@@ -1858,12 +1858,12 @@
 	"type": "Armor",
     "value": 250,
     "stats": {
-      "str": 20,
-	  "dex": 200,
-	  "wis": 40,
-	  "luk": 40,
-	  "atk": 40,
-	  "def": 200
+      "str": 200,
+	  "dex": 1000,
+	  "wis": 200,
+	  "luk": 200,
+	  "atk": 200,
+	  "def": 100
     },
     "description": "A helmet from one of the gods",
     "rarity": 4,
@@ -1875,11 +1875,11 @@
 	"type": "Sword",
     "value": 1000,
     "stats": {
-      "str": 100,
+      "str": 200,
 	  "dex": 1000,
-	  "wis": 100,
-	  "luk": 100,
-	  "atk": 500,
+	  "wis": 200,
+	  "luk": 200,
+	  "atk": 200,
 	  "def": 100
     },
     "description": "A sword from one of the gods",
@@ -1892,12 +1892,12 @@
 	"type": "Spear",
     "value": 1000,
     "stats": {
-      "str": 80,
-	  "dex": 800,
-	  "wis": 80,
-	  "luk": 180,
-	  "atk": 400,
-	  "def": 150
+      "str": 200,
+	  "dex": 1000,
+	  "wis": 200,
+	  "luk": 200,
+	  "atk": 200,
+	  "def": 100
     },
     "description": "A spear from one of the gods",
     "rarity": 4,
@@ -1909,12 +1909,12 @@
 	"type": "Axe",
     "value": 1000,
     "stats": {
-      "str": 150,
-	  "dex": 1500,
-	  "wis": 120,
-	  "luk": 120,
-	  "atk": 750,
-	  "def": 80
+      "str": 200,
+	  "dex": 1000,
+	  "wis": 200,
+	  "luk": 200,
+	  "atk": 200,
+	  "def": 100
     },
     "description": "An axe from one of the gods",
     "rarity": 4,
@@ -1926,12 +1926,12 @@
 	"type": "Dagger",
     "value": 100,
     "stats": {
-      "str": 50,
-	  "dex": 600,
-	  "wis": 60,
-	  "luk": 60,
-	  "atk": 60,
-	  "def": 120
+      "str": 200,
+	  "dex": 1000,
+	  "wis": 200,
+	  "luk": 200,
+	  "atk": 200,
+	  "def": 100
     },
     "description": "A dagger from one of the gods",
     "rarity": 4,
@@ -1943,11 +1943,11 @@
 	"type": "Helmet",
     "value": 250,
     "stats": {
-      "str": 20,
-	  "dex": 20,
-	  "wis": 20,
-	  "luk": 100,
-	  "atk": 20,
+      "str": 200,
+	  "dex": 200,
+	  "wis": 200,
+	  "luk": 1000,
+	  "atk": 200,
 	  "def": 100
     },
     "description": "A helmet from one of the gods",
@@ -1960,12 +1960,12 @@
 	"type": "Armor",
     "value": 250,
     "stats": {
-      "str": 40,
-	  "dex": 40,
-	  "wis": 40,
-	  "luk": 200,
-	  "atk": 40,
-	  "def": 200
+      "str": 200,
+	  "dex": 200,
+	  "wis": 200,
+	  "luk": 1000,
+	  "atk": 200,
+	  "def": 100
     },
     "description": "A helmet from one of the gods",
     "rarity": 4,
@@ -1977,11 +1977,11 @@
 	"type": "Sword",
     "value": 1000,
     "stats": {
-      "str": 100,
-	  "dex": 100,
-	  "wis": 100,
+      "str": 200,
+	  "dex": 200,
+	  "wis": 200,
 	  "luk": 1000,
-	  "atk": 500,
+	  "atk": 200,
 	  "def": 100
     },
     "description": "A sword from one of the gods",
@@ -1994,12 +1994,12 @@
 	"type": "Spear",
     "value": 1000,
     "stats": {
-      "str": 80,
-	  "dex": 180,
-	  "wis": 80,
-	  "luk": 800,
-	  "atk": 400,
-	  "def": 150
+      "str": 200,
+	  "dex": 200,
+	  "wis": 200,
+	  "luk": 1000,
+	  "atk": 200,
+	  "def": 100
     },
     "description": "A spear from one of the gods",
     "rarity": 4,
@@ -2011,12 +2011,12 @@
 	"type": "Axe",
     "value": 1000,
     "stats": {
-      "str": 150,
-	  "dex": 120,
-	  "wis": 120,
-	  "luk": 1500,
-	  "atk": 750,
-	  "def": 80
+      "str": 200,
+	  "dex": 200,
+	  "wis": 200,
+	  "luk": 1000,
+	  "atk": 200,
+	  "def": 100
     },
     "description": "An axe from one of the gods",
     "rarity": 4,
@@ -2028,12 +2028,12 @@
 	"type": "Dagger",
     "value": 1000,
     "stats": {
-      "str": 50,
-	  "dex": 60,
-	  "wis": 60,
-	  "luk": 600,
-	  "atk": 60,
-	  "def": 120
+      "str": 200,
+	  "dex": 200,
+	  "wis": 200,
+	  "luk": 1000,
+	  "atk": 200,
+	  "def": 100
     },
     "description": "A dagger from one of the gods",
     "rarity": 4,
@@ -2045,11 +2045,11 @@
 	"type": "Helmet",
     "value": 250,
     "stats": {
-      "str": 20,
-	  "dex": 20,
-	  "wis": 100,
-	  "luk": 20,
-	  "atk": 20,
+      "str": 200,
+	  "dex": 200,
+	  "wis": 1000,
+	  "luk": 200,
+	  "atk": 200,
 	  "def": 100
     },
     "description": "A helmet from one of the gods",
@@ -2062,12 +2062,12 @@
 	"type": "Armor",
     "value": 250,
     "stats": {
-      "str": 40,
-	  "dex": 40,
-	  "wis": 200,
-	  "luk": 40,
-	  "atk": 40,
-	  "def": 200
+      "str": 200,
+	  "dex": 200,
+	  "wis": 1000,
+	  "luk": 200,
+	  "atk": 200,
+	  "def": 100
     },
     "description": "A helmet from one of the gods",
     "rarity": 4,
@@ -2079,11 +2079,11 @@
 	"type": "Sword",
     "value": 1000,
     "stats": {
-      "str": 100,
-	  "dex": 100,
+      "str": 200,
+	  "dex": 200,
 	  "wis": 1000,
-	  "luk": 100,
-	  "atk": 500,
+	  "luk": 200,
+	  "atk": 200,
 	  "def": 100
     },
     "description": "A sword from one of the gods",
@@ -2096,12 +2096,12 @@
 	"type": "Spear",
     "value": 1000,
     "stats": {
-      "str": 80,
-	  "dex": 80,
-	  "wis": 800,
-	  "luk": 180,
-	  "atk": 400,
-	  "def": 150
+      "str": 200,
+	  "dex": 200,
+	  "wis": 1000,
+	  "luk": 200,
+	  "atk": 200,
+	  "def": 100
     },
     "description": "A spear from one of the gods",
     "rarity": 4,
@@ -2113,12 +2113,12 @@
 	"type": "Axe",
     "value": 1000,
     "stats": {
-      "str": 150,
-	  "dex": 120,
-	  "wis": 1500,
-	  "luk": 120,
-	  "atk": 750,
-	  "def": 80
+      "str": 200,
+	  "dex": 200,
+	  "wis": 1000,
+	  "luk": 200,
+	  "atk": 200,
+	  "def": 100
     },
     "description": "An axe from one of the gods",
     "rarity": 4,
@@ -2130,12 +2130,12 @@
 	"type": "Dagger",
     "value": 1000,
     "stats": {
-      "str": 50,
-	  "dex": 60,
-	  "wis": 600,
-	  "luk": 60,
-	  "atk": 60,
-	  "def": 120
+      "str": 200,
+	  "dex": 200,
+	  "wis": 1000,
+	  "luk": 200,
+	  "atk": 200,
+	  "def": 100
     },
     "description": "A dagger from one of the gods",
     "rarity": 4,
@@ -2147,11 +2147,11 @@
 	"type": "Helmet",
     "value": 250,
     "stats": {
-      "str": 100,
-	  "dex": 20,
-	  "wis": 20,
-	  "luk": 20,
-	  "atk": 20,
+      "str": 1000,
+	  "dex": 200,
+	  "wis": 200,
+	  "luk": 200,
+	  "atk": 200,
 	  "def": 100
     },
     "description": "A helmet from one of the gods",
@@ -2164,12 +2164,12 @@
 	"type": "Armor",
     "value": 250,
     "stats": {
-      "str": 200,
-	  "dex": 40,
-	  "wis": 40,
-	  "luk": 40,
-	  "atk": 40,
-	  "def": 200
+      "str": 1000,
+	  "dex": 200,
+	  "wis": 200,
+	  "luk": 200,
+	  "atk": 200,
+	  "def": 100
     },
     "description": "A helmet from one of the gods",
     "rarity": 4,
@@ -2182,10 +2182,10 @@
     "value": 1000,
     "stats": {
       "str": 1000,
-	  "dex": 100,
-	  "wis": 100,
-	  "luk": 100,
-	  "atk": 500,
+	  "dex": 200,
+	  "wis": 200,
+	  "luk": 200,
+	  "atk": 200,
 	  "def": 100
     },
     "description": "A sword from one of the gods",
@@ -2198,12 +2198,12 @@
 	"type": "Spear",
     "value": 1000,
     "stats": {
-      "str": 800,
-	  "dex": 180,
-	  "wis": 80,
-	  "luk": 80,
-	  "atk": 400,
-	  "def": 150
+      "str": 1000,
+	  "dex": 200,
+	  "wis": 200,
+	  "luk": 200,
+	  "atk": 200,
+	  "def": 100
     },
     "description": "A spear from one of the gods",
     "rarity": 4,
@@ -2215,12 +2215,12 @@
 	"type": "Axe",
     "value": 1000,
     "stats": {
-      "str": 1500,
-	  "dex": 150,
-	  "wis": 120,
-	  "luk": 120,
-	  "atk": 750,
-	  "def": 80
+      "str": 1000,
+	  "dex": 200,
+	  "wis": 200,
+	  "luk": 200,
+	  "atk": 200,
+	  "def": 100
     },
     "description": "An axe from one of the gods",
     "rarity": 4,
@@ -2232,12 +2232,12 @@
 	"type": "Dagger",
     "value": 1000,
     "stats": {
-      "str": 600,
-	  "dex": 60,
-	  "wis": 60,
-	  "luk": 50,
-	  "atk": 60,
-	  "def": 120
+      "str": 1000,
+	  "dex": 200,
+	  "wis": 200,
+	  "luk": 200,
+	  "atk": 200,
+	  "def": 100
     },
     "description": "A dagger from one of the gods",
     "rarity": 4,
