@@ -25,6 +25,12 @@ public class DoorController : MonoBehaviour {
 				SceneManager.LoadScene (stageNumber, LoadSceneMode.Single);
 				Transform target = GameObject.FindWithTag ("Player").transform;
 				target.GetComponent<Player> ().door = true;
+				PlayerMusic temp = GameObject.Find ("Audio").GetComponent<PlayerMusic> ();
+				if (stageNumber == 2) {
+					temp.SM ();
+				} else {
+					temp.TM ();
+				}
 			}
 		}
 	}

@@ -18,6 +18,7 @@ public class PlayerStatUI : MonoBehaviour {
 	public Text avo;
 
     public Text sP;
+	public Text cd;
 
 	void Awake() {
 		str = GameObject.Find ("str").GetComponentInChildren<Text> ();
@@ -30,6 +31,7 @@ public class PlayerStatUI : MonoBehaviour {
 		sP = GameObject.Find ("sP").GetComponentInChildren<Text> ();
 		def = GameObject.Find ("def").GetComponentInChildren<Text> ();
 		avo = GameObject.Find ("avo").GetComponentInChildren<Text> ();
+		cd = GameObject.Find ("cd").GetComponentInChildren<Text> ();
 	}
 
     void Start () {
@@ -50,6 +52,7 @@ public class PlayerStatUI : MonoBehaviour {
         sP.text = "stat points left: " + PlayerStatistics.statPoints.ToString();
 		def.text = "def: " + PlayerStatistics.def.ToString ();
 		avo.text = "avo: " + PlayerStatistics.avo.ToString ();
+		cd.text = "cd: " + PlayerStatistics.cd.ToString ();
     }
 
 }

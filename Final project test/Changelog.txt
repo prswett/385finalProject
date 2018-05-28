@@ -1,3 +1,8 @@
+Version 4.6
+Map crash bug fixed
+fixed item drop bug
+Music doesn't restart after new stage
+
 Version 4.5
 Camera bug fixes
 stat save/load fixes

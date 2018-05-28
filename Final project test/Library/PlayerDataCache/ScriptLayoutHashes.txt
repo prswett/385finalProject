@@ -193,12 +193,14 @@ d64a7f935a1332310951c3185b31bd6b Assembly-CSharp.dll:.DoorController
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.EnemyWeaponController
 aa2e7797e2822bdedff620e81d324838 Assembly-CSharp.dll:.CrusherBoss
 4d52fd7a07270a80d14d2a1963a229e0 Assembly-CSharp.dll:.PisanShopKeeper
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.AudioController
+89c1990330271e9ae41ed0c7a914ee48 Assembly-CSharp.dll:.PlayerMusic
 6325068068b7444039497b3406f6fcc4 Assembly-CSharp.dll:.BossHealth
 492db5ae4fd998f0212061c83ff0ee74 Assembly-CSharp.dll:.TownController
 905c453a60b18ead19d924670f8a51f4 Assembly-CSharp.dll:.EnemyList
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Advertisements.dll:UnityEngine.Advertisements.CallbackExecutor
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Advertisements.dll:UnityEngine.Advertisements.Editor.Placeholder
-2132060caee97d7082706cf1053ce53d Assembly-CSharp.dll:.PlayerStatUI
+54e133ac9d9aee519dfc8922ac6bd765 Assembly-CSharp.dll:.PlayerStatUI
 c70b0bcae44aef9e96ae6ca2e2ed18bc Assembly-CSharp.dll:.StageController
 41c2bcd780f250d2af78113a6fd056b2 Assembly-CSharp.dll:.FlamethrowerController
 136a5b0fd782c95068bf6c93120adbeb Assembly-CSharp.dll:.EnemyController
@@ -245,7 +247,7 @@ f39111988ceb368d6e39330aadccfa87 Assembly-CSharp.dll:.SwordController
 e0f7ffd5d5c2abe4b2e16569a21163da UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioRoom
 67a5f2c97205d2e41a8ed7c7ce898f6e UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioSoundfieldExtension
 67a5f2c97205d2e41a8ed7c7ce898f6e UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioSourceExtension
-4a2b8f98b491ca3d4605fbeb8ac2d78d Assembly-CSharp.dll:.PortalController
+b903c034998f311e2656c314221c9a6d Assembly-CSharp.dll:.PortalController
 9e0ef5bf862444b5dc48b5a99554ce7c UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioListenerExtension
 e0f7ffd5d5c2abe4b2e16569a21163da UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioRoom
 67a5f2c97205d2e41a8ed7c7ce898f6e UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioSoundfieldExtension
@@ -268,7 +270,7 @@ ce9cd4b8d999269aba58dbfe044b2b24 Assembly-CSharp.dll:.PotionDescription
 4d52fd7a07270a80d14d2a1963a229e0 Assembly-CSharp.dll:.DamageNumber
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.LevelText
 8d58eedc8e1ad2a521bfe3b859be7569 Assembly-CSharp.dll:.PisanController
-180c81b8a31c8197f48521b935174e1e Assembly-CSharp.dll:.CameraController
+7fdcceb62787570d4fd667e845815da7 Assembly-CSharp.dll:.CameraController
 8f081f4a91dbd893b93bdb583c09a08c Assembly-CSharp.dll:.ShopController
 ce9cd4b8d999269aba58dbfe044b2b24 Assembly-CSharp.dll:.statDescription
 feca42a4c086c0535d9455c4acf1ea09 Assembly-CSharp.dll:.SpellBookController

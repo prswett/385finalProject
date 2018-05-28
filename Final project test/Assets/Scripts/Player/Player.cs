@@ -219,6 +219,7 @@ public class Player : MonoBehaviour {
 				anim.SetBool ("dead", false);
 				text.text = "";
 				playerReset ();
+				GetComponentInChildren<PlayerMusic> ().TM ();
 			}
 		} else {
 			anim.SetInteger ("weapon state", wepState);

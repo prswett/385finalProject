@@ -1,10 +1,15 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Items\ItemObject.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Player\PlayerStatistics.cs">
     <Files>
-      <File FileName="Assets\Scripts\Player\SwordController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Items\ItemObject.cs" Line="287" Column="54" />
-      <File FileName="Assets\Scripts\Stage\PortalController.cs" Line="46" Column="72" />
+      <File FileName="Assets\Scripts\Items\ItemController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Items\RareItemController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Inventory\ItemDatabase.cs" Line="1" Column="1" />
+      <File FileName="Assets\PlayerMusic.cs" Line="1" Column="2" />
+      <File FileName="Assets\Scripts\Enemies\EnemyHealth.cs" Line="105" Column="31" />
+      <File FileName="Assets\Scripts\Enemies\GasController.cs" Line="19" Column="64" />
+      <File FileName="Assets\Scripts\Enemies\EnemyWeaponController.cs" Line="37" Column="5" />
+      <File FileName="Assets\Scripts\Player\PlayerStatistics.cs" Line="63" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

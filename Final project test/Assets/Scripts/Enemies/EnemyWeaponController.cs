@@ -16,13 +16,25 @@ public class EnemyWeaponController : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject.CompareTag ("Player")) {
-			PlayerStatistics.takeDamage (1);
+			if (PlayerStatistics.level <= 5) {
+				PlayerStatistics.takeDamage (1 + PlayerStatistics.level / 7);
+			} else if (PlayerStatistics.level <= 10) {
+				PlayerStatistics.takeDamage (1 + PlayerStatistics.level / 4);
+			} else {
+				PlayerStatistics.takeDamage (1 + PlayerStatistics.level / 2);
+			}
 		}
 	}
 
 	void OnTriggerStay2D(Collider2D other) {
 		if (other.gameObject.CompareTag ("Player")) {
-			PlayerStatistics.takeDamage(1);
+			if (PlayerStatistics.level <= 5) {
+				PlayerStatistics.takeDamage (1 + PlayerStatistics.level / 7);
+			} else if (PlayerStatistics.level <= 10) {
+				PlayerStatistics.takeDamage (1 + PlayerStatistics.level / 4);
+			} else {
+				PlayerStatistics.takeDamage (1 + PlayerStatistics.level / 2);
+			}
 		}
 	}
 }

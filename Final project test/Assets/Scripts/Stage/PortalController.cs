@@ -10,6 +10,7 @@ public class PortalController : MonoBehaviour {
 	public Transform target;
 	Player player;
 	public TextMesh control;
+	public PlayerMusic playermusic;
 
 	public bool finalBoss = false;
 	public bool boss = false;
@@ -19,9 +20,13 @@ public class PortalController : MonoBehaviour {
 
 	public bool sent = false;
 
+	public bool testing = false;
+	public int test;
+
 	void Awake() {
 		target = GameObject.FindWithTag ("Player").transform;
 		player = target.GetComponent<Player> ();
+		playermusic = GameObject.Find ("Audio").GetComponent<PlayerMusic> ();
 	}
 
 	void Start () {
@@ -48,6 +53,7 @@ public class PortalController : MonoBehaviour {
 						player.delete ();
 						PlayerStatistics.reset ();
 						SceneManager.LoadScene (1, LoadSceneMode.Single);
+						playermusic.TM ();
 					}
 				} else {
 
@@ -57,17 +63,27 @@ public class PortalController : MonoBehaviour {
 							if (!sent) {
 								sent = true;
 								SceneManager.LoadScene (Random.Range (4, 8), LoadSceneMode.Single);
+								playermusic.BM ();
 							}
 						} else if (player.stageCount == 5) {
 							if (!sent) {
 								sent = true;
 								SceneManager.LoadScene (1, LoadSceneMode.Single);
+								playermusic.TM ();
 							}
 						} else {
 							if (!sent) {
 								sent = true;
-								int next = Random.Range (8, 25);
-								SceneManager.LoadScene (next, LoadSceneMode.Single);
+								if (!testing) {
+									int next = Random.Range (8, 25);
+									Debug.Log (next);
+									SceneManager.LoadScene (next, LoadSceneMode.Single);
+								} else {
+									SceneManager.LoadScene (test, LoadSceneMode.Single);
+								}
+								if (player.stageCount == 0) {
+									playermusic.DM ();
+								}
 							}
 						}
 					} else {

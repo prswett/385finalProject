@@ -38,10 +38,12 @@ public class EnemyHealth : MonoBehaviour {
 		if (maxHealth == 0) {
 			maxHealth = 100;
 		}
-		if (PlayerStatistics.level <= 20) {
+		if (PlayerStatistics.level <= 10) {
 			maxHealth = (maxHealth * PlayerStatistics.level) / 4f;
-		} else {
+		} else if (PlayerStatistics.level <= 10) {
 			maxHealth = (maxHealth * PlayerStatistics.level) / 2f;
+		} else {
+			maxHealth = (maxHealth * PlayerStatistics.level);
 		}
 		lastHit = Time.time;
 		target = GameObject.FindWithTag ("Player").transform;
@@ -93,9 +95,17 @@ public class EnemyHealth : MonoBehaviour {
 			Player killCount = target.GetComponent<Player> ();
 			killCount.killCount++;
 			if (killCount.expBoost) {
-				PlayerStatistics.exp += 2 * (3 * PlayerStatistics.level / 4);
+				if (PlayerStatistics.level <= 10) {
+					PlayerStatistics.exp += 2 * 3 * PlayerStatistics.level / 4;
+				} else {
+					PlayerStatistics.exp += 2 * 3 * PlayerStatistics.level / 2;
+				}
 			} else {
-				PlayerStatistics.exp += 3 * PlayerStatistics.level / 4;
+				if (PlayerStatistics.level <= 10) {
+					PlayerStatistics.exp += 3 * PlayerStatistics.level / 4;
+				} else {
+					PlayerStatistics.exp += 3 * PlayerStatistics.level / 2;
+				}
 			}
 			parentController.destroy();
 		}
@@ -146,15 +156,13 @@ public class EnemyHealth : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other) {
 		if (!tutorial) {
 			if (other.gameObject.CompareTag ("Player")) {
-				if (parentController.active == true) {
 					if (PlayerStatistics.level <= 5) {
 						PlayerStatistics.takeDamage (1 + PlayerStatistics.level / 7);
-					} else if (PlayerStatistics.level <= 20) {
+					} else if (PlayerStatistics.level <= 10) {
 						PlayerStatistics.takeDamage (1 + PlayerStatistics.level / 4);
 					} else {
 						PlayerStatistics.takeDamage (1 + PlayerStatistics.level / 2);
 					}
-				}
 			}
 		}
 	}
@@ -162,15 +170,13 @@ public class EnemyHealth : MonoBehaviour {
 	void OnTriggerStay2D(Collider2D other) {
 		if (!tutorial) {
 			if (other.gameObject.CompareTag ("Player")) {
-				if (parentController.active == true) {
 					if (PlayerStatistics.level <= 5) {
 						PlayerStatistics.takeDamage (1 + PlayerStatistics.level / 7);
-					} else if (PlayerStatistics.level <= 20) {
+					} else if (PlayerStatistics.level <= 10) {
 						PlayerStatistics.takeDamage (1 + PlayerStatistics.level / 4);
 					} else {
 						PlayerStatistics.takeDamage (1 + PlayerStatistics.level / 2);
 					}
-				}
 			}
 		}
 	}

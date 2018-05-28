@@ -74,37 +74,37 @@ public class RareItemController : MonoBehaviour {
 	void generateIntermediateItemv2() {
 		int roll = Random.Range (0, 100);
 		if (roll < 40) {
-			ID = Random.Range (36, 67);
+			ID = Random.Range (36, 66);
 		} else if (roll < 70) {
-			ID = Random.Range (12, 67);
+			ID = Random.Range (12, 66);
 		} else {
-			ID = Random.Range (0, 67);
+			ID = Random.Range (0, 66);
 		}
 	}
 
 	void generateAdvancedItem() {
 		int roll = Random.Range (0, 100);
 		if (roll < 30) {
-			ID = Random.Range (67, 91);
+			ID = Random.Range (66, 90);
 		} else if (roll < 60) {
-			ID = Random.Range (36, 91);
+			ID = Random.Range (36, 90);
 		} else if (roll < 90) {
-			ID = Random.Range (12, 91);
+			ID = Random.Range (12, 90);
 		} else {
-			ID = Random.Range (0, 91);
+			ID = Random.Range (0, 90);
 		}
 	}
 
 	void generateAdvancedItemv2() {
 		int roll = Random.Range (0, 100);
 		if (roll < 40) {
-			ID = Random.Range (91, 109);
+			ID = Random.Range (90, 108);
 		} else if (roll < 60) {
-			ID = Random.Range (67, 109);
+			ID = Random.Range (66, 108);
 		} else if (roll < 90) {
-			ID = Random.Range (36, 109);
+			ID = Random.Range (36, 108);
 		} else {
-			ID = Random.Range (12, 109);
+			ID = Random.Range (12, 108);
 		}
 	}
 
@@ -112,9 +112,9 @@ public class RareItemController : MonoBehaviour {
 		if (rareItem) {
 			int roll = Random.Range (0, 100);
 			if (roll < 5) {
-				ID = Random.Range (109, 133);
-			} else if (roll < 15) {
-				ID = Random.Range (133, 139);
+				ID = Random.Range (108, 132);
+			} else if (roll < 10) {
+				ID = Random.Range (132, 137);
 			} else {
 				generateAdvancedItemv2 ();
 			}

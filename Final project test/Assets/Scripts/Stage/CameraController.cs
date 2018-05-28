@@ -10,9 +10,12 @@ public class CameraController : MonoBehaviour {
 	public float negX;
 	public float negY;
 	public float posY;
+
+	public float size;
 	// Use this for initialization
 	void Awake() {
 		target = GameObject.FindWithTag ("Player").transform;
+		size = GetComponent<Camera> ().orthographicSize;
 	}
 
 	void Start () {

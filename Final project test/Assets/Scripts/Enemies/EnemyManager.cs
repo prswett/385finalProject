@@ -35,7 +35,7 @@ public class EnemyManager : MonoBehaviour {
 	}
 
 	void Start () {
-		InvokeRepeating ("Spawn", spawnTime, 1f);
+		InvokeRepeating ("Spawn", spawnTime, Random.Range(1f, 3f));
 	}
 
 	void Update () {
@@ -50,11 +50,15 @@ public class EnemyManager : MonoBehaviour {
 		if (!bossStage) {
 			spawnx = Random.Range (horiNeg + x, horiPos + x);
 			spawny = Random.Range (vertiNeg + y, vertiPos + y);
-			while (spawnx < temp.negX - 1.9f || spawnx > temp.posX + 1.9f) {
-				spawnx = Random.Range (horiNeg + x, horiPos + x);
+			if (spawnx < temp.negX - 2 * temp.size) {
+				spawnx = temp.negX;
+			} else if (spawnx > temp.posX + 2 * temp.size) {
+				spawnx = temp.posX;
 			}
-			while (spawny < temp.negY - .8f  || spawny > temp.posY + .9f) {
-				spawny = Random.Range (vertiNeg + y, vertiPos + y);
+			if (spawny < temp.negY - 2 * temp.size) {
+				spawny = temp.negY;
+			} else if (spawny > temp.posY + 2 * temp.size) {
+				spawny = temp.posY;
 			}
 			Vector3 position = new Vector3 (spawnx, spawny, 0);
 			int selectEnemy = Random.Range (0, EnemyList.numberEnemies);

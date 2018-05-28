@@ -127,7 +127,7 @@ public class ItemObject : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 								PlayerStatistics.wis += temp.wis;
 								PlayerStatistics.luk += temp.luk;
 								PlayerStatistics.atk += temp.atk;
-								PlayerStatistics.def += temp.atk;
+								PlayerStatistics.def += temp.def;
 							}
 						}
 

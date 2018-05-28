@@ -186,7 +186,7 @@ public class PlayerStatistics  : MonoBehaviour
 
 	private void Update()
 	{
-		if (maxMana > 50) {
+		if (maxMana > 100) {
 			if (Time.time - manaRegen > 5) {
 				float manaAdd = maxMana / 10;
 				if (mana + manaAdd > maxMana) {
@@ -229,8 +229,10 @@ public class PlayerStatistics  : MonoBehaviour
 		} else {
 			matk = nmatk;
 		}
+
 		// crit chance scales off of 0.5 * luk
 		cc = 5 + (float)(luk * 0.5);
+
 		// more luk more crit
 		expMod = 1 + (float)(luk * 0.01);
 		// enemy avo - acc is hit chance
@@ -255,8 +257,12 @@ public class PlayerStatistics  : MonoBehaviour
 			mana = maxMana;
 			// next level reached
 			exp -= nextLevel;
-			// exp to next level += 20
-			nextLevel *= 1.5f;
+
+			if (level <= 10) {
+				nextLevel *= 1.5f;
+			} else {
+				nextLevel *= 1.3f;
+			}
 			nextLevel = (float)(int)nextLevel + 1;
 			// more stat points
 			statPoints += 7;

@@ -52,7 +52,6 @@ public class LoadPlayer : MonoBehaviour {
 					int.Parse (split [7]), int.Parse (split [8]), data.item0Desc, int.Parse (split [9]),
 					           split [10]);
 				temp2.loadStats (temp);
-				Debug.Log (data.item0Title);
 				a.addItem (temp2);
 			}
 
@@ -63,7 +62,6 @@ public class LoadPlayer : MonoBehaviour {
 					int.Parse (split [7]), int.Parse (split [8]), data.item1Desc, int.Parse (split [9]),
 					split [10]);
 				temp2.loadStats (temp);
-				Debug.Log (data.item1Title);
 				a.addItem (temp2);
 			}
 				
