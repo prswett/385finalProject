@@ -7,7 +7,7 @@ boss balancing
 Add item boost chance
 Switch iron (boosted) to steel
 
-Player outofbounds for map bugs
+player outofbounds
 
 if (PlayerStatistics.level <= 5) {
 
