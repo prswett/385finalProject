@@ -8,6 +8,7 @@ public class PlayerStatistics  : MonoBehaviour
 	public static float coins = 50;
 
 	public static float lastHit = 0;
+	public static float lastDefHit = 0;
 
 	public static float baseHealth = 125;
 	// current hp
@@ -69,15 +70,15 @@ public class PlayerStatistics  : MonoBehaviour
 	// ignore enemy defense% (enemy defense * (ied / 100))
 	public static float ied = 30;
 
-	// multiplier for exp
-	public static float expMod = 1;
-
 	public static float level = 1;
 	// exp needed to reach next level
 	public static float nextLevel = 10;
 
 	public float manaRegen = 0;
 	public bool updateTextIcon = false;
+
+	public static float healthPotTimer;
+	public static float manaPotTimer;
 
 	// everyone starts with 5 stat points
 	public static float statPoints = 10;
@@ -106,8 +107,8 @@ public class PlayerStatistics  : MonoBehaviour
 	}
 
 	public static void load() {
-		maxHealth = baseHealth + (4 * str);
-		maxMana = baseMana + (float)(int)(wis / 3);
+		maxHealth = baseHealth + (3 * str);
+		maxMana = baseMana + (float)(int)(wis / 4);
 		health = maxHealth;
 		mana = maxMana;
 	}
@@ -132,11 +133,11 @@ public class PlayerStatistics  : MonoBehaviour
 
 	public static void takeDamage(float damage) {
 
-		if (Time.time - lastHit >= .2f) {
+		if (Time.time - lastHit >= .3f) {
 			if (def < 0) {
 				int avoid = UnityEngine.Random.Range (0, 100);
 				if (avoid > avo) {
-					float damageIncrease = Mathf.Abs (def) / 25;
+					float damageIncrease = Mathf.Abs (def) / 40;
 					damageIncrease *= 5;
 					health -= (damage / 100) * (100 + damageIncrease);
 					if (health <= 0) {
@@ -148,15 +149,33 @@ public class PlayerStatistics  : MonoBehaviour
 			} else {
 				int avoid = UnityEngine.Random.Range (0, 100);
 				if (avoid > avo) {
-					float damageReduction = def / 50;
-					damageReduction *= 4;
-					health -= (damage / 100) * (100 - damageReduction);
+					float damageReduction = def / 100;
+					damageReduction *= 3.5f;
+					float temp = (damage / 100) * (100 - damageReduction);
+					if (temp <= 0) {
+
+					} else {
+						health -= temp;
+					}
 					if (health <= 0) {
 						health = 0;
 					}
 					lastHit = Time.time;
 					health = (float)(int)health;
 				}
+			}
+		}
+	}
+
+	public static void takeDefDamage(float damage) {
+		if (Time.time - lastDefHit >= .3f) {
+			int avoid = UnityEngine.Random.Range (0, 100);
+			if (avoid > (avo / 2)) {
+				health -= damage;
+				if (health <= 0) {
+					health = 0;
+				}
+				lastDefHit = Time.time;
 			}
 		}
 	}
@@ -202,13 +221,13 @@ public class PlayerStatistics  : MonoBehaviour
 
 	private void Update()
 	{
-		if (maxMana > 100) {
-			if (Time.time - manaRegen > 5) {
-				float manaAdd = maxMana / 10;
+		if (maxMana > 75) {
+			if (Time.time - manaRegen > 4) {
+				float manaAdd = maxMana / 12;
 				if (mana + manaAdd > maxMana) {
 					mana = maxMana;
 				} else {
-					mana += manaAdd;
+					mana += (float)(int)manaAdd;
 				}
 				manaRegen = Time.time;
 			}
@@ -217,29 +236,29 @@ public class PlayerStatistics  : MonoBehaviour
 			text.updateLevel ();
 		}
 		//
-		maxHealth = baseHealth + (4 * str);
-		if (maxHealth <= 0) {
+		maxHealth = baseHealth + (3 * str);
+		if (maxHealth <= 1) {
 			maxHealth = 1;
 		}
 		if (health > maxHealth) {
 			health = maxHealth;
 		}
-		maxMana = (float)(int)(baseMana + (float)(int)(wis / 3));
-		if (maxMana <= 0) {
+		maxMana = (float)(int)(baseMana + (float)(int)(wis / 4));
+		if (maxMana <= 1) {
 			maxMana = 1;
 		}
 		if (mana > maxMana) {
 			mana = maxMana;
 		}
 		// atk scales off WA + 0.5*Str + 0.25Dex
-		float natk = (float)((str * 0.5) + (dex * 0.25) + wa);
+		float natk = (float)((str * 0.2) + (dex * 0.5) + wa);
 		if (natk <= 0) {
 			atk = 1;
 		} else {
 			atk = natk;
 		}
 		// matk scales off MA + 0.8*wis
-		float nmatk = ma + (float)(wis * 0.8);
+		float nmatk = ma + (float)(wis * 1);
 		if (nmatk <= 0) {
 			matk = 1;
 		} else {
@@ -247,14 +266,18 @@ public class PlayerStatistics  : MonoBehaviour
 		}
 
 		// crit chance scales off of 0.5 * luk
-		cc = 5 + (float)(luk * 0.5);
+		float ncc = 5 + (float)(luk * 0.5);
+		if (ncc > 100) {
+			cc = 100;
+		} else {
+			cc = ncc;
+		}
 
-		// more luk more crit
-		expMod = 1 + (float)(luk * 0.01);
 		// enemy avo - acc is hit chance
 		acc = 90 + (float)(dex * 0.5);
+
 		// chance to get hit
-		float nAvo = 10 + (float)((dex * 0.2) + (luk * 0.5));
+		float nAvo = 0 + (float)((dex * 0.25) + (luk * 0.4));
 		if(nAvo > 40){
 			avo = 40;
 		}
@@ -264,7 +287,7 @@ public class PlayerStatistics  : MonoBehaviour
 		// ied
 		ied = 30 + (float)(luk * 0.05);
 		//crit damage
-		cd = 50 + (float)((dex * 0.005) + (luk * 0.5));
+		cd = 30 + (float)((dex * 0.1) + (luk * 0.45));
 
 		// check if exp reached
 		if(exp >= nextLevel)
@@ -274,10 +297,12 @@ public class PlayerStatistics  : MonoBehaviour
 			// next level reached
 			exp -= nextLevel;
 
-			if (level <= 10) {
+			if (level <= 5) {
 				nextLevel *= 1.5f;
-			} else {
+			} else if (level <= 15) {
 				nextLevel *= 1.3f;
+			} else {
+				nextLevel *= 1.2f;
 			}
 			nextLevel = (float)(int)nextLevel + 1;
 			// more stat points

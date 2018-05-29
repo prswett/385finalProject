@@ -9,11 +9,11 @@ public class HealingController : MonoBehaviour {
 	public string description = "Heal yourself";
 	// Use this for initialization
 	void Start () {
-		float healing = (modifiedHealing + PlayerStatistics.calcMD ()) / 2;
+		float healing = (modifiedHealing + PlayerStatistics.calcMD ()) / 4;
 		if (PlayerStatistics.maxHealth - PlayerStatistics.health < healing) {
 			PlayerStatistics.health = PlayerStatistics.maxHealth;
 		} else {
-			PlayerStatistics.health += healing;
+			PlayerStatistics.health += (float)(int)healing;
 		}
 		Invoke ("Destroy", 1f);
 	}

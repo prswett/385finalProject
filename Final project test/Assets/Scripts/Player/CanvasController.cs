@@ -52,41 +52,43 @@ public class CanvasController : MonoBehaviour {
 	}
 
 	void Update () {
-		if (Input.GetKeyDown (KeyCode.Escape)) {
-			if (paused) {
-				UnPause ();
-			} else {
-				player.anim.SetBool ("attacking", false);
-				Pause ();
+		if (Time.timeScale != 0) {
+			if (Input.GetKeyDown (KeyCode.Escape)) {
+				if (paused) {
+					UnPause ();
+				} else {
+					player.anim.SetBool ("attacking", false);
+					Pause ();
+				}
 			}
-		}
 			
-		if (Input.GetKeyDown (KeyCode.C)) {
-			if (!inventoryOpen) {
-				showInventory ();
-				player.anim.SetBool ("attacking", false);
-			} else {
-				if (player != null) {
-					if (!player.tryingToDelete) {
+			if (Input.GetKeyDown (KeyCode.C)) {
+				if (!inventoryOpen) {
+					showInventory ();
+					player.anim.SetBool ("attacking", false);
+				} else {
+					if (player != null) {
+						if (!player.tryingToDelete) {
+							hideInventory ();
+							upgrading = false;
+							upgradeImage.sprite = Resources.Load<Sprite> ("DrawingsV2/UI/UpgradeUnActive");
+						}
+					} else {
 						hideInventory ();
 						upgrading = false;
 						upgradeImage.sprite = Resources.Load<Sprite> ("DrawingsV2/UI/UpgradeUnActive");
 					}
-				} else {
-					hideInventory ();
+				}
+			}
+
+			if (Input.GetKeyDown (KeyCode.U) && player.upgradeAvailable) {
+				if (!upgrading && inventoryOpen) {
+					upgrading = true;
+					upgradeImage.sprite = Resources.Load<Sprite> ("DrawingsV2/UI/UpgradeActive");
+				} else if (upgrading && inventoryOpen) {
 					upgrading = false;
 					upgradeImage.sprite = Resources.Load<Sprite> ("DrawingsV2/UI/UpgradeUnActive");
 				}
-			}
-		}
-
-		if (Input.GetKeyDown(KeyCode.U) && player.upgradeAvailable) {
-			if (!upgrading && inventoryOpen) {
-				upgrading = true;
-				upgradeImage.sprite = Resources.Load<Sprite> ("DrawingsV2/UI/UpgradeActive");
-			} else if (upgrading && inventoryOpen) {
-				upgrading = false;
-				upgradeImage.sprite = Resources.Load<Sprite> ("DrawingsV2/UI/UpgradeUnActive");
 			}
 		}
 	}

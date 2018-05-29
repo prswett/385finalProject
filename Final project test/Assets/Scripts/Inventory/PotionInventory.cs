@@ -94,49 +94,8 @@ public class PotionInventory : MonoBehaviour {
 					temp.potion.GetComponent<PotionObject> ().slot = i;
 					temp.potion.GetComponent<PotionStats> ().loadStats(database.FetchItemByID(id));
 					slots [i].GetComponent<PotionSlot> ().potion.GetComponent<PotionObject> ().amount = 1;
-					break;
-				}
-			}
-		}
-	}
-
-	public void AddItem(int id, bool tutorial)
-	{
-		if (id < 0) {
-			return;
-		}
-		Potion itemToAdd = database.FetchItemByID(id);
-
-		if (itemToAdd.Stackable && CheckIfItemIsInInventory(itemToAdd.ID))
-		{
-			for(int i = 0; i < slotAmount; i++)
-			{
-				if(slots[i].GetComponent<PotionSlot>().potion.GetComponent<PotionStats>().ID == itemToAdd.ID)
-				{
-					PotionObject data = slots [i].GetComponent<PotionSlot> ().potion.GetComponent<PotionObject> ();
-					data.amount++;
-					data.tutorial = tutorial;
-					data.transform.GetChild(0).GetComponent<Text>().text = data.amount.ToString();
-					break;
-				}
-
-			}
-
-		}
-		else
-		{
-			for (int i = 0; i < slotAmount; i++) {
-				if (slots [i].GetComponent<PotionSlot> ().potion == null) {
-					PotionSlot temp = slots [i].GetComponent<PotionSlot> ();
-					temp.potion = Instantiate (inventoryPotion);
-					temp.potion.transform.SetParent (slots [i].transform);
-					temp.potion.transform.position = slots [i].transform.position;
-					temp.potion.GetComponent<Image> ().sprite = database.FetchItemByID (id).Sprite;
-					temp.potion.transform.localScale = new Vector3 (.5f, .5f, 0);
-					temp.potion.GetComponent<PotionObject> ().slot = i;
-					temp.potion.GetComponent<PotionObject> ().tutorial = tutorial;
-					temp.potion.GetComponent<PotionStats> ().loadStats(database.FetchItemByID(id));
-					slots [i].GetComponent<PotionSlot> ().potion.GetComponent<PotionObject> ().amount = 1;
+					int integer = 1;
+					temp.potion.GetComponent<PotionObject> ().transform.GetChild (0).GetComponent<Text> ().text = integer.ToString();
 					break;
 				}
 			}
@@ -153,6 +112,7 @@ public class PotionInventory : MonoBehaviour {
 		temp.potion.GetComponent<PotionObject> ().slot = slot;
 		temp.potion.GetComponent<PotionObject> ().amount = amount;
 		temp.potion.GetComponent<PotionStats> ().loadStats(id);
+		temp.potion.GetComponent<PotionObject> ().transform.GetChild (0).GetComponent<Text> ().text = amount.ToString();
 	}
 
 	public void RemoveItemSlot(int slot) {

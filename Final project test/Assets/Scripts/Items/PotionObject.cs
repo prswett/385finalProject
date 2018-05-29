@@ -34,33 +34,38 @@ public class PotionObject : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 			if (PlayerStatistics.health > 0) {
 				PotionStats temp = pInv.slots [slot].GetComponent<PotionSlot> ().potion.GetComponent<PotionStats> ();
 				if (temp.type == "Health") {
-					int healing = (int)((PlayerStatistics.maxHealth / 100) * temp.healing);
-					if (PlayerStatistics.health <= PlayerStatistics.maxHealth - healing) {
-						PlayerStatistics.health += healing;
-					} else {
-						PlayerStatistics.health = PlayerStatistics.maxHealth;
-					}
-					amount--;
-					transform.GetChild (0).GetComponent<Text> ().text = amount.ToString ();
-					if (amount == 0) {
-						tooltip.Deactivate ();
-						pInv.RemoveItemSlot (slot);
+					if (Time.time - PlayerStatistics.healthPotTimer >= 3) {
+						int healing = (int)((PlayerStatistics.maxHealth / 100) * temp.healing);
+						if (PlayerStatistics.health <= PlayerStatistics.maxHealth - healing) {
+							PlayerStatistics.health += healing;
+						} else {
+							PlayerStatistics.health = PlayerStatistics.maxHealth;
+						}
+						amount--;
+						transform.GetChild (0).GetComponent<Text> ().text = amount.ToString ();
+						PlayerStatistics.healthPotTimer = Time.time;
+						if (amount == 0) {
+							tooltip.Deactivate ();
+							pInv.RemoveItemSlot (slot);
+						}
 					}
 				}
 
 				if (temp.type == "Mana") {
-					int healing = (int)((PlayerStatistics.maxMana / 100) * temp.healing);
-					if (PlayerStatistics.mana <= PlayerStatistics.maxMana - healing) {
-						PlayerStatistics.mana += healing;
-					} else {
-						PlayerStatistics.mana = PlayerStatistics.maxMana;
-					}
-					amount--;
-					transform.GetChild (0).GetComponent<Text> ().text = amount.ToString ();
-
-					if (amount == 0) {
-						tooltip.Deactivate ();
-						pInv.RemoveItemSlot (slot);
+					if (Time.time - PlayerStatistics.manaPotTimer >= 3) {
+						int healing = (int)((PlayerStatistics.maxMana / 100) * temp.healing);
+						if (PlayerStatistics.mana <= PlayerStatistics.maxMana - healing) {
+							PlayerStatistics.mana += healing;
+						} else {
+							PlayerStatistics.mana = PlayerStatistics.maxMana;
+						}
+						amount--;
+						transform.GetChild (0).GetComponent<Text> ().text = amount.ToString ();
+						PlayerStatistics.manaPotTimer = Time.time;
+						if (amount == 0) {
+							tooltip.Deactivate ();
+							pInv.RemoveItemSlot (slot);
+						}
 					}
 				}
 

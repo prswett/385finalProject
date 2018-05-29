@@ -36,10 +36,10 @@ public class coinController : MonoBehaviour {
 				} else {
 					PlayerStatistics.coins += coin;
 				}
-				Destroy (gameObject);
+				Destroy (transform.parent.gameObject);
 			}
 		} else {
-			Destroy (gameObject);
+			Destroy (transform.parent.gameObject);
 		}
 
 		if (other.gameObject.CompareTag ("outofbounds")) {

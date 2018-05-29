@@ -43,9 +43,9 @@ public class ItemController : MonoBehaviour {
 					generateIntermediateItem ();
 				} else if (PlayerStatistics.level <= 12) {
 					generateIntermediateItemv2 ();
-				} else if (PlayerStatistics.level <= 16) {
+				} else if (PlayerStatistics.level <= 15) {
 					generateAdvancedItem ();
-				} else if (PlayerStatistics.level <= 22) {
+				} else if (PlayerStatistics.level <= 19) {
 					generateAdvancedItemv2 ();
 				} else {
 					generateGodItem ();
@@ -123,26 +123,29 @@ public class ItemController : MonoBehaviour {
 
 	void generatePotion() {
 		int potionSize = Random.Range (0, 10);
-		if (potionSize < 1) {
-			int hm = Random.Range (0, 10);
-			if (hm < 3) {
-				ID = 7;
+		if (PlayerStatistics.level <= 5) {
+			if (potionSize < 1) {
+				ID = Random.Range (6, 8);
+			} else if (potionSize < 4) {
+				ID = Random.Range (4, 6);
 			} else {
-				ID = 6;
+				ID = Random.Range (0, 2);
 			}
-		} else if (potionSize < 4) {
-			int hm = Random.Range (0, 10);
-			if (hm < 3) {
-				ID = 5;
+		} else if (PlayerStatistics.level <= 15) {
+			if (potionSize < 2) {
+				ID = Random.Range (6, 8);
+			} else if (potionSize < 5) {
+				ID = Random.Range (4, 6);
 			} else {
-				ID = 4;
+				ID = Random.Range (0, 2);
 			}
 		} else {
-			int hm = Random.Range (0, 10);
-			if (hm < 3) {
-				ID = 1;
+			if (potionSize < 3) {
+				ID = Random.Range (6, 8);
+			} else if (potionSize < 6) {
+				ID = Random.Range (4, 6);
 			} else {
-				ID = 0;
+				ID = Random.Range (0, 2);
 			}
 		}
 	}
@@ -164,13 +167,9 @@ public class ItemController : MonoBehaviour {
 
 	void pickUP() {
 		if (type == "Potion") {
-			if (player.pInv.checkEmpty ()) {
-				player.addPotion (ID);
-				itempickup.showItem ("Picked up: " + player.pInv.database.FetchItemName (ID));
-				Destroy (transform.parent.gameObject);
-			} else {
-				itempickup.showItem ("Potion Inventory Full");
-			}
+			player.addPotion (ID);
+			itempickup.showItem ("Picked up: " + player.pInv.database.FetchItemName (ID));
+			Destroy (transform.parent.gameObject);
 		} else {
 			if (player.inv.checkEmpty ()) {
 				player.addItem (ID);

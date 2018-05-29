@@ -12,7 +12,6 @@ public class ItemDatabase : MonoBehaviour
 	string url = "http://students.washington.edu/mattphan/StreamingAssets/Items.json";
 	void Awake() {
 		Start ();
-
 	}
 			
 	IEnumerator Start() {
@@ -20,7 +19,6 @@ public class ItemDatabase : MonoBehaviour
 		yield return link;
 		isDone = true;
 		if (isDone) {
-			Debug.Log ("finished");
 			itemData = JsonMapper.ToObject (new LitJson.JsonReader (link.text));
 			ConstructItemDatabase ();
 		}

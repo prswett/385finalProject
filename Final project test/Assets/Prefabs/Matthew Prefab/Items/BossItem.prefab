@@ -161,6 +161,8 @@ MonoBehaviour:
   player: {fileID: 0}
   location: 0
   rareItem: 1
+  set: 0
+  itempickup: {fileID: 0}
 --- !u!212 &212905754594298184
 SpriteRenderer:
   m_ObjectHideFlags: 1

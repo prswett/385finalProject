@@ -33,6 +33,8 @@ public class Player : MonoBehaviour {
 
 	//Update() variables
 	public static bool loadedChar = false;
+	public float loadTime = 0;
+	public bool setLoadTime = false;
 	public Transform groundCheck;
 	public float groundCheckRadius;
 	public LayerMask groundLayer;
@@ -86,6 +88,8 @@ public class Player : MonoBehaviour {
 
 	public TextMesh text;
 	public bool upgradeAvailable = false;
+
+	public Image loadingScreen;
 
 	void Awake() {
 		if (Instance == null) {
@@ -162,23 +166,32 @@ public class Player : MonoBehaviour {
 		killCount = 0;
 		gravityStore = rb2d.gravityScale;
 
+		if (!loadedChar) {
+			Destroy (loadingScreen);
+		}
 		//GetComponent<SpriteRenderer> ().color = Color.blue;
 	}
-
-	//
+		
 	void Update () {
 		timeStop = (menu || inventory || shop);
-		if (loadedChar) {
+		if (loadedChar && !setLoadTime) {
+			loadTime = Time.time;
+			setLoadTime = true;
+			Time.timeScale = 0;
+		}
+		if (loadedChar && Time.time - loadTime > 1) {
 			LoadPlayer load = new LoadPlayer ();
 			load.Load (this);
 			loadedChar = false;
 			spells.load ();
+			Destroy (loadingScreen);
+			Time.timeScale = 1;
 		}
 
-		if (Time.time - goldTime > 30) {
+		if (Time.time - goldTime > 70) {
 			goldBoost = false;
 		}
-		if (Time.time - expTime > 30) {
+		if (Time.time - expTime > 70) {
 			expBoost = false;
 		}
 
@@ -234,7 +247,7 @@ public class Player : MonoBehaviour {
 					attacking = false;
 				}
 
-				if (Input.GetKeyDown (KeyCode.Space) && onGround && !jumpDown && !Input.GetKey(KeyCode.S)) {
+				if (Input.GetKeyDown (KeyCode.Space) && onGround && !jumpDown && !Input.GetKey (KeyCode.S)) {
 					rb2d.gravityScale = gravityStore;
 					rb2d.velocity = new Vector2 (rb2d.velocity.x, jumpSpeed);
 					jumping = true;
@@ -254,7 +267,7 @@ public class Player : MonoBehaviour {
 					}
 				}
 
-				float wheel = Input.GetAxis("Mouse ScrollWheel");
+				float wheel = Input.GetAxis ("Mouse ScrollWheel");
 				if (wheel > 0f) {
 					changeWeapon (true);
 				} else if (wheel < 0f) {
@@ -285,7 +298,7 @@ public class Player : MonoBehaviour {
 				}
 			}
 
-			if (onLadder ) {
+			if (onLadder) {
 				if (Input.GetKeyDown (KeyCode.Space)) {
 					rb2d.gravityScale = gravityStore;
 					rb2d.velocity = new Vector2 (rb2d.velocity.x, jumpSpeed);
@@ -303,7 +316,7 @@ public class Player : MonoBehaviour {
 				rb2d.gravityScale = gravityStore;
 			}
 		}
-		}
+	}
 
 	void FixedUpdate() {
 		if (!timeStop && (anim.GetBool("dead") != true)) {

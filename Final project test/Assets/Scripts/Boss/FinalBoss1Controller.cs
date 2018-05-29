@@ -16,8 +16,8 @@ public class FinalBoss1Controller : MonoBehaviour {
 	Vector2 bulletPos;
 
 	public BossHealth myHealth;
-	int baseDamage = 10;
-	int damage = 100;
+	int baseDamage = 20;
+	int damage = 150;
 	public float increaseDamage;
 
 	public float shootTime;
@@ -41,7 +41,7 @@ public class FinalBoss1Controller : MonoBehaviour {
 	}
 
 	void Update () {
-		if (Time.time - increaseDamage > 25f) {
+		if (Time.time - increaseDamage > 15f) {
 			damage += baseDamage;
 			increaseDamage = Time.time;
 		}
@@ -52,9 +52,17 @@ public class FinalBoss1Controller : MonoBehaviour {
 		enemyY = transform.position.y + 1.1f;
 
 		if (Time.time - attackWindow < 10f) {
-			if (Time.time - shootTime > .5f) {
-				fire ();
-				shootTime = Time.time;
+			if (myHealth.currentHealth <= myHealth.maxHealth / 2) {
+				if (Time.time - shootTime > .1f) {
+					fire ();
+					shootTime = Time.time;
+					baseDamage = 30;
+				}
+			} else {
+				if (Time.time - shootTime > .3f) {
+					fire ();
+					shootTime = Time.time;
+				}
 			}
 		} else {
 			shooting = true;
@@ -65,10 +73,18 @@ public class FinalBoss1Controller : MonoBehaviour {
 		}
 
 		if (shooting) {
-			if (Time.time - shootAgain >= 4f) {
-				attackWindow = Time.time;
-				shooting = false;
-				set = false;
+			if (myHealth.currentHealth <= myHealth.maxHealth / 2) {
+				if (Time.time - shootAgain >= 2f) {
+					attackWindow = Time.time;
+					shooting = false;
+					set = false;
+				}
+			} else {
+				if (Time.time - shootAgain >= 4f) {
+					attackWindow = Time.time;
+					shooting = false;
+					set = false;
+				}
 			}
 		}
 	}

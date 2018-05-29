@@ -43,7 +43,7 @@ public class SpellBookController : MonoBehaviour {
 		if (other.gameObject.CompareTag ("Player")) {
 			setId ();
 			player.addSpell (ID);
-			Destroy (gameObject);
+			Destroy (transform.parent.gameObject);
 		}
 
 		if (other.gameObject.CompareTag ("outofbounds")) {

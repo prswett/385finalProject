@@ -25,6 +25,8 @@ public class EnemyHealth : MonoBehaviour {
 	Renderer render;
 	public Vector3 current;
 
+	Player killCount;
+
 	public bool tutorial = false;
 	public float spawnTime;
 	bool checkInvalid = false;
@@ -47,18 +49,21 @@ public class EnemyHealth : MonoBehaviour {
 		}
 		lastHit = Time.time;
 		target = GameObject.FindWithTag ("Player").transform;
+		killCount = target.GetComponent<Player> ();
 		parent = transform.parent.gameObject;
 		parentController = parent.GetComponent<EnemyController> ();
 
 		currentHealth = maxHealth;
 		control = GetComponentInChildren<TextMesh> ();
-		control.text = monsterName;
 		render = parent.GetComponent<Renderer> ();
 
 		current = transform.position;
 	}
 
 	void Update () {
+		if (parentController.active) {
+			control.text = monsterName;
+		}
 		if (spawnTime == 0) {
 			spawnTime = Time.time;
 		}
@@ -85,7 +90,7 @@ public class EnemyHealth : MonoBehaviour {
 			DamageNumber temp = damageNumber.GetComponent<DamageNumber> ();
 			temp.setNumber (damage);
 			Instantiate(temp, new Vector3(transform.position.x, healthbar.transform.position.y + .2f, 0), Quaternion.identity);
-			if (transform.position.x - target.position.x < 0) {
+			if (parent.transform.position.x < killCount.transform.position.x) {
 				parentController.moveLeft ();
 			} else {
 				parentController.moveRight ();
@@ -98,6 +103,7 @@ public class EnemyHealth : MonoBehaviour {
 			}
 
 			if (currentHealth <= 0) {
+				Debug.Log (killCount.transform.position.x);
 				if (Random.Range (0, 10) < 5 + (int)(PlayerStatistics.luk / 50)) {
 					dropCoin ();
 				}
@@ -114,7 +120,7 @@ public class EnemyHealth : MonoBehaviour {
 				if (dropRate < 5 + (int)(PlayerStatistics.luk / 50)) {
 					dropSpell ();
 				}
-				Player killCount = target.GetComponent<Player> ();
+
 				killCount.killCount++;
 				if (killCount.expBoost) {
 					if (PlayerStatistics.level <= 10) {
@@ -130,6 +136,7 @@ public class EnemyHealth : MonoBehaviour {
 					}
 				}
 				parentController.destroy();
+				Debug.Log (killCount.transform.position.x);
 			}
 		}
 	}
@@ -157,6 +164,7 @@ public class EnemyHealth : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other) {
 		if (!tutorial) {
 			if (other.gameObject.CompareTag ("Player")) {
+				if (parentController.active) {
 					if (PlayerStatistics.level <= 5) {
 						PlayerStatistics.takeDamage (1 + PlayerStatistics.level / 7);
 					} else if (PlayerStatistics.level <= 10) {
@@ -164,13 +172,15 @@ public class EnemyHealth : MonoBehaviour {
 					} else {
 						PlayerStatistics.takeDamage (1 + PlayerStatistics.level / 2);
 					}
+				}
 			}
 		}
 	}
 
 	void OnTriggerStay2D(Collider2D other) {
 		if (!tutorial) {
-			if (other.gameObject.CompareTag ("Player")) {
+			if (parentController.active) {
+				if (other.gameObject.CompareTag ("Player")) {
 					if (PlayerStatistics.level <= 5) {
 						PlayerStatistics.takeDamage (1 + PlayerStatistics.level / 7);
 					} else if (PlayerStatistics.level <= 10) {
@@ -178,6 +188,7 @@ public class EnemyHealth : MonoBehaviour {
 					} else {
 						PlayerStatistics.takeDamage (1 + PlayerStatistics.level / 2);
 					}
+				}
 			}
 		}
 	}

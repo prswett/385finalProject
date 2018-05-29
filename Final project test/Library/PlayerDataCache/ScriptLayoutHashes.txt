@@ -178,7 +178,7 @@ e9bdabf9265d758d56f01bb188916fa8 UnityEngine.Networking.dll:UnityEngine.Networki
 dc42b00dc04fd541388728f3ea717c98 Assembly-CSharp.dll:.PotionSlot
 322cb40e1e282f28af980cbef7922a90 UnityEngine.Analytics.dll:UnityEngine.Analytics.AnalyticsEventTracker
 dc07d7ad69b399a46e92c483bf1c04ca UnityEngine.Analytics.dll:UnityEngine.Analytics.AnalyticsTracker
-93fcde100ed9354969fbd48860ead8aa Assembly-CSharp.dll:.PlayerSpells
+0e297acadb380cbf6738b54bcad2cbaf Assembly-CSharp.dll:.PlayerSpells
 bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.AudioSpatializerMicrosoft
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInput
 463516d5b5fe8e67a0a24c48f2095b04 UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInputModule
@@ -209,7 +209,7 @@ c70b0bcae44aef9e96ae6ca2e2ed18bc Assembly-CSharp.dll:.StageController
 210d400b4e8d41292552a64ec6abcbbd Assembly-CSharp.dll:.BulletController
 8c60f5ff007782675db3e63d4d9d3ee4 Assembly-CSharp.dll:.FinalBoss3Controller
 ce09cb02e2f857c8aa562f2552261f90 Assembly-CSharp.dll:.WeaponController
-0fc6d85cecee8bb9f5cecd6d8251cabe Assembly-CSharp.dll:.Player
+a9033404889be02352a0e79f55f06024 Assembly-CSharp.dll:.Player
 120fb81302abec2fb005bcbca5fd03c0 Assembly-CSharp.dll:.SlimeController
 f39111988ceb368d6e39330aadccfa87 Assembly-CSharp.dll:.AxeController
 7461d52d4a02444ab89f9d5f53a8d8fb Assembly-CSharp.dll:.SpeedController
@@ -276,3 +276,4 @@ f4dc4786aa07b8ab2c854a2c4fe97ebb Assembly-CSharp.dll:.ItemPickupController
 ce9cd4b8d999269aba58dbfe044b2b24 Assembly-CSharp.dll:.statDescription
 feca42a4c086c0535d9455c4acf1ea09 Assembly-CSharp.dll:.SpellBookController
 05b3c4ca0ba03e320f49c1244a0e6f4b Assembly-CSharp.dll:.MushroomController
+833990591e6df2138feb7ad7dc010cc2 Assembly-CSharp.dll:.PotionCooldown

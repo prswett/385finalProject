@@ -36,60 +36,62 @@ public class PortalController : MonoBehaviour {
 	void Update () {
 		
 		if (Input.GetKey(KeyCode.W)) {
-			if (near) {
-				player.resetKills ();
-				if (player.dupeSpeed) {
-					player.dupeSpeed = false;
-					player.speed /= 1.5f;
-					player.jumpSpeed /= 1.1f;
-				}
-
-				if (tutorial) {
-					if (!finishTutorial) {
-						SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex + 1, LoadSceneMode.Single);
-					} else {
-						player.delete ();
-						PlayerStatistics.reset ();
-						SceneManager.LoadScene (1, LoadSceneMode.Single);
+			if (Time.timeScale != 0) {
+				if (near) {
+					player.resetKills ();
+					if (player.dupeSpeed) {
+						player.dupeSpeed = false;
+						player.speed /= 1.5f;
+						player.jumpSpeed /= 1.1f;
 					}
-				} else {
 
-					if (!finalBoss) {
+					if (tutorial) {
+						if (!finishTutorial) {
+							SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex + 1, LoadSceneMode.Single);
+						} else {
+							player.delete ();
+							PlayerStatistics.reset ();
+							SceneManager.LoadScene (1, LoadSceneMode.Single);
+						}
+					} else {
+
+						if (!finalBoss) {
 						
-						if (player.stageCount == 4) {
-							if (!sent) {
-								sent = true;
-								SceneManager.LoadScene (Random.Range (4, 8), LoadSceneMode.Single);
-								playermusic.BM ();
-							}
-						} else if (player.stageCount == 5) {
-							if (!sent) {
-								sent = true;
-								SceneManager.LoadScene (1, LoadSceneMode.Single);
-								playermusic.TM ();
+							if (player.stageCount == 4) {
+								if (!sent) {
+									sent = true;
+									SceneManager.LoadScene (Random.Range (4, 8), LoadSceneMode.Single);
+									playermusic.BM ();
+								}
+							} else if (player.stageCount == 5) {
+								if (!sent) {
+									sent = true;
+									SceneManager.LoadScene (1, LoadSceneMode.Single);
+									playermusic.TM ();
+								}
+							} else {
+								if (!sent) {
+									sent = true;
+									if (!testing) {
+										int next = Random.Range (8, 25);
+										SceneManager.LoadScene (next, LoadSceneMode.Single);
+									} else {
+										SceneManager.LoadScene (test, LoadSceneMode.Single);
+									}
+									if (player.stageCount == 0) {
+										playermusic.DM ();
+									}
+								}
 							}
 						} else {
-							if (!sent) {
-								sent = true;
-								if (!testing) {
-									int next = Random.Range (8, 25);
-									SceneManager.LoadScene (next, LoadSceneMode.Single);
-								} else {
-									SceneManager.LoadScene (test, LoadSceneMode.Single);
-								}
-								if (player.stageCount == 0) {
-									playermusic.DM ();
-								}
+							if (PlayerStatistics.level >= 20) {
+								SceneManager.LoadScene (nextScene, LoadSceneMode.Single);
 							}
 						}
-					} else {
-						if (PlayerStatistics.level >= 20) {
-							SceneManager.LoadScene (nextScene, LoadSceneMode.Single);
-						}
 					}
+					player.anim.SetBool ("attacking", false);
+					player.anim.SetBool ("walking", false);
 				}
-				player.anim.SetBool ("attacking", false);
-				player.anim.SetBool ("walking", false);
 			}
 		}
 	}

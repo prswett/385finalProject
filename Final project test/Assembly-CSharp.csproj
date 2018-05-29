@@ -57,6 +57,7 @@
      <Compile Include="Assets\ItemPickupController.cs" />
      <Compile Include="Assets\LevelText.cs" />
      <Compile Include="Assets\PlayerMusic.cs" />
+     <Compile Include="Assets\PotionCooldown.cs" />
      <Compile Include="Assets\Scripts\Boss\BoarController.cs" />
      <Compile Include="Assets\Scripts\Boss\BossHealth.cs" />
      <Compile Include="Assets\Scripts\Boss\FinalBoss1Controller.cs" />

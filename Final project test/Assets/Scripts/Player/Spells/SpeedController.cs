@@ -20,6 +20,7 @@ public class SpeedController : MonoBehaviour {
 		if (!temp.dupeSpeed) {
 			temp.speed /= 1.5f;
 			temp.speed /= 1.1f;
+			temp.dupeSpeed = true;
 		}
 		Destroy (gameObject);
 	}

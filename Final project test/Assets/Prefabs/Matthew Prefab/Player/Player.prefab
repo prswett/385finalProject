@@ -3092,7 +3092,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 1f6c3c66e15bfea4ebe16ecf9efffa11, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 0.25
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -6480,6 +6480,8 @@ MonoBehaviour:
   manaText: {fileID: 0}
   expText: {fileID: 0}
   anim: {fileID: 0}
+  loadTime: 0
+  setLoadTime: 0
   groundCheck: {fileID: 4389832058666502}
   groundCheckRadius: 0.01
   groundLayer:
@@ -6513,6 +6515,7 @@ MonoBehaviour:
   jumping: 0
   text: {fileID: 102772376994991952}
   upgradeAvailable: 0
+  loadingScreen: {fileID: 0}
 --- !u!114 &114738183898218320
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -1,3 +1,15 @@
+Version 4.7
+Bug fixes
+Small code cleanup
+Stat rebalancing
+Boss rescaling
+Final boss phase 1 rescaling
+boss item drops increased
+potion cd added
+Stage bug fixes
+spawn rate scaled
+potion healing increased
+
 Version 4.6
 Map crash bug fixed
 fixed item drop bug

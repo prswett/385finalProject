@@ -16,7 +16,7 @@ public class DoorController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKey(KeyCode.W)) {
+		if (Input.GetKeyDown(KeyCode.W)) {
 			if (shop) {
 				ShopController temp = GameObject.Find ("PisanShopKeeper").GetComponent<ShopController> ();
 				temp.stopShop ();

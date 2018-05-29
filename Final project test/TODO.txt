@@ -4,7 +4,19 @@ enemy health/damage balancing
 exp balancing
 boss balancing
 
+Add item boost chance
+Switch iron (boosted) to steel
+
+Player outofbounds for map bugs
+
+if (PlayerStatistics.level <= 5) {
+
+		} else if (PlayerStatistics.level <= 15) {
+
+		} else {
+
+		}
+
 
 Bugs
 -----
-

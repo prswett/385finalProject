@@ -260,10 +260,7 @@ public class LoadPlayer : MonoBehaviour {
 				a.addEquipment (temp, 5, true);
 				a.resources.changeDagger ("DrawingsV2/Items/Equipment/" + temp.Slug);
 			}
-
-			print(" Loaded saved file.");
 		}
-		SceneManager.LoadScene(1);
 	}
 
 	public void loadY()

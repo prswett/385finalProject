@@ -36,7 +36,15 @@ public class BossHealth : MonoBehaviour {
 	void Awake() {
 		anim = GetComponent<Animator> ();
 		healthbar = GameObject.Find ("BossHealth").GetComponent<Image> ();
-		currentHealth = currentHealth * (PlayerStatistics.level) / 2f;
+
+		if (PlayerStatistics.level <= 5) {
+			currentHealth = currentHealth * (PlayerStatistics.level) / 2f;
+		} else if (PlayerStatistics.level <= 15) {
+			currentHealth = currentHealth * (PlayerStatistics.level);
+		} else {
+			currentHealth = currentHealth * (PlayerStatistics.level) * 2;
+		}
+
 		maxHealth = currentHealth;
 		target = GameObject.FindWithTag ("Boss").transform;
 
@@ -67,20 +75,20 @@ public class BossHealth : MonoBehaviour {
 			} else {
 				PlayerStatistics.exp += 10 * PlayerStatistics.level / 2;
 			}
-			for (int i = 0; i < Random.Range (1, 5); i++) {
+			for (int i = 0; i < Random.Range (5, 10); i++) {
 				
 				Instantiate (item, new Vector3 ((transform.position.x + Random.Range (-.3f, .3f)), transform.position.y, 0), 
 					Quaternion.identity);
 			}
-			for (int i = 0; i < Random.Range (5, 10); i++) {
+			for (int i = 0; i < Random.Range (10, 20); i++) {
 				Instantiate (coin, new Vector3 ((transform.position.x + Random.Range (-.3f, .3f)), transform.position.y, 0), 
 					Quaternion.identity);
 			}
-			for (int i = 0; i < Random.Range (1, 5); i++) {
+			for (int i = 0; i < Random.Range (3, 7); i++) {
 				Instantiate (rareItem, new Vector3 ((transform.position.x + Random.Range (-.3f, .3f)), transform.position.y, 0), 
 					Quaternion.identity);
 			}
-			for (int i = 0; i < Random.Range (1, 5); i++) {
+			for (int i = 0; i < Random.Range (2, 5); i++) {
 				Instantiate (spellBook, new Vector3 ((transform.position.x + Random.Range (-.3f, .3f)), transform.position.y, 0), 
 					Quaternion.identity);
 			}
@@ -91,14 +99,12 @@ public class BossHealth : MonoBehaviour {
 
 	public void takeDamage(int damage) {
 
-		if (Time.time - lastHit >= 0.5 || lastHit == 0) {
+		if (Time.time - lastHit >= 0.7 || lastHit == 0) {
 			currentHealth -= damage;
 			damageAnimation();
 			Invoke ("damageAnimation", .1f);
 			lastHit = Time.time;
 		}
-
-
 	}
 
 	public void damageAnimation() {

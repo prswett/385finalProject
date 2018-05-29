@@ -19,7 +19,6 @@ public class PotionDatabase : MonoBehaviour {
 		yield return link;
 		isDone = true;
 		if (isDone) {
-			Debug.Log ("finished");
 			potionData = JsonMapper.ToObject (new LitJson.JsonReader (link.text));
 			ConstructPotionDatabase ();
 		}
