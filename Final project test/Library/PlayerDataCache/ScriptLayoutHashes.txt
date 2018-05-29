@@ -192,6 +192,7 @@ d64a7f935a1332310951c3185b31bd6b Assembly-CSharp.dll:.DoorController
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.LadderZone
 8f50c79df8afeee30d8c58ca80dce9bc Assembly-CSharp.dll:.EquipmentSlot
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.EnemyWeaponController
+833990591e6df2138feb7ad7dc010cc2 Assembly-CSharp.dll:.PotionCooldown
 aa2e7797e2822bdedff620e81d324838 Assembly-CSharp.dll:.CrusherBoss
 4d52fd7a07270a80d14d2a1963a229e0 Assembly-CSharp.dll:.PisanShopKeeper
 89c1990330271e9ae41ed0c7a914ee48 Assembly-CSharp.dll:.PlayerMusic
@@ -276,4 +277,3 @@ f4dc4786aa07b8ab2c854a2c4fe97ebb Assembly-CSharp.dll:.ItemPickupController
 ce9cd4b8d999269aba58dbfe044b2b24 Assembly-CSharp.dll:.statDescription
 feca42a4c086c0535d9455c4acf1ea09 Assembly-CSharp.dll:.SpellBookController
 05b3c4ca0ba03e320f49c1244a0e6f4b Assembly-CSharp.dll:.MushroomController
-833990591e6df2138feb7ad7dc010cc2 Assembly-CSharp.dll:.PotionCooldown

@@ -1,13 +1,14 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Player\Player.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Player\CanvasController.cs">
     <Files>
       <File FileName="Assets\Scripts\Player\Spells\FlamethrowerController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Player\Spells\PlayerSpells.cs" Line="274" Column="28" />
-      <File FileName="Assets\Scripts\Player\Spells\HealingController.cs" Line="14" Column="51" />
-      <File FileName="Assets\Scripts\Items\RareItemController.cs" Line="140" Column="10" />
-      <File FileName="Assets\Scripts\Enemies\EnemyHealth.cs" Line="54" Column="20" />
-      <File FileName="Assets\Scripts\Player\Player.cs" Line="125" Column="1" />
+      <File FileName="Assets\Scripts\Player\Spells\PlayerSpells.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Player\Spells\HealingController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Items\RareItemController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Enemies\EnemyHealth.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Player\Player.cs" Line="191" Column="27" />
+      <File FileName="Assets\Scripts\Player\CanvasController.cs" Line="93" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -106,10 +106,10 @@ MonoBehaviour:
     y: 30
     width: 1904
     height: 927
-  m_MinSize: {x: 727, y: 442}
-  m_MaxSize: {x: 16012, y: 8042}
+  m_MinSize: {x: 857, y: 492}
+  m_MaxSize: {x: 22012, y: 14042}
   vertical: 0
-  controlID: 31
+  controlID: 142
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -130,10 +130,10 @@ MonoBehaviour:
     y: 0
     width: 1610
     height: 927
-  m_MinSize: {x: 450, y: 442}
-  m_MaxSize: {x: 12010, y: 8042}
+  m_MinSize: {x: 580, y: 492}
+  m_MaxSize: {x: 18010, y: 14042}
   vertical: 1
-  controlID: 32
+  controlID: 143
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -157,7 +157,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 221}
   m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
-  controlID: 33
+  controlID: 16
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -176,8 +176,8 @@ MonoBehaviour:
     y: 0
     width: 277
     height: 656
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -231,10 +231,10 @@ MonoBehaviour:
     y: 656
     width: 1610
     height: 271
-  m_MinSize: {x: 450, y: 221}
-  m_MaxSize: {x: 12010, y: 4021}
+  m_MinSize: {x: 580, y: 271}
+  m_MaxSize: {x: 18010, y: 10021}
   vertical: 0
-  controlID: 159
+  controlID: 144
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -253,14 +253,14 @@ MonoBehaviour:
     y: 0
     width: 1262
     height: 271
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_ActualView: {fileID: 21}
+  m_MinSize: {x: 232, y: 271}
+  m_MaxSize: {x: 10002, y: 10021}
+  m_ActualView: {fileID: 20}
   m_Panes:
   - {fileID: 20}
   - {fileID: 21}
-  m_Selected: 1
-  m_LastSelected: 0
+  m_Selected: 0
+  m_LastSelected: 1
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -400,21 +400,21 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 265de8ff0e5ee8ffb05fe8ff2c60e8ffbe60e8ff2861e8ffb661e8ff5862e8ff0c63e8ff7663e8ff2464e8ff8e64e8ff8a69e8ffa06de8ff1272e8ff8275e8ff7879e8ffd87ce8ffdc82e8ff1e84e8ff6085e8ffa286e8ff628ae8ff868de8ff0893e8ff8297e8ffcc9de8ff24a4e8ff00a7e8ff8ea7e8ff06a8e8ff7ea8e8fffaa8e8ffaaa9e8ff46aae8ffa2aae8ffbcaae8fff4aae8ff4eb7e8ff38b8e8ffdcb9e8ff58bae8ffeabae8ff54bbe8ffe2bbe8ff84bce8ff38bde8ffa2bde8ff50bee8ffbabee8ffb6c3e8ffccc7e8ff3ecce8ffaecfe8ffa4d3e8ff04d7e8ff08dde8ff4adee8ff8cdfe8ffcee0e8ff8ee4e8ffb2e7e8ff34ede8ffaef1e8fff8f7e8ff50fee8ff2c01e9ffba01e9ff3202e9ffaa02e9ff2603e9ffd603e9ff7204e9ffce04e9ffe804e9ff2005e9ff40b5eaff56baeafff60aebff16a2ebffcea2ebff26a3ebff5ea4ebff6ea4ebffd6a4ebff9ec0ebff6ad6ebffc6e5ebff2a88ecff9257edffa6e9edfff8ebedff3eeeedff14bdf6ff36f7f9ff38f7f9ff3af7f9ff9c07faff0408faffb6aafaff52eafaffbaeafaff3202fbff5e05fbff0afcfcff6a39fdff8a42fdff9c52fdffac52fdff1453fdffa0c7feffb2c7feffb4c7feffc0c7feffc8d9feff40eefeff0abeffffeebeffff50c0ffff60c0ffff62f1ffff9efbfffff4ffffff00000000504400005c440000ae6b0000e66b0000f475000022d00000
+    m_ExpandedIDs: 8ac1feff88c2feff2ac4feffa6c4feff38c5feffa2c5feff30c6feffd2c6feff86c7fefff0c7feff9ec8feff08c9feff18cefeff2ed2feffa0d6feff10dafeff06defeff66e1feff6ae7fefface8feffeee9feff30ebfefff0eefeff14f2feff96f7feff10fcfeff5a02ffffb208ffff8e0bffff1c0cffff940cffff0c0dffff880dffff380effffd40effff300fffff4a0fffff820fffff6c1affff6e1bffff121dffff8e1dffff201effff8a1effff181fffffba1fffff6e20ffffd820ffff8621fffff021ffff0027ffff162bffff882ffffff832ffffee36ffff4e3affff5240ffff9441ffffd642ffff1844ffffd847fffffc4affff7e50fffff854ffff425bffff9a61ffff7664ffff0465ffff7c65fffff465ffff7066ffff2067ffffbc67ffff1868ffff3268ffff6a68ffff0af3ffff82f3ffff2cf4ffff00000000b0420000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: PotionObject
-      m_OriginalName: PotionObject
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: -1373450
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 0
       m_ClientGUIView: {fileID: 8}
     m_SearchString: 
@@ -643,20 +643,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Scripts/Player
+    - Assets/Prefabs/Matthew Prefab/Player
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts/Player
+  - Assets/Prefabs/Matthew Prefab/Player
   m_LastFoldersGridSize: 64
   m_LastProjectPath: C:\Users\Matthew\Desktop\CSS 385\Final Project\Final project
     test
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 551}
-    m_SelectedIDs: 80310000
-    m_LastClickedID: 12672
-    m_ExpandedIDs: 0000000044280000882800000029000072290000362a0000e62c0000a82d00006c2e0000222f0000262f0000c82f0000d43000003031000080310000ec430000ee43000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 71}
+    m_SelectedIDs: 80380000
+    m_LastClickedID: 14464
+    m_ExpandedIDs: 00000000e83700001238000078380000d238000050390000563b0000f43b00009c3c00002c3d0000303d0000a43d00007c3e0000c43e0000103f0000b8440000ba44000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -684,7 +684,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000442800008828000000290000362a0000e62c0000a82d00006c2e0000222f0000262f0000c82f0000d430000080310000ec430000ee430000
+    m_ExpandedIDs: 00000000e83700001238000078380000d238000050390000563b0000f43b00009c3c00002c3d0000303d0000a43d00007c3e0000c43e0000103f0000b8440000ba440000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -709,9 +709,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 20a40100
-    m_LastClickedInstanceID: 107552
-    m_HadKeyboardFocusLastEvent: 1
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c62300005c2b0000f22b00001e280000382900001e2b0000622b00004cf0f1ff2a2c0000c22900003a2a00009c2c0000982b0000642a0000722a0000482a0000ae2c0000e0290000a82b0000142900008c2b0000142b00006a290000822a0000022d0000523500001a340000a82f000072310000dc33000092300000362b00003a2b0000c22a0000c42b000000000000aa300000382e00003269e7ff986feaff982a00008c330000d0280000c83e0000f64000001e330000303300008048f2ffca2a0000902c0000ce5700002c2b00001431000030320000
     m_RenameOverlay:
       m_UserAcceptedRename: 0

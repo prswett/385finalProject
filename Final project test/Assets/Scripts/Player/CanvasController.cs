@@ -52,7 +52,7 @@ public class CanvasController : MonoBehaviour {
 	}
 
 	void Update () {
-		if (Time.timeScale != 0) {
+		if (!Player.loadedChar) {
 			if (Input.GetKeyDown (KeyCode.Escape)) {
 				if (paused) {
 					UnPause ();
