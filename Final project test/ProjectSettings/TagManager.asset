@@ -25,6 +25,7 @@ TagManager:
   - Controls
   - SaveQuestion
   - Anvil
+  - playeroutofbounds
   layers:
   - Default
   - TransparentFX

@@ -52,11 +52,13 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\AnvilController.cs" />
+     <Compile Include="Assets\Cooldowns.cs" />
      <Compile Include="Assets\CrusherBoss.cs" />
      <Compile Include="Assets\EmptyClass.cs" />
      <Compile Include="Assets\ItemPickupController.cs" />
      <Compile Include="Assets\LevelText.cs" />
      <Compile Include="Assets\PlayerMusic.cs" />
+     <Compile Include="Assets\PlayerOutOfBounds.cs" />
      <Compile Include="Assets\PotionCooldown.cs" />
      <Compile Include="Assets\Scripts\Boss\BoarController.cs" />
      <Compile Include="Assets\Scripts\Boss\BossHealth.cs" />

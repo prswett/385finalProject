@@ -17,6 +17,7 @@ if (PlayerStatistics.level <= 5) {
 
 		}
 
+Can't use timescale for loading
 
 Bugs
 -----

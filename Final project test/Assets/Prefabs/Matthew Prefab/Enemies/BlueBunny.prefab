@@ -379,8 +379,10 @@ MonoBehaviour:
   control: {fileID: 0}
   damageNumber: {fileID: 1888548063201054, guid: 9043e4b5a85fbc140915b0ee7b37e82a,
     type: 2}
+  current: {x: 0, y: 0, z: 0}
   tutorial: 0
   spawnTime: 0
+  stay: 0
 --- !u!114 &114378578636388608
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -428,7 +430,7 @@ MonoBehaviour:
   playerY: 0
   enemyY: 0
   parent: {fileID: 0}
-  MinDist: 3
+  MinDist: 1.5
   facing: 0
   speed: 1
   jumpTime: 0

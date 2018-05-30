@@ -13,13 +13,9 @@ public class GasController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (inGas) {
-			if (PlayerStatistics.level <= 5) {
-				PlayerStatistics.takeDamage (2 + PlayerStatistics.level / 5);
-			} else if (PlayerStatistics.level <= 10) {
-				PlayerStatistics.takeDamage (2 + PlayerStatistics.level / 3);
-			} else {
-				PlayerStatistics.takeDamage (2 + PlayerStatistics.level / 2);
-			}
+			float damage = PlayerStatistics.maxHealth / 200f;
+			PlayerStatistics.takeDamage (damage);
+			PlayerStatistics.takeDefDamage (damage);
 		}
 	}
 

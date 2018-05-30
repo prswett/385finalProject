@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SpearController : MonoBehaviour {
-	public int baseDamage = 25;
-	public int damage = 25;
+	public int baseDamage = 15;
+	public int damage = 15;
 	void Start () {
 
 	}
 
 	void Update () {
-		damage = baseDamage + (int)PlayerStatistics.calcPD ();
+		damage = baseDamage + (int)PlayerStatistics.calcPDSpear ();
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {

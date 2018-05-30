@@ -16,9 +16,11 @@ public class PotionCooldown : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (temp.type == "Health") {
-			cooldown.fillAmount = 1 - (Time.time - PlayerStatistics.healthPotTimer) / 5;
+			cooldown.fillAmount = 1 - (Time.time - PlayerStatistics.healthPotTimer) / 3;
 		} else if (temp.type == "Mana") {
-			cooldown.fillAmount = 1 - (Time.time - PlayerStatistics.manaPotTimer) / 5;
+			cooldown.fillAmount = 1 - (Time.time - PlayerStatistics.manaPotTimer) / 3;
+		} else {
+			cooldown.fillAmount = 0;
 		}
 	}
 }

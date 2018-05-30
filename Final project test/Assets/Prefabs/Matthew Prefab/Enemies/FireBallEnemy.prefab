@@ -442,7 +442,7 @@ MonoBehaviour:
   playerY: 0
   enemyY: 0
   parent: {fileID: 0}
-  MinDist: 4
+  MinDist: 2
   facing: 0
   speed: 1
   bullet: {fileID: 1404036833623762, guid: cdef9782c6a77e340925bb2295a109a7, type: 2}
@@ -479,8 +479,10 @@ MonoBehaviour:
   control: {fileID: 0}
   damageNumber: {fileID: 1888548063201054, guid: 9043e4b5a85fbc140915b0ee7b37e82a,
     type: 2}
+  current: {x: 0, y: 0, z: 0}
   tutorial: 0
   spawnTime: 0
+  stay: 0
 --- !u!212 &212332136261449312
 SpriteRenderer:
   m_ObjectHideFlags: 1

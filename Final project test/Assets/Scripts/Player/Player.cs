@@ -50,6 +50,8 @@ public class Player : MonoBehaviour {
 	public float spellTime;
 	public bool dupeSpeed;
 
+	public bool location = false;
+
 	//Taking damage variables
 	public float lastHit;
 
@@ -136,7 +138,7 @@ public class Player : MonoBehaviour {
 	}
 
 	public void addItem(int input) {
-		inv.AddItem (input);
+		inv.pickUpItem (input);
 	}
 
 	public void addItem(ItemStats inputStats) {
@@ -177,7 +179,6 @@ public class Player : MonoBehaviour {
 		if (loadedChar && !setLoadTime) {
 			loadTime = Time.time;
 			setLoadTime = true;
-			Time.timeScale = 0;
 		}
 		if (loadedChar && Time.time - loadTime > 1) {
 			LoadPlayer load = new LoadPlayer ();
@@ -185,7 +186,10 @@ public class Player : MonoBehaviour {
 			loadedChar = false;
 			spells.load ();
 			Destroy (loadingScreen);
-			Time.timeScale = 1;
+		}
+
+		if (location == false) {
+			transform.position = new Vector2 (x, y);
 		}
 
 		if (Time.time - goldTime > 70) {
@@ -231,89 +235,91 @@ public class Player : MonoBehaviour {
 				GetComponentInChildren<PlayerMusic> ().TM ();
 			}
 		} else {
-			anim.SetInteger ("weapon state", wepState);
-			anim.SetInteger ("weapon equipped", resources.wepEQPD);
-			onGround = Physics2D.OverlapCircle (groundCheck.position, groundCheckRadius, groundLayer);
-			if (!timeStop) {
-				if (onGround) {
-					jumping = false;
-				}
-				if (Input.GetMouseButton (0)) {
-					anim.SetBool ("attacking", true);
-					attacking = true;
-				}
-				if (Input.GetMouseButtonUp (0)) {
-					anim.SetBool ("attacking", false);
-					attacking = false;
-				}
+			if (!loadedChar) {
+				anim.SetInteger ("weapon state", wepState);
+				anim.SetInteger ("weapon equipped", resources.wepEQPD);
+				onGround = Physics2D.OverlapCircle (groundCheck.position, groundCheckRadius, groundLayer);
+				if (!timeStop) {
+					if (onGround) {
+						jumping = false;
+					}
+					if (Input.GetMouseButton (0)) {
+						anim.SetBool ("attacking", true);
+						attacking = true;
+					}
+					if (Input.GetMouseButtonUp (0)) {
+						anim.SetBool ("attacking", false);
+						attacking = false;
+					}
 
-				if (Input.GetKeyDown (KeyCode.Space) && onGround && !jumpDown && !Input.GetKey (KeyCode.S)) {
-					rb2d.gravityScale = gravityStore;
-					rb2d.velocity = new Vector2 (rb2d.velocity.x, jumpSpeed);
-					jumping = true;
-				}
+					if (Input.GetKeyDown (KeyCode.Space) && onGround && !jumpDown && !Input.GetKey (KeyCode.S)) {
+						rb2d.gravityScale = gravityStore;
+						rb2d.velocity = new Vector2 (rb2d.velocity.x, jumpSpeed);
+						jumping = true;
+					}
 
-				if (Input.GetKeyDown (KeyCode.S)) {
-					anim.SetBool ("crouching", true);
-				}
-				if (Input.GetKeyUp (KeyCode.S)) {
-					anim.SetBool ("crouching", false);
-				}
+					if (Input.GetKeyDown (KeyCode.S)) {
+						anim.SetBool ("crouching", true);
+					}
+					if (Input.GetKeyUp (KeyCode.S)) {
+						anim.SetBool ("crouching", false);
+					}
 
-				if (Input.GetMouseButton (1)) {
-					if (Time.time - spellTime > .5f) {
-						spellTime = Time.time;
-						spells.useSpell ();
+					if (Input.GetMouseButton (1)) {
+						if (Time.time - spellTime > .5f) {
+							spellTime = Time.time;
+							spells.useSpell ();
+						}
+					}
+
+					float wheel = Input.GetAxis ("Mouse ScrollWheel");
+					if (wheel > 0f) {
+						changeWeapon (true);
+					} else if (wheel < 0f) {
+						changeWeapon (false);
+					}
+
+					if (Input.GetMouseButtonDown (2)) {
+						changeWeapon (true);
+					}
+
+					if (Input.GetKeyDown (KeyCode.Q)) {
+						spells.decrease ();
+					}
+
+					if (Input.GetKeyDown (KeyCode.E)) {
+						spells.increase ();
+					}
+
+					if (Input.GetKeyUp (KeyCode.A)) {
+						anim.SetBool ("walking", false);
+					}
+					if (Input.GetKeyUp (KeyCode.D)) {
+						anim.SetBool ("walking", false);
+					}
+
+					if (Input.GetKeyDown (KeyCode.W)) {
+						jumping = false;
 					}
 				}
 
-				float wheel = Input.GetAxis ("Mouse ScrollWheel");
-				if (wheel > 0f) {
-					changeWeapon (true);
-				} else if (wheel < 0f) {
-					changeWeapon (false);
+				if (onLadder) {
+					if (Input.GetKeyDown (KeyCode.Space)) {
+						rb2d.gravityScale = gravityStore;
+						rb2d.velocity = new Vector2 (rb2d.velocity.x, jumpSpeed);
+						jumping = true;
+					} 
+					if (!jumping) {
+						rb2d.gravityScale = 0f;
+						climbVelocity = climbSpeed * Input.GetAxisRaw ("Vertical");
+
+						rb2d.velocity = new Vector2 (0, climbVelocity);
+					}
 				}
 
-				if (Input.GetMouseButtonDown (2)) {
-					changeWeapon (true);
-				}
-
-				if (Input.GetKeyDown (KeyCode.Q)) {
-					spells.decrease ();
-				}
-
-				if (Input.GetKeyDown (KeyCode.E)) {
-					spells.increase ();
-				}
-
-				if (Input.GetKeyUp (KeyCode.A)) {
-					anim.SetBool ("walking", false);
-				}
-				if (Input.GetKeyUp (KeyCode.D)) {
-					anim.SetBool ("walking", false);
-				}
-
-				if (Input.GetKeyDown (KeyCode.W)) {
-					jumping = false;
-				}
-			}
-
-			if (onLadder) {
-				if (Input.GetKeyDown (KeyCode.Space)) {
+				if (!onLadder) {
 					rb2d.gravityScale = gravityStore;
-					rb2d.velocity = new Vector2 (rb2d.velocity.x, jumpSpeed);
-					jumping = true;
-				} 
-				if (!jumping) {
-					rb2d.gravityScale = 0f;
-					climbVelocity = climbSpeed * Input.GetAxisRaw ("Vertical");
-
-					rb2d.velocity = new Vector2 (0, climbVelocity);
 				}
-			}
-
-			if (!onLadder) {
-				rb2d.gravityScale = gravityStore;
 			}
 		}
 	}
@@ -348,15 +354,24 @@ public class Player : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
-
+		if (other.gameObject.CompareTag("playeroutofbounds")) {
+			location = true;
+		}
 		if (other.gameObject.CompareTag ("Anvil")) {
 			upgradeAvailable = true;
 		}
 	}
 		
+	void OnTriggerStay2D(Collider2D other) {
+		if (other.gameObject.CompareTag("playeroutofbounds")) {
+			location = true;
+		}
+	}
 
 	void OnTriggerExit2D(Collider2D other) {
-
+		if (other.gameObject.CompareTag("playeroutofbounds")) {
+			location = false;
+		}
 		if (other.gameObject.CompareTag ("Anvil")) {
 			upgradeAvailable = false;
 		}
@@ -417,8 +432,10 @@ public class Player : MonoBehaviour {
 		public void delete() {
 			Destroy (gameObject);
 		}
+
+
 		
-	}
+}
 	
 	
 	

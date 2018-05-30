@@ -45,7 +45,7 @@ public class ItemObject : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 		PlayerStatistics.dex -= temp.dex;
 		PlayerStatistics.wis -= temp.wis;
 		PlayerStatistics.luk -= temp.luk;
-		PlayerStatistics.atk -= temp.atk;
+		PlayerStatistics.wa -= temp.atk;
 		PlayerStatistics.def -= temp.def;
 	}
 
@@ -67,7 +67,7 @@ public class ItemObject : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 		PlayerStatistics.dex += temp.dex;
 		PlayerStatistics.wis += temp.wis;
 		PlayerStatistics.luk += temp.luk;
-		PlayerStatistics.atk += temp.atk;
+		PlayerStatistics.wa += temp.atk;
 		PlayerStatistics.def += temp.def;
 	}
 
@@ -126,7 +126,7 @@ public class ItemObject : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 								PlayerStatistics.dex += temp.dex;
 								PlayerStatistics.wis += temp.wis;
 								PlayerStatistics.luk += temp.luk;
-								PlayerStatistics.atk += temp.atk;
+								PlayerStatistics.wa += temp.atk;
 								PlayerStatistics.def += temp.def;
 							}
 						}
@@ -149,7 +149,7 @@ public class ItemObject : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 								PlayerStatistics.dex += temp.dex;
 								PlayerStatistics.wis += temp.wis;
 								PlayerStatistics.luk += temp.luk;
-								PlayerStatistics.atk += temp.atk;
+								PlayerStatistics.wa += temp.atk;
 								PlayerStatistics.def += temp.def;
 							}
 						}
@@ -173,7 +173,7 @@ public class ItemObject : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 								PlayerStatistics.dex += temp.dex;
 								PlayerStatistics.wis += temp.wis;
 								PlayerStatistics.luk += temp.luk;
-								PlayerStatistics.atk += temp.atk;
+								PlayerStatistics.wa += temp.atk;
 								PlayerStatistics.def += temp.def;
 								player.UIChange ();
 							}
@@ -198,7 +198,7 @@ public class ItemObject : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 								PlayerStatistics.dex += temp.dex;
 								PlayerStatistics.wis += temp.wis;
 								PlayerStatistics.luk += temp.luk;
-								PlayerStatistics.atk += temp.atk;
+								PlayerStatistics.wa += temp.atk;
 								PlayerStatistics.def += temp.def;
 								player.UIChange ();
 							}
@@ -223,7 +223,7 @@ public class ItemObject : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 								PlayerStatistics.dex += temp.dex;
 								PlayerStatistics.wis += temp.wis;
 								PlayerStatistics.luk += temp.luk;
-								PlayerStatistics.atk += temp.atk;
+								PlayerStatistics.wa += temp.atk;
 								PlayerStatistics.def += temp.def;
 								player.UIChange ();
 							}
@@ -248,7 +248,7 @@ public class ItemObject : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 								PlayerStatistics.dex += temp.dex;
 								PlayerStatistics.wis += temp.wis;
 								PlayerStatistics.luk += temp.luk;
-								PlayerStatistics.atk += temp.atk;
+								PlayerStatistics.wa += temp.atk;
 								PlayerStatistics.def += temp.def;
 								player.UIChange ();
 							}
@@ -256,7 +256,6 @@ public class ItemObject : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 					} else {
 						if (eventData.button == PointerEventData.InputButton.Right) {
 							if (inv.checkEmpty()) {
-								Debug.Log (inv.checkEmpty());
 								ItemStats temp = eInv.slots [slot].GetComponent<EquipmentSlot> ().item.GetComponent<ItemStats> ();
 								eInv.RemoveItemSlot (slot);
 								inv.AddItem (temp);
@@ -264,7 +263,7 @@ public class ItemObject : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 								PlayerStatistics.dex -= temp.dex;
 								PlayerStatistics.wis -= temp.wis;
 								PlayerStatistics.luk -= temp.luk;
-								PlayerStatistics.atk -= temp.atk;
+								PlayerStatistics.wa -= temp.atk;
 								PlayerStatistics.def -= temp.def;
 								if (temp.type == "Helmet") {
 									player.resetHelmet ();

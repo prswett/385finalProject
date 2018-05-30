@@ -46,6 +46,8 @@ public class SunController : MonoBehaviour {
 			bulletGround = false;
 			speed = 2;
 			fireRate = .5f;
+		} else if (currentHealth / maxHealth <= .75) {
+			fireRate = .75f;
 		}
 
 		if (transform.position.x > left && count == 1) {
@@ -87,145 +89,147 @@ public class SunController : MonoBehaviour {
 	}
 
 	void fire2() {
+		float damage = PlayerStatistics.health / 200f;
 		BulletController shot = bullet.GetComponent<BulletController>();
 		shot.setVelocity(-2,0);
-		shot.damage = (int)(baseDamage + PlayerStatistics.level / 5);
+		shot.damage = (int)(baseDamage +damage);
 		Instantiate (bullet, transform.position, Quaternion.identity);
 
 		shot = bullet.GetComponent<BulletController>();
-		shot.damage = (int)(baseDamage + PlayerStatistics.level / 5);
+		shot.damage = (int)(baseDamage +damage);
 		shot.setVelocity(2,0);
 		Instantiate (bullet, transform.position, Quaternion.identity);
 
 		shot = bullet.GetComponent<BulletController>();
-		shot.damage = (int)(baseDamage + PlayerStatistics.level / 5);
+		shot.damage = (int)(baseDamage +damage);
 		shot.setVelocity(0,2);
 		Instantiate (bullet, transform.position, Quaternion.identity);
 
 		shot = bullet.GetComponent<BulletController>();
-		shot.damage = (int)(baseDamage + PlayerStatistics.level / 5);
+		shot.damage = (int)(baseDamage +damage);
 		shot.setVelocity(0,-2);
 		Instantiate (bullet, transform.position, Quaternion.identity);
 
 		shot = bullet.GetComponent<BulletController>();
 		 
-		shot.damage = (int)(baseDamage + PlayerStatistics.level / 5);
+		shot.damage = (int)(baseDamage +damage);
 		shot.setVelocity(-2,-2);
 		Instantiate (bullet, transform.position, Quaternion.identity);
 
 		shot = bullet.GetComponent<BulletController>();
 		 
-		shot.damage = (int)(baseDamage + PlayerStatistics.level / 5);
+		shot.damage = (int)(baseDamage +damage);
 		shot.setVelocity(2,2);
 		Instantiate (bullet, transform.position, Quaternion.identity);
 
 		shot = bullet.GetComponent<BulletController>();
 		 
-		shot.damage = (int)(baseDamage + PlayerStatistics.level / 5);
+		shot.damage = (int)(baseDamage +damage);
 		shot.setVelocity(-2,2);
 		Instantiate (bullet, transform.position, Quaternion.identity);
 
 		shot = bullet.GetComponent<BulletController>();
 		 
-		shot.damage = (int)(baseDamage + PlayerStatistics.level / 5);
+		shot.damage = (int)(baseDamage +damage);
 		shot.setVelocity(2,-2);
 		Instantiate (bullet, transform.position, Quaternion.identity);
 
 		shot = bullet.GetComponent<BulletController>();
 		 
 		shot.setVelocity(-1,3);
-		shot.damage = (int)(baseDamage + PlayerStatistics.level / 5);
+		shot.damage = (int)(baseDamage +damage);
 		Instantiate (bullet, transform.position, Quaternion.identity);
 
 		shot = bullet.GetComponent<BulletController>();
 		 
-		shot.damage = (int)(baseDamage + PlayerStatistics.level / 5);
+		shot.damage = (int)(baseDamage +damage);
 		shot.setVelocity(1,3);
 		Instantiate (bullet, transform.position, Quaternion.identity);
 
 		shot = bullet.GetComponent<BulletController>();
 		 
-		shot.damage = (int)(baseDamage + PlayerStatistics.level / 5);
+		shot.damage = (int)(baseDamage +damage);
 		shot.setVelocity(-1,-3);
 		Instantiate (bullet, transform.position, Quaternion.identity);
 
 		shot = bullet.GetComponent<BulletController>();
 		 
-		shot.damage = (int)(baseDamage + PlayerStatistics.level / 5);
+		shot.damage = (int)(baseDamage +damage);
 		shot.setVelocity(1,-3);
 		Instantiate (bullet, transform.position, Quaternion.identity);
 
 		shot = bullet.GetComponent<BulletController>();
 		 
-		shot.damage = (int)(baseDamage + PlayerStatistics.level / 5);
+		shot.damage = (int)(baseDamage +damage);
 		shot.setVelocity(3,1);
 		Instantiate (bullet, transform.position, Quaternion.identity);
 
 		shot = bullet.GetComponent<BulletController>();
 		 
-		shot.damage = (int)(baseDamage + PlayerStatistics.level / 5);
+		shot.damage = (int)(baseDamage +damage);
 		shot.setVelocity(3,-1);
 		Instantiate (bullet, transform.position, Quaternion.identity);
 
 		shot = bullet.GetComponent<BulletController>();
 		 
-		shot.damage = (int)(baseDamage + PlayerStatistics.level / 5);
+		shot.damage = (int)(baseDamage +damage);
 		shot.setVelocity(-3,1);
 		Instantiate (bullet, transform.position, Quaternion.identity);
 
 		shot = bullet.GetComponent<BulletController>();
 		 
-		shot.damage = (int)(baseDamage + PlayerStatistics.level / 5);
+		shot.damage = (int)(baseDamage +damage);
 		shot.setVelocity(-3,-1);
 		Instantiate (bullet, transform.position, Quaternion.identity);
 	}
 
 	void fire() {
+		float damage = PlayerStatistics.health / 200f;
 		BulletController shot = bullet.GetComponent<BulletController>();
 		 
 		shot.setVelocity(-2,0);
-		shot.damage = (int)(baseDamage + PlayerStatistics.level / 5);
+		shot.damage = (int)(baseDamage +damage);
 		Instantiate (bullet, transform.position, Quaternion.identity);
 
 		shot = bullet.GetComponent<BulletController>();
 		 
-		shot.damage = (int)(baseDamage + PlayerStatistics.level / 5);
+		shot.damage = (int)(baseDamage +damage);
 		shot.setVelocity(2,0);
 		Instantiate (bullet, transform.position, Quaternion.identity);
 
 		shot = bullet.GetComponent<BulletController>();
 		 
-		shot.damage = (int)(baseDamage + PlayerStatistics.level / 5);
+		shot.damage = (int)(baseDamage +damage);
 		shot.setVelocity(0,2);
 		Instantiate (bullet, transform.position, Quaternion.identity);
 
 		shot = bullet.GetComponent<BulletController>();
 		 
-		shot.damage = (int)(baseDamage + PlayerStatistics.level / 5);
+		shot.damage = (int)(baseDamage +damage);
 		shot.setVelocity(0,-2);
 		Instantiate (bullet, transform.position, Quaternion.identity);
 
 		shot = bullet.GetComponent<BulletController>();
 		 
-		shot.damage = (int)(baseDamage + PlayerStatistics.level / 5);
+		shot.damage = (int)(baseDamage +damage);
 		shot.setVelocity(-2,-2);
 		Instantiate (bullet, transform.position, Quaternion.identity);
 
 		shot = bullet.GetComponent<BulletController>();
 		 
-		shot.damage = (int)(baseDamage + PlayerStatistics.level / 5);
+		shot.damage = (int)(baseDamage +damage);
 		shot.setVelocity(2,2);
 		Instantiate (bullet, transform.position, Quaternion.identity);
 
 		shot = bullet.GetComponent<BulletController>();
 		 
-		shot.damage = (int)(baseDamage + PlayerStatistics.level / 5);
+		shot.damage = (int)(baseDamage +damage);
 		shot.setVelocity(-2,2);
 		Instantiate (bullet, transform.position, Quaternion.identity);
 
 		shot = bullet.GetComponent<BulletController>();
 		 
-		shot.damage = (int)(baseDamage + PlayerStatistics.level / 5);
+		shot.damage = (int)(baseDamage +damage);
 		shot.setVelocity(2,-2);
 		Instantiate (bullet, transform.position, Quaternion.identity);
 	}

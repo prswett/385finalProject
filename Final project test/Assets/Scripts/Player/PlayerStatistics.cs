@@ -113,7 +113,7 @@ public class PlayerStatistics  : MonoBehaviour
 		mana = maxMana;
 	}
 
-	public static float calcPD() {
+	public static float calcPDSword() {
 		float crit = UnityEngine.Random.Range (0, 101);
 		float dam = atk * 1.5f;
 		if (cc > crit) {
@@ -122,9 +122,35 @@ public class PlayerStatistics  : MonoBehaviour
 		return dam;
 	}
 
+	public static float calcPDSpear() {
+		float crit = UnityEngine.Random.Range (0, 101);
+		float dam = atk * 1.5f;
+		if (cc > crit) {
+			dam = atk * (1 + (cd / 100));
+		}
+		return dam / .75f;
+	}
+
+	public static float calcPDAxe() {
+		float crit = UnityEngine.Random.Range (0, 101);
+		float dam = atk * 1.5f;
+		if (cc > crit) {
+			dam = atk * (1 + (cd / 100));
+		}
+		return dam * 1.5f;
+	}
+
+	public static float calcPDDagger() {
+		float crit = UnityEngine.Random.Range (0, 101);
+		float dam = atk * 1.5f;
+		if (cc > crit) {
+			dam = atk * (1 + (cd / 100));
+		}
+		return dam / 2f;
+	}
 	public static float calcMD() {
 		float crit = UnityEngine.Random.Range (0, 101);
-		float dam = matk * 3f;
+		float dam = matk * 2.5f;
 		if (cc > crit) {
 			dam = matk * (1 + (cd / 100));
 		}
@@ -137,7 +163,7 @@ public class PlayerStatistics  : MonoBehaviour
 			if (def < 0) {
 				int avoid = UnityEngine.Random.Range (0, 100);
 				if (avoid > avo) {
-					float damageIncrease = Mathf.Abs (def) / 40;
+					float damageIncrease = Mathf.Abs (def) / 25;
 					damageIncrease *= 5;
 					health -= (damage / 100) * (100 + damageIncrease);
 					if (health <= 0) {
@@ -149,7 +175,7 @@ public class PlayerStatistics  : MonoBehaviour
 			} else {
 				int avoid = UnityEngine.Random.Range (0, 100);
 				if (avoid > avo) {
-					float damageReduction = def / 100;
+					float damageReduction = def / 60;
 					damageReduction *= 3.5f;
 					float temp = (damage / 100) * (100 - damageReduction);
 					if (temp <= 0) {
@@ -176,6 +202,7 @@ public class PlayerStatistics  : MonoBehaviour
 					health = 0;
 				}
 				lastDefHit = Time.time;
+				health = (float)(int)health;
 			}
 		}
 	}
@@ -250,23 +277,22 @@ public class PlayerStatistics  : MonoBehaviour
 		if (mana > maxMana) {
 			mana = maxMana;
 		}
-		// atk scales off WA + 0.5*Str + 0.25Dex
-		float natk = (float)((str * 0.2) + (dex * 0.5) + wa);
+
+		float natk = (float)((str * 0.1) + (dex * 0.3) + (float)(int)(wa / 3));
 		if (natk <= 0) {
 			atk = 1;
 		} else {
 			atk = natk;
 		}
-		// matk scales off MA + 0.8*wis
-		float nmatk = ma + (float)(wis * 1);
+			
+		float nmatk = (float)(int)wa / 3 + (float)(wis * 1 / 3);
 		if (nmatk <= 0) {
 			matk = 1;
 		} else {
 			matk = nmatk;
 		}
-
-		// crit chance scales off of 0.5 * luk
-		float ncc = 5 + (float)(luk * 0.5);
+			
+		float ncc = 5 + (float)(luk * 0.3);
 		if (ncc > 100) {
 			cc = 100;
 		} else {
@@ -298,11 +324,11 @@ public class PlayerStatistics  : MonoBehaviour
 			exp -= nextLevel;
 
 			if (level <= 5) {
-				nextLevel *= 1.5f;
-			} else if (level <= 15) {
 				nextLevel *= 1.3f;
+			} else if (level <= 15) {
+				nextLevel *= 1.4f;
 			} else {
-				nextLevel *= 1.2f;
+				nextLevel *= 1.5f;
 			}
 			nextLevel = (float)(int)nextLevel + 1;
 			// more stat points

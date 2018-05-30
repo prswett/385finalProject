@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class SwordController : MonoBehaviour {
 
-	public int baseDamage = 25;
-	public int damage = 25;
+	public int baseDamage = 15;
+	public int damage = 15;
 
 	// Use this for initialization
 	void Start () {
@@ -13,7 +13,7 @@ public class SwordController : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		damage = baseDamage + (int)PlayerStatistics.calcPD ();
+		damage = baseDamage + (int)PlayerStatistics.calcPDSword ();
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {

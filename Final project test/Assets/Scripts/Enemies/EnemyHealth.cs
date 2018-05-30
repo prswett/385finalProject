@@ -37,9 +37,7 @@ public class EnemyHealth : MonoBehaviour {
 
 	void Start () {
 		//If maxhealth hasnt been initialized, default value of 100
-		if (maxHealth == 0) {
-			maxHealth = 100;
-		}
+		maxHealth = 1000;
 		if (PlayerStatistics.level <= 10) {
 			maxHealth = (maxHealth * PlayerStatistics.level) / 4f;
 		} else if (PlayerStatistics.level <= 10) {
@@ -103,21 +101,24 @@ public class EnemyHealth : MonoBehaviour {
 			}
 
 			if (currentHealth <= 0) {
-				Debug.Log (killCount.transform.position.x);
-				if (Random.Range (0, 10) < 5 + (int)(PlayerStatistics.luk / 50)) {
+				int dropBoost = (int)(PlayerStatistics.luk / 50);
+				if (dropBoost >= 15) {
+					dropBoost = 15;
+				}
+				if (Random.Range (0, 100) < 50) {
 					dropCoin ();
 				}
 				int dropRate = Random.Range (0, 100);
-				if (dropRate < 25 + (int)(PlayerStatistics.luk / 50)) {
+				if (dropRate < 25 + dropBoost) {
 					int roll = Random.Range (0, 100);
-					if (roll < 15 + (int)(PlayerStatistics.luk / 100)) {
+					if (roll < 15 + dropBoost) {
 						dropRareItem ();
 					} else {
 						dropItem ();
 					}
 				}
 				dropRate = Random.Range (0, 100);
-				if (dropRate < 5 + (int)(PlayerStatistics.luk / 50)) {
+				if (dropRate < 10 + dropBoost) {
 					dropSpell ();
 				}
 
@@ -136,7 +137,6 @@ public class EnemyHealth : MonoBehaviour {
 					}
 				}
 				parentController.destroy();
-				Debug.Log (killCount.transform.position.x);
 			}
 		}
 	}
@@ -164,31 +164,19 @@ public class EnemyHealth : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other) {
 		if (!tutorial) {
 			if (other.gameObject.CompareTag ("Player")) {
-				if (parentController.active) {
-					if (PlayerStatistics.level <= 5) {
-						PlayerStatistics.takeDamage (1 + PlayerStatistics.level / 7);
-					} else if (PlayerStatistics.level <= 10) {
-						PlayerStatistics.takeDamage (1 + PlayerStatistics.level / 4);
-					} else {
-						PlayerStatistics.takeDamage (1 + PlayerStatistics.level / 2);
-					}
-				}
+				float damage = PlayerStatistics.maxHealth / 200f;
+				PlayerStatistics.takeDamage (damage);
+				PlayerStatistics.takeDefDamage (damage);
 			}
 		}
 	}
 
 	void OnTriggerStay2D(Collider2D other) {
 		if (!tutorial) {
-			if (parentController.active) {
-				if (other.gameObject.CompareTag ("Player")) {
-					if (PlayerStatistics.level <= 5) {
-						PlayerStatistics.takeDamage (1 + PlayerStatistics.level / 7);
-					} else if (PlayerStatistics.level <= 10) {
-						PlayerStatistics.takeDamage (1 + PlayerStatistics.level / 4);
-					} else {
-						PlayerStatistics.takeDamage (1 + PlayerStatistics.level / 2);
-					}
-				}
+			if (other.gameObject.CompareTag ("Player")) {
+				float damage = PlayerStatistics.maxHealth / 200f;
+				PlayerStatistics.takeDamage (damage);
+				PlayerStatistics.takeDefDamage (damage);
 			}
 		}
 	}

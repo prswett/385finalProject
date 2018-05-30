@@ -51,6 +51,9 @@ public class CrusherBoss : MonoBehaviour {
 
 		if (myHealth.currentHealth <= (myHealth.maxHealth / 2)) {
 			speed = 4f;
+			baseDamage = 15;
+		} else if (myHealth.currentHealth <= (myHealth.maxHealth / 4 * 3)) {
+			speed = 3f;
 			baseDamage = 10;
 		}
 		playerX = target.transform.position.x;
@@ -86,13 +89,15 @@ public class CrusherBoss : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject.CompareTag ("Player")) {
-			PlayerStatistics.takeDamage(damage);
+			PlayerStatistics.takeDamage(damage + (float)(int)PlayerStatistics.maxHealth / 100);
+			PlayerStatistics.takeDefDamage(damage + (float)(int)PlayerStatistics.maxHealth / 100);
 		}
 	}
 
 	void OnTriggerStay2D(Collider2D other) {
 		if (other.gameObject.CompareTag ("Player")) {
-			PlayerStatistics.takeDamage(damage);
+			PlayerStatistics.takeDamage(damage + (float)(int)PlayerStatistics.maxHealth / 100);
+			PlayerStatistics.takeDefDamage(damage + (float)(int)PlayerStatistics.maxHealth / 100);
 		}
 	}
 }

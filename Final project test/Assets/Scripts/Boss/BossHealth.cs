@@ -71,9 +71,9 @@ public class BossHealth : MonoBehaviour {
 				temp.killedBoss = true;
 			}
 			if (temp.expBoost) {
-				PlayerStatistics.exp += 2 * (10 * PlayerStatistics.level / 2);
+				PlayerStatistics.exp += 2 * (8 * PlayerStatistics.level / 2);
 			} else {
-				PlayerStatistics.exp += 10 * PlayerStatistics.level / 2;
+				PlayerStatistics.exp += 8 * PlayerStatistics.level / 2;
 			}
 			for (int i = 0; i < Random.Range (5, 10); i++) {
 				

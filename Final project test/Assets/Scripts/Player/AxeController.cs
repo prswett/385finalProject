@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class AxeController : MonoBehaviour {
-	public int baseDamage = 50;
-	public int damage = 50;
+	public int baseDamage = 30;
+	public int damage = 30;
 	void Start () {
 
 	}
 
 	void Update () {
-		damage = baseDamage + (int)PlayerStatistics.calcPD ();
+		damage = baseDamage + (int)PlayerStatistics.calcPDAxe();
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {

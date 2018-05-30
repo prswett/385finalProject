@@ -1,3 +1,28 @@
+Version 5.0
+Atk and magic attack bug fixed
+item super stat reroll fixed
+bug fixes
+stage bug fixes
+stage cleanup
+player weapon damage changed
+strength health slight nerf
+strength damage nerf
+dex damage increased
+dex avoidability increased
+luk item drop rate nerfed
+gave enemies and bosses defense pen attack
+enemies and bosses no do percentage damage
+flower boss damage bug fix
+enemy spawn rescaled based on level
+spell scaling increased
+spell mana cost scales
+Boss item drop increase
+Boss exp increased
+mana cost for mana regen decreased
+mana cost per wis decreased
+spear moved up
+dagger animation changed
+
 Version 4.7
 Bug fixes
 Small code cleanup

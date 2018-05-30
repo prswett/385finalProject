@@ -24,12 +24,21 @@ public class ItemDatabase : MonoBehaviour
 		}
 	}
 
+	public Item RerollFetch(int id) {
+		for (int i = 0; i < database.Count; i++)
+			if (database [i].ID == id) {
+				Item temp = database [id];
+				temp = rerollStats (temp);
+				return temp;
+			}
+		return null;
+	}
+
     public Item FetchItemByID(int id)
     {
 		for (int i = 0; i < database.Count; i++)
 			if (database [i].ID == id) {
 				Item temp = database [id];
-				temp = rerollStats (temp);
 				return temp;
 			}
         return null;

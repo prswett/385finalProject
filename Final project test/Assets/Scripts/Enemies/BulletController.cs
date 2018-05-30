@@ -74,7 +74,10 @@ public class BulletController : MonoBehaviour {
 	//On collision with ground dissapear
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject.CompareTag ("Player")) {
-			PlayerStatistics.takeDamage(1 + (PlayerStatistics.level / 2) + damage);
+			float bulletDamage = PlayerStatistics.maxHealth / 200f;
+
+			PlayerStatistics.takeDamage(bulletDamage + damage);
+			PlayerStatistics.takeDefDamage (bulletDamage + damage);
 			if (!explosion) {
 				Destroy (gameObject);
 			} else {
@@ -96,7 +99,10 @@ public class BulletController : MonoBehaviour {
 
 	void OnTriggerStay2D(Collider2D other) {
 		if (other.gameObject.CompareTag ("Player")) {
-			PlayerStatistics.takeDamage(1 + (PlayerStatistics.level / 2) + damage);
+			float bulletDamage = PlayerStatistics.maxHealth / 200f;
+
+			PlayerStatistics.takeDamage(bulletDamage + damage);
+			PlayerStatistics.takeDefDamage (bulletDamage + damage);
 		}
 	}
 
