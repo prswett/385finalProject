@@ -1,0 +1,23 @@
+stat balancing
+bug testing
+enemy health/damage balancing
+exp balancing
+boss balancing
+
+Add item boost chance
+Switch iron (boosted) to steel
+
+player outofbounds
+
+if (PlayerStatistics.level <= 5) {
+
+		} else if (PlayerStatistics.level <= 15) {
+
+		} else {
+
+		}
+
+Can't use timescale for loading
+
+Bugs
+-----

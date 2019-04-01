@@ -1,0 +1,2348 @@
+[
+  {
+    "id": 0,
+    "title": "Iron Helmet",
+	"type": "Helmet",
+    "value": 5,
+    "stats": {
+      "str": 1,
+	  "dex": 1,
+	  "wis": 1,
+	  "luk": 1,
+	  "atk": 1,
+	  "def": 3
+    },
+    "description": "A helmet made of iron",
+    "rarity": 1,
+    "slug":  "IronHelmet"
+  },
+  {
+    "id": 1,
+    "title": "Iron Armor",
+	"type": "Armor",
+    "value": 5,
+    "stats": {
+      "str": 1,
+	  "dex": 1,
+	  "wis": 1,
+	  "luk": 1,
+	  "atk": 1,
+	  "def": 5
+    },
+    "description": "Armor made of iron",
+    "rarity": 1,
+    "slug":  "IronArmor"
+  },
+  {
+    "id": 2,
+    "title": "Iron Sword",
+	"type": "Sword",
+    "value": 5,
+    "stats": {
+      "str": 5,
+	  "dex": 1,
+	  "wis": 1,
+	  "luk": 1,
+	  "atk": 5,
+	  "def": 1
+    },
+    "description": "A Sword made of iron",
+    "rarity": 1,
+    "slug":  "IronSword"
+  },
+  {
+    "id": 3,
+    "title": "Iron Spear",
+	"type": "Spear",
+    "value": 5,
+    "stats": {
+      "str": 5,
+	  "dex": 1,
+	  "wis": 1,
+	  "luk": 1,
+	  "atk": 5,
+	  "def": 1
+    },
+    "description": "A Spear made of iron",
+    "rarity": 1,
+    "slug":  "IronSpear"
+  },
+  {
+    "id": 4,
+    "title": "Iron Axe",
+	"type": "Axe",
+    "value": 5,
+    "stats": {
+      "str": 5,
+	  "dex": 1,
+	  "wis": 1,
+	  "luk": 1,
+	  "atk": 5,
+	  "def": 1
+    },
+    "description": "An Axe made of iron",
+    "rarity": 1,
+    "slug":  "IronAxe"
+  },
+  {
+    "id": 5,
+    "title": "Iron Dagger",
+	"type": "Dagger",
+    "value": 5,
+    "stats": {
+      "str": 5,
+	  "dex": 1,
+	  "wis": 1,
+	  "luk": 1,
+	  "atk": 5,
+	  "def": 1
+    },
+    "description": "A Dagger made of iron",
+    "rarity": 1,
+    "slug":  "IronDagger"
+  },
+  {
+    "id": 6,
+    "title": "Iron Helmet(Boosted)",
+	"type": "Helmet",
+    "value": 5,
+    "stats": {
+      "str": 1,
+	  "dex": 1,
+	  "wis": 1,
+	  "luk": 1,
+	  "atk": 1,
+	  "def": 8
+    },
+    "description": "A helmet made of iron",
+    "rarity": 1,
+    "slug":  "IronHelmet"
+  },
+  {
+    "id": 7,
+    "title": "Iron Armor(Boosted)",
+	"type": "Armor",
+    "value": 5,
+    "stats": {
+      "str": 1,
+	  "dex": 1,
+	  "wis": 1,
+	  "luk": 1,
+	  "atk": 1,
+	  "def": 10
+    },
+    "description": "Armor made of iron",
+    "rarity": 1,
+    "slug":  "IronArmor"
+  },
+  {
+    "id": 8,
+    "title": "Iron Sword(Boosted)",
+	"type": "Sword",
+    "value": 5,
+    "stats": {
+      "str": 10,
+	  "dex": 1,
+	  "wis": 1,
+	  "luk": 1,
+	  "atk": 10,
+	  "def": 1
+    },
+    "description": "A Sword made of iron",
+    "rarity": 1,
+    "slug":  "IronSword"
+  },
+  {
+    "id": 9,
+    "title": "Iron Spear(Boosted)",
+	"type": "Spear",
+    "value": 5,
+    "stats": {
+      "str": 10,
+	  "dex": 1,
+	  "wis": 1,
+	  "luk": 1,
+	  "atk": 10,
+	  "def": 1
+    },
+    "description": "A Spear made of iron",
+    "rarity": 1,
+    "slug":  "IronSpear"
+  },
+  {
+    "id": 10,
+    "title": "Iron Axe(Boosted)",
+	"type": "Axe",
+    "value": 1,
+    "stats": {
+      "str": 10,
+	  "dex": 1,
+	  "wis": 1,
+	  "luk": 1,
+	  "atk": 10,
+	  "def": 1
+    },
+    "description": "An Axe made of iron",
+    "rarity": 1,
+    "slug":  "IronAxe"
+  },
+  {
+    "id": 11,
+    "title": "Iron Dagger(Boosted)",
+	"type": "Dagger",
+    "value": 5,
+    "stats": {
+      "str": 10,
+	  "dex": 1,
+	  "wis": 1,
+	  "luk": 1,
+	  "atk": 10,
+	  "def": 1
+    },
+    "description": "A Dagger made of iron",
+    "rarity": 1,
+    "slug":  "IronDagger"
+  },
+  {
+    "id": 12,
+    "title": "Fire Helmet",
+	"type": "Helmet",
+    "value": 15,
+    "stats": {
+      "str": 5,
+	  "dex": 1,
+	  "wis": -5,
+	  "luk": 1,
+	  "atk": 10,
+	  "def": -50
+    },
+    "description": "A helmet forged with fire",
+    "rarity": 1,
+    "slug":  "FireHelmet"
+  },
+  {
+    "id": 13,
+    "title": "Fire Armor",
+	"type": "Armor",
+    "value": 15,
+    "stats": {
+      "str": 10,
+	  "dex": 1,
+	  "wis": 1,
+	  "luk": 1,
+	  "atk": 15,
+	  "def": -50
+    },
+    "description": "Armor forged with fire",
+    "rarity": 1,
+    "slug":  "FireArmor"
+  },
+  {
+    "id": 14,
+    "title": "Fire Sword",
+	"type": "Sword",
+    "value": 15,
+    "stats": {
+      "str": 20,
+	  "dex": 1,
+	  "wis": 1,
+	  "luk": 1,
+	  "atk": 30,
+	  "def": -50
+    },
+    "description": "A Sword forged with fire",
+    "rarity": 1,
+    "slug":  "FireSword"
+  },
+  {
+    "id": 15,
+    "title": "Fire Spear",
+	"type": "Spear",
+    "value": 15,
+    "stats": {
+      "str": 15,
+	  "dex": 1,
+	  "wis": 1,
+	  "luk": 1,
+	  "atk": 20,
+	  "def": -50
+    },
+    "description": "A Spear forged with fire",
+    "rarity": 1,
+    "slug":  "FireSpear"
+  },
+  {
+    "id": 16,
+    "title": "Fire Axe",
+	"type": "Axe",
+    "value": 15,
+    "stats": {
+      "str": 25,
+	  "dex": 1,
+	  "wis": 1,
+	  "luk": 1,
+	  "atk": 40,
+	  "def": -50
+    },
+    "description": "An Axe forged with fire",
+    "rarity": 1,
+    "slug":  "FireAxe"
+  },
+  {
+    "id": 17,
+    "title": "Fire Dagger",
+	"type": "Dagger",
+    "value": 15,
+    "stats": {
+      "str": 10,
+	  "dex": 1,
+	  "wis": 1,
+	  "luk": 1,
+	  "atk": 15,
+	  "def": -50
+    },
+    "description": "A Dagger forged with fire",
+    "rarity": 1,
+    "slug":  "FireDagger"
+  },
+  {
+    "id": 18,
+    "title": "Water Helmet",
+	"type": "Helmet",
+    "value": 15,
+    "stats": {
+      "str": 1,
+	  "dex": 3,
+	  "wis": 5,
+	  "luk": 1,
+	  "atk": 1,
+	  "def": 100
+    },
+    "description": "A helmet from the sea",
+    "rarity": 1,
+    "slug":  "WaterHelmet"
+  },
+  {
+    "id": 19,
+    "title": "Water Armor",
+	"type": "Armor",
+    "value": 15,
+    "stats": {
+      "str": 1,
+	  "dex": 6,
+	  "wis": 10,
+	  "luk": 1,
+	  "atk": 1,
+	  "def": 150
+    },
+    "description": "Armor from the sea",
+    "rarity": 1,
+    "slug":  "WaterArmor"
+  },
+  {
+    "id": 20,
+    "title": "Water Sword",
+	"type": "Sword",
+    "value": 15,
+    "stats": {
+      "str": 1,
+	  "dex": 7,
+	  "wis": 10,
+	  "luk": 1,
+	  "atk": 20,
+	  "def": 50
+    },
+    "description": "A Sword from the sea",
+    "rarity": 1,
+    "slug":  "WaterSword"
+  },
+  {
+    "id": 21,
+    "title": "Water Spear",
+	"type": "Spear",
+    "value": 15,
+    "stats": {
+      "str": 1,
+	  "dex": 7,
+	  "wis": 10,
+	  "luk": 1,
+	  "atk": 20,
+	  "def": 50
+    },
+    "description": "A Spear from the sea",
+    "rarity": 1,
+    "slug":  "WaterSpear"
+  },
+  {
+    "id": 22,
+    "title": "Water Axe",
+	"type": "Axe",
+    "value": 15,
+    "stats": {
+      "str": 1,
+	  "dex": 7,
+	  "wis": 10,
+	  "luk": 1,
+	  "atk": 20,
+	  "def": 50
+    },
+    "description": "An Axe from the sea",
+    "rarity": 1,
+    "slug":  "WaterAxe"
+  },
+  {
+    "id": 23,
+    "title": "Water Dagger",
+	"type": "Dagger",
+    "value": 15,
+    "stats": {
+      "str": 1,
+	  "dex": 7,
+	  "wis": 10,
+	  "luk": 1,
+	  "atk": 20,
+	  "def": 50
+    },
+    "description": "A Dagger from the sea",
+    "rarity": 1,
+    "slug":  "WaterDagger"
+  },
+  {
+    "id": 24,
+    "title": "Wind Helmet",
+	"type": "Helmet",
+    "value": 15,
+    "stats": {
+      "str": 1,
+	  "dex": 10,
+	  "wis": 1,
+	  "luk": 10,
+	  "atk": 1,
+	  "def": 25
+    },
+    "description": "A light helmet tempered by the winds",
+    "rarity": 1,
+    "slug":  "WindHelmet"
+  },
+  {
+    "id": 25,
+    "title": "Wind Armor",
+	"type": "Armor",
+    "value": 15,
+    "stats": {
+      "str": 1,
+	  "dex": 20,
+	  "wis": 1,
+	  "luk": 15,
+	  "atk": 1,
+	  "def": 50
+    },
+    "description": "Armor tempered by the winds",
+    "rarity": 1,
+    "slug":  "WindArmor"
+  },
+  {
+    "id": 26,
+    "title": "Wind Sword",
+	"type": "Sword",
+    "value": 15,
+    "stats": {
+      "str": 1,
+	  "dex": 10,
+	  "wis": 1,
+	  "luk": 5,
+	  "atk": 25,
+	  "def": 10
+    },
+    "description": "A blade made of wind",
+    "rarity": 1,
+    "slug":  "WindSword"
+  },
+  {
+    "id": 27,
+    "title": "Wind Spear",
+	"type": "Spear",
+    "value": 15,
+    "stats": {
+      "str": 1,
+	  "dex": 10,
+	  "wis": 1,
+	  "luk": 5,
+	  "atk": 25,
+	  "def": 10
+    },
+    "description": "A spear summoning the winds",
+    "rarity": 1,
+    "slug":  "WindSpear"
+  },
+  {
+    "id": 28,
+    "title": "Wind Axe",
+	"type": "Axe",
+    "value": 15,
+    "stats": {
+      "str": 1,
+	  "dex": 10,
+	  "wis": 1,
+	  "luk": 5,
+	  "atk": 25,
+	  "def": 10
+    },
+    "description": "An Axe that can cut the wind",
+    "rarity": 1,
+    "slug":  "WindAxe"
+  },
+  {
+    "id": 29,
+    "title": "Wind Dagger",
+	"type": "Dagger",
+    "value": 15,
+    "stats": {
+      "str": 1,
+	  "dex": 10,
+	  "wis": 1,
+	  "luk": 5,
+	  "atk": 25,
+	  "def": 10
+    },
+    "description": "A Dagger as quick as the wind",
+    "rarity": 1,
+    "slug":  "WaterDagger"
+  },
+  {
+    "id": 30,
+    "title": "Earth Helmet",
+	"type": "Helmet",
+    "value": 15,
+    "stats": {
+      "str": 5,
+	  "dex": 1,
+	  "wis": 5,
+	  "luk": 1,
+	  "atk": 1,
+	  "def": 150
+    },
+    "description": "A helmet from the depths of the earth",
+    "rarity": 1,
+    "slug":  "EarthHelmet"
+  },
+  {
+    "id": 31,
+    "title": "Earth Armor",
+	"type": "Armor",
+    "value": 15,
+    "stats": {
+      "str": 5,
+	  "dex": 1,
+	  "wis": 5,
+	  "luk": 1,
+	  "atk": 1,
+	  "def": 300
+    },
+    "description": "Armor from the deepest crevices",
+    "rarity": 1,
+    "slug":  "EarthArmor"
+  },
+  {
+    "id": 32,
+    "title": "Earth Sword",
+	"type": "Sword",
+    "value": 15,
+    "stats": {
+      "str": 10,
+	  "dex": 1,
+	  "wis": 10,
+	  "luk": 1,
+	  "atk": 25,
+	  "def": 100
+    },
+    "description": "A Sword from mount Fuji",
+    "rarity": 1,
+    "slug":  "EarthSword"
+  },
+  {
+    "id": 33,
+    "title": "Earth Spear",
+	"type": "Spear",
+    "value": 15,
+    "stats": {
+      "str": 10,
+	  "dex": 1,
+	  "wis": 10,
+	  "luk": 1,
+	  "atk": 25,
+	  "def": 100
+    },
+    "description": "A Spear made of mud, suprisingly effective",
+    "rarity": 1,
+    "slug":  "EarthSpear"
+  },
+  {
+    "id": 34,
+    "title": "Earth Axe",
+	"type": "Axe",
+    "value": 15,
+    "stats": {
+      "str": 10,
+	  "dex": 1,
+	  "wis": 10,
+	  "luk": 1,
+	  "atk": 25,
+	  "def": 100
+    },
+    "description": "A mud axe polished as if it were a metal",
+    "rarity": 1,
+    "slug":  "EarthAxe"
+  },
+  {
+    "id": 35,
+    "title": "Earth Dagger",
+	"type": "Dagger",
+    "value": 15,
+    "stats": {
+      "str": 10,
+	  "dex": 1,
+	  "wis": 10,
+	  "luk": 1,
+	  "atk": 25,
+	  "def": 100
+    },
+    "description": "A Stick",
+    "rarity": 1,
+    "slug":  "EarthDagger"
+  },
+  {
+    "id": 36,
+    "title": "Lava Helmet",
+	"type": "Helmet",
+    "value": 25,
+    "stats": {
+      "str": 10,
+	  "dex": 5,
+	  "wis": -10,
+	  "luk": 5,
+	  "atk": 20,
+	  "def": -60
+    },
+    "description": "A helmet forged with lava",
+    "rarity": 1,
+    "slug":  "LavaHelmet"
+  },
+  {
+    "id": 37,
+    "title": "Lava Armor",
+	"type": "Armor",
+    "value": 25,
+    "stats": {
+      "str": 15,
+	  "dex": 5,
+	  "wis": 5,
+	  "luk": 5,
+	  "atk": 20,
+	  "def": -60
+    },
+    "description": "Armor forged with lava",
+    "rarity": 1,
+    "slug":  "LavaArmor"
+  },
+  {
+    "id": 38,
+    "title": "Lava Sword",
+	"type": "Sword",
+    "value": 25,
+    "stats": {
+      "str": 25,
+	  "dex": 5,
+	  "wis": 5,
+	  "luk": 5,
+	  "atk": 35,
+	  "def": -60
+    },
+    "description": "A Sword forged with lava",
+    "rarity": 1,
+    "slug":  "LavaSword"
+  },
+  {
+    "id": 39,
+    "title": "Lava Spear",
+	"type": "Spear",
+    "value": 25,
+    "stats": {
+      "str": 25,
+	  "dex": 5,
+	  "wis": 5,
+	  "luk": 5,
+	  "atk": 35,
+	  "def": -60
+    },
+    "description": "A Spear forged with lava",
+    "rarity": 1,
+    "slug":  "LavaSpear"
+  },
+  {
+    "id": 40,
+    "title": "Lava Axe",
+	"type": "Axe",
+    "value": 25,
+    "stats": {
+      "str": 25,
+	  "dex": 5,
+	  "wis": 5,
+	  "luk": 5,
+	  "atk": 35,
+	  "def": -60
+    },
+    "description": "A Axe forged with lava",
+    "rarity": 1,
+    "slug":  "LavaAxe"
+  },
+  {
+    "id": 41,
+    "title": "Lava Dagger",
+	"type": "Dagger",
+    "value": 25,
+    "stats": {
+      "str": 25,
+	  "dex": 5,
+	  "wis": 5,
+	  "luk": 5,
+	  "atk": 35,
+	  "def": -60
+    },
+    "description": "A Dagger forged with lava",
+    "rarity": 1,
+    "slug":  "LavaDagger"
+  },
+  {
+    "id": 42,
+    "title": "Ice Helmet",
+	"type": "Helmet",
+    "value": 25,
+    "stats": {
+      "str": 3,
+	  "dex": 10,
+	  "wis": 15,
+	  "luk": 3,
+	  "atk": 3,
+	  "def": 120
+    },
+    "description": "A helmet forged with Ice",
+    "rarity": 1,
+    "slug":  "IceHelmet"
+  },
+  {
+    "id": 43,
+    "title": "Ice Armor",
+	"type": "Armor",
+    "value": 25,
+    "stats": {
+      "str": 3,
+	  "dex": 13,
+	  "wis": 20,
+	  "luk": 3,
+	  "atk": 3,
+	  "def": 175
+    },
+    "description": "Armor forged with Ice",
+    "rarity": 1,
+    "slug":  "IceArmor"
+  },
+  {
+    "id": 44,
+    "title": "Ice Sword",
+	"type": "Sword",
+    "value": 25,
+    "stats": {
+      "str": 3,
+	  "dex": 16,
+	  "wis": 23,
+	  "luk": 3,
+	  "atk": 25,
+	  "def": 60
+    },
+    "description": "A Sword forged with Ice",
+    "rarity": 1,
+    "slug":  "IceSword"
+  },
+  {
+    "id": 45,
+    "title": "Ice Spear",
+	"type": "Spear",
+    "value": 25,
+    "stats": {
+      "str": 3,
+	  "dex": 16,
+	  "wis": 23,
+	  "luk": 3,
+	  "atk": 25,
+	  "def": 60
+    },
+    "description": "A Spear forged with Ice",
+    "rarity": 1,
+    "slug":  "IceSpear"
+  },
+  {
+    "id": 46,
+    "title": "Ice Axe",
+	"type": "Axe",
+    "value": 25,
+    "stats": {
+      "str": 3,
+	  "dex": 16,
+	  "wis": 23,
+	  "luk": 3,
+	  "atk": 25,
+	  "def": 60
+    },
+    "description": "A Axe forged with Ice",
+    "rarity": 1,
+    "slug":  "IceAxe"
+  },
+  {
+    "id": 47,
+    "title": "Ice Dagger",
+	"type": "Dagger",
+    "value": 25,
+    "stats": {
+      "str": 3,
+	  "dex": 16,
+	  "wis": 23,
+	  "luk": 3,
+	  "atk": 25,
+	  "def": 60
+    },
+    "description": "A Dagger forged with Ice",
+    "rarity": 1,
+    "slug":  "IceDagger"
+  },
+  {
+    "id": 48,
+    "title": "Gust Helmet",
+	"type": "Helmet",
+    "value": 25,
+    "stats": {
+      "str": 3,
+	  "dex": 15,
+	  "wis": 3,
+	  "luk": 15,
+	  "atk": 3,
+	  "def": 35
+    },
+    "description": "A helmet forged with strong winds",
+    "rarity": 1,
+    "slug":  "GustHelmet"
+  },
+  {
+    "id": 49,
+    "title": "Gust Armor",
+	"type": "Armor",
+    "value": 25,
+    "stats": {
+      "str": 3,
+	  "dex": 26,
+	  "wis": 3,
+	  "luk": 23,
+	  "atk": 3,
+	  "def": 60
+    },
+    "description": "Armor forged with strong winds",
+    "rarity": 1,
+    "slug":  "GustArmor"
+  },
+  {
+    "id": 50,
+    "title": "Gust Sword",
+	"type": "Sword",
+    "value": 25,
+    "stats": {
+      "str": 3,
+	  "dex": 15,
+	  "wis": 3,
+	  "luk": 10,
+	  "atk": 35,
+	  "def": 20
+    },
+    "description": "A Sword forged with strong winds",
+    "rarity": 1,
+    "slug":  "GustSword"
+  },
+  {
+    "id": 51,
+    "title": "Gust Spear",
+	"type": "Spear",
+    "value": 25,
+    "stats": {
+      "str": 3,
+	  "dex": 15,
+	  "wis": 3,
+	  "luk": 10,
+	  "atk": 35,
+	  "def": 20
+    },
+    "description": "A Spear forged with strong winds",
+    "rarity": 1,
+    "slug":  "GustSpear"
+  },
+  {
+    "id": 52,
+    "title": "Gust Axe",
+	"type": "Axe",
+    "value": 25,
+    "stats": {
+      "str": 3,
+	  "dex": 15,
+	  "wis": 3,
+	  "luk": 10,
+	  "atk": 35,
+	  "def": 20
+    },
+    "description": "A Axe forged with strong winds",
+    "rarity": 1,
+    "slug":  "GustAxe"
+  },
+  {
+    "id": 53,
+    "title": "Gust Dagger",
+	"type": "Dagger",
+    "value": 25,
+    "stats": {
+      "str": 3,
+	  "dex": 15,
+	  "wis": 3,
+	  "luk": 10,
+	  "atk": 35,
+	  "def": 20
+    },
+    "description": "A Dagger forged with strong winds",
+    "rarity": 1,
+    "slug":  "GustDagger"
+  },
+  {
+    "id": 54,
+    "title": "Rock Helmet",
+	"type": "Helmet",
+    "value": 25,
+    "stats": {
+      "str": 10,
+	  "dex": 3,
+	  "wis": 10,
+	  "luk": 3,
+	  "atk": 3,
+	  "def": 160
+    },
+    "description": "A helmet forged with Rock",
+    "rarity": 1,
+    "slug":  "RockHelmet"
+  },
+  {
+    "id": 55,
+    "title": "Rock Armor",
+	"type": "Armor",
+    "value": 25,
+    "stats": {
+      "str": 15,
+	  "dex": 3,
+	  "wis": 15,
+	  "luk": 3,
+	  "atk": 3,
+	  "def": 320
+    },
+    "description": "Armor forged with Rock",
+    "rarity": 1,
+    "slug":  "RockArmor"
+  },
+  {
+    "id": 56,
+    "title": "Rock Sword",
+	"type": "Sword",
+    "value": 25,
+    "stats": {
+      "str": 20,
+	  "dex": 3,
+	  "wis": 18,
+	  "luk": 3,
+	  "atk": 35,
+	  "def": 110
+    },
+    "description": "A Sword forged with Rock",
+    "rarity": 1,
+    "slug":  "RockSword"
+  },
+  {
+    "id": 57,
+    "title": "Rock Spear",
+	"type": "Spear",
+    "value": 25,
+    "stats": {
+      "str": 20,
+	  "dex": 3,
+	  "wis": 18,
+	  "luk": 3,
+	  "atk": 35,
+	  "def": 110
+    },
+    "description": "A Spear forged with Rock",
+    "rarity": 1,
+    "slug":  "RockSpear"
+  },
+  {
+    "id": 58,
+    "title": "Rock Axe",
+	"type": "Axe",
+    "value": 25,
+    "stats": {
+     "str": 20,
+	  "dex": 3,
+	  "wis": 18,
+	  "luk": 3,
+	  "atk": 35,
+	  "def": 110
+    },
+    "description": "A Axe forged with Rock",
+    "rarity": 1,
+    "slug":  "RockAxe"
+  },
+  {
+    "id": 59,
+    "title": "Rock Dagger",
+	"type": "Dagger",
+    "value": 25,
+    "stats": {
+      "str": 20,
+	  "dex": 3,
+	  "wis": 18,
+	  "luk": 3,
+	  "atk": 35,
+	  "def": 110
+    },
+    "description": "A Dagger forged with Rock",
+    "rarity": 1,
+    "slug":  "RockDagger"
+  },
+  {
+    "id": 61,
+    "title": "Thunder Helmet",
+	"type": "Helmet",
+    "value": 25,
+    "stats": {
+      "str": -5,
+	  "dex": -5,
+	  "wis": -5,
+	  "luk": -5,
+	  "atk": 50,
+	  "def": -25
+    },
+    "description": "A helmet forged with Thunder",
+    "rarity": 1,
+    "slug":  "ThunderHelmet"
+  },
+  {
+    "id": 62,
+    "title": "Thunder Armor",
+	"type": "Armor",
+    "value": 25,
+    "stats": {
+      "str": -5,
+	  "dex": -5,
+	  "wis": -5,
+	  "luk": -5,
+	  "atk": 50,
+	  "def": -25
+    },
+    "description": "Armor forged with Thunder",
+    "rarity": 1,
+    "slug":  "ThunderArmor"
+  },
+  {
+    "id": 63,
+    "title": "Thunder Sword",
+	"type": "Sword",
+    "value": 25,
+    "stats": {
+      "str": 0,
+	  "dex": 0,
+	  "wis": 0,
+	  "luk": 0,
+	  "atk": 80,
+	  "def": -10
+    },
+    "description": "A Sword forged with Thunder",
+    "rarity": 1,
+    "slug":  "ThunderSword"
+  },
+  {
+    "id": 64,
+    "title": "Thunder Spear",
+	"type": "Spear",
+    "value": 25,
+    "stats": {
+      "str": 0,
+	  "dex": 0,
+	  "wis": 0,
+	  "luk": 0,
+	  "atk": 80,
+	  "def": -10
+    },
+    "description": "A Spear forged with Thunder",
+    "rarity": 1,
+    "slug":  "ThunderSpear"
+  },
+  {
+    "id": 65,
+    "title": "Thunder Axe",
+	"type": "Axe",
+    "value": 25,
+    "stats": {
+      "str": 0,
+	  "dex": 0,
+	  "wis": 0,
+	  "luk": 0,
+	  "atk": 80,
+	  "def": -10
+    },
+    "description": "A Axe forged with Thunder",
+    "rarity": 1,
+    "slug":  "ThunderAxe"
+  },
+  {
+    "id": 66,
+    "title": "Thunder Dagger",
+	"type": "Dagger",
+    "value": 25,
+    "stats": {
+      "str": 0,
+	  "dex": 0,
+	  "wis": 0,
+	  "luk": 0,
+	  "atk": 80,
+	  "def": -10
+    },
+    "description": "A Dagger forged with Thunder",
+    "rarity": 1,
+    "slug":  "ThunderDagger"
+  },
+  {
+    "id": 67,
+    "title": "Light Helmet",
+	"type": "Helmet",
+    "value": 35,
+    "stats": {
+      "str": 25,
+	  "dex": 25,
+	  "wis": 25,
+	  "luk": 25,
+	  "atk": 25,
+	  "def": 25
+    },
+    "description": "A helmet forged with Light",
+    "rarity": 2,
+    "slug":  "LightHelmet"
+  },
+  {
+    "id": 68,
+    "title": "Light Armor",
+	"type": "Armor",
+    "value": 35,
+    "stats": {
+      "str": 30,
+	  "dex": 30,
+	  "wis": 30,
+	  "luk": 30,
+	  "atk": 30,
+	  "def": 30
+    },
+    "description": "Armor forged with Light",
+    "rarity": 2,
+    "slug":  "LightArmor"
+  },
+  {
+    "id": 69,
+    "title": "Light Sword",
+	"type": "Sword",
+    "value": 35,
+    "stats": {
+      "str": 35,
+	  "dex": 35,
+	  "wis": 35,
+	  "luk": 35,
+	  "atk": 35,
+	  "def": 35
+    },
+    "description": "A Sword forged with Light",
+    "rarity": 2,
+    "slug":  "LightSword"
+  },
+  {
+    "id": 70,
+    "title": "Light Spear",
+	"type": "Spear",
+    "value": 35,
+    "stats": {
+      "str": 35,
+	  "dex": 35,
+	  "wis": 35,
+	  "luk": 35,
+	  "atk": 35,
+	  "def": 35
+    },
+    "description": "A Spear forged with Light",
+    "rarity": 2,
+    "slug":  "LightSpear"
+  },
+  {
+    "id": 71,
+    "title": "Light Axe",
+	"type": "Axe",
+    "value": 35,
+    "stats": {
+      "str": 35,
+	  "dex": 35,
+	  "wis": 35,
+	  "luk": 35,
+	  "atk": 35,
+	  "def": 35
+    },
+    "description": "A Axe forged with Light",
+    "rarity": 2,
+    "slug":  "LightAxe"
+  },
+  {
+    "id": 72,
+    "title": "Light Dagger",
+	"type": "Dagger",
+    "value": 35,
+    "stats": {
+      "str": 35,
+	  "dex": 35,
+	  "wis": 35,
+	  "luk": 35,
+	  "atk": 35,
+	  "def": 35
+    },
+    "description": "A Dagger forged with Light",
+    "rarity": 2,
+    "slug":  "LightDagger"
+  },
+  {
+    "id": 73,
+    "title": "Dark Helmet",
+	"type": "Helmet",
+    "value": 35,
+    "stats": {
+      "str": 30,
+	  "dex": 20,
+	  "wis": 30,
+	  "luk": 20,
+	  "atk": 30,
+	  "def": 20
+    },
+    "description": "A helmet forged with Darkness",
+    "rarity": 2,
+    "slug":  "DarkHelmet"
+  },
+  {
+    "id": 74,
+    "title": "Dark Armor",
+	"type": "Armor",
+    "value": 35,
+    "stats": {
+      "str": 30,
+	  "dex": 20,
+	  "wis": 30,
+	  "luk": 20,
+	  "atk": 30,
+	  "def": 20
+    },
+    "description": "Armor forged with Darkness",
+    "rarity": 2,
+    "slug":  "DarkArmor"
+  },
+  {
+    "id": 75,
+    "title": "Dark Sword",
+	"type": "Sword",
+    "value": 35,
+    "stats": {
+      "str": 30,
+	  "dex": 20,
+	  "wis": 30,
+	  "luk": 20,
+	  "atk": 30,
+	  "def": 20
+    },
+    "description": "A Sword forged with Darkness",
+    "rarity": 2,
+    "slug":  "DarkSword"
+  },
+  {
+    "id": 76,
+    "title": "Dark Spear",
+	"type": "Spear",
+    "value": 35,
+    "stats": {
+      "str": 30,
+	  "dex": 20,
+	  "wis": 30,
+	  "luk": 20,
+	  "atk": 30,
+	  "def": 20
+    },
+    "description": "A Spear forged with Darkness",
+    "rarity": 2,
+    "slug":  "DarkSpear"
+  },
+  {
+    "id": 77,
+    "title": "Dark Axe",
+	"type": "Axe",
+    "value": 35,
+    "stats": {
+      "str": 30,
+	  "dex": 20,
+	  "wis": 30,
+	  "luk": 20,
+	  "atk": 30,
+	  "def": 20
+    },
+    "description": "A Axe forged with Darkness",
+    "rarity": 2,
+    "slug":  "DarkAxe"
+  },
+  {
+    "id": 78,
+    "title": "Dark Dagger",
+	"type": "Dagger",
+    "value": 35,
+    "stats": {
+      "str": 30,
+	  "dex": 20,
+	  "wis": 30,
+	  "luk": 20,
+	  "atk": 30,
+	  "def": 20
+    },
+    "description": "A Dagger forged with Darkness",
+    "rarity": 2,
+    "slug":  "DarkDagger"
+  },
+  {
+    "id": 79,
+    "title": "Obsidian Helmet",
+	"type": "Helmet",
+    "value": 35,
+    "stats": {
+      "str": 15,
+	  "dex": 15,
+	  "wis": 15,
+	  "luk": 15,
+	  "atk": 50,
+	  "def": 50
+    },
+    "description": "A helmet forged with water and lava",
+    "rarity": 2,
+    "slug":  "ObsidianHelmet"
+  },
+  {
+    "id": 80,
+    "title": "Obsidian Armor",
+	"type": "Armor",
+    "value": 35,
+    "stats": {
+      "str": 15,
+	  "dex": 15,
+	  "wis": 15,
+	  "luk": 15,
+	  "atk": 50,
+	  "def": 50
+    },
+    "description": "Armor forged with water and lava",
+    "rarity": 2,
+    "slug":  "ObsidianArmor"
+  },
+  {
+    "id": 81,
+    "title": "Obsidian Sword",
+	"type": "Sword",
+    "value": 35,
+    "stats": {
+      "str": 15,
+	  "dex": 15,
+	  "wis": 15,
+	  "luk": 15,
+	  "atk": 50,
+	  "def": 50
+    },
+    "description": "A Sword forged with water and lava",
+    "rarity": 2,
+    "slug":  "ObsidianSword"
+  },
+  {
+    "id": 82,
+    "title": "Obsidian Spear",
+	"type": "Spear",
+    "value": 35,
+    "stats": {
+      "str": 15,
+	  "dex": 15,
+	  "wis": 15,
+	  "luk": 15,
+	  "atk": 50,
+	  "def": 50
+    },
+    "description": "A Spear forged with water and lava",
+    "rarity": 2,
+    "slug":  "ObsidianSpear"
+  },
+  {
+    "id": 83,
+    "title": "Obsidian Axe",
+	"type": "Axe",
+    "value": 35,
+    "stats": {
+      "str": 15,
+	  "dex": 15,
+	  "wis": 15,
+	  "luk": 15,
+	  "atk": 50,
+	  "def": 50
+    },
+    "description": "A Axe forged with water and lava",
+    "rarity": 2,
+    "slug":  "ObsidianAxe"
+  },
+  {
+    "id": 84,
+    "title": "Obsidian Dagger",
+	"type": "Dagger",
+    "value": 35,
+    "stats": {
+      "str": 15,
+	  "dex": 15,
+	  "wis": 15,
+	  "luk": 15,
+	  "atk": 50,
+	  "def": 50
+    },
+    "description": "A Dagger forged with water and lava",
+    "rarity": 2,
+    "slug":  "ObsidianDagger"
+  },
+  {
+    "id": 85,
+    "title": "Storm Helmet",
+	"type": "Helmet",
+    "value": 35,
+    "stats": {
+      "str": 40,
+	  "dex": 40,
+	  "wis": 40,
+	  "luk": 40,
+	  "atk": 15,
+	  "def": 15
+    },
+    "description": "A helmet forged with wind and thunder",
+    "rarity": 2,
+    "slug":  "StormHelmet"
+  },
+  {
+    "id": 86,
+    "title": "Storm Armor",
+	"type": "Armor",
+    "value": 35,
+    "stats": {
+      "str": 40,
+	  "dex": 40,
+	  "wis": 40,
+	  "luk": 40,
+	  "atk": 15,
+	  "def": 15
+    },
+    "description": "Armor forged with wind and thunder",
+    "rarity": 2,
+    "slug":  "StormArmor"
+  },
+  {
+    "id": 87,
+    "title": "Storm Sword",
+	"type": "Sword",
+    "value": 35,
+    "stats": {
+      "str": 40,
+	  "dex": 40,
+	  "wis": 40,
+	  "luk": 40,
+	  "atk": 15,
+	  "def": 15
+    },
+    "description": "A Sword forged with wind and thunder",
+    "rarity": 2,
+    "slug":  "StormSword"
+  },
+  {
+    "id": 88,
+    "title": "Storm Spear",
+	"type": "Spear",
+    "value": 35,
+    "stats": {
+      "str": 40,
+	  "dex": 40,
+	  "wis": 40,
+	  "luk": 40,
+	  "atk": 15,
+	  "def": 15
+    },
+    "description": "A Spear forged with wind and thunder",
+    "rarity": 2,
+    "slug":  "StormSpear"
+  },
+  {
+    "id": 89,
+    "title": "Storm Axe",
+	"type": "Axe",
+    "value": 35,
+    "stats": {
+      "str": 40,
+	  "dex": 40,
+	  "wis": 40,
+	  "luk": 40,
+	  "atk": 15,
+	  "def": 15
+    },
+    "description": "A Axe forged with wind and thunder",
+    "rarity": 2,
+    "slug":  "StormAxe"
+  },
+  {
+    "id": 90,
+    "title": "Storm Dagger",
+	"type": "Dagger",
+    "value": 35,
+    "stats": {
+      "str": 40,
+	  "dex": 40,
+	  "wis": 40,
+	  "luk": 40,
+	  "atk": 15,
+	  "def": 15
+    },
+    "description": "A Dagger forged with wind and thunder",
+    "rarity": 2,
+    "slug":  "StormDagger"
+  },
+  {
+    "id": 91,
+    "title": "Sun Helmet",
+	"type": "Helmet",
+    "value": 45,
+    "stats": {
+      "str": 50,
+	  "dex": 20,
+	  "wis": 10,
+	  "luk": 20,
+	  "atk": 50,
+	  "def": 40
+    },
+    "description": "A helmet forged with the rays of the sun",
+    "rarity": 3,
+    "slug":  "SunHelmet"
+  },
+  {
+    "id": 92,
+    "title": "Sun Armor",
+	"type": "Armor",
+    "value": 45,
+    "stats": {
+      "str": 60,
+	  "dex": 25,
+	  "wis": 10,
+	  "luk": 20,
+	  "atk": 70,
+	  "def": 60
+    },
+    "description": "Armor forged with the rays of the sun",
+    "rarity": 3,
+    "slug":  "SunArmor"
+  },
+  {
+    "id": 93,
+    "title": "Sun Sword",
+	"type": "Sword",
+    "value": 45,
+    "stats": {
+      "str": 50,
+	  "dex": 0,
+	  "wis": 0,
+	  "luk": 0,
+	  "atk": 80,
+	  "def": -20
+    },
+    "description": "A Sword forged with the rays of the sun",
+    "rarity": 3,
+    "slug":  "SunSword"
+  },
+  {
+    "id": 94,
+    "title": "Sun Spear",
+	"type": "Spear",
+    "value": 45,
+    "stats": {
+      "str": 50,
+	  "dex": 0,
+	  "wis": 0,
+	  "luk": 0,
+	  "atk": 80,
+	  "def": -20
+    },
+    "description": "A Spear forged with the rays of the sun",
+    "rarity": 3,
+    "slug":  "SunSpear"
+  },
+  {
+    "id": 95,
+    "title": "Sun Axe",
+	"type": "Axe",
+    "value": 45,
+    "stats": {
+      "str": 50,
+	  "dex": 0,
+	  "wis": 0,
+	  "luk": 0,
+	  "atk": 80,
+	  "def": -20
+    },
+    "description": "A Axe forged with the rays of the sun",
+    "rarity": 3,
+    "slug":  "SunAxe"
+  },
+  {
+    "id": 96,
+    "title": "Sun Dagger",
+	"type": "Dagger",
+    "value": 45,
+    "stats": {
+      "str": 50,
+	  "dex": 0,
+	  "wis": 0,
+	  "luk": 0,
+	  "atk": 80,
+	  "def": -20
+    },
+    "description": "A Dagger forged with the rays of the sun",
+    "rarity": 3,
+    "slug":  "SunDagger"
+  },
+  {
+    "id": 97,
+    "title": "Moon Helmet",
+	"type": "Helmet",
+    "value": 45,
+    "stats": {
+      "str": 10,
+	  "dex": 10,
+	  "wis": 50,
+	  "luk": 25,
+	  "atk": 10,
+	  "def": 100
+    },
+    "description": "A helmet forged with the rays of the Moon",
+    "rarity": 3,
+    "slug":  "MoonHelmet"
+  },
+  {
+    "id": 98,
+    "title": "Moon Armor",
+	"type": "Armor",
+    "value": 45,
+    "stats": {
+      "str": 10,
+	  "dex": 10,
+	  "wis": 100,
+	  "luk": 25,
+	  "atk": 10,
+	  "def": 150
+    },
+    "description": "Armor forged with the rays of the Moon",
+    "rarity": 3,
+    "slug":  "MoonArmor"
+  },
+  {
+    "id": 99,
+    "title": "Moon Sword",
+	"type": "Sword",
+    "value": 45,
+    "stats": {
+      "str": 0,
+	  "dex": 0,
+	  "wis": 120,
+	  "luk": 0,
+	  "atk": 0,
+	  "def": 100
+    },
+    "description": "A Sword forged with the rays of the Moon",
+    "rarity": 3,
+    "slug":  "MoonSword"
+  },
+  {
+    "id": 100,
+    "title": "Moon Spear",
+	"type": "Spear",
+    "value": 45,
+    "stats": {
+      "str": 0,
+	  "dex": 0,
+	  "wis": 120,
+	  "luk": 0,
+	  "atk": 0,
+	  "def": 100
+    },
+    "description": "A Spear forged with the rays of the Moon",
+    "rarity": 3,
+    "slug":  "MoonSpear"
+  },
+  {
+    "id": 101,
+    "title": "Moon Axe",
+	"type": "Axe",
+    "value": 45,
+    "stats": {
+      "str": 0,
+	  "dex": 0,
+	  "wis": 120,
+	  "luk": 0,
+	  "atk": 0,
+	  "def": 100
+    },
+    "description": "A Axe forged with the rays of the Moon",
+    "rarity": 3,
+    "slug":  "MoonAxe"
+  },
+  {
+    "id": 102,
+    "title": "Moon Dagger",
+	"type": "Dagger",
+    "value": 45,
+    "stats": {
+      "str": 0,
+	  "dex": 0,
+	  "wis": 120,
+	  "luk": 0,
+	  "atk": 0,
+	  "def": 100
+    },
+    "description": "A Dagger forged with the rays of the Moon",
+    "rarity": 3,
+    "slug":  "MoonDagger"
+  },
+  {
+    "id": 103,
+    "title": "Star Helmet",
+	"type": "Helmet",
+    "value": 45,
+    "stats": {
+      "str": 10,
+	  "dex": 40,
+	  "wis": 20,
+	  "luk": 20,
+	  "atk": 20,
+	  "def": 50
+    },
+    "description": "A helmet forged with the rays of the stars",
+    "rarity": 3,
+    "slug":  "StarHelmet"
+  },
+  {
+    "id": 104,
+    "title": "Star Armor",
+	"type": "Armor",
+    "value": 45,
+    "stats": {
+      "str": 15,
+	  "dex": 45,
+	  "wis": 25,
+	  "luk": 25,
+	  "atk": 25,
+	  "def": 60
+    },
+    "description": "Armor forged with the rays of the stars",
+    "rarity": 3,
+    "slug":  "StarArmor"
+  },
+  {
+    "id": 105,
+    "title": "Star Sword",
+	"type": "Sword",
+    "value": 45,
+    "stats": {
+      "str": 15,
+	  "dex": 50,
+	  "wis": 35,
+	  "luk": 35,
+	  "atk": 20,
+	  "def": 20
+    },
+    "description": "A Sword forged with the rays of the stars",
+    "rarity": 3,
+    "slug":  "StarSword"
+  },
+  {
+    "id": 106,
+    "title": "Star Spear",
+	"type": "Spear",
+    "value": 45,
+    "stats": {
+      "str": 15,
+	  "dex": 50,
+	  "wis": 35,
+	  "luk": 35,
+	  "atk": 20,
+	  "def": 20
+    },
+    "description": "A Spear forged with the rays of the stars",
+    "rarity": 3,
+    "slug":  "StarSpear"
+  },
+  {
+    "id": 107,
+    "title": "Star Axe",
+	"type": "Axe",
+    "value": 45,
+    "stats": {
+      "str": 15,
+	  "dex": 50,
+	  "wis": 35,
+	  "luk": 35,
+	  "atk": 20,
+	  "def": 20
+    },
+    "description": "A Axe forged with the rays of the stars",
+    "rarity": 3,
+    "slug":  "StarAxe"
+  },
+  {
+    "id": 108,
+    "title": "Star Dagger",
+	"type": "Dagger",
+    "value": 45,
+    "stats": {
+      "str": 15,
+	  "dex": 50,
+	  "wis": 35,
+	  "luk": 35,
+	  "atk": 20,
+	  "def": 20
+    },
+    "description": "A Dagger forged with the rays of the stars",
+    "rarity": 3,
+    "slug":  "StarDagger"
+  },
+  {
+    "id": 109,
+    "title": "Bens Helmet",
+	"type": "Helmet",
+    "value": 250,
+    "stats": {
+      "str": 20,
+	  "dex": 100,
+	  "wis": 20,
+	  "luk": 20,
+	  "atk": 20,
+	  "def": 100
+    },
+    "description": "A helmet from one of the gods",
+    "rarity": 4,
+    "slug":  "BensHelmet"
+  },
+  {
+    "id": 110,
+    "title": "Bens Armor",
+	"type": "Armor",
+    "value": 250,
+    "stats": {
+      "str": 20,
+	  "dex": 200,
+	  "wis": 40,
+	  "luk": 40,
+	  "atk": 40,
+	  "def": 200
+    },
+    "description": "A helmet from one of the gods",
+    "rarity": 4,
+    "slug":  "BensArmor"
+  },
+  {
+    "id": 111,
+    "title": "Bens Sword",
+	"type": "Sword",
+    "value": 1000,
+    "stats": {
+      "str": 100,
+	  "dex": 1000,
+	  "wis": 100,
+	  "luk": 100,
+	  "atk": 500,
+	  "def": 100
+    },
+    "description": "A sword from one of the gods",
+    "rarity": 4,
+    "slug":  "BensSword"
+  },
+  {
+    "id": 112,
+    "title": "Bens Spear",
+	"type": "Spear",
+    "value": 1000,
+    "stats": {
+      "str": 80,
+	  "dex": 800,
+	  "wis": 80,
+	  "luk": 180,
+	  "atk": 400,
+	  "def": 150
+    },
+    "description": "A spear from one of the gods",
+    "rarity": 4,
+    "slug":  "BensSpear"
+  },
+  {
+    "id": 113,
+    "title": "Bens Axe",
+	"type": "Axe",
+    "value": 1000,
+    "stats": {
+      "str": 150,
+	  "dex": 1500,
+	  "wis": 120,
+	  "luk": 120,
+	  "atk": 750,
+	  "def": 80
+    },
+    "description": "An axe from one of the gods",
+    "rarity": 4,
+    "slug":  "BensAxe"
+  },
+  {
+    "id": 114,
+    "title": "Bens Dagger",
+	"type": "Dagger",
+    "value": 100,
+    "stats": {
+      "str": 50,
+	  "dex": 600,
+	  "wis": 60,
+	  "luk": 60,
+	  "atk": 60,
+	  "def": 120
+    },
+    "description": "A dagger from one of the gods",
+    "rarity": 4,
+    "slug":  "BensDagger"
+  },
+    {
+    "id": 115,
+    "title": "Hansels Helmet",
+	"type": "Helmet",
+    "value": 250,
+    "stats": {
+      "str": 20,
+	  "dex": 20,
+	  "wis": 20,
+	  "luk": 100,
+	  "atk": 20,
+	  "def": 100
+    },
+    "description": "A helmet from one of the gods",
+    "rarity": 4,
+    "slug":  "HanselsHelmet"
+  },
+  {
+    "id": 116,
+    "title": "Hansels Armor",
+	"type": "Armor",
+    "value": 250,
+    "stats": {
+      "str": 40,
+	  "dex": 40,
+	  "wis": 40,
+	  "luk": 200,
+	  "atk": 40,
+	  "def": 200
+    },
+    "description": "A helmet from one of the gods",
+    "rarity": 4,
+    "slug":  "HanselsArmor"
+  },
+  {
+    "id": 117,
+    "title": "Hansels Sword",
+	"type": "Sword",
+    "value": 1000,
+    "stats": {
+      "str": 100,
+	  "dex": 100,
+	  "wis": 100,
+	  "luk": 1000,
+	  "atk": 500,
+	  "def": 100
+    },
+    "description": "A sword from one of the gods",
+    "rarity": 4,
+    "slug":  "HanselsSword"
+  },
+  {
+    "id": 118,
+    "title": "Hansels Spear",
+	"type": "Spear",
+    "value": 1000,
+    "stats": {
+      "str": 80,
+	  "dex": 180,
+	  "wis": 80,
+	  "luk": 800,
+	  "atk": 400,
+	  "def": 150
+    },
+    "description": "A spear from one of the gods",
+    "rarity": 4,
+    "slug":  "HanselsSpear"
+  },
+  {
+    "id": 119,
+    "title": "Hansels Axe",
+	"type": "Axe",
+    "value": 1000,
+    "stats": {
+      "str": 150,
+	  "dex": 120,
+	  "wis": 120,
+	  "luk": 1500,
+	  "atk": 750,
+	  "def": 80
+    },
+    "description": "An axe from one of the gods",
+    "rarity": 4,
+    "slug":  "HanselsAxe"
+  },
+  {
+    "id": 120,
+    "title": "Hansels Dagger",
+	"type": "Dagger",
+    "value": 1000,
+    "stats": {
+      "str": 50,
+	  "dex": 60,
+	  "wis": 60,
+	  "luk": 600,
+	  "atk": 60,
+	  "def": 120
+    },
+    "description": "A dagger from one of the gods",
+    "rarity": 4,
+    "slug":  "HanselsDagger"
+  },
+    {
+    "id": 121,
+    "title": "Matthews Helmet",
+	"type": "Helmet",
+    "value": 250,
+    "stats": {
+      "str": 20,
+	  "dex": 20,
+	  "wis": 100,
+	  "luk": 20,
+	  "atk": 20,
+	  "def": 100
+    },
+    "description": "A helmet from one of the gods",
+    "rarity": 4,
+    "slug":  "MatthewsHelmet"
+  },
+  {
+    "id": 122,
+    "title": "Matthews Armor",
+	"type": "Armor",
+    "value": 250,
+    "stats": {
+      "str": 40,
+	  "dex": 40,
+	  "wis": 200,
+	  "luk": 40,
+	  "atk": 40,
+	  "def": 200
+    },
+    "description": "A helmet from one of the gods",
+    "rarity": 4,
+    "slug":  "MatthewsArmor"
+  },
+  {
+    "id": 123,
+    "title": "Matthews Sword",
+	"type": "Sword",
+    "value": 1000,
+    "stats": {
+      "str": 100,
+	  "dex": 100,
+	  "wis": 1000,
+	  "luk": 100,
+	  "atk": 500,
+	  "def": 100
+    },
+    "description": "A sword from one of the gods",
+    "rarity": 4,
+    "slug":  "MatthewsSword"
+  },
+  {
+    "id": 124,
+    "title": "Matthews Spear",
+	"type": "Spear",
+    "value": 1000,
+    "stats": {
+      "str": 80,
+	  "dex": 80,
+	  "wis": 800,
+	  "luk": 180,
+	  "atk": 400,
+	  "def": 150
+    },
+    "description": "A spear from one of the gods",
+    "rarity": 4,
+    "slug":  "MatthewsSpear"
+  },
+  {
+    "id": 125,
+    "title": "Matthews Axe",
+	"type": "Axe",
+    "value": 1000,
+    "stats": {
+      "str": 150,
+	  "dex": 120,
+	  "wis": 1500,
+	  "luk": 120,
+	  "atk": 750,
+	  "def": 80
+    },
+    "description": "An axe from one of the gods",
+    "rarity": 4,
+    "slug":  "MatthewsAxe"
+  },
+  {
+    "id": 126,
+    "title": "Matthews Dagger",
+	"type": "Dagger",
+    "value": 1000,
+    "stats": {
+      "str": 50,
+	  "dex": 60,
+	  "wis": 600,
+	  "luk": 60,
+	  "atk": 60,
+	  "def": 120
+    },
+    "description": "A dagger from one of the gods",
+    "rarity": 4,
+    "slug":  "MatthewsDagger"
+  },
+    {
+    "id": 127,
+    "title": "Patricks Helmet",
+	"type": "Helmet",
+    "value": 250,
+    "stats": {
+      "str": 100,
+	  "dex": 20,
+	  "wis": 20,
+	  "luk": 20,
+	  "atk": 20,
+	  "def": 100
+    },
+    "description": "A helmet from one of the gods",
+    "rarity": 4,
+    "slug":  "PatricksHelmet"
+  },
+  {
+    "id": 128,
+    "title": "Patricks Armor",
+	"type": "Armor",
+    "value": 250,
+    "stats": {
+      "str": 200,
+	  "dex": 40,
+	  "wis": 40,
+	  "luk": 40,
+	  "atk": 40,
+	  "def": 200
+    },
+    "description": "A helmet from one of the gods",
+    "rarity": 4,
+    "slug":  "PatricksArmor"
+  },
+  {
+    "id": 129,
+    "title": "Patricks Sword",
+	"type": "Sword",
+    "value": 1000,
+    "stats": {
+      "str": 1000,
+	  "dex": 100,
+	  "wis": 100,
+	  "luk": 100,
+	  "atk": 500,
+	  "def": 100
+    },
+    "description": "A sword from one of the gods",
+    "rarity": 4,
+    "slug":  "PatricksSword"
+  },
+  {
+    "id": 130,
+    "title": "Patricks Spear",
+	"type": "Spear",
+    "value": 1000,
+    "stats": {
+      "str": 800,
+	  "dex": 180,
+	  "wis": 80,
+	  "luk": 80,
+	  "atk": 400,
+	  "def": 150
+    },
+    "description": "A spear from one of the gods",
+    "rarity": 4,
+    "slug":  "PatricksSpear"
+  },
+  {
+    "id": 131,
+    "title": "Patricks Axe",
+	"type": "Axe",
+    "value": 1000,
+    "stats": {
+      "str": 1500,
+	  "dex": 150,
+	  "wis": 120,
+	  "luk": 120,
+	  "atk": 750,
+	  "def": 80
+    },
+    "description": "An axe from one of the gods",
+    "rarity": 4,
+    "slug":  "PatricksAxe"
+  },
+  {
+    "id": 132,
+    "title": "Patricks Dagger",
+	"type": "Dagger",
+    "value": 1000,
+    "stats": {
+      "str": 600,
+	  "dex": 60,
+	  "wis": 60,
+	  "luk": 50,
+	  "atk": 60,
+	  "def": 120
+    },
+    "description": "A dagger from one of the gods",
+    "rarity": 4,
+    "slug":  "PatricksDagger"
+  },
+  {
+    "id": 133,
+    "title": "TL Helmet",
+	"type": "Helmet",
+    "value": 1,
+    "stats": {
+      "str": -10,
+	  "dex": -10,
+	  "wis": -10,
+	  "luk": -10,
+	  "atk": -10,
+	  "def": -100
+    },
+    "description": "Well delivered",
+    "rarity": 1,
+    "slug":  "TLHelmet"
+  },
+  {
+    "id": 134,
+    "title": "TL Armor",
+	"type": "Armor",
+    "value": 1,
+    "stats": {
+      "str": -40,
+	  "dex": -20,
+	  "wis": -20,
+	  "luk": -20,
+	  "atk": -20,
+	  "def": -200
+    },
+    "description": "Armor made of paper",
+    "rarity": 1,
+    "slug":  "TLArmor"
+  },
+  {
+    "id": 135,
+    "title": "TL Sword",
+	"type": "Sword",
+    "value": 1,
+    "stats": {
+      "str": -1000,
+	  "dex": -100,
+	  "wis": -100,
+	  "luk": -100,
+	  "atk": -500,
+	  "def": -100
+    },
+    "description": "A foam stick",
+    "rarity": 1,
+    "slug":  "TLSword"
+  },
+  {
+    "id": 136,
+    "title": "TL Spear",
+	"type": "Spear",
+    "value": 1,
+    "stats": {
+      "str": -800,
+	  "dex": -180,
+	  "wis": -80,
+	  "luk": -80,
+	  "atk": -400,
+	  "def": -150
+    },
+    "description": "A piece of paper rolled into the shape of a long stick",
+    "rarity": 1,
+    "slug":  "TLSpear"
+  },
+  {
+    "id": 137,
+    "title": "TL Axe",
+	"type": "Axe",
+    "value": 1,
+    "stats": {
+      "str": -1500,
+	  "dex": -150,
+	  "wis": -120,
+	  "luk": -120,
+	  "atk": -750,
+	  "def": -80
+    },
+    "description": "An axe made of popsicle sticks",
+    "rarity": 1,
+    "slug":  "TLAxe"
+  },
+  {
+    "id": 138,
+    "title": "TL Dagger",
+	"type": "Dagger",
+    "value": 1,
+    "stats": {
+      "str": -600,
+	  "dex": -60,
+	  "wis": -60,
+	  "luk": -50,
+	  "atk": -60,
+	  "def": -120
+    },
+    "description": "A piece of mail",
+    "rarity": 1,
+    "slug":  "TLDagger"
+  }
+]

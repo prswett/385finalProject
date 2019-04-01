@@ -7,6 +7,25 @@ TagManager:
   - Weapon
   - Ground
   - Enemy
+  - Enemy Weapon
+  - Boss
+  - Platform
+  - Portal
+  - Pause
+  - Instructions
+  - Door
+  - Item
+  - outofbounds
+  - Inventory
+  - Shop
+  - Spike
+  - QuestionBox
+  - Pickup
+  - EnemyHealth
+  - Controls
+  - SaveQuestion
+  - Anvil
+  - playeroutofbounds
   layers:
   - Default
   - TransparentFX
@@ -18,13 +37,13 @@ TagManager:
   - 
   - Player
   - Weapon
+  - Monster
+  - Item
+  - Pickup
+  - Spell
   - Ground
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Enemy
+  - Damage Numbers
   - 
   - 
   - 
@@ -47,6 +66,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Item
+    uniqueID: 3183687585
+    locked: 0
+  - name: Enemy
+    uniqueID: 1203121819
+    locked: 0
+  - name: Monster
+    uniqueID: 733831569
+    locked: 0
   - name: Weapon
     uniqueID: 1672905393
     locked: 0
@@ -55,4 +83,7 @@ TagManager:
     locked: 0
   - name: UI
     uniqueID: 3376621861
+    locked: 1
+  - name: Damage Numbers
+    uniqueID: 1836247765
     locked: 0

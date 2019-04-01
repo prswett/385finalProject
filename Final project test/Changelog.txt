@@ -1,0 +1,234 @@
+Version 5.0
+Atk and magic attack bug fixed
+item super stat reroll fixed
+bug fixes
+stage bug fixes
+stage cleanup
+player weapon damage changed
+strength health slight nerf
+strength damage nerf
+dex damage increased
+dex avoidability increased
+luk item drop rate nerfed
+gave enemies and bosses defense pen attack
+enemies and bosses no do percentage damage
+flower boss damage bug fix
+enemy spawn rescaled based on level
+spell scaling increased
+spell mana cost scales
+Boss item drop increase
+Boss exp increased
+mana cost for mana regen decreased
+mana cost per wis decreased
+spear moved up
+dagger animation changed
+
+Version 4.7
+Bug fixes
+Small code cleanup
+Stat rebalancing
+Boss rescaling
+Final boss phase 1 rescaling
+boss item drops increased
+potion cd added
+Stage bug fixes
+spawn rate scaled
+potion healing increased
+
+Version 4.6
+Map crash bug fixed
+fixed item drop bug
+Music doesn't restart after new stage
+
+Version 4.5
+Camera bug fixes
+stat save/load fixes
+added ~70 new items
+modified some item stats
+fixed def bug
+increased item drop rate
+randomized enemy and boss drops
+randomized treasure chest drops
+decreased spell book drop rate
+decreased exp needed for each level slightly
+fixed item ID sprite bug
+fixed enemy out of bounds bug
+fixed tutorial bugs
+Readjusted base item upgrade amount
+added more randomization to item stat reroll and upgrade
+decreased highest gold possible per coin
+increased base gold possible per coin
+changing equips in town keeps health/mana percentages (100%)
+changed hp color text from black to white
+
+Version 4.4
+Melee weapon balancing
+Spell nerf (mana cost increased, mana potion cost increased, mana potion drop rate decreased
+Camera adjusted (QOL)
+New enemy colors added
+Readjusted enemy spawning probability
+Decreased item drop rate
+Increased exp increase for each level
+
+Version 4.3
+Added 2 new bosses (sun boss and crusher boss)
+Added medium and large potions
+Increased potion inventory size
+changed save point sprite
+Saving now shows a question box
+fixed avoidability bug
+moving an item from its slot into the old slot no longer shows sell option
+added anvil for upgrade system
+added new tutorial stages
+
+Version 4.2
+Fixed item inventory full bug
+Modified monster move location
+Decreased final boss health
+Added upgrade system
+Quality of life changes
+Tool tip QOL
+Player can now jump from ladders, onto ladders
+
+Version 4.1
+Added music
+Fixed final boss bug
+Fixed UI bugs
+Changed drop rates
+Legendary weapons only drop from bosses
+EnemySpawn fixed
+
+Version 4.0 (Alpha version)
+Added many new stages
+Fixed many bugs
+Updated spear sprite
+Added new items
+Added new enemies
+Rebalanced enemy damage + health
+Increased Boar boss difficulty
+Decreased Flower boss difficulty
+Decreased Final boss difficulty
+Final boss level requirement is now 20
+Modified item drop rates
+Redid tutorial
+
+Version 3.4
+Added new stages to Ben Version
+Added new stage images for a square stage and a tall stage
+Adjusted item stats and added new tier 3 equips
+
+Version 3.3
+Added bomb spell
+Added spell UI
+fixed bugs
+Enemy manager has two modes now: spawn around player, spawn around area
+Enemies can now be modified to remain in an area
+flying enemies will now go upward if player is above them
+added new prefabs
+Updated save and load functions
+removed J as attack key
+Added keys for spells and switching
+added damage scaling
+Added spell book drop
+
+Version 3.2
+Enemies now fade in before becoming active
+Added two new weapon sets
+adjusted item stats
+added treasure chest
+added tutorial stage
+added rare item drop
+adjusted drop rates for item
+adjusted rates for getting an equip
+adjusted weapon damage
+added enemy health and damage scaling
+added boss health and damage scaling
+Fixed equipment cosmetics bugs
+Fixed stats not changing on switching equips
+Added player level
+Changed player animations and sprites
+Loot will not longer be picked up and destroyed if inventory is full
+
+Version 3.1 (bug fixes, play test changes)
+Stage glitches removed
+Enemies no longer can go through stage
+Items and coins can no longer be out of reach
+Items and coins now move to player after 10 seconds
+Save and load implemented
+Inventory UI fixed
+Enemies now have blinking animation on hit
+Boss blink animation on hit fixed
+Boar boss hp decreased
+Player weapon switch moved from 'z' to scroll wheel
+Shop key is now 'F' instead of 'O'
+Time resume bug fixed on opening menu, inventory, and shop
+Equipment drop rate decreased from 30% to 10%
+
+Version 3.0
+Enemies no longer get stuck in walls
+Added fireball spell
+Added equips
+Added monster drops
+many many bug fixes
+
+Version 2.1 (Bug fixes version)
+Enemies can now pass through each other and player
+Fixed tileset movement exploits
+Fixed player weapon bugs
+Coins now drop to ground
+Fixed collider bugs
+Platforms are now jump through
+Portals now show tool tip
+
+Version 2.04
+Added main menu
+Fixed some bugs
+
+Version 2.03
+added sword sprites (example of equipment change)
+added coin icon, player now holds coins
+black slimes now drop cins
+fixed pisan bullet targeting bug
+replaced enemy stage with new base stage
+monster spawner now spawns monsters near player
+decreased black slime speed
+
+Version 2.02
+Added town stage
+-entrance to shop
+-added save point (no code)
+-added stage manager (no code)
+bug fixes
+UI menu added (pause, quit)
+
+Version 2.01
+Pisan health bug fixed
+enemy AI jumping implemented
+knight enemy bug fixes
+added tileset for level creation
+
+Version 2.0
+player can now switch weapons
+Pisan boss difficulty increased
+bug fixes
+restart and quit buttons added
+new enemies added
+
+Version 1.02
+Change stages after killing a monster
+new sprites added for main character
+Pisan boss added
+
+Version 1.01
+Enemies can now shoot at player
+mana bar and health bar added
+enemy AI (movement towards player) added
+touching an enemy does damage
+invulnerability period after taking damage
+bullet collision
+
+Version 1.0
+Basic character created
+jump and attack features with animations
+temporary stage created
+enemies added (hp, damage, etc)

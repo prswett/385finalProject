@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Stages/FinalProject.unity
+- path: Assets/Stages/Patrick Stages/bepr6.unity
   isLoaded: 1
   isActive: 1
